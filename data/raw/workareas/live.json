@@ -1,0 +1,151 @@
+{
+  "captured_at": "2026-11-26",
+  "source": "https://search.warwick.ac.uk/search/workareas.json",
+  "count": 12,
+  "workareas": [
+    {
+      "building": "Zeeman (A001)",
+      "room": "A0.01",
+      "total": 20,
+      "available": 10,
+      "inUse": 7,
+      "off": 3,
+      "seats": 13,
+      "unavailable": 0,
+      "percentageInUse": 35,
+      "booked": false
+    },
+    {
+      "building": "Warwick Medical School",
+      "room": "Gibbet Hill B052",
+      "total": 39,
+      "available": 0,
+      "inUse": 0,
+      "off": 39,
+      "seats": 39,
+      "unavailable": 39,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "Library 20 Min PCs ",
+      "room": "Library 20 Min PCs",
+      "total": 10,
+      "available": 0,
+      "inUse": 0,
+      "off": 10,
+      "seats": 10,
+      "unavailable": 10,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "Library (Floor 2)",
+      "room": "Library Floor 2",
+      "total": 110,
+      "available": 0,
+      "inUse": 0,
+      "off": 110,
+      "seats": 110,
+      "unavailable": 110,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "Library (Floor 3)",
+      "room": "Library Floor 3",
+      "total": 8,
+      "available": 0,
+      "inUse": 0,
+      "off": 8,
+      "seats": 8,
+      "unavailable": 8,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "Library (Floor 5)",
+      "room": "Library Floor 5",
+      "total": 8,
+      "available": 0,
+      "inUse": 0,
+      "off": 8,
+      "seats": 8,
+      "unavailable": 8,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "A002",
+      "room": "A002",
+      "total": 39,
+      "available": 30,
+      "inUse": 0,
+      "off": 9,
+      "seats": 39,
+      "unavailable": 9,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "Lib Ground Floor (R039)",
+      "room": "R039",
+      "total": 39,
+      "available": 0,
+      "inUse": 0,
+      "off": 39,
+      "seats": 39,
+      "unavailable": 39,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "Lib Ground Floor (R041)",
+      "room": "R041",
+      "total": 43,
+      "available": 0,
+      "inUse": 0,
+      "off": 43,
+      "seats": 43,
+      "unavailable": 43,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "A003",
+      "room": "A003",
+      "total": 15,
+      "available": 0,
+      "inUse": 0,
+      "off": 15,
+      "seats": 15,
+      "unavailable": 15,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "Avon Multimedia Centre",
+      "room": "Westwood Avon Building",
+      "total": 10,
+      "available": 0,
+      "inUse": 0,
+      "off": 10,
+      "seats": 10,
+      "unavailable": 10,
+      "percentageInUse": 0,
+      "booked": false
+    },
+    {
+      "building": "Library (Floor 1)",
+      "room": "Library Floor 1",
+      "total": 84,
+      "available": 23,
+      "inUse": 14,
+      "off": 47,
+      "seats": 70,
+      "unavailable": 47,
+      "percentageInUse": 0,
+      "booked": false
+    }
+  ]
+}

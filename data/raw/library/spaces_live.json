@@ -1,0 +1,84 @@
+{
+  "captured_at": "2026-11-26T18:19:47.851Z",
+  "source": "https://studyspaces.warwick.ac.uk/",
+  "spaces": [
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 1",
+      "status": "Full or nearly full",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 2",
+      "status": "Full or nearly full",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 2 extension",
+      "status": "Full or nearly full",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 3",
+      "status": "Full or nearly full",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 3 extension",
+      "status": "Full or nearly full",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 4",
+      "status": "Full or nearly full",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 5",
+      "status": "Full or nearly full",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Research Exchange (Restrictions on access)",
+      "status": "Full or nearly full",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 2 extension - Sensory Study Room",
+      "status": "Some spaces available",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Ground Floor - The Eating Place",
+      "status": "Some spaces available",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 2 - Creative Community Place (Check door signage for occasional pre-booked events in progress)",
+      "status": "Closed",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Main Library",
+      "name": "Library - Floor 2 - Teaching and Learning Space (Check door signage for occasional pre-booked events in progress)",
+      "status": "Closed",
+      "observed": "15:26 today"
+    },
+    {
+      "section": "Term 3 flexi-spaces",
+      "name": "Library Floor 2 - Training Room",
+      "status": "Closed",
+      "observed": "15:26 today"
+    }
+  ]
+}

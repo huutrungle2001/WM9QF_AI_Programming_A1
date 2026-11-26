@@ -1,0 +1,391 @@
+{
+  "captured_at": "2026-11-26",
+  "source": "https://warwick.ac.uk/sitebuilder2/api/ajax/keywordSearch.htm?basePage=/services/idg/services-support/av/lecturerooms/meetingrooms",
+  "count": 39,
+  "rooms": [
+    {
+      "slug": "ac01",
+      "title": "AC0.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "ac02",
+      "title": "AC0.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "ac03",
+      "title": "AC0.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "ac06",
+      "title": "AC0.06",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "ac07",
+      "title": "AC0.07",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "ac08",
+      "title": "AC0.08",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr28",
+      "title": "CMR 2.8",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr29",
+      "title": "CMR 2.9",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech Rally Bar",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr04",
+      "title": "CMR0.4",
+      "facilities": [
+        "LCD Screen",
+        "Whiteboard",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "cmr10",
+      "title": "CMR1.0",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Solstice Wireless Casting",
+        "Logitech Rally Bar",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr11",
+      "title": "CMR1.1",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Logitech Rally Bar",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr12",
+      "title": "CMR1.2",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech Rally Bar",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr13",
+      "title": "CMR1.3",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr14",
+      "title": "CMR1.4",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr15",
+      "title": "CMR1.5",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr23",
+      "title": "CMR2.3",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr24",
+      "title": "CMR2.4",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr25",
+      "title": "CMR2.5",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech Rally Bar"
+      ]
+    },
+    {
+      "slug": "cmr26",
+      "title": "CMR2.6",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "cmr27",
+      "title": "CMR2.7",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "mr212",
+      "title": "MR 2.12",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "mrf1",
+      "title": "MR.F1",
+      "facilities": [
+        "LCD Screen",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "mrf2",
+      "title": "MR.F2",
+      "facilities": [
+        "LCD Screen",
+        "Logitech Rally Bar"
+      ]
+    },
+    {
+      "slug": "mrf6",
+      "title": "MR.F6",
+      "facilities": [
+        "LCD Screen",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "mrg3",
+      "title": "MR.G3",
+      "facilities": [
+        "LCD Screen",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "mrg4",
+      "title": "MR.G4",
+      "facilities": [
+        "LCD Screen",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "mrg5",
+      "title": "MR.G5",
+      "facilities": [
+        "LCD Screen",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "mrg6",
+      "title": "MR.G6",
+      "facilities": [
+        "LCD Screen",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "mrg7",
+      "title": "MR.G7",
+      "facilities": [
+        "LCD Screen",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "mrg8",
+      "title": "MR.G8",
+      "facilities": [
+        "LCD Screen"
+      ]
+    },
+    {
+      "slug": "consult1",
+      "title": "MR0.1",
+      "facilities": [
+        "Solstice Wireless Casting",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "consult2",
+      "title": "MR0.2",
+      "facilities": [
+        "Whiteboard"
+      ]
+    },
+    {
+      "slug": "consult3",
+      "title": "MR0.3",
+      "facilities": [
+        "LCD Screen",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "consult5",
+      "title": "MR0.5",
+      "facilities": [
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "consult6",
+      "title": "MR0.6",
+      "facilities": [
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech MeetUp",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "annexmr",
+      "title": "MR1.9",
+      "facilities": [
+        "Laptop Input",
+        "LCD Screen",
+        "Solstice Wireless Casting",
+        "Logitech Rally Bar",
+        "Teams-Enabled Audio and Video Conferencing"
+      ]
+    },
+    {
+      "slug": "sh206",
+      "title": "MR2.06",
+      "facilities": [
+        "LCD Screen",
+        "Whiteboard",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "mr213",
+      "title": "MR2.13",
+      "facilities": [
+        "LCD Screen",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "rssb",
+      "title": "RSS B",
+      "facilities": [
+        "LCD Screen",
+        "Meeting Owl"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1340 @@
+{
+  "captured_at": "2026-11-26",
+  "source": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/local/room-data.js",
+  "departments": [
+    {
+      "name": "Chemistry",
+      "rooms": [
+        {
+          "name": "C5.06",
+          "url": "c506",
+          "type": "flat, teaching",
+          "capacity": 12
+        },
+        {
+          "name": "C5.21",
+          "url": "c521",
+          "type": "flat, teaching",
+          "capacity": 20
+        },
+        {
+          "name": "MAS2.02",
+          "url": "mas202",
+          "type": "flat, teaching",
+          "capacity": 12
+        },
+        {
+          "name": "MAS2.03",
+          "url": "mas203",
+          "type": "flat, teaching",
+          "capacity": 12
+        },
+        {
+          "name": "MAS2.04",
+          "url": "mas204",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "MAS2.05",
+          "url": "mas205",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "MAS2.06",
+          "url": "mas206",
+          "type": "flat, teaching",
+          "capacity": 24
+        }
+      ]
+    },
+    {
+      "name": "Computer Science",
+      "rooms": [
+        {
+          "name": "CS1.04",
+          "url": "cs104",
+          "type": "flat, teaching",
+          "capacity": 60
+        },
+        {
+          "name": "MB0.01",
+          "url": "mb001",
+          "type": "flat, teaching",
+          "capacity": 24
+        },
+        {
+          "name": "MB3.17",
+          "url": "mb317",
+          "type": "flat, teaching",
+          "capacity": 60
+        }
+      ]
+    },
+    {
+      "name": "Cultural & Media Policy Studies",
+      "rooms": [
+        {
+          "name": "F2.04",
+          "url": "f204",
+          "type": "flat, teaching",
+          "capacity": 20
+        },
+        {
+          "name": "G52",
+          "url": "g52",
+          "type": "flat, teaching",
+          "capacity": 12
+        }
+      ]
+    },
+    {
+      "name": "Economics",
+      "rooms": [
+        {
+          "name": "S0.96",
+          "url": "s096",
+          "type": "flat, teaching",
+          "capacity": 2
+        },
+        {
+          "name": "S1.135",
+          "url": "s1135",
+          "type": "flat, teaching",
+          "capacity": 2
+        }
+      ]
+    },
+    {
+      "name": "Engineering",
+      "rooms": [
+        {
+          "name": "A2.05a",
+          "url": "a205a",
+          "type": "flat, teaching",
+          "capacity": 29
+        },
+        {
+          "name": "A2.05b",
+          "url": "a205b",
+          "type": "flat, teaching",
+          "capacity": 38
+        },
+        {
+          "name": "A4.01",
+          "url": "a401",
+          "type": "flat, teaching",
+          "capacity": 20
+        },
+        {
+          "name": "D2.02",
+          "url": "d202",
+          "type": "flat, teaching",
+          "capacity": 35
+        },
+        {
+          "name": "F3.08",
+          "url": "f308",
+          "type": "flat, teaching",
+          "capacity": 20
+        }
+      ]
+    },
+    {
+      "name": "Estates",
+      "rooms": [
+        {
+          "name": "AC1.01a",
+          "url": "ac101a",
+          "type": "flat, teaching",
+          "capacity": 6
+        }
+      ]
+    },
+    {
+      "name": "Faculty of Arts",
+      "rooms": [
+        {
+          "name": "FAB0.16",
+          "url": "fab016",
+          "type": "flat, teaching",
+          "capacity": 50
+        },
+        {
+          "name": "FAB0.18",
+          "url": "fab018",
+          "type": "flat, teaching",
+          "capacity": 50
+        },
+        {
+          "name": "FAB0.19",
+          "url": "fab019",
+          "type": "flat, teaching",
+          "capacity": 70
+        },
+        {
+          "name": "FAB0.20",
+          "url": "fab020",
+          "type": "flat, teaching",
+          "capacity": 98
+        },
+        {
+          "name": "FAB1.01",
+          "url": "fab101",
+          "type": "flat, teaching",
+          "capacity": 50
+        },
+        {
+          "name": "FAB1.04",
+          "url": "fab104",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB1.16",
+          "url": "fab116",
+          "type": "flat, teaching",
+          "capacity": 59
+        },
+        {
+          "name": "FAB1.38",
+          "url": "fab138",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB1.63",
+          "url": "fab163",
+          "type": "flat, teaching",
+          "capacity": 20
+        },
+        {
+          "name": "FAB2.01",
+          "url": "fab201",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB2.23",
+          "url": "fab223",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "FAB2.24",
+          "url": "fab224",
+          "type": "flat, teaching",
+          "capacity": 18
+        },
+        {
+          "name": "FAB2.25",
+          "url": "fab225",
+          "type": "flat, teaching",
+          "capacity": 38
+        },
+        {
+          "name": "FAB2.28",
+          "url": "fab228",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB2.46",
+          "url": "fab246",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB3.27",
+          "url": "fab327",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB3.36",
+          "url": "fab336",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB4.02",
+          "url": "fab402",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB4.51",
+          "url": "fab451",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB4.70",
+          "url": "fab470",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB4.76",
+          "url": "fab476",
+          "type": "flat, teaching",
+          "capacity": 46
+        },
+        {
+          "name": "FAB5.30",
+          "url": "fab530",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "FAB5.31",
+          "url": "fab531",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB5.50",
+          "url": "fab550",
+          "type": "flat, teaching",
+          "capacity": 40
+        },
+        {
+          "name": "FAB6.06",
+          "url": "fab606",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FAB6.07",
+          "url": "fab607",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FABM0.02",
+          "url": "fabm002",
+          "type": "flat, teaching",
+          "capacity": 12
+        },
+        {
+          "name": "FABM0.05",
+          "url": "fabm005",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "FABM0.05a",
+          "url": "fabm005a",
+          "type": "flat, teaching",
+          "capacity": 5
+        },
+        {
+          "name": "FABM0.06",
+          "url": "fabm006",
+          "type": "flat, teaching",
+          "capacity": 12
+        }
+      ]
+    },
+    {
+      "name": "Film & TV",
+      "rooms": [
+        {
+          "name": "FABM0.07",
+          "url": "fabm007",
+          "type": "flat, teaching",
+          "capacity": 20
+        },
+        {
+          "name": "FABM0.09",
+          "url": "fabm009",
+          "type": "flat, teaching",
+          "capacity": 32
+        },
+        {
+          "name": "FABM0.10",
+          "url": "fabm010",
+          "type": "flat, teaching",
+          "capacity": 32
+        },
+        {
+          "name": "FABM0.21",
+          "url": "fabm021",
+          "type": "tiered, teaching",
+          "capacity": 71
+        }
+      ]
+    },
+    {
+      "name": "Library",
+      "rooms": [
+        {
+          "name": "Creative Community Place",
+          "url": "teachinggrid",
+          "type": "flat, teaching",
+          "capacity": 40
+        },
+        {
+          "name": "L2.07",
+          "url": "l207",
+          "type": "flat, teaching",
+          "capacity": 40
+        },
+        {
+          "name": "L2.22",
+          "url": "l222",
+          "type": "flat, teaching",
+          "capacity": 50
+        },
+        {
+          "name": "L2.23",
+          "url": "l223",
+          "type": "flat, teaching",
+          "capacity": 30
+        },
+        {
+          "name": "Wolfson Research Exchange 1",
+          "url": "wolfsonroom1",
+          "type": "flat, teaching",
+          "capacity": 20
+        },
+        {
+          "name": "Wolfson Research Exchange 2",
+          "url": "wolfsonroom2",
+          "type": "flat, teaching",
+          "capacity": 20
+        },
+        {
+          "name": "Wolfson Research Exchange 3",
+          "url": "wolfsonroom3",
+          "type": "flat, teaching",
+          "capacity": 20
+        }
+      ]
+    },
+    {
+      "name": "Mathematics and Statistics",
+      "rooms": [
+        {
+          "name": "B0.06",
+          "url": "b006",
+          "type": "flat, teaching",
+          "capacity": 20
+        },
+        {
+          "name": "B1.01",
+          "url": "b101",
+          "type": "flat, teaching",
+          "capacity": 30
+        },
+        {
+          "name": "B3.01",
+          "url": "b301",
+          "type": "flat, teaching",
+          "capacity": 24
+        },
+        {
+          "name": "C1.06",
+          "url": "c106",
+          "type": "flat, teaching",
+          "capacity": 12
+        },
+        {
+          "name": "D1.07",
+          "url": "d107",
+          "type": "flat, teaching",
+          "capacity": 40
+        },
+        {
+          "name": "MB0.02",
+          "url": "mb002",
+          "type": "flat, teaching",
+          "capacity": 30
+        },
+        {
+          "name": "MB1.02",
+          "url": "mb102",
+          "type": "flat, teaching",
+          "capacity": 100
+        },
+        {
+          "name": "MB1.05",
+          "url": "mb105",
+          "type": "flat, teaching",
+          "capacity": 13
+        },
+        {
+          "name": "MB1.06",
+          "url": "mb106",
+          "type": "flat, teaching",
+          "capacity": 13
+        },
+        {
+          "name": "MB1.09",
+          "url": "mb109",
+          "type": "flat, teaching",
+          "capacity": 37
+        },
+        {
+          "name": "MB2.22",
+          "url": "mb222",
+          "type": "flat, teaching",
+          "capacity": 25
+        },
+        {
+          "name": "MB2.23",
+          "url": "mb223",
+          "type": "flat, teaching",
+          "capacity": 18
+        },
+        {
+          "name": "MB2.24",
+          "url": "mb224",
+          "type": "flat, teaching",
+          "capacity": 18
+        },
+        {
+          "name": "MB5.19",
+          "url": "mb519",
+          "type": "flat, teaching",
+          "capacity": 13
+        },
+        {
+          "name": "MB5.20",
+          "url": "mb520",
+          "type": "flat, teaching",
+          "capacity": 12
+        },
+        {
+          "name": "MS.B3.02",
+          "url": "msb302",
+          "type": "flat, teaching",
+          "capacity": 56
+        }
+      ]
+    },
+    {
+      "name": "PAIS",
+      "rooms": [
+        {
+          "name": "D1.01",
+          "url": "d101",
+          "type": "flat, teaching",
+          "capacity": 5
+        },
+        {
+          "name": "D1.02",
+          "url": "d102",
+          "type": "flat, teaching",
+          "capacity": 5
+        },
+        {
+          "name": "D1.03",
+          "url": "d103",
+          "type": "flat, teaching",
+          "capacity": 6
+        },
+        {
+          "name": "D1.04",
+          "url": "d104",
+          "type": "flat, teaching",
+          "capacity": 6
+        },
+        {
+          "name": "D1.05",
+          "url": "d105",
+          "type": "flat, teaching",
+          "capacity": 6
+        },
+        {
+          "name": "E2.02",
+          "url": "e202",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "E2.25",
+          "url": "e225",
+          "type": "flat, teaching",
+          "capacity": 5
+        },
+        {
+          "name": "PAIS Common Room",
+          "url": "paiscommon",
+          "type": "flat",
+          "capacity": 60
+        }
+      ]
+    },
+    {
+      "name": "Physics",
+      "rooms": [
+        {
+          "name": "P5.23",
+          "url": "p523",
+          "type": "flat, teaching",
+          "capacity": 22
+        }
+      ]
+    },
+    {
+      "name": "Psychology",
+      "rooms": [
+        {
+          "name": "Clinical Teaching Room",
+          "url": "psychoctr",
+          "type": "flat, teaching",
+          "capacity": 30
+        },
+        {
+          "name": "Computing and Teaching Lab",
+          "url": "psychocatlab",
+          "type": "flat, teaching",
+          "capacity": 60
+        },
+        {
+          "name": "Multipurpose Room",
+          "url": "psychopod",
+          "type": "flat, meeting",
+          "capacity": 30
+        }
+      ]
+    },
+    {
+      "name": "Ramphal",
+      "rooms": [
+        {
+          "name": "R2.25",
+          "url": "r225",
+          "type": "flat, meeting",
+          "capacity": 10
+        }
+      ]
+    },
+    {
+      "name": "Rootes Learning Grid",
+      "rooms": [
+        {
+          "name": "Learning Grid Rootes Room 1",
+          "url": "lgroom1",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "Learning Grid Rootes Room 2",
+          "url": "lgroom2",
+          "type": "flat, teaching",
+          "capacity": 16
+        }
+      ]
+    },
+    {
+      "name": "School of Law",
+      "rooms": [
+        {
+          "name": "S0.02",
+          "url": "s002",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "S0.03",
+          "url": "s003",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "S0.04",
+          "url": "s004",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "S1.14",
+          "url": "s114",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "S2.09",
+          "url": "s209",
+          "type": "flat, teaching",
+          "capacity": 20
+        },
+        {
+          "name": "S2.12",
+          "url": "s212",
+          "type": "flat, teaching",
+          "capacity": 20
+        }
+      ]
+    },
+    {
+      "name": "SELCS",
+      "rooms": [
+        {
+          "name": "B1.36",
+          "url": "b136",
+          "type": "flat, flexible",
+          "capacity": 10
+        }
+      ]
+    },
+    {
+      "name": "Senate House",
+      "rooms": [
+        {
+          "name": "M3.01",
+          "url": "m301",
+          "type": "flat, teaching",
+          "capacity": 60
+        },
+        {
+          "name": "M3.05",
+          "url": "m305",
+          "type": "flat, teaching",
+          "capacity": 24
+        },
+        {
+          "name": "SH0.03 - Student Opportunity Hub",
+          "url": "sh003",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "SH0.06 - Student Opportunity Hub",
+          "url": "sh006",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "SH1.30",
+          "url": "sh130",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "SH1.35a",
+          "url": "sh135a",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "SH2.19",
+          "url": "sh219",
+          "type": "flat, teaching",
+          "capacity": 16
+        }
+      ]
+    },
+    {
+      "name": "Social Sciences",
+      "rooms": [
+        {
+          "name": "S1.137",
+          "url": "s1137",
+          "type": "flat, flexible",
+          "capacity": 6
+        },
+        {
+          "name": "S1.50",
+          "url": "s150",
+          "type": "flat, flexible",
+          "capacity": 18
+        },
+        {
+          "name": "S2.77",
+          "url": "s277",
+          "type": "flat, flexible",
+          "capacity": 28
+        },
+        {
+          "name": "S2.79",
+          "url": "s279",
+          "type": "flat, flexible",
+          "capacity": 50
+        },
+        {
+          "name": "S2.81a",
+          "url": "s281a",
+          "type": "flat, flexible",
+          "capacity": 20
+        },
+        {
+          "name": "S2.82",
+          "url": "s282",
+          "type": "flat, flexible",
+          "capacity": 19
+        },
+        {
+          "name": "S2.86",
+          "url": "s286",
+          "type": "flat, flexible",
+          "capacity": 8
+        }
+      ]
+    },
+    {
+      "name": "Sociology",
+      "rooms": [
+        {
+          "name": "E1.02",
+          "url": "e102",
+          "type": "flat, flexible",
+          "capacity": 10
+        }
+      ]
+    },
+    {
+      "name": "Sports And Wellness Hub",
+      "rooms": [
+        {
+          "name": "Space 2",
+          "url": "space2",
+          "type": "flat, boardroom",
+          "capacity": 6
+        },
+        {
+          "name": "Space 3",
+          "url": "space3",
+          "type": "flat, boardroom",
+          "capacity": 6
+        },
+        {
+          "name": "Space 4",
+          "url": "space4",
+          "type": "flat, boardroom",
+          "capacity": 14
+        },
+        {
+          "name": "Space 5",
+          "url": "space5",
+          "type": "flat, boardroom",
+          "capacity": 8
+        },
+        {
+          "name": "Space 6",
+          "url": "space6",
+          "type": "flat, boardroom",
+          "capacity": 8
+        },
+        {
+          "name": "Studio 1",
+          "url": "studio1",
+          "type": "flat, flexible",
+          "capacity": 0
+        },
+        {
+          "name": "Studio 2",
+          "url": "studio2",
+          "type": "flat, flexible",
+          "capacity": 0
+        },
+        {
+          "name": "Studio 3",
+          "url": "studio3",
+          "type": "flat, flexible",
+          "capacity": 0
+        },
+        {
+          "name": "Studio 4",
+          "url": "studio4",
+          "type": "flat, flexible",
+          "capacity": 0
+        },
+        {
+          "name": "Squash Courts",
+          "url": "squashcourts",
+          "type": "flat, flexible",
+          "capacity": 80
+        },
+        {
+          "name": "Rowing Room",
+          "url": "rowingroom",
+          "type": "flat, flexible",
+          "capacity": 0
+        },
+        {
+          "name": "Climbing Briefing Room",
+          "url": "climbingbriefingroom",
+          "type": "flat, teaching",
+          "capacity": 40
+        },
+        {
+          "name": "Combat Hall",
+          "url": "combathall",
+          "type": "flat, teaching",
+          "capacity": 0
+        },
+        {
+          "name": "Spin Studio",
+          "url": "cyclespinningstudio",
+          "type": "flat, flexible",
+          "capacity": 0
+        },
+        {
+          "name": "Multipurpose Hall",
+          "url": "multipurposehall",
+          "type": "flat, flexible",
+          "capacity": 0
+        }
+      ]
+    },
+    {
+      "name": "Sports Pavillion",
+      "rooms": [
+        {
+          "name": "Cryfield Sports Pavillion",
+          "url": "cryfieldsportspavillion",
+          "type": "flat, flexible",
+          "capacity": 50
+        }
+      ]
+    },
+    {
+      "name": "The Beehive",
+      "rooms": [
+        {
+          "name": "IDG Training Room 1",
+          "url": "IDGTraining1",
+          "type": "flat, flexible",
+          "capacity": 20
+        },
+        {
+          "name": "IDG Training Room 2",
+          "url": "IDGTraining2",
+          "type": "flat, flexible",
+          "capacity": 20
+        }
+      ]
+    },
+    {
+      "name": "Warwick Writing Programme",
+      "rooms": [
+        {
+          "name": "FAB2.49",
+          "url": "fab249",
+          "type": "flat, flexible",
+          "capacity": 13
+        }
+      ]
+    },
+    {
+      "name": "University House - Human Resources",
+      "rooms": [
+        {
+          "name": "Meeting Room 1",
+          "url": "hrmeetingroom1",
+          "type": "flat, boardroom",
+          "capacity": 0
+        },
+        {
+          "name": "Meeting Room 2",
+          "url": "hrmeetingroom2",
+          "type": "flat, boardroom",
+          "capacity": 0
+        },
+        {
+          "name": "Meeting Room 3",
+          "url": "hrmeetingroom3",
+          "type": "flat, boardroom",
+          "capacity": 0
+        }
+      ]
+    },
+    {
+      "name": "University House - Learning Grid",
+      "rooms": [
+        {
+          "name": "Presentation Room 1",
+          "url": "presentationroom1",
+          "type": "flat, boardroom",
+          "capacity": 12
+        },
+        {
+          "name": "Presentation Room 2",
+          "url": "presentationroom2",
+          "type": "flat, boardroom",
+          "capacity": 12
+        }
+      ]
+    },
+    {
+      "name": "Gibbet Hill - Biotechnology",
+      "rooms": [
+        {
+          "name": "Teaching Laboratory 1",
+          "url": "teachinglab1",
+          "type": "flat, teaching",
+          "capacity": 0
+        },
+        {
+          "name": "Teaching Laboratory 2",
+          "url": "teachinglab2",
+          "type": "flat, teaching",
+          "capacity": 0
+        },
+        {
+          "name": "Teaching Laboratory 3",
+          "url": "teachinglab3",
+          "type": "flat, teaching",
+          "capacity": 0
+        },
+        {
+          "name": "Teaching Laboratory 4",
+          "url": "teachinglab4",
+          "type": "flat, teaching",
+          "capacity": 0
+        }
+      ]
+    },
+    {
+      "name": "Gibbet Hill - Clinical Trials",
+      "rooms": [
+        {
+          "name": "T0.08",
+          "url": "t008",
+          "type": "flat, boardroom",
+          "capacity": 16
+        },
+        {
+          "name": "T0.09",
+          "url": "t009",
+          "type": "flat, boardroom",
+          "capacity": 16
+        }
+      ]
+    },
+    {
+      "name": "Gibbet Hill - Medical School",
+      "rooms": [
+        {
+          "name": "A1.17",
+          "url": "a117",
+          "type": "flat, teaching",
+          "capacity": 12
+        },
+        {
+          "name": "A1.30",
+          "url": "a130",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "A1.51",
+          "url": "a151",
+          "type": "flat, teaching",
+          "capacity": 30
+        },
+        {
+          "name": "B0.26",
+          "url": "b026",
+          "type": "flat, teaching",
+          "capacity": 12
+        },
+        {
+          "name": "BSR2",
+          "url": "bsr2",
+          "type": "flat, teaching",
+          "capacity": 30
+        },
+        {
+          "name": "BSR4",
+          "url": "bsr4",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "BSR6",
+          "url": "bsr6",
+          "type": "flat, teaching",
+          "capacity": 10
+        },
+        {
+          "name": "Deans Meeting Room",
+          "url": "deansmeetingroom",
+          "type": "flat, teaching",
+          "capacity": 0
+        },
+        {
+          "name": "ICL",
+          "url": "icl",
+          "type": "flat, teaching",
+          "capacity": 132
+        }
+      ]
+    },
+    {
+      "name": "Gibbet Hill - Medical Teaching Centre",
+      "rooms": [
+        {
+          "name": "MD0.04",
+          "url": "004",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD0.05",
+          "url": "005",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD0.06",
+          "url": "006",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD0.07",
+          "url": "007",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD0.08",
+          "url": "008",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD0.09",
+          "url": "009",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD0.10",
+          "url": "010",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD0.11",
+          "url": "011",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD1.08",
+          "url": "108",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD1.09",
+          "url": "109",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD1.10",
+          "url": "110",
+          "type": "flat, teaching",
+          "capacity": 16
+        },
+        {
+          "name": "MD1.11",
+          "url": "111",
+          "type": "flat, teaching",
+          "capacity": 16
+        }
+      ]
+    },
+    {
+      "name": "Gibbet Hill - Interdisciplinary Biomedical Research",
+      "rooms": [
+        {
+          "name": "IBR1.02",
+          "url": "ibr102",
+          "type": "flat, teaching",
+          "capacity": 7
+        },
+        {
+          "name": "IBR1.03",
+          "url": "ibr103",
+          "type": "flat, teaching",
+          "capacity": 7
+        },
+        {
+          "name": "IBR1.04",
+          "url": "ibr104",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "IBR1.05",
+          "url": "ibr105",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "IBR1.06",
+          "url": "ibr106",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "IBR1.07",
+          "url": "ibr107",
+          "type": "flat, teaching",
+          "capacity": 11
+        },
+        {
+          "name": "IBR1.31",
+          "url": "ibr131",
+          "type": "flat, teaching",
+          "capacity": 7
+        },
+        {
+          "name": "IBR1.32",
+          "url": "ibr132",
+          "type": "flat, teaching",
+          "capacity": 7
+        },
+        {
+          "name": "IBR2.02",
+          "url": "ibr202",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "IBR2.03",
+          "url": "ibr203",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "IBR2.04",
+          "url": "ibr204",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "IBR2.05",
+          "url": "ibr205",
+          "type": "flat, teaching",
+          "capacity": 11
+        },
+        {
+          "name": "IBR2.30",
+          "url": "ibr230",
+          "type": "flat, teaching",
+          "capacity": 7
+        },
+        {
+          "name": "IBR2.31",
+          "url": "ibr231",
+          "type": "flat, teaching",
+          "capacity": 7
+        },
+        {
+          "name": "IBR3.25",
+          "url": "ibr325",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "IBR3.26",
+          "url": "ibr326",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "IBR3.27",
+          "url": "ibr327",
+          "type": "flat, teaching",
+          "capacity": 11
+        },
+        {
+          "name": "IBR3.29",
+          "url": "ibr329",
+          "type": "flat, teaching",
+          "capacity": 8
+        },
+        {
+          "name": "IBR3.30",
+          "url": "ibr330",
+          "type": "flat, teaching",
+          "capacity": 8
+        }
+      ]
+    },
+    {
+      "name": "Westwood - Engineering Management Building",
+      "rooms": [
+        {
+          "name": "L0.09",
+          "url": "l009",
+          "type": "flat, teaching",
+          "capacity": 15
+        },
+        {
+          "name": "L0.10",
+          "url": "l010",
+          "type": "flat, teaching",
+          "capacity": 15
+        },
+        {
+          "name": "L0.11",
+          "url": "l011",
+          "type": "flat, teaching",
+          "capacity": 15
+        },
+        {
+          "name": "L0.12",
+          "url": "l012",
+          "type": "flat, teaching",
+          "capacity": 16
+        }
+      ]
+    },
+    {
+      "name": "Westwood - Lifelong Learning",
+      "rooms": [
+        {
+          "name": "WCE0.04",
+          "url": "wce004",
+          "type": "flat, office",
+          "capacity": 5
+        },
+        {
+          "name": "WCE0.12",
+          "url": "wce012",
+          "type": "flat, teaching",
+          "capacity": 15
+        },
+        {
+          "name": "Pigeon Loft",
+          "url": "pigeonloft",
+          "type": "flat, teaching",
+          "capacity": 22
+        }
+      ]
+    },
+    {
+      "name": "Westwood - New Education Building",
+      "rooms": [
+        {
+          "name": "WE1.26",
+          "url": "we126",
+          "type": "flat, teaching",
+          "capacity": 40
+        },
+        {
+          "name": "WE1.32",
+          "url": "we132",
+          "type": "flat, teaching",
+          "capacity": 6
+        },
+        {
+          "name": "WE1.39",
+          "url": "we139",
+          "type": "flat, teaching",
+          "capacity": 20
+        }
+      ]
+    }
+  ]
+}

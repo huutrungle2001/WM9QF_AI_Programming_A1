@@ -1,0 +1,1376 @@
+{
+  "captured_at": "2026-11-26",
+  "source": "https://abs.warwick.ac.uk/wrb2627/default.aspx",
+  "authenticated_as": "student (u5838393, PGT WMG)",
+  "count": 152,
+  "rooms": [
+    {
+      "name": "FAB5.07",
+      "description": "Faculty of Arts Building",
+      "size": 10,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab507",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S1.141",
+      "description": "Social Sciences Building",
+      "size": 12,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s1141",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.47 - open room/kobi",
+      "description": "Faculty of Arts Building",
+      "size": 13,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab247",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.07",
+      "description": "Faculty of Arts Building",
+      "size": 14,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab107",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.08",
+      "description": "Faculty of Arts Building",
+      "size": 14,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab108",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.09",
+      "description": "Faculty of Arts Building",
+      "size": 14,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab109",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.33",
+      "description": "Faculty of Arts Building",
+      "size": 14,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab233",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB3.28",
+      "description": "Faculty of Arts Building",
+      "size": 14,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab328",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "F25B",
+      "description": "Millburn House",
+      "size": 15,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/f25b",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB3.29",
+      "description": "Faculty of Arts Building",
+      "size": 15,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab329",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.05",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab105",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.13",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab113",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.37 - open room",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab137",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.34",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab234",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.35",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab235",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.36",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab236",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.48",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab248",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.61 - open room",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab261",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB3.35 - open room/kobi",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab335",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB4.01 - open room/kobi",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab401",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB4.78",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab478",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB6.03",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab603",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB6.04",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab604",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB6.05",
+      "description": "Faculty of Arts Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab605",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H3.57",
+      "description": "Humanities Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h357",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H3.58",
+      "description": "Humanities Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h358",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S1.71",
+      "description": "Social Sciences Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s171",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S1.88",
+      "description": "Social Sciences Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s188",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S2.85",
+      "description": "Social Sciences Building",
+      "size": 16,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s285",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S1.69",
+      "description": "Social Sciences Building",
+      "size": 17,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s169",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.12",
+      "description": "Faculty of Arts Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab112",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB3.25",
+      "description": "Faculty of Arts Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab325",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB3.33",
+      "description": "Faculty of Arts Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab333",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB4.73",
+      "description": "Faculty of Arts Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab473",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB4.80",
+      "description": "Faculty of Arts Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab480",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB5.02",
+      "description": "Faculty of Arts Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab502",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB5.52",
+      "description": "Faculty of Arts Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab552",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB6.01",
+      "description": "Faculty of Arts Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab601",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.52",
+      "description": "Social Sciences Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s052",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S1.66",
+      "description": "Social Sciences Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s166",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S2.84",
+      "description": "Social Sciences Building",
+      "size": 18,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s284",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A0.05 (Soc Sci)",
+      "description": "Social Sciences Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a005",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A1.05 (Soc Sci)",
+      "description": "Social Sciences Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a105",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "B2.03 (Sci Conc)",
+      "description": "Science Concourse",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/b203",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "E0.23 (Soc Sci)",
+      "description": "Social Sciences Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/e023",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "F37",
+      "description": "Millburn House",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/f37",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.11",
+      "description": "Faculty of Arts Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab111",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.14",
+      "description": "Faculty of Arts Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab114",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.15",
+      "description": "Faculty of Arts Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab115",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB3.26",
+      "description": "Faculty of Arts Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab326",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB3.30",
+      "description": "Faculty of Arts Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab330",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB3.31",
+      "description": "Faculty of Arts Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab331",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB4.52",
+      "description": "Faculty of Arts Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab452",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB4.74",
+      "description": "Faculty of Arts Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab474",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB4.79",
+      "description": "Faculty of Arts Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab479",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R3.25",
+      "description": "Ramphal Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r325",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.28",
+      "description": "Social Sciences Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s028",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S1.39",
+      "description": "Social Sciences Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s139",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S2.81",
+      "description": "Social Sciences Building",
+      "size": 20,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s281",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB3.32",
+      "description": "Faculty of Arts Building",
+      "size": 22,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab332",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H3.56",
+      "description": "Humanities Building",
+      "size": 22,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h356",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.50",
+      "description": "Social Sciences Building",
+      "size": 22,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s050",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "F25A",
+      "description": "Millburn House",
+      "size": 24,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/f25a",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.06",
+      "description": "Faculty of Arts Building",
+      "size": 24,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab106",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB1.10",
+      "description": "Faculty of Arts Building",
+      "size": 24,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab110",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.31",
+      "description": "Faculty of Arts Building",
+      "size": 24,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab231",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H0.02",
+      "description": "Humanities Building",
+      "size": 24,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h002",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H0.44",
+      "description": "Humanities Building",
+      "size": 24,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h044",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H3.02",
+      "description": "Humanities Building",
+      "size": 24,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h302",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H3.03",
+      "description": "Humanities Building",
+      "size": 24,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h303",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H3.55",
+      "description": "Humanities Building",
+      "size": 24,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h355",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "C1.15 (Soc Sci)",
+      "description": "Social Sciences Building",
+      "size": 25,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/c1.15",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB6.02",
+      "description": "Faculty of Arts Building",
+      "size": 25,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab602",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H0.42",
+      "description": "Humanities Building",
+      "size": 25,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h042",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A0.26 (Millburn)",
+      "description": "Millburn House",
+      "size": 26,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a026",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A1.25 (Millburn)",
+      "description": "Millburn House",
+      "size": 26,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a125",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.17",
+      "description": "Social Sciences Building",
+      "size": 26,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s017",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A1.27 (Millburn)",
+      "description": "Millburn House",
+      "size": 28,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a127",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB0.23",
+      "description": "Faculty of Arts Building",
+      "size": 28,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab023",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.32",
+      "description": "Faculty of Arts Building",
+      "size": 28,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab232",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A1.28 (Millburn)",
+      "description": "Millburn House",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a128",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB5.01",
+      "description": "Faculty of Arts Building",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab501",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "G55 (Millburn - no furniture)",
+      "description": "Millburn House",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/g55",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "G56 (Millburn - no furniture)",
+      "description": "Millburn House",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/g56",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "G57 (Millburn - not in use 26/27)",
+      "description": "Millburn House",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/g57",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H0.03",
+      "description": "Humanities Building",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h003",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H0.43",
+      "description": "Humanities Building",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h043",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H3.44",
+      "description": "Humanities Building",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h344",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "MB0.08",
+      "description": "Mathematical Sciences Building",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/mb008",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC0.05",
+      "description": "The Oculus",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc005",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC1.02",
+      "description": "The Oculus",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc102",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC1.03",
+      "description": "The Oculus",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc103",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC1.07",
+      "description": "The Oculus",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc107",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC1.08",
+      "description": "The Oculus",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc108",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R0.03",
+      "description": "Ramphal Building",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r003",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R0.04",
+      "description": "Ramphal Building",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r004",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.08",
+      "description": "Social Sciences Building",
+      "size": 30,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s008",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A1.01 (Zeeman)",
+      "description": "Zeeman Building",
+      "size": 32,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/msa101",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H1.49a",
+      "description": "Humanities Building",
+      "size": 32,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h149a",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A0.14 (Soc Sci)",
+      "description": "Social Sciences Building",
+      "size": 34,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a014",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.09",
+      "description": "Social Sciences Building",
+      "size": 35,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s009",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.10",
+      "description": "Social Sciences Building",
+      "size": 35,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s010",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R1.03",
+      "description": "Ramphal Building",
+      "size": 36,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r103",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R1.04",
+      "description": "Ramphal Building",
+      "size": 36,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r104",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB5.03",
+      "description": "Faculty of Arts Building",
+      "size": 40,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab503",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R2.41",
+      "description": "Ramphal Building",
+      "size": 40,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r241",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R3.41",
+      "description": "Ramphal Building",
+      "size": 40,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r341",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R0.14",
+      "description": "Ramphal Building",
+      "size": 46,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r014",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R1.15",
+      "description": "Ramphal Building",
+      "size": 46,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r115",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A1.11 (Soc Sci)",
+      "description": "Social Sciences Building",
+      "size": 48,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a111",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB2.43",
+      "description": "Faculty of Arts Building",
+      "size": 50,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab243",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "MB0.07",
+      "description": "Mathematical Sciences Building",
+      "size": 50,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/mb007",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R0.12",
+      "description": "Ramphal Building",
+      "size": 50,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r012",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R1.13",
+      "description": "Ramphal Building",
+      "size": 50,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r113",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.13",
+      "description": "Social Sciences Building",
+      "size": 50,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s013",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.18",
+      "description": "Social Sciences Building",
+      "size": 50,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s018",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A0.23 (Soc Sci)",
+      "description": "Social Sciences Building",
+      "size": 54,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a023",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "A0.28 (Millburn)",
+      "description": "Millburn House",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/a028",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "B2.02 (Sci Conc)",
+      "description": "Science Concourse",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/b202",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "B2.04/5 (Sci Conc)",
+      "description": "Science Concourse",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/b204",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC0.01",
+      "description": "The Oculus",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc001",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC1.01",
+      "description": "The Oculus",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc101",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC1.04",
+      "description": "The Oculus",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc104",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC1.06",
+      "description": "The Oculus",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc106",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC1.09",
+      "description": "The Oculus",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc109",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.11",
+      "description": "Social Sciences Building",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s011",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.19",
+      "description": "Social Sciences Building",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s019",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.20",
+      "description": "Social Sciences Building",
+      "size": 60,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s020",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "H1.48",
+      "description": "Humanities Building",
+      "size": 74,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/h148",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "MS.04",
+      "description": "Zeeman Building",
+      "size": 75,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/ms04",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "MS.05",
+      "description": "Zeeman Building",
+      "size": 75,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/ms05",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "JX2.02 (Junction)",
+      "description": "Junction",
+      "size": 78,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/jx202",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "B3.03 (Zeeman)",
+      "description": "Zeeman Building",
+      "size": 80,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/msb303",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC0.04",
+      "description": "The Oculus",
+      "size": 80,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc004",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "MS.03",
+      "description": "Zeeman Building",
+      "size": 85,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/ms03",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "JX2.03 (Junction)",
+      "description": "Junction",
+      "size": 88,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/jx203",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "LIB2",
+      "description": "Library Building",
+      "size": 100,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/lib2",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC0.02",
+      "description": "The Oculus",
+      "size": 100,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc002",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "S0.21",
+      "description": "Social Sciences Building",
+      "size": 100,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/s021",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "L4",
+      "description": "Sciences Building",
+      "size": 116,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/l4",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "L5",
+      "description": "Sciences Building",
+      "size": 116,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/l5",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB0.08",
+      "description": "Faculty of Arts Building",
+      "size": 128,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab008",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "FAB0.03",
+      "description": "Faculty of Arts Building",
+      "size": 164,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/fab003",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "PLT",
+      "description": "Sciences Building",
+      "size": 165,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/plt",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC0.03",
+      "description": "The Oculus",
+      "size": 250,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc003",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "WOODS-SCAWEN",
+      "description": "Arts Centre",
+      "size": 250,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/woods-scawen",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "MS.01",
+      "description": "Zeeman Building",
+      "size": 270,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/ms01",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "JX0.10 (Junction - no furniture or AV)",
+      "description": "Junction",
+      "size": 300,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/%23SPLUS02FF30",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "L3",
+      "description": "Sciences Building",
+      "size": 336,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/l3",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "MS.02",
+      "description": "Zeeman Building",
+      "size": 370,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/ms02",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "R0.21",
+      "description": "Ramphal Building",
+      "size": 400,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/r021",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    },
+    {
+      "name": "OC1.05",
+      "description": "The Oculus",
+      "size": 500,
+      "info_url": "http://www2.warwick.ac.uk/services/its/servicessupport/av/lecturerooms/roominformation/oc105",
+      "department": "CENTRAL",
+      "zone": "Main Site",
+      "request_only": "P"
+    }
+  ]
+}

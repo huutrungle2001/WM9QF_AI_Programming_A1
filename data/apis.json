@@ -1,0 +1,238 @@
+{
+  "search.warwick.ac.uk": {
+    "base_url": "https://search.warwick.ac.uk",
+    "verified_at": "2026-11-26",
+    "auth": {
+      "method": "none"
+    },
+    "endpoints": {
+      "workareas_live": {
+        "method": "GET",
+        "path": "/search/workareas.json",
+        "params": {},
+        "response_fields": [
+          "[].building",
+          "[].room",
+          "[].total",
+          "[].available",
+          "[].inUse",
+          "[].off",
+          "[].seats",
+          "[].unavailable",
+          "[].percentageInUse",
+          "[].booked"
+        ],
+        "notes": "Live JSON snapshot of Open Access PC Labs across Warwick campuses (refreshed every 60s on IDG work-areas page). Supports JSONP via ?callback=."
+      }
+    },
+    "gotchas": [
+      "Only returns currently active/monitored workareas (12 labs as of 2026-11-26); join with SiteBuilder entries.json for bookable/linux/avEquipment flags and opening hours."
+    ]
+  },
+  "warwick.ac.uk": {
+    "base_url": "https://warwick.ac.uk",
+    "verified_at": "2026-11-26",
+    "auth": {
+      "method": "mixed",
+      "notes": "central_rooms and workareas_metadata are public; meeting_rooms and local_rooms require Warwick SSO (websignon.warwick.ac.uk)."
+    },
+    "endpoints": {
+      "central_rooms": {
+        "method": "GET",
+        "path": "/services/idg/services-support/av/lecturerooms/roominformation/room-data.js",
+        "auth": "none",
+        "response_fields": [
+          "roomData[].name (building)",
+          "roomData[].rooms[].name",
+          "roomData[].rooms[].url",
+          "roomData[].rooms[].type",
+          "roomData[].rooms[].capacity"
+        ],
+        "notes": "JS data file defining var roomData with 25 buildings and 214 centrally timetabled teaching rooms."
+      },
+      "meeting_rooms": {
+        "method": "GET",
+        "path": "/services/idg/services-support/av/lecturerooms/meetingrooms/room-data.js",
+        "auth": "sso",
+        "response_fields": [
+          "roomData[].name (building)",
+          "roomData[].rooms[].name",
+          "roomData[].rooms[].url",
+          "roomData[].rooms[].type",
+          "roomData[].rooms[].capacity"
+        ],
+        "notes": "JS data file with 7 buildings and 48 centrally managed meeting & consultation rooms."
+      },
+      "local_rooms": {
+        "method": "GET",
+        "path": "/services/idg/services-support/av/lecturerooms/local/room-data.js",
+        "auth": "sso",
+        "response_fields": [
+          "roomData[].name (department)",
+          "roomData[].rooms[].name",
+          "roomData[].rooms[].url",
+          "roomData[].rooms[].type",
+          "roomData[].rooms[].capacity"
+        ],
+        "notes": "JS data file with 34 academic/support departments and 194 locally timetabled departmental rooms."
+      },
+      "workareas_metadata": {
+        "method": "GET",
+        "path": "/sitebuilder2/api/dataentry/entries.json",
+        "params": {
+          "page": "/services/idg/services-support/work-areas/locations"
+        },
+        "auth": "none",
+        "response_fields": [
+          "items[].title",
+          "items[].metadata (JSON string: bookable, avEquipment, linux, nonITS, mapLink)",
+          "items[].parsedContentBody (opening hours)",
+          "items[].lastUpdated"
+        ],
+        "notes": "Contains historical duplicate entries per room title; deduplicate by keeping highest lastUpdated per title."
+      },
+      "room_av_tags": {
+        "method": "POST",
+        "path": "/sitebuilder2/api/ajax/keywordSearch.htm",
+        "auth": "mixed (public for roominformation; sso for meetingrooms)",
+        "params": {
+          "basePage": "/services/idg/services-support/av/lecturerooms/roominformation | .../meetingrooms",
+          "pageTypes": "HTML",
+          "fieldToShow": "pageHeading",
+          "includeSubsites": "true",
+          "searchType": "AND",
+          "searchTerms": "<single AV tag name>"
+        },
+        "notes": "Query once per AV facility tag (24 central tags, 12 meeting-room tags) to build the complete exact room->facilities matrix (215 central rooms + 39 meeting rooms)."
+      },
+      "official_departments": {
+        "method": "GET",
+        "path": "/services/library/using/libspaces/the-teaching-and-learning-space-availability/teaching-and-learning-space-request/",
+        "auth": "sso",
+        "notes": "Embedded SiteBuilder form JSON contains Warwick's official 52-department faculty-prefixed directory."
+      }
+    },
+    "gotchas": [
+      "room-data.js files use JS object literal syntax (single quotes, unquoted keys, leading zeros like 03 in meetingrooms/room-data.js, /* */ comments in local/room-data.js) rather than strict JSON; evaluate in JS or parse leniently.",
+      "SSO-protected SiteBuilder paths return HTTP 200 HTML titled 'Sign in' when unauthenticated; fetch via signed-in Chrome session (omni)."
+    ]
+  },
+  "studyspaces.warwick.ac.uk": {
+    "base_url": "https://studyspaces.warwick.ac.uk",
+    "verified_at": "2026-11-26",
+    "auth": {
+      "method": "none",
+      "notes": "Public live occupancy board; optional SSO header."
+    },
+    "endpoints": {
+      "occupancy_html": {
+        "method": "GET",
+        "path": "/",
+        "response_fields": [
+          "section (Main Library | Term 3 flexi-spaces)",
+          "space_name",
+          "occupancy_status (Full or nearly full | Some spaces available | Lots of spaces available | Closed)",
+          "observed_time"
+        ],
+        "notes": "Server-rendered HTML (no JSON API on /api/spaces). Parse structured space cards from main container."
+      }
+    },
+    "gotchas": [
+      "No public JSON endpoint; HTML structure is clean and deterministic."
+    ]
+  },
+  "myadvantage.warwick.ac.uk": {
+    "base_url": "https://myadvantage.warwick.ac.uk",
+    "verified_at": "2026-11-26",
+    "auth": {
+      "method": "sso",
+      "login_url": "https://myadvantage.warwick.ac.uk/",
+      "sso_path": "/providers/saml/SsoPostRedirect/1",
+      "account_hint": "u5838393@live.warwick.ac.uk"
+    },
+    "endpoints": {
+      "appointment_topics": {
+        "method": "GET",
+        "path": "/students/appointments/topics",
+        "response_fields": [
+          "a[href*='/students/appointments/topics/'] -> topic_id, name, summary"
+        ],
+        "notes": "Server-rendered HTML list of 12 student 1-on-1 support appointment topics (Careers, MASP, Course Change, Disability Careers, Visa)."
+      },
+      "event_search": {
+        "method": "GET",
+        "path": "/services/students/events/search",
+        "params": {
+          "start": "Custom",
+          "fromStart": "YYYY-MM-DD",
+          "untilStart": "YYYY-MM-DD",
+          "pageSize": "10",
+          "page": "1",
+          "studentSiteId": "1",
+          "saveAsRecent": "false"
+        },
+        "notes": "JSON API covering Academic Skills & Library workshops (e.g. Library Skills and Literature Planning). Requires active SSO session."
+      }
+    },
+    "gotchas": [
+      "Expired session redirects to /students/login or returns HTML 'myAdvantage Login'; verify content-type before parsing JSON."
+    ]
+  },
+  "api.mazemap.com": {
+    "base_url": "https://api.mazemap.com",
+    "verified_at": "2026-11-26",
+    "auth": {
+      "method": "none"
+    },
+    "endpoints": {
+      "campus_collection": {
+        "method": "GET",
+        "path": "/api/campuscollection/Warwick/?withcampuses=true",
+        "notes": "Returns Warwick campus geometries and campusIds (2188 = Central Campus, plus Innovation Campus Warwick)."
+      },
+      "buildings": {
+        "method": "GET",
+        "path": "/api/buildings/?campusid={campusId}",
+        "headers": {
+          "Referer": "https://use.mazemap.com/",
+          "Origin": "https://use.mazemap.com"
+        },
+        "response_fields": [
+          "buildings[].id",
+          "buildings[].name",
+          "buildings[].simpleGeom (EPSG:3857 polygon -> convert to WGS84 lat/lon)",
+          "buildings[].floors[].{z, name}"
+        ],
+        "notes": "Returns 205 named Warwick campus buildings (54 blank/unnamed footprints filtered out) with floor lists and map geometries (no auth required)."
+      }
+    },
+    "gotchas": [
+      "search.mazemap.com/search/equery returns HTTP 403 to bare Python urllib requests without browser headers/referer."
+    ]
+  },
+  "roombooking.lib.warwick.ac.uk": {
+    "base_url": "https://roombooking.lib.warwick.ac.uk",
+    "verified_at": "2026-11-26",
+    "auth": {
+      "method": "form_login",
+      "notes": "Legacy Delphi IntraWeb DLL (RoomBooking.dll) with separate username/password form (no SAML SSO). Used for Library group study rooms and Disability-registered Accessible Study Rooms."
+    },
+    "endpoints": {},
+    "gotchas": [
+      "Stateful IntraWeb session URLs (/RoomBooking.dll/EXEC/...) — no REST API."
+    ]
+  },
+  "timetablingmanagement.warwick.ac.uk": {
+    "base_url": "https://timetablingmanagement.warwick.ac.uk",
+    "verified_at": "2026-11-26",
+    "auth": {
+      "method": "form_login",
+      "entry_redirect": "https://go.warwick.ac.uk/roombooking -> https://abs.warwick.ac.uk/WRB2627 -> /Scientia/Portal/Login.aspx",
+      "notes": "Scientia Enterprise 4.0.1.24 ASP.NET WebForms portal for Central Timetabling Web Room Bookings (CTTR) and staff Work Area teaching bookings."
+    },
+    "endpoints": {},
+    "gotchas": [
+      "ASP.NET __VIEWSTATE WebForms portal; no public JSON API. Room catalogue itself is exposed publicly via warwick.ac.uk room-data.js files."
+    ]
+  }
+}

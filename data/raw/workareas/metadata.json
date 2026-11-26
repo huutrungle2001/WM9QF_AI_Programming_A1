@@ -1,0 +1,546 @@
+{
+  "captured_at": "2026-11-26",
+  "source": "https://warwick.ac.uk/sitebuilder2/api/dataentry/entries.json?page=/services/idg/services-support/work-areas/locations",
+  "items": [
+    {
+      "title": "A0.01",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1740565301813
+    },
+    {
+      "title": "A0.01*",
+      "bookable": true,
+      "avEquipment": true,
+      "linux": true,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=A0.01&bf=476",
+      "hoursHtml": "24 hrs",
+      "lastUpdated": 1508863449184
+    },
+    {
+      "title": "A0.02",
+      "bookable": true,
+      "avEquipment": true,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=A0.02&bf=297",
+      "hoursHtml": "24 hrs",
+      "lastUpdated": 1403090626381
+    },
+    {
+      "title": "A002",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1745481315967
+    },
+    {
+      "title": "A0.03",
+      "bookable": true,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=A0.03&bf=297",
+      "hoursHtml": "24 hrs",
+      "lastUpdated": 1403090631943
+    },
+    {
+      "title": "A003",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1745481316595
+    },
+    {
+      "title": "Avon Multimedia Centre",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=Avon%20Student%20Hub",
+      "hoursHtml": "*BH",
+      "lastUpdated": 1508421389939
+    },
+    {
+      "title": "B052",
+      "bookable": true,
+      "avEquipment": true,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=Medical+School+Building",
+      "hoursHtml": "*BH",
+      "lastUpdated": 1508423426283
+    },
+    {
+      "title": "Cafe Social Sciences",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1515692503167
+    },
+    {
+      "title": "Café Social Sciences",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1508422931682
+    },
+    {
+      "title": "Cafe Westwood",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1515068889363
+    },
+    {
+      "title": "Café Westwood",
+      "bookable": true,
+      "avEquipment": true,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1508501404364
+    },
+    {
+      "title": "Café Westwood #‡",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1508421994296
+    },
+    {
+      "title": "Café Westwood Workarea",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1507195754842
+    },
+    {
+      "title": "E103",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "",
+      "lastUpdated": 1372779158000
+    },
+    {
+      "title": "Gibbet Hill B052",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1550486920827
+    },
+    {
+      "title": "H447",
+      "bookable": true,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=H447",
+      "hoursHtml": "*BH",
+      "lastUpdated": 1508421409779
+    },
+    {
+      "title": "Humanities",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1532358507907
+    },
+    {
+      "title": "Library",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1532358508320
+    },
+    {
+      "title": "Library20Min",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1403111670869
+    },
+    {
+      "title": "Library 20 Min PCs",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1539788075505
+    },
+    {
+      "title": "Library 20 minute PCs",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1532358507824
+    },
+    {
+      "title": "Library Floor 1",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?bf=500",
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1403090377482
+    },
+    {
+      "title": "Library Floor 2",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?bf=502",
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1403090461093
+    },
+    {
+      "title": "Library Floor 3",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?bf=512",
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1403090465915
+    },
+    {
+      "title": "Library Floor 5",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?bf=510",
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1403090470500
+    },
+    {
+      "title": "LS103",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=Life+Sciences",
+      "hoursHtml": "*BH",
+      "lastUpdated": 1508421435076
+    },
+    {
+      "title": "Maths A002",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "07:30 - 21:00",
+      "lastUpdated": 1550486822791
+    },
+    {
+      "title": "Maths A003",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "07:30 - 21:00",
+      "lastUpdated": 1550486842000
+    },
+    {
+      "title": "Maths & Stats",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1532358507776
+    },
+    {
+      "title": "Medical School",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1532358507303
+    },
+    {
+      "title": "Milburn House Theatre Studies Workzone",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1532358508357
+    },
+    {
+      "title": "R039",
+      "bookable": true,
+      "avEquipment": true,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=R039",
+      "hoursHtml": "*BH",
+      "lastUpdated": 1601559891387
+    },
+    {
+      "title": "R041",
+      "bookable": true,
+      "avEquipment": true,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=R041",
+      "hoursHtml": "*BH",
+      "lastUpdated": 1601559902050
+    },
+    {
+      "title": "S0.01",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1398438670613
+    },
+    {
+      "title": "S0.02",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1398440610896
+    },
+    {
+      "title": "S0.04",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1398437111321
+    },
+    {
+      "title": "S2.74",
+      "bookable": true,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=S2.74",
+      "hoursHtml": "*BH",
+      "lastUpdated": 1518602652125
+    },
+    {
+      "title": "Social Sciences 2.74",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1550486934338
+    },
+    {
+      "title": "Social Sciences Cafe",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1415633288569
+    },
+    {
+      "title": "Social Sciences Café",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1550770645590
+    },
+    {
+      "title": "Social Studies",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1532358508275
+    },
+    {
+      "title": "Theatre Studies",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1508423483551
+    },
+    {
+      "title": "Westwood",
+      "bookable": true,
+      "avEquipment": true,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=Westwood+Workarea",
+      "hoursHtml": "Office Hours",
+      "lastUpdated": 1403090649045
+    },
+    {
+      "title": "Westwood Avon Building",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1551200248683
+    },
+    {
+      "title": "Westwood Cafe",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": "http://campus.warwick.ac.uk/?search=Cafe+Westwood",
+      "hoursHtml": "",
+      "lastUpdated": 1415633702115
+    },
+    {
+      "title": "Westwood Cafe Workarea",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1507120268669
+    },
+    {
+      "title": "Westwood CSW",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1403111610962
+    },
+    {
+      "title": "Westwood Workarea",
+      "bookable": true,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1570709128534
+    },
+    {
+      "title": "Westwood Workarea DropIn",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1416999695129
+    },
+    {
+      "title": "Westwood Workarea MM1",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1416999695099
+    },
+    {
+      "title": "Zeeman (A001)",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "Opening Hours",
+      "lastUpdated": 1551186116490
+    },
+    {
+      "title": "Zeeman (A002)",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "*BH",
+      "lastUpdated": 1601559917239
+    },
+    {
+      "title": "Zeeman (A003)",
+      "bookable": false,
+      "avEquipment": false,
+      "linux": false,
+      "nonITS": false,
+      "mapLink": null,
+      "hoursHtml": "07:30 - 21:00",
+      "lastUpdated": 1551171878729
+    }
+  ]
+}

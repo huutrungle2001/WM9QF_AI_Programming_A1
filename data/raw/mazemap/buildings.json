@@ -1,0 +1,2923 @@
+{
+  "captured_at": "2026-11-26",
+  "source": "https://api.mazemap.com/api/buildings/",
+  "campuses": [
+    {
+      "campusId": 2188,
+      "name": "Central Campus",
+      "center": [
+        -1.5635761216240203,
+        52.38107393647049
+      ]
+    },
+    {
+      "campusId": 2226,
+      "name": "Innovation Campus Warwick ",
+      "center": [
+        -1.602555015969491,
+        52.2095138615211
+      ]
+    }
+  ],
+  "count": 205,
+  "buildings": [
+    {
+      "building_id": 1016749,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Rootes",
+      "lat": 52.378429,
+      "lon": -1.561232,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016797,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Science Block G",
+      "lat": 52.381803,
+      "lon": -1.563335,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": -1.0,
+          "name": "B"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016948,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Science Block A (Engineering & Chemistry)",
+      "lat": 52.382069,
+      "lon": -1.562284,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 5.0,
+          "name": "4"
+        }
+      ]
+    },
+    {
+      "building_id": 1016949,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Science Block B",
+      "lat": 52.382109,
+      "lon": -1.562681,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": -1.0,
+          "name": "B"
+        },
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 6.0,
+          "name": "5"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 7.0,
+          "name": "6"
+        }
+      ]
+    },
+    {
+      "building_id": 1016765,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Students' Union North",
+      "lat": 52.379396,
+      "lon": -1.560174,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016747,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Students' Union South",
+      "lat": 52.378803,
+      "lon": -1.560442,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016953,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Science Block F (Engineering)",
+      "lat": 52.382684,
+      "lon": -1.561593,
+      "floors": [
+        {
+          "z": 6.0,
+          "name": "5"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016799,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Physics",
+      "lat": 52.382463,
+      "lon": -1.563406,
+      "floors": [
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        }
+      ]
+    },
+    {
+      "building_id": 1016950,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Science Block C",
+      "lat": 52.38173,
+      "lon": -1.562878,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 6.0,
+          "name": "5"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016922,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Avon",
+      "lat": 52.389212,
+      "lon": -1.559913,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016886,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Humanities Extension",
+      "lat": 52.381606,
+      "lon": -1.559951,
+      "floors": [
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        }
+      ]
+    },
+    {
+      "building_id": 1016702,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Scarman House",
+      "lat": 52.382488,
+      "lon": -1.5675,
+      "floors": [
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016808,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Energy Innovation Centre (EIC)",
+      "lat": 52.382982,
+      "lon": -1.562054,
+      "floors": [
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016900,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Westwood House",
+      "lat": 52.388127,
+      "lon": -1.562536,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016899,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Engineering Management Building",
+      "lat": 52.387879,
+      "lon": -1.562614,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016867,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Institute House",
+      "lat": 52.388539,
+      "lon": -1.55824,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016841,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Phytobiology Facility",
+      "lat": 52.383328,
+      "lon": -1.55801,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016888,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Social Sciences FME (A Block)",
+      "lat": 52.380416,
+      "lon": -1.562299,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016793,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Social Sciences D and E",
+      "lat": 52.380267,
+      "lon": -1.562953,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016795,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Ramphal Building",
+      "lat": 52.381413,
+      "lon": -1.563744,
+      "floors": [
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016815,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Humanities Building",
+      "lat": 52.381863,
+      "lon": -1.560524,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 6.0,
+          "name": "5"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016885,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Argent Court North Annex",
+      "lat": 52.387986,
+      "lon": -1.556802,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016806,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Library",
+      "lat": 52.381618,
+      "lon": -1.561927,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 6.0,
+          "name": "5"
+        }
+      ]
+    },
+    {
+      "building_id": 1016914,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Centre for Lifelong Learning Building",
+      "lat": 52.389954,
+      "lon": -1.561405,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016921,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Music Centre",
+      "lat": 52.389553,
+      "lon": -1.55909,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016810,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Modern Records Centre/Library Extension",
+      "lat": 52.381306,
+      "lon": -1.561385,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        }
+      ]
+    },
+    {
+      "building_id": 1016895,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tennis Centre",
+      "lat": 52.388299,
+      "lon": -1.564885,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016849,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Psychology Building",
+      "lat": 52.385047,
+      "lon": -1.559894,
+      "floors": [
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016881,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Mathematical Sciences Building",
+      "lat": 52.383964,
+      "lon": -1.560684,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 6.0,
+          "name": "5"
+        },
+        {
+          "z": 5.0,
+          "name": "4"
+        }
+      ]
+    },
+    {
+      "building_id": 1016917,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Westwood Teaching Centre",
+      "lat": 52.389862,
+      "lon": -1.55957,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016919,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "New Education",
+      "lat": 52.389153,
+      "lon": -1.558548,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016943,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Mechanochemical Cell Biology",
+      "lat": 52.373896,
+      "lon": -1.552184,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016681,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Faculty of Arts",
+      "lat": 52.380833,
+      "lon": -1.55961,
+      "floors": [
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 1.5,
+          "name": "M"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 6.0,
+          "name": "5"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 7.0,
+          "name": "6"
+        }
+      ]
+    },
+    {
+      "building_id": 1016679,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Warwick Business School",
+      "lat": 52.38178,
+      "lon": -1.565044,
+      "floors": [
+        {
+          "z": 5.0,
+          "name": "4"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016856,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Lord Bhattacharyya Building (NAIC)",
+      "lat": 52.384403,
+      "lon": -1.562983,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016857,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "University House",
+      "lat": 52.385543,
+      "lon": -1.564678,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016887,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Social Sciences North and South",
+      "lat": 52.381007,
+      "lon": -1.562681,
+      "floors": [
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016942,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Clinical Trials Unit",
+      "lat": 52.374248,
+      "lon": -1.552224,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016951,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Science Block D (Engineering & Chemistry)",
+      "lat": 52.382471,
+      "lon": -1.561963,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016682,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Warwick Arts Centre",
+      "lat": 52.379955,
+      "lon": -1.56155,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": -1.0,
+          "name": "B"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016791,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Social Sciences B and C",
+      "lat": 52.380683,
+      "lon": -1.563272,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016835,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "International Digital Laboratory (IDL)",
+      "lat": 52.383146,
+      "lon": -1.559381,
+      "floors": [
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016680,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Zeeman",
+      "lat": 52.38423,
+      "lon": -1.559553,
+      "floors": [
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": -1.0,
+          "name": "B"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016848,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Degree Apprentice Centre (DAC)",
+      "lat": 52.384883,
+      "lon": -1.558162,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016929,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Biomedical Research",
+      "lat": 52.375572,
+      "lon": -1.551511,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": -1.0,
+          "name": "B"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016925,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Gibbet Hill Farmhouse",
+      "lat": 52.37438,
+      "lon": -1.553459,
+      "floors": [
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016798,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Materials and Analytical Sciences",
+      "lat": 52.382148,
+      "lon": -1.563616,
+      "floors": [
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016884,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Argent Court",
+      "lat": 52.387814,
+      "lon": -1.557399,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016896,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Westwood Games Hall",
+      "lat": 52.387105,
+      "lon": -1.564735,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016952,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Science Block E",
+      "lat": 52.381961,
+      "lon": -1.563069,
+      "floors": [
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016790,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Senate House",
+      "lat": 52.380597,
+      "lon": -1.560919,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016845,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "IINM",
+      "lat": 52.384204,
+      "lon": -1.558439,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016830,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "The Oculus",
+      "lat": 52.380049,
+      "lon": -1.558694,
+      "floors": [
+        {
+          "z": -1.0,
+          "name": "B"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016844,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "IIPSI",
+      "lat": 52.383905,
+      "lon": -1.55879,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016805,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Physical Sciences",
+      "lat": 52.382839,
+      "lon": -1.56324,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016908,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Westwood Dining & Social Building",
+      "lat": 52.389269,
+      "lon": -1.560845,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016931,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Interdisciplinary Biomedical Research Building (IBRB)",
+      "lat": 52.375276,
+      "lon": -1.553028,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": -1.0,
+          "name": "B"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        }
+      ]
+    },
+    {
+      "building_id": 1016701,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Lakeside Apartments",
+      "lat": 52.381622,
+      "lon": -1.570175,
+      "floors": []
+    },
+    {
+      "building_id": 1016840,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "MEC",
+      "lat": 52.383794,
+      "lon": -1.558101,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016836,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Advanced Materials Manufacturing Centre (AMMC)",
+      "lat": 52.383035,
+      "lon": -1.558612,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016792,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Chaplaincy",
+      "lat": 52.380572,
+      "lon": -1.56155,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016817,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Junction",
+      "lat": 52.381487,
+      "lon": -1.558337,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1016834,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Electric Vehicle Workshop",
+      "lat": 52.383171,
+      "lon": -1.558162,
+      "floors": []
+    },
+    {
+      "building_id": 1016833,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Millburn House",
+      "lat": 52.387026,
+      "lon": -1.562026,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016866,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Schmitt Building",
+      "lat": 52.388277,
+      "lon": -1.558571,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016861,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "iHouse",
+      "lat": 52.386314,
+      "lon": -1.562537,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016859,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "University House Annex",
+      "lat": 52.385461,
+      "lon": -1.563949,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016932,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Gibbet Hill Academic Building",
+      "lat": 52.374935,
+      "lon": -1.551012,
+      "floors": [
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016809,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "International Manufacturing Centre (IMC)",
+      "lat": 52.383294,
+      "lon": -1.561072,
+      "floors": [
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016744,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sports Hub",
+      "lat": 52.377464,
+      "lon": -1.571045,
+      "floors": [
+        {
+          "z": -1.0,
+          "name": "B"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016955,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "The Beehive",
+      "lat": 52.38713,
+      "lon": -1.576965,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016954,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Medical Teaching Centre",
+      "lat": 52.374513,
+      "lon": -1.552495,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016705,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "The Slate",
+      "lat": 52.381269,
+      "lon": -1.566511,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016706,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Radcliffe House",
+      "lat": 52.380485,
+      "lon": -1.565066,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016704,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Nursery",
+      "lat": 52.381234,
+      "lon": -1.567886,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016843,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Computer Science Building",
+      "lat": 52.383736,
+      "lon": -1.560355,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        },
+        {
+          "z": 4.0,
+          "name": "3"
+        }
+      ]
+    },
+    {
+      "building_id": 1016724,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield Sports Pavilion",
+      "lat": 52.375751,
+      "lon": -1.565857,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016860,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Swallow House",
+      "lat": 52.385924,
+      "lon": -1.563421,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "building_id": 1016918,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Print Services building",
+      "lat": 52.389693,
+      "lon": -1.55989,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1016901,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Loxley",
+      "lat": 52.388892,
+      "lon": -1.561987,
+      "floors": []
+    },
+    {
+      "building_id": 1016761,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Rootes J to L",
+      "lat": 52.37861,
+      "lon": -1.559144,
+      "floors": []
+    },
+    {
+      "building_id": 1016892,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Emscote",
+      "lat": 52.38901,
+      "lon": -1.563398,
+      "floors": []
+    },
+    {
+      "building_id": 1016924,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "P6",
+      "lat": 52.374848,
+      "lon": -1.554214,
+      "floors": []
+    },
+    {
+      "building_id": 1016934,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Maths Houses 3",
+      "lat": 52.375691,
+      "lon": -1.550234,
+      "floors": []
+    },
+    {
+      "building_id": 1016865,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Foundation House",
+      "lat": 52.386891,
+      "lon": -1.559886,
+      "floors": []
+    },
+    {
+      "building_id": 1016789,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 49-54",
+      "lat": 52.380723,
+      "lon": -1.557315,
+      "floors": []
+    },
+    {
+      "building_id": 1016891,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Dunmore",
+      "lat": 52.389559,
+      "lon": -1.563342,
+      "floors": []
+    },
+    {
+      "building_id": 1016838,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Claycroft 2",
+      "lat": 52.38277,
+      "lon": -1.555241,
+      "floors": []
+    },
+    {
+      "building_id": 1016878,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Perkin Elmer",
+      "lat": 52.385326,
+      "lon": -1.56155,
+      "floors": []
+    },
+    {
+      "building_id": 1016764,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Bluebell 4",
+      "lat": 52.378139,
+      "lon": -1.557547,
+      "floors": []
+    },
+    {
+      "building_id": 1016829,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 31-36",
+      "lat": 52.381251,
+      "lon": -1.556137,
+      "floors": []
+    },
+    {
+      "building_id": 1016928,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Maths Houses 2",
+      "lat": 52.375657,
+      "lon": -1.55051,
+      "floors": []
+    },
+    {
+      "building_id": 1016821,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 01-06",
+      "lat": 52.381665,
+      "lon": -1.557436,
+      "floors": []
+    },
+    {
+      "building_id": 1016771,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "3 Whitefields",
+      "lat": 52.379404,
+      "lon": -1.559113,
+      "floors": []
+    },
+    {
+      "building_id": 1016684,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sherbourne 6",
+      "lat": 52.382134,
+      "lon": -1.571362,
+      "floors": []
+    },
+    {
+      "building_id": 1016874,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Heron House",
+      "lat": 52.386343,
+      "lon": -1.559129,
+      "floors": []
+    },
+    {
+      "building_id": 1016695,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Heronbank",
+      "lat": 52.379313,
+      "lon": -1.571552,
+      "floors": []
+    },
+    {
+      "building_id": 1016839,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Claycroft 1",
+      "lat": 52.38382,
+      "lon": -1.556327,
+      "floors": []
+    },
+    {
+      "building_id": 1016686,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sherbourne 5",
+      "lat": 52.381715,
+      "lon": -1.571814,
+      "floors": []
+    },
+    {
+      "building_id": 1016788,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Jack Martin 3",
+      "lat": 52.379517,
+      "lon": -1.556159,
+      "floors": []
+    },
+    {
+      "building_id": 1016739,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 6",
+      "lat": 52.377045,
+      "lon": -1.563127,
+      "floors": []
+    },
+    {
+      "building_id": 1016691,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sherbourne 9",
+      "lat": 52.380778,
+      "lon": -1.574557,
+      "floors": []
+    },
+    {
+      "building_id": 1016774,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "4 Whitefields",
+      "lat": 52.379306,
+      "lon": -1.558951,
+      "floors": []
+    },
+    {
+      "building_id": 1016758,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "International House",
+      "lat": 52.377844,
+      "lon": -1.559604,
+      "floors": []
+    },
+    {
+      "building_id": 1016755,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Bluebell 2",
+      "lat": 52.377354,
+      "lon": -1.55916,
+      "floors": []
+    },
+    {
+      "building_id": 1016689,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sherbourne 8",
+      "lat": 52.380288,
+      "lon": -1.574228,
+      "floors": []
+    },
+    {
+      "building_id": 1016826,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 43-48",
+      "lat": 52.38096,
+      "lon": -1.556833,
+      "floors": []
+    },
+    {
+      "building_id": 1016757,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Rootes Laundry",
+      "lat": 52.378267,
+      "lon": -1.560163,
+      "floors": []
+    },
+    {
+      "building_id": 1016700,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Lakeside",
+      "lat": 52.380834,
+      "lon": -1.569265,
+      "floors": []
+    },
+    {
+      "building_id": 1016722,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 15",
+      "lat": 52.377209,
+      "lon": -1.565355,
+      "floors": []
+    },
+    {
+      "building_id": 1016870,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Vanguard Centre",
+      "lat": 52.387136,
+      "lon": -1.558168,
+      "floors": []
+    },
+    {
+      "building_id": 1016903,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Hampton",
+      "lat": 52.388523,
+      "lon": -1.561503,
+      "floors": []
+    },
+    {
+      "building_id": 1016786,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Arthur Vick 1",
+      "lat": 52.380375,
+      "lon": -1.555926,
+      "floors": []
+    },
+    {
+      "building_id": 1016787,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Jack Martin 2",
+      "lat": 52.379866,
+      "lon": -1.557012,
+      "floors": []
+    },
+    {
+      "building_id": 1016776,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "7 Whitefields",
+      "lat": 52.378948,
+      "lon": -1.559222,
+      "floors": []
+    },
+    {
+      "building_id": 1016717,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 14",
+      "lat": 52.377371,
+      "lon": -1.565822,
+      "floors": []
+    },
+    {
+      "building_id": 1016750,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Benefactors",
+      "lat": 52.378003,
+      "lon": -1.562062,
+      "floors": []
+    },
+    {
+      "building_id": 1016824,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 25-30",
+      "lat": 52.381498,
+      "lon": -1.556514,
+      "floors": []
+    },
+    {
+      "building_id": 1016759,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Nightline",
+      "lat": 52.377986,
+      "lon": -1.559999,
+      "floors": []
+    },
+    {
+      "building_id": 1016904,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Gosford",
+      "lat": 52.388396,
+      "lon": -1.560672,
+      "floors": []
+    },
+    {
+      "building_id": 1016913,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "IT Services",
+      "lat": 52.390152,
+      "lon": -1.560911,
+      "floors": []
+    },
+    {
+      "building_id": 1016823,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 19-24",
+      "lat": 52.381758,
+      "lon": -1.556157,
+      "floors": []
+    },
+    {
+      "building_id": 1016783,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Jack Martin 4",
+      "lat": 52.379088,
+      "lon": -1.5567,
+      "floors": []
+    },
+    {
+      "building_id": 1016853,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Pump House",
+      "lat": 52.384117,
+      "lon": -1.564289,
+      "floors": []
+    },
+    {
+      "building_id": 1016733,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 8",
+      "lat": 52.376622,
+      "lon": -1.564235,
+      "floors": []
+    },
+    {
+      "building_id": 1016687,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sherbourne 2",
+      "lat": 52.381527,
+      "lon": -1.572915,
+      "floors": []
+    },
+    {
+      "building_id": 1016732,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 10",
+      "lat": 52.37676,
+      "lon": -1.564626,
+      "floors": []
+    },
+    {
+      "building_id": 1016688,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sherbourne 1",
+      "lat": 52.381249,
+      "lon": -1.572337,
+      "floors": []
+    },
+    {
+      "building_id": 1016822,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 07-12",
+      "lat": 52.381893,
+      "lon": -1.55716,
+      "floors": []
+    },
+    {
+      "building_id": 1016862,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sovereign Court one",
+      "lat": 52.387856,
+      "lon": -1.559774,
+      "floors": []
+    },
+    {
+      "building_id": 1016699,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Lakeside",
+      "lat": 52.380514,
+      "lon": -1.570946,
+      "floors": []
+    },
+    {
+      "building_id": 1016756,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Residential Community Team",
+      "lat": 52.378215,
+      "lon": -1.560377,
+      "floors": []
+    },
+    {
+      "building_id": 1016897,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Arden",
+      "lat": 52.387884,
+      "lon": -1.563865,
+      "floors": []
+    },
+    {
+      "building_id": 1016785,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Jack Martin 1",
+      "lat": 52.3796,
+      "lon": -1.558084,
+      "floors": []
+    },
+    {
+      "building_id": 1016827,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 37-42",
+      "lat": 52.38096,
+      "lon": -1.556202,
+      "floors": []
+    },
+    {
+      "building_id": 1016763,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Bluebell 3",
+      "lat": 52.377758,
+      "lon": -1.558237,
+      "floors": []
+    },
+    {
+      "building_id": 1016740,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 7",
+      "lat": 52.376557,
+      "lon": -1.563153,
+      "floors": []
+    },
+    {
+      "building_id": 1016780,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "6 Whitefields",
+      "lat": 52.379047,
+      "lon": -1.559054,
+      "floors": []
+    },
+    {
+      "building_id": 1016784,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Health Centre",
+      "lat": 52.379056,
+      "lon": -1.557897,
+      "floors": []
+    },
+    {
+      "building_id": 1016910,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Estates Stores",
+      "lat": 52.390401,
+      "lon": -1.561547,
+      "floors": []
+    },
+    {
+      "building_id": 1016912,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Laundry",
+      "lat": 52.390517,
+      "lon": -1.561371,
+      "floors": []
+    },
+    {
+      "building_id": 1016864,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Voyager",
+      "lat": 52.387365,
+      "lon": -1.55952,
+      "floors": []
+    },
+    {
+      "building_id": 1016731,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 5",
+      "lat": 52.377369,
+      "lon": -1.563331,
+      "floors": []
+    },
+    {
+      "building_id": 1016818,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 55-60",
+      "lat": 52.380906,
+      "lon": -1.557589,
+      "floors": []
+    },
+    {
+      "building_id": 1016766,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "16 Whitefields",
+      "lat": 52.379386,
+      "lon": -1.559501,
+      "floors": []
+    },
+    {
+      "building_id": 1016905,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Knightcote",
+      "lat": 52.388786,
+      "lon": -1.56079,
+      "floors": []
+    },
+    {
+      "building_id": 1016879,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Lynchgate Car Park (P5)",
+      "lat": 52.38439,
+      "lon": -1.557464,
+      "floors": []
+    },
+    {
+      "building_id": 1016851,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Varsity",
+      "lat": 52.384194,
+      "lon": -1.56666,
+      "floors": []
+    },
+    {
+      "building_id": 1016936,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Maths Houses 5",
+      "lat": 52.375404,
+      "lon": -1.550003,
+      "floors": []
+    },
+    {
+      "building_id": 1016868,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Schneider Electric",
+      "lat": 52.388816,
+      "lon": -1.557065,
+      "floors": []
+    },
+    {
+      "building_id": 1016734,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 4",
+      "lat": 52.377826,
+      "lon": -1.563412,
+      "floors": []
+    },
+    {
+      "building_id": 1016852,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Community Safety Hub",
+      "lat": 52.383166,
+      "lon": -1.56518,
+      "floors": []
+    },
+    {
+      "building_id": 1016694,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Heronbank",
+      "lat": 52.379815,
+      "lon": -1.572057,
+      "floors": []
+    },
+    {
+      "building_id": 1016751,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Rootes A to C",
+      "lat": 52.377561,
+      "lon": -1.561695,
+      "floors": []
+    },
+    {
+      "building_id": 1016872,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Venture Centre",
+      "lat": 52.385385,
+      "lon": -1.557656,
+      "floors": []
+    },
+    {
+      "building_id": 1016716,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 13",
+      "lat": 52.377617,
+      "lon": -1.565336,
+      "floors": []
+    },
+    {
+      "building_id": 1016730,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 9",
+      "lat": 52.376845,
+      "lon": -1.564196,
+      "floors": []
+    },
+    {
+      "building_id": 1016698,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Heronbank",
+      "lat": 52.379268,
+      "lon": -1.569095,
+      "floors": []
+    },
+    {
+      "building_id": 1016781,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "11 Whitefields",
+      "lat": 52.378882,
+      "lon": -1.559704,
+      "floors": []
+    },
+    {
+      "building_id": 1016877,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Hitex UK",
+      "lat": 52.385687,
+      "lon": -1.560946,
+      "floors": []
+    },
+    {
+      "building_id": 1016863,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sovereign Court two",
+      "lat": 52.388177,
+      "lon": -1.559312,
+      "floors": []
+    },
+    {
+      "building_id": 1016743,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield Energy Centre",
+      "lat": 52.377623,
+      "lon": -1.572189,
+      "floors": []
+    },
+    {
+      "building_id": 1016690,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sherbourne 7",
+      "lat": 52.380004,
+      "lon": -1.573617,
+      "floors": []
+    },
+    {
+      "building_id": 1016882,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Car Park 15 (P4)",
+      "lat": 52.38431,
+      "lon": -1.561797,
+      "floors": []
+    },
+    {
+      "building_id": 1016778,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "9 Whitefields",
+      "lat": 52.378767,
+      "lon": -1.559524,
+      "floors": []
+    },
+    {
+      "building_id": 1016935,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Maths Houses 4",
+      "lat": 52.37558,
+      "lon": -1.550024,
+      "floors": []
+    },
+    {
+      "building_id": 1016760,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Rootes M to P",
+      "lat": 52.378221,
+      "lon": -1.558516,
+      "floors": []
+    },
+    {
+      "building_id": 1016782,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "12 Whitefields",
+      "lat": 52.378983,
+      "lon": -1.559514,
+      "floors": []
+    },
+    {
+      "building_id": 1016723,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 12",
+      "lat": 52.377424,
+      "lon": -1.564943,
+      "floors": []
+    },
+    {
+      "building_id": 1016779,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "10 Whitefields",
+      "lat": 52.378674,
+      "lon": -1.559703,
+      "floors": []
+    },
+    {
+      "building_id": 1016770,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "13 Whitefields",
+      "lat": 52.379095,
+      "lon": -1.559678,
+      "floors": []
+    },
+    {
+      "building_id": 1016873,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Technology House",
+      "lat": 52.385834,
+      "lon": -1.558818,
+      "floors": []
+    },
+    {
+      "building_id": 1016927,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Maths Houses 1",
+      "lat": 52.375509,
+      "lon": -1.550637,
+      "floors": []
+    },
+    {
+      "building_id": 1016837,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Claycroft 3",
+      "lat": 52.38298,
+      "lon": -1.556572,
+      "floors": []
+    },
+    {
+      "building_id": 1016777,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "1 Whitefields",
+      "lat": 52.379595,
+      "lon": -1.559404,
+      "floors": []
+    },
+    {
+      "building_id": 1016773,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "14 Whitefields",
+      "lat": 52.379179,
+      "lon": -1.559501,
+      "floors": []
+    },
+    {
+      "building_id": 1016721,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 11",
+      "lat": 52.376881,
+      "lon": -1.56509,
+      "floors": []
+    },
+    {
+      "building_id": 1016685,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sherbourne 3",
+      "lat": 52.381933,
+      "lon": -1.572566,
+      "floors": []
+    },
+    {
+      "building_id": 1016772,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "5 Whitefields",
+      "lat": 52.379189,
+      "lon": -1.558781,
+      "floors": []
+    },
+    {
+      "building_id": 1016752,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Rootes D to H",
+      "lat": 52.37742,
+      "lon": -1.560967,
+      "floors": []
+    },
+    {
+      "building_id": 1016735,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "The Observatory",
+      "lat": 52.376784,
+      "lon": -1.567208,
+      "floors": []
+    },
+    {
+      "building_id": 1016683,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Sherbourne 4",
+      "lat": 52.382315,
+      "lon": -1.572141,
+      "floors": []
+    },
+    {
+      "building_id": 1016831,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Arthur Vick 2",
+      "lat": 52.380034,
+      "lon": -1.555117,
+      "floors": []
+    },
+    {
+      "building_id": 1016775,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "15 Whitefields",
+      "lat": 52.379283,
+      "lon": -1.559674,
+      "floors": []
+    },
+    {
+      "building_id": 1016729,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 2",
+      "lat": 52.377841,
+      "lon": -1.563939,
+      "floors": []
+    },
+    {
+      "building_id": 1016768,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "17 Whitefields",
+      "lat": 52.379494,
+      "lon": -1.55966,
+      "floors": []
+    },
+    {
+      "building_id": 1016726,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield Village Hall",
+      "lat": 52.37758,
+      "lon": -1.563813,
+      "floors": []
+    },
+    {
+      "building_id": 1016889,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Bericote",
+      "lat": 52.390597,
+      "lon": -1.563217,
+      "floors": []
+    },
+    {
+      "building_id": 1016832,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Arthur Vick 3",
+      "lat": 52.381008,
+      "lon": -1.555168,
+      "floors": []
+    },
+    {
+      "building_id": 1016825,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Tocil Flats 13-18",
+      "lat": 52.381984,
+      "lon": -1.556522,
+      "floors": []
+    },
+    {
+      "building_id": 1016725,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 1",
+      "lat": 52.37805,
+      "lon": -1.564351,
+      "floors": []
+    },
+    {
+      "building_id": 1016894,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Feldon House",
+      "lat": 52.388533,
+      "lon": -1.563448,
+      "floors": []
+    },
+    {
+      "building_id": 1016890,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Compton",
+      "lat": 52.390077,
+      "lon": -1.563274,
+      "floors": []
+    },
+    {
+      "building_id": 1016930,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Plant Growth Facility",
+      "lat": 52.375968,
+      "lon": -1.550906,
+      "floors": []
+    },
+    {
+      "building_id": 1016767,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "2 Whitefields",
+      "lat": 52.379509,
+      "lon": -1.559267,
+      "floors": []
+    },
+    {
+      "building_id": 1016728,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Cryfield 3",
+      "lat": 52.377648,
+      "lon": -1.564602,
+      "floors": []
+    },
+    {
+      "building_id": 1016933,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Life Sciences",
+      "lat": 52.37562,
+      "lon": -1.550982,
+      "floors": []
+    },
+    {
+      "building_id": 1016753,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Bluebell 1",
+      "lat": 52.376753,
+      "lon": -1.560344,
+      "floors": []
+    },
+    {
+      "building_id": 1016871,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Herald Court (ATU-I)",
+      "lat": 52.386436,
+      "lon": -1.557586,
+      "floors": []
+    },
+    {
+      "building_id": 1016937,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "Maths Houses 6",
+      "lat": 52.375306,
+      "lon": -1.55025,
+      "floors": []
+    },
+    {
+      "building_id": 1016769,
+      "campus_id": 2188,
+      "campus_name": "Central Campus",
+      "name": "8 Whitefields",
+      "lat": 52.378853,
+      "lon": -1.559365,
+      "floors": []
+    },
+    {
+      "building_id": 1017239,
+      "campus_id": 2226,
+      "campus_name": "Innovation Campus Warwick ",
+      "name": "Gene Bank",
+      "lat": 52.209477,
+      "lon": -1.602341,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1017240,
+      "campus_id": 2226,
+      "campus_name": "Innovation Campus Warwick ",
+      "name": "Horticultural Services Building",
+      "lat": 52.208385,
+      "lon": -1.602242,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "building_id": 1017241,
+      "campus_id": 2226,
+      "campus_name": "Innovation Campus Warwick ",
+      "name": "Prince Philip",
+      "lat": 52.21036,
+      "lon": -1.600194,
+      "floors": [
+        {
+          "z": -1.0,
+          "name": "B"
+        },
+        {
+          "z": 1.0,
+          "name": "G"
+        },
+        {
+          "z": 2.0,
+          "name": "1"
+        },
+        {
+          "z": 3.0,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "building_id": 1017242,
+      "campus_id": 2226,
+      "campus_name": "Innovation Campus Warwick ",
+      "name": "Engineering Block",
+      "lat": 52.210467,
+      "lon": -1.60197,
+      "floors": [
+        {
+          "z": 1.0,
+          "name": "G"
+        }
+      ]
+    }
+  ]
+}

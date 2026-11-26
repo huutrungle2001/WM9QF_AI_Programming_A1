@@ -1,0 +1,180 @@
+# System Architecture & Design
+
+## 1. Design Philosophy
+
+1. **Admin-First Core, Policy Layer on Top**: Build the full domain and data capabilities first from an unrestricted `admin` perspective (full CRUD across entities, conflict checks, CSV import/seed, analytics, charts), while passing an explicit `ActorContext` (`user_id`, `role`) through every service boundary from day one. Role-based authorisation (RBAC) and privacy projections then sit cleanly as a dedicated policy layer without duplicating or blocking core logic.
+2. **Single Core, Dual Thin Interfaces**: Both the **FastAPI REST API** and the **CLI** call the exact same service layer and Pydantic schemas so business rules (validation, conflict checks, RBAC, analytics) are guaranteed identical everywhere.
+3. **Configurable Business Policies**: Uncertain institutional rules (e.g. daily/weekly booking quota per student, max advance booking horizon, cancellation cutoff, manual approval for specialist equipment) are isolated in a `BookingPolicyConfig` object so outcomes from the mock stakeholder interview can be applied without refactoring core code.
+4. **Strict Separation of Concerns & TDD**: Each layer has a single responsibility and is unit/integration-tested with `pytest` against isolated SQLite databases.
+
+---
+
+## 2. High-Level Architecture
+
+```mermaid
+flowchart TD
+    CLI["CLI Interface (Typer / Interactive Menu)"] --> Policy
+    API["FastAPI REST API (/api/v1 + OpenAPI /docs)"] --> Policy
+
+    subgraph Core["Application Core"]
+        Policy["Policy & Privacy Layer (RBAC Guard + PII Redaction)"]
+        CatalogSvc["CatalogService (Departments, Users, Resources)"]
+        BookingSvc["BookingService (CRUD, Availability, Clash & Quota Rules)"]
+        AnalyticsSvc["AnalyticsService (Demand, Peaks, Cancellations, Trends, Fairness)"]
+        ChartSvc["ChartService (Matplotlib / Seaborn PNG Exports)"]
+        ImportSvc["Seed & CSV Import Service"]
+
+        Policy --> CatalogSvc
+        Policy --> BookingSvc
+        Policy --> AnalyticsSvc
+        Policy --> ChartSvc
+        Policy --> ImportSvc
+    end
+
+    subgraph Persistence["Persistence Layer (100% Parameterised SQL)"]
+        CatalogRepo["CatalogRepository"]
+        BookingRepo["BookingRepository"]
+        AnalyticsRepo["AnalyticsRepository"]
+        DB["DatabaseManager (SQLite3 + PRAGMA foreign_keys=ON)"]
+
+        CatalogRepo --> DB
+        BookingRepo --> DB
+        AnalyticsRepo --> DB
+    end
+
+    CatalogSvc --> CatalogRepo
+    BookingSvc --> BookingRepo
+    BookingSvc --> CatalogRepo
+    AnalyticsSvc --> AnalyticsRepo
+    ChartSvc --> AnalyticsSvc
+    ImportSvc --> CatalogRepo
+    ImportSvc --> BookingRepo
+```
+
+---
+
+## 3. Proposed Project Structure
+
+```text
+assessments/A1/
+├── docs/
+│   ├── brief.md
+│   ├── scenario.md
+│   ├── rubric.md
+│   ├── models.md
+│   └── system_design.md
+├── src/
+│   ├── config.py                 # DB path, BookingPolicyConfig (quotas, horizons)
+│   ├── db.py                     # DatabaseManager, schema DDL, connection context
+│   ├── schemas/                  # Pydantic v2 DTOs, enums, domain exceptions
+│   ├── repositories/             # Parameterised SQLite queries (no SQL injection)
+│   ├── services/                 # Policy guard, catalog, booking, analytics, charts, seed/import
+│   ├── api/                      # FastAPI app, routers, exception-to-HTTP mappers
+│   └── cli/                      # Command-line & interactive demo menu
+├── scripts/                      # One-off deterministic DB seed / CSV generator
+├── tests/                        # pytest TDD suite (unit, DB/SQLi, service, API, CLI)
+├── data/                         # Runtime SQLite DB & sample CSV files
+└── reports/charts/               # Generated analytics visualisations (PNG)
+```
+
+---
+
+## 4. Tech Stack
+
+- **Language**: Python 3.11+
+- **Database**: Built-in `sqlite3` with strict parameterised queries (`?`) and foreign-key enforcement
+- **Validation & Schemas**: Pydantic v2
+- **REST API**: FastAPI + Uvicorn (auto-generated Swagger UI at `/docs` for live inspection/demo)
+- **CLI**: Standard Python / Typer interactive menu for fast demo workflows
+- **Analytics & Visualisation**: SQL aggregations + `matplotlib` (bar charts, weekly trend lines, day-by-hour demand heatmap)
+- **Testing**: `pytest` + FastAPI `TestClient`
+
+---
+
+## 5. REST API Contract (v1)
+
+All API endpoints accept role/actor context via request headers (`X-Role`, optional `X-User-Id` for ownership checks). During initial admin-first development, auth is lightweight header-based context; the policy guard enforces role boundaries uniformly.
+
+### 5.1 System & Data Setup
+
+| Method | Endpoint | Purpose | Primary Roles |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/health` | Liveness & DB connectivity check | All |
+| `POST` | `/api/v1/admin/seed` | Seed deterministic campus dataset | `admin` |
+| `POST` | `/api/v1/admin/import-csv` | Batch import bookings with line-level error/clash report | `admin`, `manager` |
+
+### 5.2 Catalogue Management (Departments, Buildings, Users, Resources)
+
+| Method | Endpoint | Purpose | Primary Roles |
+| :--- | :--- | :--- | :--- |
+| `GET / POST` | `/api/v1/departments` | List or create departments | Read: All / Write: `admin` |
+| `PATCH / DELETE` | `/api/v1/departments/{dept_code}` | Update or remove department | `admin` |
+| `GET / POST` | `/api/v1/buildings` | List (filter by `zone`/`campus`) or create campus buildings with GPS coordinates | Read: All / Write: `admin` |
+| `PATCH / DELETE` | `/api/v1/buildings/{building_id}` | Update or remove building | `admin` |
+| `GET / POST` | `/api/v1/users` | List or create users | Read: `admin`, `manager` / Write: `admin` |
+| `PATCH / DELETE` | `/api/v1/users/{user_id}` | Update or remove user | `admin` |
+| `GET / POST` | `/api/v1/resources` | List (filter by `type`, `dept`, `zone`, `building_id`, `facility`, `status`) or add resource | Read: All / Write: `admin`, `manager` |
+| `PATCH / DELETE` | `/api/v1/resources/{resource_id}` | Update capacity/location/status (e.g. `maintenance`) or remove | `admin`, `manager` |
+
+### 5.3 Bookings & Availability
+
+| Method | Endpoint | Purpose | Primary Roles |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/v1/availability` | Find active resources free for `booking_date`, `start_time`, `end_time` (optional filters) | All |
+| `GET` | `/api/v1/bookings` | Search & filter bookings (`user_id`, `resource_id`, `resource_type`, `dept_code`, `course`, `status_code`, `date_from`, `date_to`) | All *(scoped/redacted by role)* |
+| `POST` | `/api/v1/bookings` | Create booking with resource-clash, user-clash, active-status, and quota validation | `admin`, `manager`, `member` |
+| `GET` | `/api/v1/bookings/{booking_id}` | Retrieve single booking record | All *(scoped/redacted by role)* |
+| `PATCH` | `/api/v1/bookings/{booking_id}` | Reschedule time/date, update status, or edit reason/notes (re-runs conflict check) | `admin`, `manager`, owner `member` |
+| `POST` | `/api/v1/bookings/{booking_id}/cancel` | Soft-cancel booking (`status_code = 'cancelled'`), releasing slot while keeping history | `admin`, `manager`, owner `member` |
+| `DELETE` | `/api/v1/bookings/{booking_id}` | Hard delete record (housekeeping / GDPR erasure) | `admin` |
+
+### 5.4 Analytics & Visualisations
+
+| Method | Endpoint | Purpose | Stakeholder Focus |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/v1/analytics/overview` | KPI summary (total bookings, active rate, cancellation & no-show rates, active resources) | Both |
+| `GET` | `/api/v1/analytics/demand` | Resource ranking (most booked + underused/zero-booking resources) & breakdown by type/department | Learning Resources Manager |
+| `GET` | `/api/v1/analytics/heatmap` | Booking counts matrix by day-of-week × hour slot (busiest days & peak hours) | Learning Resources Manager |
+| `GET` | `/api/v1/analytics/trends` | Weekly booking volume over time to expose semester pressure periods | Student Services Rep |
+| `GET` | `/api/v1/analytics/cancellations` | Cancellation & no-show breakdown by resource type, department, and course | Learning Resources Manager |
+| `GET` | `/api/v1/analytics/fairness` | Bookings & hours per course/user with small-cohort suppression (`k >= 5`) | Student Services Rep |
+| `POST` | `/api/v1/analytics/charts` | Generate/refresh PNG charts (demand bar chart, peak-time heatmap, weekly trend line, course fairness chart) | `admin`, `manager`, `student_services` |
+
+### 5.5 Standard Error Mapping
+
+- `401 Unauthorized`: Missing or unrecognised role/actor context
+- `403 Forbidden`: Role lacks permission or attempting to modify another user's booking
+- `404 Not Found`: Unknown department, user, resource, or booking ID
+- `409 Conflict`: Resource time overlap, user time overlap, duplicate primary/unique key, or FK restriction
+- `422 Unprocessable Entity`: Invalid date/time format, `end_time <= start_time`, quota exceeded, or inactive resource
+
+---
+
+## 6. CLI Interface
+
+The CLI mirrors the same core services for quick scripted runs and the 15-minute live presentation:
+
+- **Interactive menu**: Guided actions for catalogue browsing, availability lookup, booking CRUD/cancel, role switching, analytics summaries, and chart export.
+- **Direct subcommands**: Scriptable commands (e.g. `seed`, `import-csv`, `book`, `availability`, `analytics`, `charts`, `serve`) to demonstrate automation and run repeatable checks.
+
+---
+
+## 7. Privacy, Ethics & Security Controls
+
+- **SQL Injection Prevention**: 100% parameterised SQL placeholders (`?`); dynamic filters append only whitelisted column predicates.
+- **Privacy by Role**:
+  - `student_services` never receives raw student names/emails/IDs or free-text `notes`; IDs are SHA-256 pseudonymised (`ANON-...`) and course cohorts smaller than `k = 5` are suppressed/grouped.
+  - `member` can only view and manage their own bookings (never other students' records).
+- **Data Minimisation**: Structured `reason_category` reduces sensitive free-text collection while preserving analytical value.
+
+---
+
+## 8. Open Policy Questions for Stakeholder Interviews
+
+Core implementation proceeds immediately with sensible defaults; the following policy knobs can be tuned directly in `BookingPolicyConfig` after interviewing the mock stakeholders:
+
+1. **Fairness Quotas**: Should students have a daily/weekly booking cap (e.g. max 2 bookings/day or 6 hours/week) to prevent slot hoarding during exam weeks?
+2. **Booking Horizon & Cancellation Cutoff**: How far in advance may bookings be made (e.g. 14 days), and is there a late-cancellation / no-show threshold?
+3. **Approval Workflow**: Do all 5 resource types auto-confirm, or should `specialist_equipment` / `academic_support` default to `pending` pending staff approval?
+4. **Maintenance Overrides**: When a resource moves to `maintenance`, should existing future bookings auto-cancel with a flag or require manual manager review?
+5. **Privacy Boundary**: Confirm whether `student_services` should only view aggregated/anonymised metrics and whether `notes` should be optional or disabled.

@@ -1,0 +1,329 @@
+{
+  "captured_at": "2026-11-26",
+  "source": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/room-data.js",
+  "buildings": [
+    {
+      "name": "Argent Court",
+      "rooms": [
+        {
+          "name": "AC0.01",
+          "url": "ac01",
+          "type": "flat, boardroom",
+          "capacity": 20
+        },
+        {
+          "name": "AC0.02",
+          "url": "ac02",
+          "type": "flat, boardroom",
+          "capacity": 20
+        },
+        {
+          "name": "AC0.03",
+          "url": "aC03",
+          "type": "flat, boardroom",
+          "capacity": 20
+        },
+        {
+          "name": "AC0.04",
+          "url": "ac04",
+          "type": "flat, boardroom",
+          "capacity": 3
+        },
+        {
+          "name": "AC0.06",
+          "url": "ac06",
+          "type": "flat, boardroom",
+          "capacity": 6
+        },
+        {
+          "name": "AC0.07",
+          "url": "ac07",
+          "type": "flat, boardroom",
+          "capacity": 6
+        },
+        {
+          "name": "AC0.08",
+          "url": "ac08",
+          "type": "flat, boardroom",
+          "capacity": 6
+        }
+      ]
+    },
+    {
+      "name": "Senate House",
+      "rooms": [
+        {
+          "name": "MR2.06",
+          "url": "sh206",
+          "type": "flat, boardroom",
+          "capacity": 12
+        },
+        {
+          "name": "MR2.07",
+          "url": "sh207",
+          "type": "flat, boardroom",
+          "capacity": 8
+        },
+        {
+          "name": "MR2.14",
+          "url": "sh214",
+          "type": "flat, boardroom",
+          "capacity": 10
+        }
+      ]
+    },
+    {
+      "name": "Swallow House",
+      "rooms": [
+        {
+          "name": "MR.F1",
+          "url": "mrf1",
+          "type": "flat, boardroom",
+          "capacity": 8
+        },
+        {
+          "name": "MR.F2",
+          "url": "mrf2",
+          "type": "flat, boardroom",
+          "capacity": 12
+        },
+        {
+          "name": "MR.F4",
+          "url": "mrf4",
+          "type": "flat, boardroom",
+          "capacity": 4
+        },
+        {
+          "name": "MR.F5",
+          "url": "mrf5",
+          "type": "flat, boardroom",
+          "capacity": 4
+        },
+        {
+          "name": "MR.F6",
+          "url": "mrf6",
+          "type": "flat, boardroom",
+          "capacity": 16
+        },
+        {
+          "name": "MR.G2",
+          "url": "mrg2",
+          "type": "flat, boardroom",
+          "capacity": 4
+        },
+        {
+          "name": "MR.G3",
+          "url": "mrg3",
+          "type": "flat, boardroom",
+          "capacity": 8
+        },
+        {
+          "name": "MR.G4",
+          "url": "mrg4",
+          "type": "flat, boardroom",
+          "capacity": 10
+        },
+        {
+          "name": "MR.G5",
+          "url": "mrg5",
+          "type": "flat, boardroom",
+          "capacity": 4
+        },
+        {
+          "name": "MR.G6",
+          "url": "mrg6",
+          "type": "flat, boardroom",
+          "capacity": 4
+        },
+        {
+          "name": "MR.G7",
+          "url": "mrg7",
+          "type": "flat, boardroom",
+          "capacity": 6
+        },
+        {
+          "name": "MR.G8",
+          "url": "mrg8",
+          "type": "flat, boardroom",
+          "capacity": 8
+        }
+      ]
+    },
+    {
+      "name": "University House - MR",
+      "rooms": [
+        {
+          "name": "CMR 1.0",
+          "url": "cmr10",
+          "type": "flat, boardroom",
+          "capacity": 46
+        },
+        {
+          "name": "CMR 1.1",
+          "url": "cmr11",
+          "type": "flat, boardroom",
+          "capacity": 16
+        },
+        {
+          "name": "CMR 1.2",
+          "url": "cmr12",
+          "type": "flat, boardroom",
+          "capacity": 16
+        },
+        {
+          "name": "CMR 1.3",
+          "url": "cmr13",
+          "type": "flat, boardroom",
+          "capacity": 8
+        },
+        {
+          "name": "CMR 1.4",
+          "url": "cmr14",
+          "type": "flat, boardroom",
+          "capacity": 6
+        },
+        {
+          "name": "CMR 1.5",
+          "url": "cmr15",
+          "type": "flat, boardroom",
+          "capacity": 6
+        },
+        {
+          "name": "MR 1.6",
+          "url": "mr16",
+          "type": "flat, boardroom",
+          "capacity": 8
+        },
+        {
+          "name": "CMR 2.3",
+          "url": "cmr23",
+          "type": "flat, boardroom",
+          "capacity": 5
+        },
+        {
+          "name": "CMR 2.4",
+          "url": "cmr24",
+          "type": "flat, boardroom",
+          "capacity": 6
+        },
+        {
+          "name": "CMR 2.6",
+          "url": "cmr26",
+          "type": "flat, boardroom",
+          "capacity": 8
+        },
+        {
+          "name": "CMR 2.7",
+          "url": "cmr27",
+          "type": "flat, boardroom",
+          "capacity": 8
+        },
+        {
+          "name": "CMR 2.8",
+          "url": "cmr28",
+          "type": "flat, boardroom",
+          "capacity": 12
+        },
+        {
+          "name": "CMR 2.9",
+          "url": "cmr29",
+          "type": "flat, boardroom",
+          "capacity": 12
+        }
+      ]
+    },
+    {
+      "name": "University House - Annex",
+      "rooms": [
+        {
+          "name": "CMR 0.4",
+          "url": "cmr04",
+          "type": "flat, boardroom",
+          "capacity": 10
+        },
+        {
+          "name": "Meeting Room 1.9",
+          "url": "annexmr",
+          "type": "flat, boardroom",
+          "capacity": 14
+        },
+        {
+          "name": "RSS B",
+          "url": "rssb",
+          "type": "flat, boardroom",
+          "capacity": 4
+        }
+      ]
+    },
+    {
+      "name": "University House - Consultation Rooms",
+      "rooms": [
+        {
+          "name": "Consult Room 2",
+          "url": "consult2",
+          "type": "flat, boardroom",
+          "capacity": 3
+        },
+        {
+          "name": "Consult Room 3",
+          "url": "consult3",
+          "type": "flat, boardroom",
+          "capacity": 3
+        },
+        {
+          "name": "Consult Room 5",
+          "url": "consult5",
+          "type": "flat, boardroom",
+          "capacity": 4
+        },
+        {
+          "name": "Consult Room 6",
+          "url": "consult6",
+          "type": "flat, boardroom",
+          "capacity": 8
+        }
+      ]
+    },
+    {
+      "name": "University House - Other Locations & Pods",
+      "rooms": [
+        {
+          "name": "Finance Office Meeting Room",
+          "url": "othermeetingroom4",
+          "type": "flat, boardroom",
+          "capacity": 10
+        },
+        {
+          "name": "Large Meeting Room",
+          "url": "othermeetingroom5",
+          "type": "flat, boardroom",
+          "capacity": 10
+        },
+        {
+          "name": "Pod 1",
+          "url": "uhpod1",
+          "type": "flat, boardroom",
+          "capacity": 1
+        },
+        {
+          "name": "Pod 2",
+          "url": "uhpod2",
+          "type": "flat, boardroom",
+          "capacity": 1
+        },
+        {
+          "name": "Pod 3",
+          "url": "uhpod3",
+          "type": "flat, boardroom",
+          "capacity": 1
+        },
+        {
+          "name": "Pod 4",
+          "url": "uhpod4",
+          "type": "flat, boardroom",
+          "capacity": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "captured_at": "2026-11-26T18:51:47.409Z",
+  "source": "https://roombooking.lib.warwick.ac.uk/",
+  "room_type": "Group Study Room",
+  "date": "2026-12-01",
+  "open_hours": "09:00-22:00",
+  "slot_rule": "Consecutive 1-hour slots for the same room merge into a single booking; other students bookings are anonymised as Booked.",
+  "rooms": [
+    {
+      "room_id": 6,
+      "name": "Rootes Group Study 1"
+    },
+    {
+      "room_id": 7,
+      "name": "Rootes Group Study 2"
+    }
+  ],
+  "slots": [
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "08:00",
+      "status": "closed"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "08:00",
+      "status": "closed"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "09:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "09:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "10:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "10:00",
+      "status": "booked_other"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "11:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "11:00",
+      "status": "booked_other"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "12:00",
+      "status": "booked_other"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "12:00",
+      "status": "booked_own"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "13:00",
+      "status": "booked_other"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "13:00",
+      "status": "booked_own"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "14:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "14:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "15:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "15:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "16:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "16:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "17:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "17:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "18:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "18:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "19:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "19:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "20:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "20:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "21:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "21:00",
+      "status": "available"
+    },
+    {
+      "room": "Rootes Group Study 1",
+      "room_id": 6,
+      "hour": "22:00",
+      "status": "closed"
+    },
+    {
+      "room": "Rootes Group Study 2",
+      "room_id": 7,
+      "hour": "22:00",
+      "status": "closed"
+    }
+  ]
+}

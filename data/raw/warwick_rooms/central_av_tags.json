@@ -1,0 +1,3691 @@
+{
+  "captured_at": "2026-11-26",
+  "source": "https://warwick.ac.uk/sitebuilder2/api/ajax/keywordSearch.htm?basePage=/services/idg/services-support/av/lecturerooms/roominformation",
+  "count": 215,
+  "rooms": [
+    {
+      "slug": "a001",
+      "title": "A0.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Lecture Capture",
+        "Lecture Capture Camera"
+      ]
+    },
+    {
+      "slug": "a002",
+      "title": "A0.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera"
+      ]
+    },
+    {
+      "slug": "a003",
+      "title": "A0.03",
+      "facilities": [
+        "Whiteboard"
+      ]
+    },
+    {
+      "slug": "a005",
+      "title": "A0.05",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "a014",
+      "title": "A0.14",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "a023",
+      "title": "A0.23",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "a026",
+      "title": "A0.26",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "a028",
+      "title": "A0.28",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Chalkboard",
+        "Whiteboard",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "a030",
+      "title": "A0.30",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "a039",
+      "title": "A0.39",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "a041",
+      "title": "A0.41",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "a042",
+      "title": "A0.42",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "msa101",
+      "title": "A1.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "a105",
+      "title": "A1.05",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting"
+      ]
+    },
+    {
+      "slug": "a111",
+      "title": "A1.11",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Dual Display",
+        "MS Teams Wireless Microphone"
+      ]
+    },
+    {
+      "slug": "a125",
+      "title": "A1.25",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "a127",
+      "title": "A1.27",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "a128",
+      "title": "A1.28",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Chalkboard",
+        "Whiteboard",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "a150",
+      "title": "A1.50",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "actheatre",
+      "title": "Arts Centre Theatre",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Lecture Capture",
+        "Touch Screen Monitor",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "b052",
+      "title": "B0.52",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input"
+      ]
+    },
+    {
+      "slug": "b202",
+      "title": "B2.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "b203",
+      "title": "B2.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "b204",
+      "title": "B2.04/05",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "msb303",
+      "title": "B3.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Chalkboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "bsr1",
+      "title": "BSR 1",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "bsr3",
+      "title": "BSR 3",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "bsr5",
+      "title": "BSR 5",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "butterworth",
+      "title": "Butterworth Hall",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Lecture Capture",
+        "Touch Screen Monitor",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "c11115",
+      "title": "C1.11/15",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "chancellors",
+      "title": "Chancellor's Suite",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "msd006",
+      "title": "D0.06",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "westwooddancestudio",
+      "title": "Dance Studio",
+      "facilities": [
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "avondramastudio",
+      "title": "Drama Studio",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "e023",
+      "title": "E0.23",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "f25a",
+      "title": "F25a",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "f25b",
+      "title": "F25b",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "f37",
+      "title": "F37",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Document Camera",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab003",
+      "title": "FAB0.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "fab008",
+      "title": "FAB0.08",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "fab023",
+      "title": "FAB0.23",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "MS Teams Enhanced AV"
+      ]
+    },
+    {
+      "slug": "fab105",
+      "title": "FAB1.05",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab106",
+      "title": "FAB1.06",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "fab107",
+      "title": "FAB1.07",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab108",
+      "title": "FAB1.08",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab109",
+      "title": "FAB1.09",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab110",
+      "title": "FAB1.10",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "fab111",
+      "title": "FAB1.11",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab112",
+      "title": "FAB1.12",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab113",
+      "title": "FAB1.13",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab114",
+      "title": "FAB1.14",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab115",
+      "title": "FAB1.15",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab137",
+      "title": "FAB1.37",
+      "facilities": [
+        "Whiteboard",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab231",
+      "title": "FAB2.31",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "fab232",
+      "title": "FAB2.32",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "fab233",
+      "title": "FAB2.33",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab234",
+      "title": "FAB2.34",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab235",
+      "title": "FAB2.35",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab236",
+      "title": "FAB2.36",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab243",
+      "title": "FAB2.43",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab247",
+      "title": "FAB2.47",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab248",
+      "title": "FAB2.48",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Centrally Timetabled All Year",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "fab261",
+      "title": "FAB2.61",
+      "facilities": [
+        "Whiteboard",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab325",
+      "title": "FAB3.25",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab326",
+      "title": "FAB3.26",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab328",
+      "title": "FAB3.28",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab329",
+      "title": "FAB3.29",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab330",
+      "title": "FAB3.30",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab331",
+      "title": "FAB3.31",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab332",
+      "title": "FAB3.32",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab333",
+      "title": "FAB3.33",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab335",
+      "title": "FAB3.35",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab401",
+      "title": "FAB4.01",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "fab452",
+      "title": "FAB4.52",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab473",
+      "title": "FAB4.73",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab474",
+      "title": "FAB4.74",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab478",
+      "title": "FAB4.78",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab479",
+      "title": "FAB4.79",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab480",
+      "title": "FAB4.80",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab501",
+      "title": "FAB5.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "MS Teams Enhanced AV"
+      ]
+    },
+    {
+      "slug": "fab502",
+      "title": "FAB5.02",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab503",
+      "title": "FAB5.03",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "MS Teams Enhanced AV"
+      ]
+    },
+    {
+      "slug": "fab507",
+      "title": "FAB5.07",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab552",
+      "title": "FAB5.52",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab601",
+      "title": "FAB6.01",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab602",
+      "title": "FAB6.02",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab603",
+      "title": "FAB6.03",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Centrally Timetabled All Year",
+        "Logitech MeetUp"
+      ]
+    },
+    {
+      "slug": "fab604",
+      "title": "FAB6.04",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "fab605",
+      "title": "FAB6.05",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year",
+        "Sennheiser TeamConnect"
+      ]
+    },
+    {
+      "slug": "g55",
+      "title": "G55",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "g56",
+      "title": "G56",
+      "facilities": [
+        "Whiteboard",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "g57",
+      "title": "G57",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "glt1",
+      "title": "GLT1",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "glt2",
+      "title": "GLT2",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "glt3",
+      "title": "GLT3",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "glt4",
+      "title": "GLT4",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "h002",
+      "title": "H0.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "h003",
+      "title": "H0.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "h042",
+      "title": "H0.42",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h043",
+      "title": "H0.43",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h044",
+      "title": "H0.44",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h148",
+      "title": "H1.48",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h149a",
+      "title": "H1.49a",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h244",
+      "title": "H2.44",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Touch Screen Monitor"
+      ]
+    },
+    {
+      "slug": "h302",
+      "title": "H3.02",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h303",
+      "title": "H3.03",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "h344",
+      "title": "H3.44",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h355",
+      "title": "H3.55",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h356",
+      "title": "H3.56",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h357",
+      "title": "H3.57",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "h358",
+      "title": "H3.58",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "ibrblt",
+      "title": "IBR0.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "imc002",
+      "title": "IMC0.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "jx003",
+      "title": "JX0.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "jx202",
+      "title": "JX2.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "jx203",
+      "title": "JX2.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "l3",
+      "title": "L3",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "l4",
+      "title": "L4",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "l5",
+      "title": "L5",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "lib2",
+      "title": "LIB 2",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "mb007",
+      "title": "MB0.07",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "mb008",
+      "title": "MB0.08",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "md001",
+      "title": "MD0.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "ms01",
+      "title": "MS.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "ms02",
+      "title": "MS.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "ms03",
+      "title": "MS.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "ms04",
+      "title": "MS.04",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "ms05",
+      "title": "MS.05",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wmusic1",
+      "title": "MUSIC 1",
+      "facilities": [
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wmusic2",
+      "title": "MUSIC 2",
+      "facilities": [
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wmusic3",
+      "title": "MUSIC 3",
+      "facilities": [
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "oc001",
+      "title": "OC0.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc002",
+      "title": "OC0.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc003",
+      "title": "OC0.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc004",
+      "title": "OC0.04",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc005",
+      "title": "OC0.05",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc101",
+      "title": "OC1.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "MS Teams Enhanced AV",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc102",
+      "title": "OC1.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc103",
+      "title": "OC1.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc104",
+      "title": "OC1.04",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "MS Teams Enhanced AV",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc105",
+      "title": "OC1.05",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc106",
+      "title": "OC1.06",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "MS Teams Enhanced AV",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc107",
+      "title": "OC1.07",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc108",
+      "title": "OC1.08",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "oc109",
+      "title": "OC1.09",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "MS Teams Enhanced AV",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "p521",
+      "title": "P5.21",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "panorama",
+      "title": "Panorama",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "plt",
+      "title": "PLT",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "ps128",
+      "title": "PS1.28",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r003",
+      "title": "R0.03",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r004",
+      "title": "R0.04",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r012",
+      "title": "R0.12",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "MS Teams Enhanced AV",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r014",
+      "title": "R0.14",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r021",
+      "title": "R0.21",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "Catchbox",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r039",
+      "title": "R0.39",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard"
+      ]
+    },
+    {
+      "slug": "r041",
+      "title": "R0.41",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone"
+      ]
+    },
+    {
+      "slug": "r103",
+      "title": "R1.03",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r104",
+      "title": "R1.04",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r113",
+      "title": "R1.13",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r115",
+      "title": "R1.15",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r241",
+      "title": "R2.41",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r325",
+      "title": "R3.25",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "r341",
+      "title": "R3.41",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "s008",
+      "title": "S0.08",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "s009",
+      "title": "S0.09",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "s010",
+      "title": "S0.10",
+      "facilities": [
+        "Fixed Computer",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "s011",
+      "title": "S0.11",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "s013",
+      "title": "S0.13",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "s017",
+      "title": "S0.17",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "s018",
+      "title": "S0.18",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "s019",
+      "title": "S0.19",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "s020",
+      "title": "S0.20",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "s021",
+      "title": "S0.21",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "s028",
+      "title": "S0.28",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "s050",
+      "title": "S0.50",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "s052",
+      "title": "S0.52",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "s1141",
+      "title": "S1.141",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "s139",
+      "title": "S1.39",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "s166",
+      "title": "S1.66",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "s169",
+      "title": "S1.69",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "s171",
+      "title": "S1.71",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Document Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor"
+      ]
+    },
+    {
+      "slug": "s188",
+      "title": "S1.88",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Document Camera",
+        "Touch Screen Monitor"
+      ]
+    },
+    {
+      "slug": "s274",
+      "title": "S2.74",
+      "facilities": [
+        "Chalkboard"
+      ]
+    },
+    {
+      "slug": "s281",
+      "title": "S2.81",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "s284",
+      "title": "S2.84",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera"
+      ]
+    },
+    {
+      "slug": "s285",
+      "title": "S2.85",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor"
+      ]
+    },
+    {
+      "slug": "sh205",
+      "title": "SH2.05",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "MS Teams Wireless Microphone"
+      ]
+    },
+    {
+      "slug": "wa015a",
+      "title": "WA0.15a",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wa015b",
+      "title": "WA0.15b",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wa023",
+      "title": "WA0.23",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Document Camera",
+        "Lecture Capture",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wa024",
+      "title": "WA0.24",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wa101",
+      "title": "WA1.01",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wa109",
+      "title": "WA1.09",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wa110",
+      "title": "WA1.10",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wa115a",
+      "title": "WA1.15a",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wa115b",
+      "title": "WA1.15b",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wa120",
+      "title": "WA1.20",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wce009a",
+      "title": "WCE0.09a",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wce009b",
+      "title": "WCE0.09b",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wce010",
+      "title": "WCE0.10",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "wce012",
+      "title": "WCE0.12",
+      "facilities": [
+        "Fixed Computer",
+        "Laptop Input",
+        "LCD Screen",
+        "Whiteboard",
+        "Touch Screen Monitor",
+        "Centrally Timetabled All Year"
+      ]
+    },
+    {
+      "slug": "cafeww",
+      "title": "Westwood Computer Room",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input"
+      ]
+    },
+    {
+      "slug": "wlt",
+      "title": "WLT",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Chalkboard",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Tiered",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "woods-scawen",
+      "title": "Woods-Scawen",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Laptop Input",
+        "Whiteboard",
+        "Lapel Microphone",
+        "Handheld Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "Dual Display",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Tiered"
+      ]
+    },
+    {
+      "slug": "wt001",
+      "title": "WT0.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt002",
+      "title": "WT0.02",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt003",
+      "title": "WT0.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt004",
+      "title": "WT0.04",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt005",
+      "title": "WT0.05",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt006",
+      "title": "WT0.06",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt101",
+      "title": "WT1.01",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt103",
+      "title": "WT1.03",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt104",
+      "title": "WT1.04",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt105",
+      "title": "WT1.05",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    },
+    {
+      "slug": "wt106",
+      "title": "WT1.06",
+      "facilities": [
+        "Data Projector",
+        "Fixed Computer",
+        "Whiteboard",
+        "Lapel Microphone",
+        "IR Induction Loop",
+        "Document Camera",
+        "Lecture Capture",
+        "Lecture Capture Camera",
+        "Solstice Wireless Casting",
+        "Touch Screen Monitor",
+        "MS Teams Wireless Microphone",
+        "MS Teams Video Camera",
+        "Centrally Timetabled All Year",
+        "Laptop Input Plus USB"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "captured_at": "2026-11-26",
+  "sources": [
+    "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/",
+    "https://warwick.ac.uk/services/library/pghub/about/bookroom/",
+    "https://roombooking.lib.warwick.ac.uk/"
+  ],
+  "accessible_study_rooms": [
+    {
+      "name": "Accessible Study Room 114",
+      "details": "A study room located on floor 1. | Coming soon: Dragon Professional 16 - speech-to-text software for dictation and voice commands. This room has dimmable lighting, soft seating options, various sensory items. This room has a printer. | How to get to Accessible Study Room 114 How to get to Accessible Study Room 114 Your browser doesn't support HTML5 video. Here is a link to the video instead. Descr"
+    },
+    {
+      "name": "Accessible Study Room 204",
+      "details": "A study room located on floor 2. | Coming soon: Dragon Professional 16 - speech-to-text software for dictation and voice commands. This room has dimmable lighting, a wobble chair, various sensory items | Warning! This room has many windows and is filled with lots of natural light and so may not suit all students. Please check the photo before booking this room The automatic door opens outwards | H"
+    },
+    {
+      "name": "Accessible Study Room 256",
+      "details": "The automatic door opens outwards, so please keep back after scanning your card. | A study room located on floor 2 extension. | Coming soon: Dragon Professional 16 - speech-to-text software for dictation and voice commands. This room has dimmable lighting, soft seating options, various sensory items, and an ergonomic chair | Warning! This room has many windows and is filled with lots of natural li"
+    },
+    {
+      "name": "Accessible Study Room 309",
+      "details": "A study room located on floor 3 | Coming soon: Dragon Professional 16 - speech-to-text software for dictation and voice commands. This computer includes Kurzweil, a text-to-speech software. This room has dimmable lighting, soft seating options, various sensory items, galaxy star projector. This room has a scanner. | How to get to Accessible Study Room 309 How to get to Accessible Study Room 309 Yo"
+    },
+    {
+      "name": "Accessible Study Room 405",
+      "details": "A study room located on floor 4 | Coming soon: Dragon Professional 16 - speech-to-text software for dictation and voice commands. This computer includes Kurzweil, a text-to-speech software. This room has dimmable lighting, standing mood lamp, soft seating options, various sensory items, galaxy star projector This room has a printer and a scanner. | Warning! The door for this room is currently manu"
+    },
+    {
+      "name": "Accessible Study Room 505",
+      "details": "A study room located on floor 5 | Coming soon: Dragon Professional 16 - speech-to-text software for dictation and voice commands. This room has dimmable lighting, LED strip lighting, standing mood lamp, soft seating options, rocking chair, various sensory items. This room has a scanner. | Warning! the LED strip lighting remote provides options for strobe and flashing lighting | How to get to Acces"
+    },
+    {
+      "name": "Accessible Study Room Postgrad Hub",
+      "details": "A study room located in the Postgrad Hub in Junction | Coming soon: Dragon Professional 16 - speech-to-text software for dictation and voice commands. This room has dimmable lighting, various sensory items"
+    }
+  ],
+  "pg_hub_rooms": [
+    "Room 1 - up to 8 students. Screen, solstice connection.",
+    "Room 2 - up to 8 students. Screen, solstice connection. Logitech Meet-Up video conferencing. Please consider using another room if you do not intend to use the conferencing system.",
+    "Room 3 - up to 6 students. Screen, solstice connection.",
+    "Room 4 - up to 6 students. Screen, solstice connection.",
+    "Room 5 - up to 6 students. Screen, solstice connection.",
+    "Room 7 - accessible study room available for students registered with Disability Services - This room must be booked."
+  ],
+  "observed_roombooking_types": [
+    "Group Study Room",
+    "Online Meeting Room"
+  ],
+  "observed_sample_room": "Rootes Group Study 2 (auto-confirm + 4-digit PIN door access)"
+}
