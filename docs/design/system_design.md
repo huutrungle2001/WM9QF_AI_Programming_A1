@@ -53,26 +53,99 @@ flowchart TD
 
 ---
 
-## 3. Proposed Project Structure
+## 3. Project Structure & Module Boundaries
+
+The repository uses a clean 3-pillar monorepo layout (`database/` + `server/` + `client/`) alongside academic and engineering documentation (`docs/`).
 
 ```text
 assessments/A1/
-├── docs/
-│   ├── assessment/               # brief.md, scenario.md, rubric.md
-│   └── design/                   # models.md, system_design.md, erd.mmd, erd.svg, erd.png
-├── src/
-│   ├── config.py                 # DB path, BookingPolicyConfig (quotas, horizons)
-│   ├── db.py                     # DatabaseManager, schema DDL, connection context
-│   ├── schemas/                  # Pydantic v2 DTOs, enums, domain exceptions
-│   ├── repositories/             # Parameterised SQLite queries (no SQL injection)
-│   ├── services/                 # Policy guard, catalog, booking, analytics, charts, seed/import
-│   ├── api/                      # FastAPI app, routers, exception-to-HTTP mappers
-│   └── cli/                      # Command-line & interactive demo menu
-├── scripts/                      # One-off deterministic DB seed / CSV generator
-├── tests/                        # pytest TDD suite (unit, DB/SQLi, service, API, CLI)
-├── data/                         # Runtime SQLite DB & sample CSV files
-└── reports/charts/               # Generated analytics visualisations (PNG)
+├── README.md                              # Setup and run instructions (CLI, FastAPI, client, pytest)
+├── .gitignore
+│
+├── docs/                                  # Assessment brief, design specs, and LO5 reflections
+│   ├── assessment/                        # brief.md, scenario.md, rubric.md
+│   ├── design/                            # models.md, system_design.md, diagram/ (erd.*)
+│   └── sdlc_and_interviews.md             # SDLC evaluation, stakeholder interview guide/log, TDD evidence, AI disclosure
+│
+├── database/                              # Data sources, ETL pipeline, canonical DDL & SQLite runtime DB
+│   ├── raw/                               # 6 Warwick portal snapshots + 11 slide screenshots
+│   ├── scripts/
+│   │   ├── normalize.py                   # raw/*.json -> catalog.json (12-table 3NF CTI)
+│   │   └── seed_db.py                     # Load catalog.json + synthetic users & multi-week bookings into SQLite
+│   ├── apis.json                          # Discovered Warwick source API inventory
+│   ├── sitemap.json                       # Portal inventory & observed real-world permission rules
+│   ├── schema.sql                         # Canonical 12-table 3NF CTI SQLite DDL (Single Source of Truth)
+│   ├── catalog.json                       # Normalized Warwick catalogue (531 resources, 205 buildings, 58 depts)
+│   ├── samples/                           # Sample CSV files for batch import & error-reporting demos
+│   └── campus_bookings.db                 # Runtime SQLite database (gitignored; reproducible via seed_db.py)
+│
+├── server/                                # Python 3 Backend: OOP Domain + REST API + CLI + Analytics + TDD
+│   ├── pyproject.toml                     # pytest and project metadata
+│   ├── requirements.txt
+│   ├── app/
+│   │   ├── main.py                        # FastAPI entrypoint (uvicorn), router registration, HTTP error mappers
+│   │   ├── config.py                      # DB path & BookingPolicyConfig (quotas, horizon, k-anonymity)
+│   │   ├── database.py                    # DatabaseManager (sqlite3, PRAGMA foreign_keys=ON, transactions)
+│   │   ├── domain/                        # Pure OOP domain layer (zero SQL/HTTP coupling)
+│   │   │   ├── exceptions.py              # DomainError, AuthenticationError, AuthorizationError, ConflictError, etc.
+│   │   │   └── resources.py               # Resource(ABC) -> Room/Lab/Equipment/Support subclasses + ResourceFactory
+│   │   ├── schemas/                       # Shared Pydantic v2 DTOs (used identically by FastAPI & CLI)
+│   │   │   ├── catalog.py                 # Department, Building, User, Resource (CTI union), Facility
+│   │   │   ├── booking.py                 # BookingCreate/Update/Record/Filter, AvailabilityQuery, ImportSummary
+│   │   │   └── analytics.py               # OverviewKPI, DemandItem, HeatmapCell, TrendPoint, FairnessRow
+│   │   ├── repositories/                  # 100% parameterised raw SQLite3 queries (SQLi-safe)
+│   │   │   ├── catalog_repo.py            # CRUD departments, buildings, users, resources (+ CTI subtypes & facilities)
+│   │   │   ├── booking_repo.py            # CRUD bookings, Unix range overlap checks, availability SQL pushdown
+│   │   │   └── analytics_repo.py          # SQL aggregations (demand, underused, heatmap, weekly trends, fairness)
+│   │   ├── services/                      # Business logic & access-control boundary
+│   │   │   ├── policy.py                  # PolicyGuard: RBAC, Policy-to-SQL pushdown, SHA-256 PII redaction, k>=5
+│   │   │   ├── catalog_service.py         # Catalogue orchestration & role enforcement
+│   │   │   ├── booking_service.py         # Booking lifecycle, 2-way clash check, loan limits, auto-PIN, CSV import
+│   │   │   ├── analytics_service.py       # KPI reports & privacy-filtered fairness analytics
+│   │   │   └── chart_service.py           # Matplotlib PNG chart generation (demand, heatmap, trends, fairness)
+│   │   ├── routers/                       # Thin FastAPI /api/v1 HTTP adapters
+│   │   │   ├── health.py
+│   │   │   ├── catalog.py                 # /departments, /buildings, /users, /resources, /facilities
+│   │   │   ├── bookings.py                # /availability, /bookings, /{id}/cancel, /import-csv
+│   │   │   └── analytics.py               # /overview, /demand, /heatmap, /trends, /cancellations, /fairness, /charts
+│   │   └── cli/                           # Thin CLI adapter sharing the exact same service layer
+│   │       ├── main.py                    # Scriptable subcommands (seed, import-csv, book, analytics, charts, serve)
+│   │       └── menu.py                    # Interactive demo menu with clean f-string tables
+│   ├── reports/charts/                    # Generated PNG visualisations
+│   └── tests/                             # pytest TDD suite (mirrors application layers)
+│       ├── conftest.py                    # Isolated temporary SQLite DB fixture & seed helpers
+│       ├── test_db_and_domain.py          # 12-table DDL, FK integrity, CTI 1:1, OOP polymorphism & ResourceFactory
+│       ├── test_catalog_crud.py           # CRUD across catalogue entities, N:M facilities, SQLi resistance
+│       ├── test_bookings_and_conflicts.py # 2-way overlap, adjacent boundaries, max_loan_days, auto-PIN, cancel vs delete
+│       ├── test_policy_and_privacy.py     # 4 roles, Policy-to-SQL pushdown, PII redaction, k>=5 suppression
+│       ├── test_analytics_and_charts.py   # KPIs, underused resources, heatmap, weekly trends, fairness, PNG output
+│       └── test_api_and_cli.py            # FastAPI TestClient end-to-end & CLI smoke tests
+│
+└── client/                                # Web UI (Next.js / React consumer of /api/v1)
+    ├── app/                               # Unified Workspace (5-type tabs, filters, campus map, Admin/Analytics)
+    ├── components/                        # Polymorphic booking panel (hourly / multi-day loan / workshop), charts, role switcher
+    └── lib/api.ts                         # Typed HTTP client for /api/v1
 ```
+
+### One-Way Dependency Flow & Boundary Rules
+
+```mermaid
+flowchart LR
+    Client["client/ (Web UI)"] -->|HTTP JSON| Routers["server/app/routers/ (FastAPI)"]
+    CLI["server/app/cli/ (CLI)"] --> Services
+    Routers --> Services["server/app/services/ (PolicyGuard + Core Logic)"]
+    Services --> Domain["server/app/domain/ (OOP Resource Hierarchy)"]
+    Services --> Repos["server/app/repositories/ (Parameterised SQL)"]
+    Repos --> DB["database/campus_bookings.db (SQLite3)"]
+    ETL["database/scripts/ (normalize.py, seed_db.py)"] --> DB
+```
+
+- **`database/` owns data provenance & DDL**: `database/schema.sql` is the canonical DDL loaded by `server/app/database.py`, avoiding duplicated SQL definitions.
+- **`server/app/domain/` stays framework-free**: No FastAPI or `sqlite3` imports inside `domain/`; pure Python OOP classes and domain rules.
+- **`server/app/repositories/` owns all SQL**: 100% parameterised placeholders (`?`); no raw SQL strings in services, routers, or CLI.
+- **`server/app/services/policy.py` is the single access-control source of truth**: Enforces both read-side SQL pushdown (`booking_eligibility IN (...)` for FE/CLI) and write-side authorisation (`403 Forbidden` against direct API bypasses).
+- **`routers/` and `cli/` are thin adapters**: Zero duplicated business logic; both delegate directly to `services/` and share `schemas/`.
+- **`client/` is fully decoupled**: Communicates strictly over `/api/v1`, keeping Python and Node/TypeScript toolchains completely separate.
 
 ---
 

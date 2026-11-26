@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Normalize raw Warwick multi-portal snapshots into a strict 3NF CTI catalog.json.
 
-Reads data/raw/<source>/*.json and produces data/catalog.json aligned 1-to-1 with
+Reads database/raw/<source>/*.json and produces database/catalog.json aligned 1-to-1 with
 the 12-table Class Table Inheritance (CTI) zero-JSON schema in docs/models.md:
   - departments, buildings (atomic floor_count), booking_statuses
   - resources (supertype)
@@ -19,9 +19,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
-DEFAULT_RAW_DIR = ROOT_DIR / "data" / "raw"
-DEFAULT_OUT_PATH = ROOT_DIR / "data" / "catalog.json"
+DB_DIR = Path(__file__).resolve().parent.parent
+DEFAULT_RAW_DIR = DB_DIR / "raw"
+DEFAULT_OUT_PATH = DB_DIR / "catalog.json"
 
 BOOKING_STATUSES = [
     {
@@ -518,7 +518,6 @@ def normalize_resources(
                     else {
                         "room_layout": (rm.get("type") or "flat").strip(),
                         "open_hours": "09:00-22:00",
-                        "wrb_student_bookable": 1 if wrb_match is not None else 0,
                         "info_url": f"https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/{slug}",
                     }
                 ),
@@ -552,7 +551,6 @@ def normalize_resources(
                 subtype_row={
                     "room_layout": (rm.get("type") or "flat, boardroom").strip(),
                     "open_hours": "08:00-20:00",
-                    "wrb_student_bookable": 0,
                     "info_url": f"https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/{slug}",
                 },
                 facility_names=meeting_av.get(slug, []),
@@ -587,7 +585,6 @@ def normalize_resources(
                 subtype_row={
                     "room_layout": (rm.get("type") or "flat").strip(),
                     "open_hours": "08:30-18:00",
-                    "wrb_student_bookable": 0,
                     "info_url": None,
                 },
                 facility_names=[],
@@ -619,7 +616,6 @@ def normalize_resources(
             subtype_row={
                 "room_layout": "flat, group study",
                 "open_hours": lib_grid.get("open_hours", "09:00-22:00"),
-                "wrb_student_bookable": 0,
                 "info_url": "https://roombooking.lib.warwick.ac.uk/",
             },
             facility_names=["Large Display Screen", "Whiteboard", "PIN Door Access"],
@@ -653,7 +649,6 @@ def normalize_resources(
             subtype_row={
                 "room_layout": "flexible",
                 "open_hours": sp.get("opening_hours"),
-                "wrb_student_bookable": 0,
                 "info_url": sp.get("booking_portal"),
             },
             facility_names=sp_facs,
@@ -683,7 +678,6 @@ def normalize_resources(
             subtype_row={
                 "room_layout": "accessible, individual",
                 "open_hours": "08:00-22:00",
-                "wrb_student_bookable": 0,
                 "info_url": "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/",
             },
             facility_names=[
@@ -726,7 +720,6 @@ def normalize_resources(
             subtype_row={
                 "room_layout": "flat, group study",
                 "open_hours": "08:00-22:00",
-                "wrb_student_bookable": 0,
                 "info_url": "https://warwick.ac.uk/services/library/pghub/about/bookroom/",
             },
             facility_names=facs,
@@ -793,7 +786,6 @@ def normalize_resources(
             subtype_row={
                 "delivery_mode": "hybrid",
                 "session_kind": "one_to_one",
-                "external_ref_id": str(tp["topic_id"]),
                 "scheduled_start": None,
                 "scheduled_end": None,
             },
@@ -831,7 +823,6 @@ def normalize_resources(
             subtype_row={
                 "delivery_mode": "online" if is_online else "in_person",
                 "session_kind": "workshop",
-                "external_ref_id": str(ev["entityId"]),
                 "scheduled_start": iso_to_unix(ev.get("start")),
                 "scheduled_end": iso_to_unix(ev.get("end")),
             },
@@ -1038,7 +1029,7 @@ def build_catalog(raw_dir: Path) -> dict[str, Any]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Normalize Warwick raw snapshots into data/catalog.json")
+    parser = argparse.ArgumentParser(description="Normalize Warwick raw snapshots into database/catalog.json")
     parser.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT_PATH)
     args = parser.parse_args()

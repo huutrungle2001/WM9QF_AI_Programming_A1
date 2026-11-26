@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0-cti",
-  "generated_at": "2026-11-26T20:24:12Z",
+  "generated_at": "2026-11-26T21:03:05Z",
   "summary": {
     "departments": 58,
     "buildings": 205,
@@ -9439,3290 +9439,2820 @@
       "resource_id": "CTR-ACTHEATRE",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/actheatre"
     },
     {
       "resource_id": "CTR-BUTTERWORTH",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/butterworth"
     },
     {
       "resource_id": "CTR-WOODS-SCAWEN",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/woods-scawen"
     },
     {
       "resource_id": "CTR-FAB003",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab003"
     },
     {
       "resource_id": "CTR-FAB008",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab008"
     },
     {
       "resource_id": "CTR-FAB023",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab023"
     },
     {
       "resource_id": "CTR-FAB105",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab105"
     },
     {
       "resource_id": "CTR-FAB106",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab106"
     },
     {
       "resource_id": "CTR-FAB107",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab107"
     },
     {
       "resource_id": "CTR-FAB108",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab108"
     },
     {
       "resource_id": "CTR-FAB109",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab109"
     },
     {
       "resource_id": "CTR-FAB110",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab110"
     },
     {
       "resource_id": "CTR-FAB111",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab111"
     },
     {
       "resource_id": "CTR-FAB112",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab112"
     },
     {
       "resource_id": "CTR-FAB113",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab113"
     },
     {
       "resource_id": "CTR-FAB114",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab114"
     },
     {
       "resource_id": "CTR-FAB115",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab115"
     },
     {
       "resource_id": "CTR-FAB137",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab137"
     },
     {
       "resource_id": "CTR-FAB231",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab231"
     },
     {
       "resource_id": "CTR-FAB232",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab232"
     },
     {
       "resource_id": "CTR-FAB233",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab233"
     },
     {
       "resource_id": "CTR-FAB234",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab234"
     },
     {
       "resource_id": "CTR-FAB235",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab235"
     },
     {
       "resource_id": "CTR-FAB236",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab236"
     },
     {
       "resource_id": "CTR-FAB243",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab243"
     },
     {
       "resource_id": "CTR-FAB247",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab247"
     },
     {
       "resource_id": "CTR-FAB248",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab248"
     },
     {
       "resource_id": "CTR-FAB261",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab261"
     },
     {
       "resource_id": "CTR-FAB325",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab325"
     },
     {
       "resource_id": "CTR-FAB326",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab326"
     },
     {
       "resource_id": "CTR-FAB328",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab328"
     },
     {
       "resource_id": "CTR-FAB329",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab329"
     },
     {
       "resource_id": "CTR-FAB330",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab330"
     },
     {
       "resource_id": "CTR-FAB331",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab331"
     },
     {
       "resource_id": "CTR-FAB332",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab332"
     },
     {
       "resource_id": "CTR-FAB333",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab333"
     },
     {
       "resource_id": "CTR-FAB335",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab335"
     },
     {
       "resource_id": "CTR-FAB401",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab401"
     },
     {
       "resource_id": "CTR-FAB452",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab452"
     },
     {
       "resource_id": "CTR-FAB473",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab473"
     },
     {
       "resource_id": "CTR-FAB474",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab474"
     },
     {
       "resource_id": "CTR-FAB478",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab478"
     },
     {
       "resource_id": "CTR-FAB479",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab479"
     },
     {
       "resource_id": "CTR-FAB480",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab480"
     },
     {
       "resource_id": "CTR-FAB501",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab501"
     },
     {
       "resource_id": "CTR-FAB502",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab502"
     },
     {
       "resource_id": "CTR-FAB503",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab503"
     },
     {
       "resource_id": "CTR-FAB507",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab507"
     },
     {
       "resource_id": "CTR-FAB552",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab552"
     },
     {
       "resource_id": "CTR-FAB601",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab601"
     },
     {
       "resource_id": "CTR-FAB602",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab602"
     },
     {
       "resource_id": "CTR-FAB603",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab603"
     },
     {
       "resource_id": "CTR-FAB604",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab604"
     },
     {
       "resource_id": "CTR-FAB605",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/fab605"
     },
     {
       "resource_id": "CTR-H002",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h002"
     },
     {
       "resource_id": "CTR-H003",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h003"
     },
     {
       "resource_id": "CTR-H042",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h042"
     },
     {
       "resource_id": "CTR-H043",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h043"
     },
     {
       "resource_id": "CTR-H044",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h044"
     },
     {
       "resource_id": "CTR-H148",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h148"
     },
     {
       "resource_id": "CTR-H149A",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h149a"
     },
     {
       "resource_id": "CTR-H244",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h244"
     },
     {
       "resource_id": "CTR-H302",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h302"
     },
     {
       "resource_id": "CTR-H303",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h303"
     },
     {
       "resource_id": "CTR-H344",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h344"
     },
     {
       "resource_id": "CTR-H355",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h355"
     },
     {
       "resource_id": "CTR-H356",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h356"
     },
     {
       "resource_id": "CTR-H357",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h357"
     },
     {
       "resource_id": "CTR-H358",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/h358"
     },
     {
       "resource_id": "CTR-IMC002",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/imc002"
     },
     {
       "resource_id": "CTR-JX003",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/jx003"
     },
     {
       "resource_id": "CTR-JX202",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/jx202"
     },
     {
       "resource_id": "CTR-JX203",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/jx203"
     },
     {
       "resource_id": "CTR-LIB2",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/lib2"
     },
     {
       "resource_id": "CTR-MB007",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/mb007"
     },
     {
       "resource_id": "CTR-MB008",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/mb008"
     },
     {
       "resource_id": "CTR-A026",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a026"
     },
     {
       "resource_id": "CTR-A028",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a028"
     },
     {
       "resource_id": "CTR-A125",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a125"
     },
     {
       "resource_id": "CTR-A127",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a127"
     },
     {
       "resource_id": "CTR-A128",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a128"
     },
     {
       "resource_id": "CTR-F25A",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/f25a"
     },
     {
       "resource_id": "CTR-F25B",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/f25b"
     },
     {
       "resource_id": "CTR-F37",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/f37"
     },
     {
       "resource_id": "CTR-G55",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/g55"
     },
     {
       "resource_id": "CTR-G56",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/g56"
     },
     {
       "resource_id": "CTR-G57",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/g57"
     },
     {
       "resource_id": "CTR-R003",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r003"
     },
     {
       "resource_id": "CTR-R004",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r004"
     },
     {
       "resource_id": "CTR-R012",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r012"
     },
     {
       "resource_id": "CTR-R014",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r014"
     },
     {
       "resource_id": "CTR-R021",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r021"
     },
     {
       "resource_id": "CTR-R103",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r103"
     },
     {
       "resource_id": "CTR-R104",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r104"
     },
     {
       "resource_id": "CTR-R113",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r113"
     },
     {
       "resource_id": "CTR-R115",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r115"
     },
     {
       "resource_id": "CTR-R241",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r241"
     },
     {
       "resource_id": "CTR-R325",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r325"
     },
     {
       "resource_id": "CTR-R341",
       "room_layout": "flat, flexible",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/r341"
     },
     {
       "resource_id": "CTR-CHANCELLORS",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/chancellors"
     },
     {
       "resource_id": "CTR-SH205",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/sh205"
     },
     {
       "resource_id": "CTR-A005",
       "room_layout": "flat, flexible",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a005"
     },
     {
       "resource_id": "CTR-A014",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a014"
     },
     {
       "resource_id": "CTR-A023",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a023"
     },
     {
       "resource_id": "CTR-A111",
       "room_layout": "flat, flexible",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a111"
     },
     {
       "resource_id": "CTR-C11115",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/c11115"
     },
     {
       "resource_id": "CTR-E023",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/e023"
     },
     {
       "resource_id": "CTR-S008",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s008"
     },
     {
       "resource_id": "CTR-S009",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s009"
     },
     {
       "resource_id": "CTR-S010",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s010"
     },
     {
       "resource_id": "CTR-S011",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s011"
     },
     {
       "resource_id": "CTR-S013",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s013"
     },
     {
       "resource_id": "CTR-S017",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s017"
     },
     {
       "resource_id": "CTR-S018",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s018"
     },
     {
       "resource_id": "CTR-S019",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s019"
     },
     {
       "resource_id": "CTR-S020",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s020"
     },
     {
       "resource_id": "CTR-S021",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s021"
     },
     {
       "resource_id": "CTR-S028",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s028"
     },
     {
       "resource_id": "CTR-S050",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s050"
     },
     {
       "resource_id": "CTR-S052",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s052"
     },
     {
       "resource_id": "CTR-S1141",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s1141"
     },
     {
       "resource_id": "CTR-S139",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s139"
     },
     {
       "resource_id": "CTR-S166",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s166"
     },
     {
       "resource_id": "CTR-S169",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s169"
     },
     {
       "resource_id": "CTR-S171",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s171"
     },
     {
       "resource_id": "CTR-S188",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s188"
     },
     {
       "resource_id": "CTR-S281",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s281"
     },
     {
       "resource_id": "CTR-S284",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s284"
     },
     {
       "resource_id": "CTR-S285",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/s285"
     },
     {
       "resource_id": "CTR-L3",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/l3"
     },
     {
       "resource_id": "CTR-L4",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/l4"
     },
     {
       "resource_id": "CTR-L5",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/l5"
     },
     {
       "resource_id": "CTR-B2078",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/b2078"
     },
     {
       "resource_id": "CTR-B209",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/b209"
     },
     {
       "resource_id": "CTR-B21314",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/b21314"
     },
     {
       "resource_id": "CTR-PLT",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/plt"
     },
     {
       "resource_id": "CTR-PS128",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/ps128"
     },
     {
       "resource_id": "CTR-P521",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/p521"
     },
     {
       "resource_id": "CTR-OC001",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc001"
     },
     {
       "resource_id": "CTR-OC002",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc002"
     },
     {
       "resource_id": "CTR-OC003",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc003"
     },
     {
       "resource_id": "CTR-OC004",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc004"
     },
     {
       "resource_id": "CTR-OC005",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc005"
     },
     {
       "resource_id": "CTR-OC101",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc101"
     },
     {
       "resource_id": "CTR-OC102",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc102"
     },
     {
       "resource_id": "CTR-OC103",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc103"
     },
     {
       "resource_id": "CTR-OC104",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc104"
     },
     {
       "resource_id": "CTR-OC105",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc105"
     },
     {
       "resource_id": "CTR-OC106",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc106"
     },
     {
       "resource_id": "CTR-OC107",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc107"
     },
     {
       "resource_id": "CTR-OC108",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc108"
     },
     {
       "resource_id": "CTR-OC109",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/oc109"
     },
     {
       "resource_id": "CTR-MS01",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/ms01"
     },
     {
       "resource_id": "CTR-MS02",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/ms02"
     },
     {
       "resource_id": "CTR-MS03",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/ms03"
     },
     {
       "resource_id": "CTR-MS04",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/ms04"
     },
     {
       "resource_id": "CTR-MS05",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/ms05"
     },
     {
       "resource_id": "CTR-MSB303",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/msb303"
     },
     {
       "resource_id": "CTR-MSA101",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 1,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/msa101"
     },
     {
       "resource_id": "CTR-MSD006",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/msd006"
     },
     {
       "resource_id": "CTR-BSR1",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/bsr1"
     },
     {
       "resource_id": "CTR-MD001",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/md001"
     },
     {
       "resource_id": "CTR-GLT1",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/glt1"
     },
     {
       "resource_id": "CTR-GLT2",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/glt2"
     },
     {
       "resource_id": "CTR-GLT3",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/glt3"
     },
     {
       "resource_id": "CTR-GLT4",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/glt4"
     },
     {
       "resource_id": "CTR-A030",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a030"
     },
     {
       "resource_id": "CTR-A039",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a039"
     },
     {
       "resource_id": "CTR-A041",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a041"
     },
     {
       "resource_id": "CTR-A042",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a042"
     },
     {
       "resource_id": "CTR-A150",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/a150"
     },
     {
       "resource_id": "CTR-BSR3",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/bsr3"
     },
     {
       "resource_id": "CTR-BSR5",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/bsr5"
     },
     {
       "resource_id": "CTR-IBRBLT",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/ibrblt"
     },
     {
       "resource_id": "CTR-WA015A",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa015a"
     },
     {
       "resource_id": "CTR-WA015B",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa015b"
     },
     {
       "resource_id": "CTR-WA023",
       "room_layout": "flat, boardroom",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa023"
     },
     {
       "resource_id": "CTR-WA024",
       "room_layout": "flat, boardroom",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa024"
     },
     {
       "resource_id": "CTR-WA101",
       "room_layout": "flat, boardroom",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa101"
     },
     {
       "resource_id": "CTR-WA109",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa109"
     },
     {
       "resource_id": "CTR-WA110",
       "room_layout": "flat, boardroom",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa110"
     },
     {
       "resource_id": "CTR-WA115A",
       "room_layout": "flat, boardroom",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa115a"
     },
     {
       "resource_id": "CTR-WA115B",
       "room_layout": "flat, boardroom",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa115b"
     },
     {
       "resource_id": "CTR-WA120",
       "room_layout": "flat, boardroom",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wa120"
     },
     {
       "resource_id": "CTR-AVONDRAMASTUDIO",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/avondramastudio"
     },
     {
       "resource_id": "CTR-CAFEWW-2",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/cafeww"
     },
     {
       "resource_id": "CTR-WCE009A",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wce009a"
     },
     {
       "resource_id": "CTR-WCE009B",
       "room_layout": "flat, boardroom",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wce009b"
     },
     {
       "resource_id": "CTR-WCE010",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wce010"
     },
     {
       "resource_id": "CTR-WCE012",
       "room_layout": "flat, boardroom",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wce012"
     },
     {
       "resource_id": "CTR-WMUSIC1",
       "room_layout": "flat, flexible",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wmusic1"
     },
     {
       "resource_id": "CTR-WMUSIC2",
       "room_layout": "flat, flexible",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wmusic2"
     },
     {
       "resource_id": "CTR-WMUSIC3",
       "room_layout": "flat, flexible",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wmusic3"
     },
     {
       "resource_id": "CTR-WESTWOODDANCESTUDI",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/westwooddancestudio"
     },
     {
       "resource_id": "CTR-WT001",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt001"
     },
     {
       "resource_id": "CTR-WT002",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt002"
     },
     {
       "resource_id": "CTR-WT003",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt003"
     },
     {
       "resource_id": "CTR-WT004",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt004"
     },
     {
       "resource_id": "CTR-WT005",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt005"
     },
     {
       "resource_id": "CTR-WT006",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt006"
     },
     {
       "resource_id": "CTR-WT101",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt101"
     },
     {
       "resource_id": "CTR-WT103",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt103"
     },
     {
       "resource_id": "CTR-WT104",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt104"
     },
     {
       "resource_id": "CTR-WT105",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt105"
     },
     {
       "resource_id": "CTR-WT106",
       "room_layout": "flat, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wt106"
     },
     {
       "resource_id": "CTR-WLT",
       "room_layout": "tiered, teaching",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/wlt"
     },
     {
       "resource_id": "MTG-AC01",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/ac01"
     },
     {
       "resource_id": "MTG-AC02",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/ac02"
     },
     {
       "resource_id": "MTG-AC03",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/ac03"
     },
     {
       "resource_id": "MTG-AC04",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/ac04"
     },
     {
       "resource_id": "MTG-AC06",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/ac06"
     },
     {
       "resource_id": "MTG-AC07",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/ac07"
     },
     {
       "resource_id": "MTG-AC08",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/ac08"
     },
     {
       "resource_id": "MTG-SH206",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/sh206"
     },
     {
       "resource_id": "MTG-SH207",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/sh207"
     },
     {
       "resource_id": "MTG-SH214",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/sh214"
     },
     {
       "resource_id": "MTG-MRF1",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrf1"
     },
     {
       "resource_id": "MTG-MRF2",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrf2"
     },
     {
       "resource_id": "MTG-MRF4",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrf4"
     },
     {
       "resource_id": "MTG-MRF5",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrf5"
     },
     {
       "resource_id": "MTG-MRF6",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrf6"
     },
     {
       "resource_id": "MTG-MRG2",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrg2"
     },
     {
       "resource_id": "MTG-MRG3",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrg3"
     },
     {
       "resource_id": "MTG-MRG4",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrg4"
     },
     {
       "resource_id": "MTG-MRG5",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrg5"
     },
     {
       "resource_id": "MTG-MRG6",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrg6"
     },
     {
       "resource_id": "MTG-MRG7",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrg7"
     },
     {
       "resource_id": "MTG-MRG8",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mrg8"
     },
     {
       "resource_id": "MTG-CMR10",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr10"
     },
     {
       "resource_id": "MTG-CMR11",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr11"
     },
     {
       "resource_id": "MTG-CMR12",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr12"
     },
     {
       "resource_id": "MTG-CMR13",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr13"
     },
     {
       "resource_id": "MTG-CMR14",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr14"
     },
     {
       "resource_id": "MTG-CMR15",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr15"
     },
     {
       "resource_id": "MTG-MR16",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/mr16"
     },
     {
       "resource_id": "MTG-CMR23",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr23"
     },
     {
       "resource_id": "MTG-CMR24",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr24"
     },
     {
       "resource_id": "MTG-CMR26",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr26"
     },
     {
       "resource_id": "MTG-CMR27",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr27"
     },
     {
       "resource_id": "MTG-CMR28",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr28"
     },
     {
       "resource_id": "MTG-CMR29",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr29"
     },
     {
       "resource_id": "MTG-CMR04",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/cmr04"
     },
     {
       "resource_id": "MTG-ANNEXMR",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/annexmr"
     },
     {
       "resource_id": "MTG-RSSB",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/rssb"
     },
     {
       "resource_id": "MTG-CONSULT2",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/consult2"
     },
     {
       "resource_id": "MTG-CONSULT3",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/consult3"
     },
     {
       "resource_id": "MTG-CONSULT5",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/consult5"
     },
     {
       "resource_id": "MTG-CONSULT6",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/consult6"
     },
     {
       "resource_id": "MTG-OTHERMEETINGROOM4",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/othermeetingroom4"
     },
     {
       "resource_id": "MTG-OTHERMEETINGROOM5",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/othermeetingroom5"
     },
     {
       "resource_id": "MTG-UHPOD1",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/uhpod1"
     },
     {
       "resource_id": "MTG-UHPOD2",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/uhpod2"
     },
     {
       "resource_id": "MTG-UHPOD3",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/uhpod3"
     },
     {
       "resource_id": "MTG-UHPOD4",
       "room_layout": "flat, boardroom",
       "open_hours": "08:00-20:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/uhpod4"
     },
     {
       "resource_id": "LOC-CHEM-C506",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CHEM-C521",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CHEM-MAS202",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CHEM-MAS203",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CHEM-MAS204",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CHEM-MAS205",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CHEM-MAS206",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CS-CS104",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CS-MB001",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CS-MB317",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CMPS-F204",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CMPS-G52",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ECON-S096",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ECON-S1135",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ENG-A205A",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ENG-A205B",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ENG-A401",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ENG-D202",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ENG-F308",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ESTATES-AC101A",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB016",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB018",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB019",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB020",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB101",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB104",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB116",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB138",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB163",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB201",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB223",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB224",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB225",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB228",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB246",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB327",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB336",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB402",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB451",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB470",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB476",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB530",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB531",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB550",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB606",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FAB607",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FABM002",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FABM005",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FABM005A",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ARTSFAC-FABM006",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-FILM-FABM007",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-FILM-FABM009",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-FILM-FABM010",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-FILM-FABM021",
       "room_layout": "tiered, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-TEACHINGGRID",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-L207",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-L222",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-L223",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-WOLFSONROOM1",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-WOLFSONROOM2",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-WOLFSONROOM3",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-B006",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-B101",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-B301",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-C106",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-D107",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB002",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB102",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB105",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB106",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB109",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB222",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB223",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB224",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB519",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MB520",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-MATH-MSB302",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PAIS-D101",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PAIS-D102",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PAIS-D103",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PAIS-D104",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PAIS-D105",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PAIS-E202",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PAIS-E225",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PAIS-PAISCOMMON",
       "room_layout": "flat",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PHYS-P523",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PSYC-PSYCHOCTR",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PSYC-PSYCHOCATLAB",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-PSYC-PSYCHOPOD",
       "room_layout": "flat, meeting",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CENTRAL-R225",
       "room_layout": "flat, meeting",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-LGROOM1",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-LGROOM2",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LAW-S002",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LAW-S003",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LAW-S004",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LAW-S114",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LAW-S209",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LAW-S212",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SMLC-B136",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CENTRAL-M301",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CENTRAL-M305",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CENTRAL-SH003",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CENTRAL-SH006",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CENTRAL-SH130",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CENTRAL-SH135A",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CENTRAL-SH219",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SOC-S1137",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SOC-S150",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SOC-S277",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SOC-S279",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SOC-S281A",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SOC-S282",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SOC-S286",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SOC-E102",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-SPACE2",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-SPACE3",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-SPACE4",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-SPACE5",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-SPACE6",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-STUDIO1",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-STUDIO2",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-STUDIO3",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-STUDIO4",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-SQUASHCOURTS",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-ROWINGROOM",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-CLIMBINGBRIEFI",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-COMBATHALL",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-CYCLESPINNINGS",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-MULTIPURPOSEHA",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-SPORT-CRYFIELDSPORTS",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ESTATES-IDGTRAINING1",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-ESTATES-IDGTRAINING2",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WWP-FAB249",
       "room_layout": "flat, flexible",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-HR-HRMEETINGROOM1",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-HR-HRMEETINGROOM2",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-HR-HRMEETINGROOM3",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-PRESENTATIONRO",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIB-PRESENTATIONRO-2",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIFESCI-TEACHINGLAB1",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIFESCI-TEACHINGLAB2",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIFESCI-TEACHINGLAB3",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-LIFESCI-TEACHINGLAB4",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-T008",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-T009",
       "room_layout": "flat, boardroom",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-A117",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-A130",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-A151",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-B026",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-BSR2",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-BSR4",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-BSR6",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-DEANSMEETINGRO",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-ICL",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-004",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-005",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-006",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-007",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-008",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-009",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-010",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-011",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-108",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-109",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-110",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-111",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR102",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR103",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR104",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR105",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR106",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR107",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR131",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR132",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR202",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR203",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR204",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR205",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR230",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR231",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR325",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR326",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR327",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR329",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMS-IBR330",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMG-L009",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMG-L010",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMG-L011",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-WMG-L012",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CLL-WCE004",
       "room_layout": "flat, office",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CLL-WCE012",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CLL-PIGEONLOFT",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CES-WE126",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CES-WE132",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LOC-CES-WE139",
       "room_layout": "flat, teaching",
       "open_hours": "08:30-18:00",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LIB-GSR-6",
       "room_layout": "flat, group study",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://roombooking.lib.warwick.ac.uk/"
     },
     {
       "resource_id": "LIB-GSR-7",
       "room_layout": "flat, group study",
       "open_hours": "09:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://roombooking.lib.warwick.ac.uk/"
     },
     {
       "resource_id": "LIB-OMR-1",
       "room_layout": "flexible",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://roombooking.lib.warwick.ac.uk/"
     },
     {
       "resource_id": "LIB-CCP",
       "room_layout": "flexible",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/libspaces/creativecommunityplace-availability/book-creative-community-request"
     },
     {
       "resource_id": "LIB-TLS",
       "room_layout": "flexible",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/libspaces/the-teaching-and-learning-space-availability/teaching-and-learning-space-request"
     },
     {
       "resource_id": "LIB-GATHERING",
       "room_layout": "flexible",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/libspaces/gatheringspace/gathering-space-availability/gathering-space-request/"
     },
     {
       "resource_id": "LIB-WRE-SEM-1",
       "room_layout": "flexible",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/libspaces/book-research-exchange-space"
     },
     {
       "resource_id": "LIB-WRE-SEM-2",
       "room_layout": "flexible",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/libspaces/book-research-exchange-space"
     },
     {
       "resource_id": "LIB-WRE-SEM-3",
       "room_layout": "flexible",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/libspaces/book-research-exchange-space"
     },
     {
       "resource_id": "LIB-UH-GRID",
       "room_layout": "flexible",
       "open_hours": "Temporarily closed",
-      "wrb_student_bookable": 0,
       "info_url": null
     },
     {
       "resource_id": "LIB-ACC-114",
       "room_layout": "accessible, individual",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/"
     },
     {
       "resource_id": "LIB-ACC-204",
       "room_layout": "accessible, individual",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/"
     },
     {
       "resource_id": "LIB-ACC-256",
       "room_layout": "accessible, individual",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/"
     },
     {
       "resource_id": "LIB-ACC-309",
       "room_layout": "accessible, individual",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/"
     },
     {
       "resource_id": "LIB-ACC-405",
       "room_layout": "accessible, individual",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/"
     },
     {
       "resource_id": "LIB-ACC-505",
       "room_layout": "accessible, individual",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/"
     },
     {
       "resource_id": "LIB-ACC-PGHUB",
       "room_layout": "accessible, individual",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/"
     },
     {
       "resource_id": "LIB-PGHUB-1",
       "room_layout": "flat, group study",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/pghub/about/bookroom/"
     },
     {
       "resource_id": "LIB-PGHUB-2",
       "room_layout": "flat, group study",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/pghub/about/bookroom/"
     },
     {
       "resource_id": "LIB-PGHUB-3",
       "room_layout": "flat, group study",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/pghub/about/bookroom/"
     },
     {
       "resource_id": "LIB-PGHUB-4",
       "room_layout": "flat, group study",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/pghub/about/bookroom/"
     },
     {
       "resource_id": "LIB-PGHUB-5",
       "room_layout": "flat, group study",
       "open_hours": "08:00-22:00",
-      "wrb_student_bookable": 0,
       "info_url": "https://warwick.ac.uk/services/library/pghub/about/bookroom/"
     }
   ],
@@ -12891,7 +12421,6 @@
       "resource_id": "SUP-1TO1-59",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "59",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12899,7 +12428,6 @@
       "resource_id": "SUP-1TO1-55",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "55",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12907,7 +12435,6 @@
       "resource_id": "SUP-1TO1-75",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "75",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12915,7 +12442,6 @@
       "resource_id": "SUP-1TO1-58",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "58",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12923,7 +12449,6 @@
       "resource_id": "SUP-1TO1-60",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "60",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12931,7 +12456,6 @@
       "resource_id": "SUP-1TO1-76",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "76",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12939,7 +12463,6 @@
       "resource_id": "SUP-1TO1-56",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "56",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12947,7 +12470,6 @@
       "resource_id": "SUP-1TO1-45",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "45",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12955,7 +12477,6 @@
       "resource_id": "SUP-1TO1-61",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "61",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12963,7 +12484,6 @@
       "resource_id": "SUP-1TO1-37",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "37",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12971,7 +12491,6 @@
       "resource_id": "SUP-1TO1-29",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "29",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12979,7 +12498,6 @@
       "resource_id": "SUP-1TO1-74",
       "delivery_mode": "hybrid",
       "session_kind": "one_to_one",
-      "external_ref_id": "74",
       "scheduled_start": null,
       "scheduled_end": null
     },
@@ -12987,7 +12505,6 @@
       "resource_id": "SUP-WS-4438608",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4438608",
       "scheduled_start": 1795773600,
       "scheduled_end": 1795777200
     },
@@ -12995,7 +12512,6 @@
       "resource_id": "SUP-WS-4398663",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4398663",
       "scheduled_start": 1796047200,
       "scheduled_end": 1796050800
     },
@@ -13003,7 +12519,6 @@
       "resource_id": "SUP-WS-4362710",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4362710",
       "scheduled_start": 1796122800,
       "scheduled_end": 1796128200
     },
@@ -13011,7 +12526,6 @@
       "resource_id": "SUP-WS-4436182",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4436182",
       "scheduled_start": 1796126400,
       "scheduled_end": 1796130000
     },
@@ -13019,7 +12533,6 @@
       "resource_id": "SUP-WS-4419276",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4419276",
       "scheduled_start": 1796130000,
       "scheduled_end": 1796140800
     },
@@ -13027,7 +12540,6 @@
       "resource_id": "SUP-WS-4436537",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4436537",
       "scheduled_start": 1796132700,
       "scheduled_end": 1796140800
     },
@@ -13035,7 +12547,6 @@
       "resource_id": "SUP-WS-4426360",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4426360",
       "scheduled_start": 1796149800,
       "scheduled_end": 1796155200
     },
@@ -13043,7 +12554,6 @@
       "resource_id": "SUP-WS-4436131",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4436131",
       "scheduled_start": 1796205000,
       "scheduled_end": 1796221800
     },
@@ -13051,7 +12561,6 @@
       "resource_id": "SUP-WS-4432176",
       "delivery_mode": "in_person",
       "session_kind": "workshop",
-      "external_ref_id": "4432176",
       "scheduled_start": 1796212800,
       "scheduled_end": 1796216400
     },
@@ -13059,7 +12568,6 @@
       "resource_id": "SUP-WS-4377521",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4377521",
       "scheduled_start": 1796216400,
       "scheduled_end": 1796218200
     },
@@ -13067,7 +12575,6 @@
       "resource_id": "SUP-WS-4437942",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4437942",
       "scheduled_start": 1796220000,
       "scheduled_end": 1796223600
     },
@@ -13075,7 +12582,6 @@
       "resource_id": "SUP-WS-4200781",
       "delivery_mode": "in_person",
       "session_kind": "workshop",
-      "external_ref_id": "4200781",
       "scheduled_start": 1796220000,
       "scheduled_end": 1796227200
     },
@@ -13083,7 +12589,6 @@
       "resource_id": "SUP-WS-4383368",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4383368",
       "scheduled_start": 1796230800,
       "scheduled_end": 1796234400
     },
@@ -13091,7 +12596,6 @@
       "resource_id": "SUP-WS-4395111",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4395111",
       "scheduled_start": 1796300100,
       "scheduled_end": 1796301900
     },
@@ -13099,7 +12603,6 @@
       "resource_id": "SUP-WS-4318369",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4318369",
       "scheduled_start": 1796302800,
       "scheduled_end": 1796306400
     },
@@ -13107,7 +12610,6 @@
       "resource_id": "SUP-WS-4214964",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4214964",
       "scheduled_start": 1796306400,
       "scheduled_end": 1796310000
     },
@@ -13115,7 +12617,6 @@
       "resource_id": "SUP-WS-4398685",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4398685",
       "scheduled_start": 1796306400,
       "scheduled_end": 1796310000
     },
@@ -13123,7 +12624,6 @@
       "resource_id": "SUP-WS-4437973",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4437973",
       "scheduled_start": 1796400000,
       "scheduled_end": 1796403600
     },
@@ -13131,7 +12631,6 @@
       "resource_id": "SUP-WS-4203360",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4203360",
       "scheduled_start": 1796809500,
       "scheduled_end": 1796830200
     },
@@ -13139,7 +12638,6 @@
       "resource_id": "SUP-WS-4362714",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4362714",
       "scheduled_start": 1796810400,
       "scheduled_end": 1796815800
     },
@@ -13147,7 +12645,6 @@
       "resource_id": "SUP-WS-4377522",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4377522",
       "scheduled_start": 1796821200,
       "scheduled_end": 1796823000
     },
@@ -13155,7 +12652,6 @@
       "resource_id": "SUP-WS-4403298",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4403298",
       "scheduled_start": 1800360000,
       "scheduled_end": 1800363600
     },
@@ -13163,7 +12659,6 @@
       "resource_id": "SUP-WS-4438571",
       "delivery_mode": "online",
       "session_kind": "workshop",
-      "external_ref_id": "4438571",
       "scheduled_start": 1800987300,
       "scheduled_end": 1800992700
     }

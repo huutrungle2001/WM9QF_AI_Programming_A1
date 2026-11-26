@@ -78,7 +78,6 @@ erDiagram
         TEXT resource_id PK,FK
         TEXT room_layout
         TEXT open_hours
-        INTEGER wrb_student_bookable
         TEXT info_url
     }
 
@@ -100,7 +99,6 @@ erDiagram
         TEXT resource_id PK,FK
         TEXT delivery_mode
         TEXT session_kind
-        TEXT external_ref_id
         INTEGER scheduled_start
         INTEGER scheduled_end
     }
@@ -220,8 +218,7 @@ Parent table holding all shared attributes across the 5 scenario resource catego
 | `resource_id` | `TEXT` | `PRIMARY KEY REFERENCES resources(resource_id) ON DELETE CASCADE` | Shared PK/FK to parent `resources` |
 | `room_layout` | `TEXT` | `NOT NULL DEFAULT 'flat'` | Layout classification (e.g. `flat, teaching`, `tiered, teaching`, `flat, boardroom`, `flexible`) |
 | `open_hours` | `TEXT` | `NULL` | Operating window (e.g. `09:00-22:00`, `08:00-22:00`) |
-| `wrb_student_bookable` | `INTEGER` | `NOT NULL DEFAULT 0 CHECK (wrb_student_bookable IN (0, 1))` | `1` if verified visible to students on Warwick WRB 26/27 |
-| `info_url` | `TEXT` | `NULL` | Official room info/photo link on `warwick.ac.uk` |
+| `info_url` | `TEXT` | `NULL` | Optional room reference or photo URL |
 
 #### 2.4.2 `lab_resources` *(CTI Subtype — `computer_lab`)*
 
@@ -254,7 +251,6 @@ Parent table holding all shared attributes across the 5 scenario resource catego
 | `resource_id` | `TEXT` | `PRIMARY KEY REFERENCES resources(resource_id) ON DELETE CASCADE` | Shared PK/FK to parent `resources` |
 | `delivery_mode` | `TEXT` | `NOT NULL CHECK (delivery_mode IN ('online', 'in_person', 'hybrid'))` | Delivery format |
 | `session_kind` | `TEXT` | `NOT NULL CHECK (session_kind IN ('one_to_one', 'workshop'))` | Individual appointment vs group workshop |
-| `external_ref_id` | `TEXT` | `NULL` | Source myAdvantage `topic_id` or `entityId` |
 | `scheduled_start` | `INTEGER` | `NULL` | Fixed Unix epoch seconds (UTC) for scheduled workshops (`NULL` for flexible 1-on-1 slots) |
 | `scheduled_end` | `INTEGER` | `NULL` | Fixed Unix epoch seconds (UTC) for scheduled workshops |
 
