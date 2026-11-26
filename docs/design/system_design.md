@@ -64,17 +64,17 @@ assessments/A1/
 │
 ├── docs/                                  # Assessment brief, design specs, and LO5 reflections
 │   ├── assessment/                        # brief.md, scenario.md, rubric.md
-│   ├── design/                            # models.md, system_design.md, diagram/ (erd.*)
+│   ├── design/                            # requirements.md, models.md, ood_design.md, system_design.md, api_and_test_plan.md, diagram/
 │   └── sdlc_and_interviews.md             # SDLC evaluation, stakeholder interview guide/log, TDD evidence, AI disclosure
 │
 ├── database/                              # Data sources, ETL pipeline, canonical DDL & SQLite runtime DB
 │   ├── raw/                               # 6 Warwick portal snapshots + 11 slide screenshots
 │   ├── scripts/
-│   │   ├── normalize.py                   # raw/*.json -> catalog.json (12-table 3NF CTI)
+│   │   ├── normalize.py                   # raw/*.json -> catalog.json (11-table 3NF CTI)
 │   │   └── seed_db.py                     # Load catalog.json + synthetic users & multi-week bookings into SQLite
 │   ├── apis.json                          # Discovered Warwick source API inventory
 │   ├── sitemap.json                       # Portal inventory & observed real-world permission rules
-│   ├── schema.sql                         # Canonical 12-table 3NF CTI SQLite DDL (Single Source of Truth)
+│   ├── schema.sql                         # Canonical 11-table 3NF CTI SQLite DDL (Single Source of Truth)
 │   ├── catalog.json                       # Normalized Warwick catalogue (531 resources, 205 buildings, 58 depts)
 │   ├── samples/                           # Sample CSV files for batch import & error-reporting demos
 │   └── campus_bookings.db                 # Runtime SQLite database (gitignored; reproducible via seed_db.py)
@@ -88,7 +88,7 @@ assessments/A1/
 │   │   ├── database.py                    # DatabaseManager (sqlite3, PRAGMA foreign_keys=ON, transactions)
 │   │   ├── domain/                        # Pure OOP domain layer (zero SQL/HTTP coupling)
 │   │   │   ├── exceptions.py              # DomainError, AuthenticationError, AuthorizationError, ConflictError, etc.
-│   │   │   └── resources.py               # Resource(ABC) -> Room/Lab/Equipment/Support subclasses + ResourceFactory
+│   │   │   └── resources.py               # Resource(ABC) -> Room/Equipment/Support subclasses + ResourceFactory
 │   │   ├── schemas/                       # Shared Pydantic v2 DTOs (used identically by FastAPI & CLI)
 │   │   │   ├── catalog.py                 # Department, Building, User, Resource (CTI union), Facility
 │   │   │   ├── booking.py                 # BookingCreate/Update/Record/Filter, AvailabilityQuery, ImportSummary
@@ -114,7 +114,7 @@ assessments/A1/
 │   ├── reports/charts/                    # Generated PNG visualisations
 │   └── tests/                             # pytest TDD suite (mirrors application layers)
 │       ├── conftest.py                    # Isolated temporary SQLite DB fixture & seed helpers
-│       ├── test_db_and_domain.py          # 12-table DDL, FK integrity, CTI 1:1, OOP polymorphism & ResourceFactory
+│       ├── test_db_and_domain.py          # 11-table DDL, FK integrity, CTI 1:1, OOP polymorphism & ResourceFactory
 │       ├── test_catalog_crud.py           # CRUD across catalogue entities, N:M facilities, SQLi resistance
 │       ├── test_bookings_and_conflicts.py # 2-way overlap, adjacent boundaries, max_loan_days, auto-PIN, cancel vs delete
 │       ├── test_policy_and_privacy.py     # 4 roles, Policy-to-SQL pushdown, PII redaction, k>=5 suppression
@@ -195,8 +195,10 @@ All API endpoints accept role/actor context via request headers (`X-Role`, optio
 | `POST` | `/api/v1/bookings` | Create booking with resource-clash, user-clash, active-status, and quota validation | `admin`, `manager`, `member` |
 | `GET` | `/api/v1/bookings/{booking_id}` | Retrieve single booking record | All *(scoped/redacted by role)* |
 | `PATCH` | `/api/v1/bookings/{booking_id}` | Reschedule `start_time`/`end_time`, update status, or edit reference/notes (re-runs conflict check) | `admin`, `manager`, owner `member` |
-| `POST` | `/api/v1/bookings/{booking_id}/cancel` | Soft-cancel booking (`status_id = 'cancelled'`), releasing slot while keeping history | `admin`, `manager`, owner `member` |
-| `DELETE` | `/api/v1/bookings/{booking_id}` | Hard delete record (housekeeping / GDPR erasure) | `admin` |
+| `POST` | `/api/v1/bookings/{booking_id}/approve` | Approve `pending` request (`confirmed` + auto-PIN if `pin`) | `admin`, `manager` |
+| `POST` | `/api/v1/bookings/{booking_id}/reject` | Decline `pending` request (`rejected`, releases slot) | `admin`, `manager` |
+| `POST` | `/api/v1/bookings/{booking_id}/cancel` | Cancel booking (`status_id = 'cancelled'`), releasing slot while keeping history | `admin`, `manager`, owner `member` |
+| `DELETE` | `/api/v1/bookings/{booking_id}` | Soft-delete record (`deleted_at = now`; zero hard deletes) | `admin` |
 
 ### 5.4 Analytics & Visualisations
 
@@ -233,7 +235,7 @@ The CLI mirrors the same core services for quick scripted runs and the 15-minute
 
 - **SQL Injection Prevention**: 100% parameterised SQL placeholders (`?`); dynamic filters append only whitelisted column predicates.
 - **Privacy by Role**:
-  - `student_services` never receives raw student names/emails/IDs or free-text `notes`; IDs are SHA-256 pseudonymised (`ANON-...`) and course cohorts smaller than `k = 5` are suppressed/grouped.
+  - `student_services` never receives raw student names/emails/IDs or `private_notes`; IDs are SHA-256 pseudonymised (`ANON-...`) and course cohorts smaller than `k = 5` are suppressed/grouped.
   - `member` can only view and manage their own bookings (never other students' records).
 - **Data Minimisation**: Structured `reason_category` reduces sensitive free-text collection while preserving analytical value.
 
@@ -247,4 +249,4 @@ Core implementation proceeds immediately with sensible defaults; the following p
 2. **Booking Horizon & Cancellation Cutoff**: How far in advance may bookings be made (e.g. 14 days), and is there a late-cancellation / no-show threshold?
 3. **Approval Workflow**: Do all 5 resource types auto-confirm, or should `specialist_equipment` / `academic_support` default to `pending` pending staff approval?
 4. **Maintenance Overrides**: When a resource moves to `maintenance`, should existing future bookings auto-cancel with a flag or require manual manager review?
-5. **Privacy Boundary**: Confirm whether `student_services` should only view aggregated/anonymised metrics and whether `notes` should be optional or disabled.
+5. **Privacy Boundary**: Confirm whether `student_services` should only view aggregated/anonymised metrics and whether `private_notes` should be optional or disabled.

@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Normalize raw Warwick multi-portal snapshots into a strict 3NF CTI catalog.json.
+"""Adapter script normalizing raw Warwick snapshots into the 11-table domain-pure catalog.json.
 
-Reads database/raw/<source>/*.json and produces database/catalog.json aligned 1-to-1 with
-the 12-table Class Table Inheritance (CTI) zero-JSON schema in docs/models.md:
-  - departments, buildings (atomic floor_count), booking_statuses
-  - resources (supertype)
-  - room_resources, lab_resources, equipment_resources, support_resources (1:1 subtypes)
+Maps external Warwick portal snapshots into the canonical 3NF CTI schema defined in
+docs/design/models.md (zero external-portal column leakage, zero JSON columns):
+  - departments, buildings, booking_statuses (6 lifecycle states)
+  - resources (11-column supertype: location, description, policy/status)
+  - rooms (capacity, room_style, noise_zone, min_group_size)
+  - equipment_items (category, quantity, specifications)
+  - support_services (support_area, session_kind, delivery_mode, max_attendees, host_user_id)
   - facilities, resource_facilities (N:M lookup)
 """
 
@@ -24,34 +26,14 @@ DEFAULT_RAW_DIR = DB_DIR / "raw"
 DEFAULT_OUT_PATH = DB_DIR / "catalog.json"
 
 BOOKING_STATUSES = [
-    {
-        "status_id": "confirmed",
-        "description": "Approved and active reservation",
-        "blocks_slot": 1,
-    },
-    {
-        "status_id": "pending",
-        "description": "Awaiting staff/timetabling approval; holds slot",
-        "blocks_slot": 1,
-    },
-    {
-        "status_id": "cancelled",
-        "description": "Cancelled prior to use; slot released",
-        "blocks_slot": 0,
-    },
-    {
-        "status_id": "completed",
-        "description": "Session or loan completed",
-        "blocks_slot": 0,
-    },
-    {
-        "status_id": "no_show",
-        "description": "User failed to attend or check in; slot released",
-        "blocks_slot": 0,
-    },
+    {"status_id": "pending", "description": "Awaiting staff/manager approval; holds slot", "blocks_slot": 1},
+    {"status_id": "confirmed", "description": "Approved and active reservation", "blocks_slot": 1},
+    {"status_id": "cancelled", "description": "Cancelled by user or staff prior to use; slot released", "blocks_slot": 0},
+    {"status_id": "rejected", "description": "Pending request declined by manager/admin; slot released", "blocks_slot": 0},
+    {"status_id": "completed", "description": "Session or equipment loan completed", "blocks_slot": 0},
+    {"status_id": "no_show", "description": "User failed to attend or check in; slot released", "blocks_slot": 0},
 ]
 
-# Canonical short codes for well-known Warwick departments & central services
 KNOWN_DEPT_CODES: dict[str, str] = {
     "Warwick Manufacturing Group (WMG)": "WMG",
     "Computer Science": "CS",
@@ -107,41 +89,15 @@ KNOWN_DEPT_CODES: dict[str, str] = {
     "Institute for Advanced Teaching and Learning (IATL)": "IATL",
 }
 
-# Additional central/operational units present in Warwick booking portals
 EXTRA_DEPARTMENTS: list[dict[str, str]] = [
-    {
-        "department_id": "CENTRAL",
-        "department_name": "Central Timetabling Office",
-        "faculty": "Services",
-    },
-    {
-        "department_id": "CAREERS",
-        "department_name": "Student Opportunity & Careers (myAdvantage)",
-        "faculty": "Services",
-    },
-    {
-        "department_id": "ESTATES",
-        "department_name": "Estates Office",
-        "faculty": "Services",
-    },
-    {
-        "department_id": "SPORT",
-        "department_name": "Warwick Sport",
-        "faculty": "Services",
-    },
-    {
-        "department_id": "HR",
-        "department_name": "Human Resources",
-        "faculty": "Services",
-    },
-    {
-        "department_id": "MUSIC",
-        "department_name": "Music Centre",
-        "faculty": "Services",
-    },
+    {"department_id": "CENTRAL", "department_name": "Central Timetabling Office", "faculty": "Services"},
+    {"department_id": "CAREERS", "department_name": "Student Opportunity & Careers", "faculty": "Services"},
+    {"department_id": "ESTATES", "department_name": "Estates Office", "faculty": "Services"},
+    {"department_id": "SPORT", "department_name": "Warwick Sport", "faculty": "Services"},
+    {"department_id": "HR", "department_name": "Human Resources", "faculty": "Services"},
+    {"department_id": "MUSIC", "department_name": "Music Centre", "faculty": "Services"},
 ]
 
-# Map local_rooms department headings -> canonical department_id
 LOCAL_DEPT_ALIAS: dict[str, str] = {
     "Chemistry": "CHEM",
     "Computer Science": "CS",
@@ -179,7 +135,6 @@ LOCAL_DEPT_ALIAS: dict[str, str] = {
     "Westwood - New Education Building": "CES",
 }
 
-# Map building labels from room-data.js / workareas / library -> MazeMap building name
 BUILDING_ALIAS_TO_MAZEMAP: dict[str, str] = {
     "Arts Centre": "Warwick Arts Centre",
     "Faculty of Arts": "Faculty of Arts",
@@ -253,7 +208,6 @@ BUILDING_ALIAS_TO_MAZEMAP: dict[str, str] = {
     "The Beehive": "The Beehive",
 }
 
-# Academic/career/skills event types to retain from myAdvantage (excluding social/faith/food)
 SUPPORT_EVENT_TYPES = {
     "Careers workshops",
     "Departmental Careers Workshops",
@@ -274,15 +228,6 @@ def slugify(text: str, max_len: int = 24) -> str:
     return cleaned[:max_len] or "ITEM"
 
 
-def iso_to_unix(value: str | None) -> int | None:
-    if not value:
-        return None
-    dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
-    if dt.tzinfo is None:
-        dt = dt.replace(tzinfo=timezone.utc)
-    return int(dt.timestamp())
-
-
 def infer_zone(name: str, campus: str, lat: float | None, lon: float | None) -> str:
     low = name.lower()
     if "innovation" in campus.lower():
@@ -291,12 +236,41 @@ def infer_zone(name: str, campus: str, lat: float | None, lon: float | None) -> 
         return "Gibbet Hill Site"
     if any(k in low for k in ("westwood", "avon", "new education", "engineering management", "aroma")):
         return "Westwood Site"
-    # Use GPS heuristics if available (Gibbet Hill is south of 52.375; Westwood is north-west of -1.573)
     if lat is not None and lat < 52.3755:
         return "Gibbet Hill Site"
     if lon is not None and lon < -1.573:
         return "Westwood Site"
     return "Main Site"
+
+
+def infer_room_style(raw_type: str, rtype: str) -> str:
+    low = (raw_type or "").lower()
+    if rtype == "computer_lab":
+        return "computer_lab"
+    if "boardroom" in low:
+        return "boardroom"
+    if "tiered" in low:
+        return "lecture"
+    if "teaching" in low:
+        return "seminar"
+    if rtype == "study_room":
+        return "individual_study"
+    return "study_pod"
+
+
+def infer_support_area(text: str) -> str:
+    low = text.lower()
+    if any(k in low for k in ("disability", "neurodiverg")):
+        return "disability_advice"
+    if any(k in low for k in ("writing", "statement", "essay")):
+        return "writing"
+    if any(k in low for k in ("math", "stat", "data")):
+        return "maths_stats"
+    if any(k in low for k in ("career", "job", "interview", "placement", "work experience", "cv")):
+        return "careers"
+    if any(k in low for k in ("skill", "study", "assessment", "library")):
+        return "study_skills"
+    return "general"
 
 
 def load_json(path: Path) -> Any:
@@ -319,9 +293,7 @@ def normalize_departments(raw_dir: Path) -> list[dict[str, str]]:
             faculty = "Cross faculty"
             name = entry.strip()
 
-        code = KNOWN_DEPT_CODES.get(name)
-        if not code:
-            code = slugify(name, max_len=12).replace("-", "")[:12]
+        code = KNOWN_DEPT_CODES.get(name) or slugify(name, max_len=12).replace("-", "")[:12]
         if code in by_code or name in used_names:
             continue
         by_code[code] = {"department_id": code, "department_name": name, "faculty": faculty}
@@ -350,18 +322,17 @@ def normalize_buildings(raw_dir: Path) -> tuple[list[dict[str, Any]], dict[str, 
         lat = b.get("lat")
         lon = b.get("lon")
         floors = [str(f.get("name", "")).strip() for f in b.get("floors", []) if str(f.get("name", "")).strip()]
-        zone = infer_zone(name, campus, lat, lon)
 
-        rec = {
-            "building_id": bid,
-            "building_name": name,
-            "zone": zone,
-            "lat": lat,
-            "lon": lon,
-            "floor_count": len(floors) if floors else 1,
-        }
-        buildings.append(rec)
-        # Keep first match (or prefer Central Campus) for lowercased name lookup
+        buildings.append(
+            {
+                "building_id": bid,
+                "building_name": name,
+                "zone": infer_zone(name, campus, lat, lon),
+                "lat": lat,
+                "lon": lon,
+                "floor_count": len(floors) if floors else 1,
+            }
+        )
         key = name.lower()
         if key not in name_to_id or campus == "Central Campus":
             name_to_id[key] = bid
@@ -377,7 +348,6 @@ def resolve_building_id(label: str, name_to_id: dict[str, str]) -> str | None:
     target = BUILDING_ALIAS_TO_MAZEMAP.get(clean, clean)
     if target.lower() in name_to_id:
         return name_to_id[target.lower()]
-    # Prefix/substring fallback
     t_low = target.lower()
     for k, bid in name_to_id.items():
         if t_low in k or k in t_low:
@@ -391,16 +361,15 @@ def normalize_resources(
     valid_department_ids: set[str],
 ) -> dict[str, list[dict[str, Any]]]:
     resources: list[dict[str, Any]] = []
-    room_resources: list[dict[str, Any]] = []
-    lab_resources: list[dict[str, Any]] = []
-    equipment_resources: list[dict[str, Any]] = []
-    support_resources: list[dict[str, Any]] = []
+    rooms: list[dict[str, Any]] = []
+    equipment_items: list[dict[str, Any]] = []
+    support_services: list[dict[str, Any]] = []
     facilities_by_name: dict[str, str] = {}
     resource_facilities: list[dict[str, str]] = []
     seen_ids: set[str] = set()
 
     def register_facilities(resource_id: str, facility_names: list[str]) -> None:
-        seen_for_resource: set[str] = set()
+        seen_for_res: set[str] = set()
         for raw_name in facility_names:
             fname = raw_name.strip()
             if not fname:
@@ -414,8 +383,8 @@ def normalize_resources(
                         n += 1
                     fid = f"{fid}-{n}"
                 facilities_by_name[fname] = fid
-            if fid not in seen_for_resource:
-                seen_for_resource.add(fid)
+            if fid not in seen_for_res:
+                seen_for_res.add(fid)
                 resource_facilities.append({"resource_id": resource_id, "facility_id": fid})
 
     def add_resource(
@@ -438,19 +407,16 @@ def normalize_resources(
 
         sub = {"resource_id": rid, **subtype_row}
         if subtype_kind == "room":
-            room_resources.append(sub)
-        elif subtype_kind == "lab":
-            lab_resources.append(sub)
+            rooms.append(sub)
         elif subtype_kind == "equipment":
-            equipment_resources.append(sub)
+            equipment_items.append(sub)
         elif subtype_kind == "support":
-            support_resources.append(sub)
+            support_services.append(sub)
         else:
             raise ValueError(f"Unknown subtype_kind: {subtype_kind}")
 
         register_facilities(rid, facility_names)
 
-    # Load AV facility maps
     central_av = {
         r["slug"].lower(): r["facilities"]
         for r in load_json(raw_dir / "warwick_rooms" / "central_av_tags.json").get("rooms", [])
@@ -460,13 +426,13 @@ def normalize_resources(
         for r in load_json(raw_dir / "warwick_rooms" / "meeting_av_tags.json").get("rooms", [])
     }
     wrb_rooms = load_json(raw_dir / "wrb" / "student_rooms.json").get("rooms", [])
-    wrb_by_slug: dict[str, dict[str, Any]] = {}
-    for wr in wrb_rooms:
-        info_url = wr.get("info_url") or ""
-        slug = info_url.rstrip("/").split("/")[-1].lower() if info_url else wr["name"].lower()
-        wrb_by_slug[slug] = wr
+    wrb_slugs = {
+        (wr.get("info_url") or "").rstrip("/").split("/")[-1].lower()
+        for wr in wrb_rooms
+        if wr.get("info_url")
+    }
 
-    # 1. Central Timetabled Rooms (214 rooms)
+    # 1. Central Rooms & IT Access Areas -> rooms
     central = load_json(raw_dir / "warwick_rooms" / "central_rooms.json")
     for bld in central.get("buildings", []):
         b_name = bld["name"].strip()
@@ -474,23 +440,21 @@ def normalize_resources(
         for rm in bld.get("rooms", []):
             slug = (rm.get("url") or slugify(rm["name"])).lower()
             cap = max(int(rm.get("capacity") or 10), 1)
-            wrb_match = wrb_by_slug.get(slug)
-            is_computer_room = b_name == "IT Access Areas"
-            if is_computer_room:
-                rtype = "computer_lab"
-                dept = "IDG"
-                booking_eligibility = "staff_only"
-                checkin_method = "card_swipe"
+            is_lab = b_name == "IT Access Areas"
+            is_student_bookable = slug in wrb_slugs
+            if is_lab:
+                rtype, dept, elig, checkin = "computer_lab", "IDG", "staff_only", "card_swipe"
+                min_grp, noise = 1, "quiet"
             elif cap <= 16:
-                rtype = "study_room"
-                dept = "CENTRAL"
-                booking_eligibility = "all_users" if wrb_match else "staff_only"
-                checkin_method = "none"
+                rtype, dept, elig, checkin = "study_room", "CENTRAL", ("all_users" if is_student_bookable else "staff_only"), "none"
+                min_grp, noise = 1, "quiet"
             else:
-                rtype = "group_space"
-                dept = "CENTRAL"
-                booking_eligibility = "all_users" if wrb_match else "staff_only"
-                checkin_method = "none"
+                rtype, dept, elig, checkin = "group_space", "CENTRAL", ("all_users" if is_student_bookable else "staff_only"), "none"
+                min_grp, noise = min(4, cap), "collaborative"
+
+            facs = list(central_av.get(slug, []))
+            if is_lab and "Desktop PCs" not in facs:
+                facs.append("Desktop PCs")
 
             add_resource(
                 {
@@ -499,32 +463,24 @@ def normalize_resources(
                     "resource_type": rtype,
                     "department_id": dept,
                     "building_id": bid,
-                    "location_detail": f"{b_name} — {rm['name'].strip()}",
-                    "capacity": cap,
-                    "booking_unit": "hourly",
+                    "location": rm["name"].strip(),
+                    "description": f"Central campus {rtype.replace('_', ' ')} in {b_name} ({rm.get('type', 'flat')}). Open 09:00-22:00. No food or drink permitted.",
                     "requires_approval": 1,
-                    "booking_eligibility": booking_eligibility,
-                    "checkin_method": checkin_method,
+                    "booking_eligibility": elig,
+                    "checkin_method": checkin,
                     "status": "active",
                 },
-                subtype_kind="lab" if is_computer_room else "room",
-                subtype_row=(
-                    {
-                        "has_linux": 0,
-                        "bookable_for_teaching": 1,
-                        "opening_hours": "08:00-22:00",
-                    }
-                    if is_computer_room
-                    else {
-                        "room_layout": (rm.get("type") or "flat").strip(),
-                        "open_hours": "09:00-22:00",
-                        "info_url": f"https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/roominformation/{slug}",
-                    }
-                ),
-                facility_names=central_av.get(slug, []),
+                subtype_kind="room",
+                subtype_row={
+                    "capacity": cap,
+                    "room_style": infer_room_style(rm.get("type", ""), rtype),
+                    "noise_zone": noise,
+                    "min_group_size": min_grp,
+                },
+                facility_names=facs,
             )
 
-    # 2. Centrally Managed Meeting & Consultation Rooms (48 rooms)
+    # 2. Meeting & Consultation Rooms -> rooms (study_room)
     meeting = load_json(raw_dir / "warwick_rooms" / "meeting_rooms.json")
     for bld in meeting.get("buildings", []):
         b_name = bld["name"].strip()
@@ -539,9 +495,8 @@ def normalize_resources(
                     "resource_type": "study_room",
                     "department_id": "CENTRAL",
                     "building_id": bid,
-                    "location_detail": f"{b_name} — {rm['name'].strip()}",
-                    "capacity": cap,
-                    "booking_unit": "hourly",
+                    "location": rm["name"].strip(),
+                    "description": f"Centrally managed meeting/consultation room in {b_name} ({rm.get('type', 'boardroom')}). Open 08:00-20:00.",
                     "requires_approval": 0,
                     "booking_eligibility": "staff_only",
                     "checkin_method": "none",
@@ -549,18 +504,19 @@ def normalize_resources(
                 },
                 subtype_kind="room",
                 subtype_row={
-                    "room_layout": (rm.get("type") or "flat, boardroom").strip(),
-                    "open_hours": "08:00-20:00",
-                    "info_url": f"https://warwick.ac.uk/services/idg/services-support/av/lecturerooms/meetingrooms/{slug}",
+                    "capacity": cap,
+                    "room_style": infer_room_style(rm.get("type", "boardroom"), "study_room"),
+                    "noise_zone": "quiet",
+                    "min_group_size": 1,
                 },
                 facility_names=meeting_av.get(slug, []),
             )
 
-    # 3. Locally Timetabled Departmental Rooms (194 rooms across 34 departments)
+    # 3. Departmental Rooms -> rooms
     local = load_json(raw_dir / "warwick_rooms" / "local_rooms.json")
     for dep in local.get("departments", []):
         d_name = dep["name"].strip()
-        department_id = LOCAL_DEPT_ALIAS.get(d_name, "CENTRAL")
+        dept_id = LOCAL_DEPT_ALIAS.get(d_name, "CENTRAL")
         bid = resolve_building_id(d_name, name_to_building_id)
         for rm in dep.get("rooms", []):
             slug = (rm.get("url") or slugify(rm["name"])).lower()
@@ -568,14 +524,13 @@ def normalize_resources(
             rtype = "study_room" if cap <= 12 else "group_space"
             add_resource(
                 {
-                    "resource_id": f"LOC-{department_id}-{slugify(slug, 14)}",
+                    "resource_id": f"LOC-{dept_id}-{slugify(slug, 14)}",
                     "resource_name": f"{rm['name'].strip()} ({d_name})",
                     "resource_type": rtype,
-                    "department_id": department_id,
+                    "department_id": dept_id,
                     "building_id": bid,
-                    "location_detail": f"{d_name} — {rm['name'].strip()}",
-                    "capacity": cap,
-                    "booking_unit": "hourly",
+                    "location": rm["name"].strip(),
+                    "description": f"Departmental room managed by {d_name}. Open 08:30-18:00.",
                     "requires_approval": 0,
                     "booking_eligibility": "staff_only",
                     "checkin_method": "none",
@@ -583,14 +538,15 @@ def normalize_resources(
                 },
                 subtype_kind="room",
                 subtype_row={
-                    "room_layout": (rm.get("type") or "flat").strip(),
-                    "open_hours": "08:30-18:00",
-                    "info_url": None,
+                    "capacity": cap,
+                    "room_style": infer_room_style(rm.get("type", ""), rtype),
+                    "noise_zone": "quiet" if rtype == "study_room" else "collaborative",
+                    "min_group_size": 1 if rtype == "study_room" else 2,
                 },
                 facility_names=[],
             )
 
-    # 4. Library Bookable Rooms (Group Study, Online Meeting, Specialist Spaces, Accessible, PG Hub)
+    # 4. Library Bookable Rooms -> rooms
     lib_grid = load_json(raw_dir / "library" / "roombooking_group_study_grid.json")
     rootes_bid = resolve_building_id("Rootes", name_to_building_id)
     lib_bid = resolve_building_id("Library", name_to_building_id)
@@ -604,32 +560,22 @@ def normalize_resources(
                 "resource_type": "group_space",
                 "department_id": "LIB",
                 "building_id": rootes_bid,
-                "location_detail": f"Rootes Learning Grid — {rm['name']}",
-                "capacity": 8,
-                "booking_unit": "hourly",
+                "location": rm["name"],
+                "description": f"Bookable group study room in Rootes Learning Grid (open {lib_grid.get('open_hours', '09:00-22:00')}). 4-digit PIN door access; consecutive hourly slots merge.",
                 "requires_approval": 0,
                 "booking_eligibility": "students_only",
                 "checkin_method": "pin",
                 "status": "active",
             },
             subtype_kind="room",
-            subtype_row={
-                "room_layout": "flat, group study",
-                "open_hours": lib_grid.get("open_hours", "09:00-22:00"),
-                "info_url": "https://roombooking.lib.warwick.ac.uk/",
-            },
+            subtype_row={"capacity": 8, "room_style": "study_pod", "noise_zone": "collaborative", "min_group_size": 2},
             facility_names=["Large Display Screen", "Whiteboard", "PIN Door Access"],
         )
 
-    # Specialist bookable rooms & site status directly from libspaces_directory.json
     lib_dir = load_json(raw_dir / "library" / "libspaces_directory.json")
     for sp in lib_dir.get("bookable_specialist_rooms", []):
         sp_bid = resolve_building_id(sp["building"], name_to_building_id)
-        sp_facs = (
-            ["Flexible Furniture", "Display Screen"]
-            if sp["resource_type"] == "group_space"
-            else ["Fixed Computer", "Webcam & Microphone", "PIN Door Access"]
-        )
+        is_group = sp["resource_type"] == "group_space"
         add_resource(
             {
                 "resource_id": sp["resource_id"],
@@ -637,9 +583,8 @@ def normalize_resources(
                 "resource_type": sp["resource_type"],
                 "department_id": "LIB",
                 "building_id": sp_bid,
-                "location_detail": sp["location_detail"],
-                "capacity": sp["capacity"],
-                "booking_unit": "hourly",
+                "location": sp["location_detail"],
+                "description": f"{sp.get('eligibility_note') or 'Library specialist space.'} Hours: {sp.get('opening_hours') or 'TBC'}.",
                 "requires_approval": sp["requires_approval"],
                 "booking_eligibility": sp["booking_eligibility"],
                 "checkin_method": sp["checkin_method"],
@@ -647,11 +592,16 @@ def normalize_resources(
             },
             subtype_kind="room",
             subtype_row={
-                "room_layout": "flexible",
-                "open_hours": sp.get("opening_hours"),
-                "info_url": sp.get("booking_portal"),
+                "capacity": sp["capacity"],
+                "room_style": "flexible" if is_group else "individual_study",
+                "noise_zone": "collaborative" if is_group else "quiet",
+                "min_group_size": 2 if is_group else 1,
             },
-            facility_names=sp_facs,
+            facility_names=(
+                ["Flexible Furniture", "Display Screen"]
+                if is_group
+                else ["Fixed Computer", "Webcam & Microphone", "PIN Door Access"]
+            ),
         )
 
     lib_books = load_json(raw_dir / "library" / "bookable_rooms.json")
@@ -659,6 +609,7 @@ def normalize_resources(
         name = acc["name"]
         is_pg = "postgrad" in name.lower()
         rid_suffix = "PGHUB" if is_pg else slugify(name.replace("Accessible Study Room", "").strip(), 10)
+        is_collab = any(n in name for n in ("114", "204"))
         add_resource(
             {
                 "resource_id": f"LIB-ACC-{rid_suffix}",
@@ -666,9 +617,8 @@ def normalize_resources(
                 "resource_type": "study_room",
                 "department_id": "LIB",
                 "building_id": junction_bid if is_pg else lib_bid,
-                "location_detail": "Junction PG Hub — Room 7" if is_pg else f"Main Library — {name}",
-                "capacity": 2,
-                "booking_unit": "hourly",
+                "location": "PG Hub Room 7" if is_pg else name.replace("Accessible Study ", ""),
+                "description": f"Open 08:00-22:00. {(acc.get('details') or 'Accessible study room for Disability Services registered students.')[:240]}",
                 "requires_approval": 0,
                 "booking_eligibility": "disability_only",
                 "checkin_method": "card_swipe",
@@ -676,11 +626,13 @@ def normalize_resources(
             },
             subtype_kind="room",
             subtype_row={
-                "room_layout": "accessible, individual",
-                "open_hours": "08:00-22:00",
-                "info_url": "https://warwick.ac.uk/services/library/using/accessibility/accessible-study-rooms/",
+                "capacity": 2,
+                "room_style": "individual_study",
+                "noise_zone": "collaborative" if is_collab else "quiet",
+                "min_group_size": 1,
             },
             facility_names=[
+                "Accessible Room",
                 "Fixed Computer",
                 "Height-Adjustable Desk",
                 "Whiteboard",
@@ -691,11 +643,9 @@ def normalize_resources(
 
     for pg_line in lib_books.get("pg_hub_rooms", []):
         m = re.match(r"Room\s+(\d+)\s*-\s*(.*)", pg_line)
-        if not m:
+        if not m or m.group(1) == "7":
             continue
         rnum, desc = m.group(1), m.group(2)
-        if rnum == "7":
-            continue  # Already captured under Accessible Study Room Postgrad Hub
         cap_m = re.search(r"up to (\d+)", desc)
         cap = int(cap_m.group(1)) if cap_m else 6
         facs = ["Display Screen", "Solstice Wireless Casting"]
@@ -708,34 +658,30 @@ def normalize_resources(
                 "resource_type": "group_space",
                 "department_id": "LIB",
                 "building_id": junction_bid,
-                "location_detail": f"Junction — PG Hub Room {rnum}",
-                "capacity": cap,
-                "booking_unit": "hourly",
+                "location": f"PG Hub Room {rnum}",
+                "description": f"Postgraduate student group study room (open 08:00-22:00). {desc}",
                 "requires_approval": 0,
                 "booking_eligibility": "pg_only",
                 "checkin_method": "none",
                 "status": "active",
             },
             subtype_kind="room",
-            subtype_row={
-                "room_layout": "flat, group study",
-                "open_hours": "08:00-22:00",
-                "info_url": "https://warwick.ac.uk/services/library/pghub/about/bookroom/",
-            },
+            subtype_row={"capacity": cap, "room_style": "study_pod", "noise_zone": "collaborative", "min_group_size": 2},
             facility_names=facs,
         )
 
-    # 5. IDG Open Access PC Labs (Work Areas — 12 live labs enriched with metadata)
+    # 5. Computer Labs (Open Access PC Work Areas) -> rooms (computer_lab)
     wa_live = load_json(raw_dir / "workareas" / "live.json").get("workareas", [])
-    wa_meta_list = load_json(raw_dir / "workareas" / "metadata.json").get("items", [])
-    wa_meta = {m["title"].strip().rstrip("*").lower(): m for m in wa_meta_list}
-
+    wa_meta = {
+        m["title"].strip().rstrip("*").lower(): m
+        for m in load_json(raw_dir / "workareas" / "metadata.json").get("items", [])
+    }
     for wa in wa_live:
         room = wa["room"].strip()
         bld = wa["building"].strip()
         meta = wa_meta.get(room.lower()) or wa_meta.get(bld.lower()) or {}
         bid = resolve_building_id(bld, name_to_building_id) or resolve_building_id(room, name_to_building_id)
-        facs = ["Desktop PCs", "Card Access"]
+        facs = ["Desktop PCs", "Windows Workstations", "Card Access"]
         if meta.get("linux"):
             facs.append("Linux Workstations")
         if meta.get("avEquipment"):
@@ -747,24 +693,24 @@ def normalize_resources(
                 "resource_type": "computer_lab",
                 "department_id": "IDG",
                 "building_id": bid,
-                "location_detail": f"{bld} — {room}",
-                "capacity": max(int(wa.get("total") or 1), 1),
-                "booking_unit": "hourly",
+                "location": room,
+                "description": f"Open-access campus PC laboratory ({meta.get('hoursHtml') or 'building opening hours'}); whole-room teaching reservations restricted to staff.",
                 "requires_approval": 0,
                 "booking_eligibility": "staff_only",
                 "checkin_method": "card_swipe",
                 "status": "active",
             },
-            subtype_kind="lab",
+            subtype_kind="room",
             subtype_row={
-                "has_linux": 1 if meta.get("linux") else 0,
-                "bookable_for_teaching": 1 if meta.get("bookable") else 0,
-                "opening_hours": meta.get("hoursHtml") or "Building opening hours",
+                "capacity": max(int(wa.get("total") or 1), 1),
+                "room_style": "computer_lab",
+                "noise_zone": "quiet",
+                "min_group_size": 1,
             },
             facility_names=facs,
         )
 
-    # 6. Academic Support Services (myAdvantage 1-on-1 Topics + Selected Workshops)
+    # 6. Academic Support Services -> support_services
     topics = load_json(raw_dir / "myadvantage" / "appointment_topics.json").get("topics", [])
     for tp in topics:
         add_resource(
@@ -774,9 +720,8 @@ def normalize_resources(
                 "resource_type": "academic_support",
                 "department_id": "CAREERS",
                 "building_id": None,
-                "location_detail": "Online (MS Teams) / Student Opportunity Hub",
-                "capacity": 1,
-                "booking_unit": "hourly",
+                "location": "Online (MS Teams) / Student Opportunity Hub",
+                "description": f"Open 09:00-17:00. {(tp.get('summary') or '1-on-1 student academic/career support consultation.')[:240]}",
                 "requires_approval": 0,
                 "booking_eligibility": "students_only",
                 "checkin_method": "none",
@@ -784,26 +729,26 @@ def normalize_resources(
             },
             subtype_kind="support",
             subtype_row={
-                "delivery_mode": "hybrid",
+                "support_area": infer_support_area(tp["name"]),
                 "session_kind": "one_to_one",
-                "scheduled_start": None,
-                "scheduled_end": None,
+                "delivery_mode": "hybrid",
+                "max_attendees": 1,
+                "host_user_id": None,
             },
             facility_names=["MS Teams Consultation", "1-on-1 Advisor"],
         )
 
     events = load_json(raw_dir / "myadvantage" / "events.json").get("events", [])
-    seen_workshop_titles: set[str] = set()
+    seen_ws: set[str] = set()
     for ev in events:
         if ev.get("isCancelled") or ev.get("type") not in SUPPORT_EVENT_TYPES:
             continue
         title = (ev.get("title") or "").strip()
-        if not title or title.lower() in seen_workshop_titles:
+        if not title or title.lower() in seen_ws:
             continue
-        seen_workshop_titles.add(title.lower())
+        seen_ws.add(title.lower())
         loc = (ev.get("location") or "Online (MS Teams)").strip()
-        bid = None if "online" in loc.lower() or "teams" in loc.lower() else resolve_building_id(loc, name_to_building_id)
-        is_online = "online" in loc.lower() or "teams" in loc.lower() or bid is None
+        bid = None if ("online" in loc.lower() or "teams" in loc.lower()) else resolve_building_id(loc, name_to_building_id)
         add_resource(
             {
                 "resource_id": f"SUP-WS-{ev['entityId']}",
@@ -811,9 +756,8 @@ def normalize_resources(
                 "resource_type": "academic_support",
                 "department_id": "WMG" if "wmg" in title.lower() else "CAREERS",
                 "building_id": bid,
-                "location_detail": loc,
-                "capacity": 30,
-                "booking_unit": "hourly",
+                "location": loc,
+                "description": f"Group support workshop ({ev.get('type')}). Open 09:00-18:00.",
                 "requires_approval": 0,
                 "booking_eligibility": "all_users",
                 "checkin_method": "none",
@@ -821,116 +765,121 @@ def normalize_resources(
             },
             subtype_kind="support",
             subtype_row={
-                "delivery_mode": "online" if is_online else "in_person",
-                "session_kind": "workshop",
-                "scheduled_start": iso_to_unix(ev.get("start")),
-                "scheduled_end": iso_to_unix(ev.get("end")),
+                "support_area": infer_support_area(title + " " + (ev.get("type") or "")),
+                "session_kind": "group_workshop",
+                "delivery_mode": "online" if bid is None else "in_person",
+                "max_attendees": 30,
+                "host_user_id": None,
             },
             facility_names=["Workshop Session"],
         )
 
-    # 7. Specialist Equipment (Policy-grounded catalogue matching verified Warwick services)
+    # 7. Specialist Equipment -> equipment_items (generalised, pooled capacity)
     imc_bid = resolve_building_id("International Manufacturing Centre", name_to_building_id)
     cs_bid = resolve_building_id("Computer Science", name_to_building_id)
     music_bid = resolve_building_id("Westwood - Music Centre", name_to_building_id)
 
-    policy_equipment = [
+    equipment_catalog = [
         {
             "resource_id": "EQ-LIB-LOCKER-LAPTOP",
-            "resource_name": "Library Laptop Loan Locker Pool (Windows/IDG Image)",
+            "resource_name": "Library Laptop Loan Locker Pool",
             "department_id": "LIB",
             "building_id": lib_bid,
-            "location_detail": "Main Library — Floor 1 Lobby Laptop Lockers",
-            "capacity": 24,
-            "booking_unit": "daily",
+            "location": "Floor 1 Lobby Laptop Lockers",
+            "description": "Self-service student laptop loan lockers available 24/7 (max 7-day loan).",
             "requires_approval": 0,
             "booking_eligibility": "students_only",
             "checkin_method": "card_swipe",
+            "category": "laptop",
+            "quantity": 24,
+            "specifications": "IDG-managed Windows laptops with standard campus software suite; swipe university ID card at locker to collect/return.",
             "facilities": ["IDG Managed Laptop", "Campus Software Suite", "Self-Service Locker"],
-            "subtype": {"equipment_category": "laptop_loan", "max_loan_days": 7, "policy_ref": "warwick.ac.uk/services/library/using/laptop-loan-lockers/"},
         },
         {
             "resource_id": "EQ-IDG-LOAN-LAPTOP",
-            "resource_name": "IDG Short-Term Student Loan Laptop (ServiceNow)",
+            "resource_name": "IDG Short-Term Student Loan Laptop",
             "department_id": "IDG",
             "building_id": lib_bid,
-            "location_detail": "IDG Helpdesk — Main Library / ServiceNow Self-Service",
-            "capacity": 15,
-            "booking_unit": "daily",
+            "location": "IDG Helpdesk, Main Library",
+            "description": "Free short-term laptop loan for students whose personal device is under repair (09:00-17:00; max 7 days).",
             "requires_approval": 1,
             "booking_eligibility": "students_only",
             "checkin_method": "none",
+            "category": "laptop",
+            "quantity": 15,
+            "specifications": "Windows 11 laptop, power adapter, and protective sleeve; overdue loans escalate to department.",
             "facilities": ["Windows 11 Laptop", "Charger & Sleeve"],
-            "subtype": {"equipment_category": "laptop_loan", "max_loan_days": 7, "policy_ref": "ServiceNow KB0003013"},
         },
         {
             "resource_id": "EQ-WMG-VR-KIT-01",
             "resource_name": "WMG XR / VR Development Headset Kit",
             "department_id": "WMG",
             "building_id": imc_bid,
-            "location_detail": "International Manufacturing Centre — WMG Digital Lab",
-            "capacity": 4,
-            "booking_unit": "daily",
+            "location": "WMG Digital Lab Counter",
+            "description": "Loanable VR/XR development kit for coursework prototyping and demos (09:00-17:00).",
             "requires_approval": 1,
             "booking_eligibility": "all_users",
             "checkin_method": "none",
-            "facilities": ["VR Headset", "Motion Controllers", "High-Spec Tether Cable"],
-            "subtype": {"equipment_category": "vr_hardware", "max_loan_days": 3, "policy_ref": "WMG Digital Lab Loan Policy"},
+            "category": "vr_xr",
+            "quantity": 4,
+            "specifications": "Standalone/PCVR headset, dual motion controllers, high-speed USB-C tether cable, carry case.",
+            "facilities": ["VR Headset", "Motion Controllers"],
         },
         {
             "resource_id": "EQ-CS-GPU-WORKSTATION",
             "resource_name": "DCS Local CUDA GPU Compute Workstation",
             "department_id": "CS",
             "building_id": cs_bid,
-            "location_detail": "Computer Science Building — AI Systems Lab",
-            "capacity": 4,
-            "booking_unit": "hourly",
+            "location": "AI Systems Lab",
+            "description": "Dedicated local GPU workstation for deep learning experiments and model training (08:00-20:00).",
             "requires_approval": 1,
             "booking_eligibility": "all_users",
             "checkin_method": "none",
-            "facilities": ["NVIDIA RTX GPU", "Ubuntu Linux", "CUDA Toolkit"],
-            "subtype": {"equipment_category": "ai_compute", "max_loan_days": 1, "policy_ref": "DCS Compute Access Policy"},
+            "category": "compute",
+            "quantity": 4,
+            "specifications": "Ubuntu Linux workstation with NVIDIA RTX GPU and CUDA Toolkit pre-installed.",
+            "facilities": ["NVIDIA RTX GPU", "Linux Workstations", "CUDA Toolkit"],
         },
         {
             "resource_id": "EQ-IDG-AV-KIT-01",
-            "resource_name": "Portable Hybrid Meeting Kit (Meeting Owl + Tripod)",
+            "resource_name": "Portable Hybrid Meeting Kit",
             "department_id": "IDG",
             "building_id": lib_bid,
-            "location_detail": "IDG Audio Visual Services Counter",
-            "capacity": 6,
-            "booking_unit": "daily",
+            "location": "IDG Audio Visual Services Counter",
+            "description": "Portable conferencing kit for hybrid seminars and student society events (09:00-17:00).",
             "requires_approval": 1,
             "booking_eligibility": "all_users",
             "checkin_method": "none",
-            "facilities": ["360 Camera", "Omnidirectional Mic", "USB-C Cable"],
-            "subtype": {"equipment_category": "av_equipment", "max_loan_days": 3, "policy_ref": "IDG AV Loan Guidelines"},
+            "category": "av_kit",
+            "quantity": 6,
+            "specifications": "360-degree smart conferencing camera (Meeting Owl), tripod, omnidirectional mic, USB-C cable.",
+            "facilities": ["360 Camera", "Omnidirectional Mic"],
         },
         {
             "resource_id": "EQ-MUSIC-ENSEMBLE-KIT",
-            "resource_name": "Music Centre Practice Instrument & Recording Kit",
+            "resource_name": "Music Centre Recording & Practice Kit",
             "department_id": "MUSIC",
             "building_id": music_bid,
-            "location_detail": "Westwood — Music Centre",
-            "capacity": 5,
-            "booking_unit": "hourly",
+            "location": "Music Centre Desk",
+            "description": "Portable audio recording kit for ensemble practice and performance capture (09:00-21:00).",
             "requires_approval": 0,
             "booking_eligibility": "all_users",
             "checkin_method": "none",
-            "facilities": ["Audio Interface", "Condenser Mic", "Music Stand"],
-            "subtype": {"equipment_category": "music_equipment", "max_loan_days": 1, "policy_ref": "Music Centre Facilities Policy"},
+            "category": "instrument",
+            "quantity": 5,
+            "specifications": "USB audio interface, condenser microphone, XLR cable, adjustable music stand.",
+            "facilities": ["Audio Interface", "Condenser Mic"],
         },
     ]
-    for eq in policy_equipment:
+    for eq in equipment_catalog:
         facs = eq.pop("facilities")
-        sub = eq.pop("subtype")
+        cat = eq.pop("category")
+        qty = eq.pop("quantity")
+        specs = eq.pop("specifications")
         add_resource(
-            {
-                **eq,
-                "resource_type": "specialist_equipment",
-                "status": "active",
-            },
+            {**eq, "resource_type": "specialist_equipment", "status": "active"},
             subtype_kind="equipment",
-            subtype_row=sub,
+            subtype_row={"category": cat, "quantity": qty, "specifications": specs},
             facility_names=facs,
         )
 
@@ -940,10 +889,9 @@ def normalize_resources(
     ]
     return {
         "resources": resources,
-        "room_resources": room_resources,
-        "lab_resources": lab_resources,
-        "equipment_resources": equipment_resources,
-        "support_resources": support_resources,
+        "rooms": rooms,
+        "equipment_items": equipment_items,
+        "support_services": support_services,
         "facilities": facilities,
         "resource_facilities": resource_facilities,
     }
@@ -955,31 +903,32 @@ def build_catalog(raw_dir: Path) -> dict[str, Any]:
     valid_department_ids = {d["department_id"] for d in departments}
     valid_building_ids = {b["building_id"] for b in buildings}
 
-    res_bundle = normalize_resources(raw_dir, name_to_building_id, valid_department_ids)
-    resources = res_bundle["resources"]
-    room_resources = res_bundle["room_resources"]
-    lab_resources = res_bundle["lab_resources"]
-    equipment_resources = res_bundle["equipment_resources"]
-    support_resources = res_bundle["support_resources"]
-    facilities = res_bundle["facilities"]
-    resource_facilities = res_bundle["resource_facilities"]
+    bundle = normalize_resources(raw_dir, name_to_building_id, valid_department_ids)
+    resources = bundle["resources"]
+    rooms = bundle["rooms"]
+    equipment_items = bundle["equipment_items"]
+    support_services = bundle["support_services"]
+    facilities = bundle["facilities"]
+    resource_facilities = bundle["resource_facilities"]
 
     valid_resource_ids = {r["resource_id"] for r in resources}
     valid_facility_ids = {f["facility_id"] for f in facilities}
 
-    # Strict referential integrity verification before writing
     for r in resources:
         assert r["department_id"] in valid_department_ids, f"Broken department_id: {r['department_id']}"
         if r["building_id"] is not None:
             assert r["building_id"] in valid_building_ids, f"Broken building_id: {r['building_id']}"
-        assert r["capacity"] > 0, f"Invalid capacity: {r['resource_id']}"
+    for rm in rooms:
+        assert rm["capacity"] > 0
+    for eq in equipment_items:
+        assert eq["quantity"] > 0
+    for sup in support_services:
+        assert sup["max_attendees"] > 0
 
-    # Strict 1:1 CTI coverage: every resource has exactly ONE subtype row
     subtype_ids = (
-        [x["resource_id"] for x in room_resources]
-        + [x["resource_id"] for x in lab_resources]
-        + [x["resource_id"] for x in equipment_resources]
-        + [x["resource_id"] for x in support_resources]
+        [x["resource_id"] for x in rooms]
+        + [x["resource_id"] for x in equipment_items]
+        + [x["resource_id"] for x in support_services]
     )
     assert len(subtype_ids) == len(resources) and set(subtype_ids) == valid_resource_ids, "CTI 1:1 coverage mismatch"
 
@@ -987,14 +936,8 @@ def build_catalog(raw_dir: Path) -> dict[str, Any]:
         assert rf["resource_id"] in valid_resource_ids
         assert rf["facility_id"] in valid_facility_ids
 
-    type_counts = Counter(r["resource_type"] for r in resources)
-    eligibility_counts = Counter(r["booking_eligibility"] for r in resources)
-    checkin_counts = Counter(r["checkin_method"] for r in resources)
-    with_building = sum(1 for r in resources if r["building_id"] is not None)
-    with_facilities = len({rf["resource_id"] for rf in resource_facilities})
-
     return {
-        "schema_version": "2.0-cti",
+        "schema_version": "3.1-domain-cti",
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "summary": {
             "departments": len(departments),
@@ -1002,27 +945,22 @@ def build_catalog(raw_dir: Path) -> dict[str, Any]:
             "booking_statuses": len(BOOKING_STATUSES),
             "resources_total": len(resources),
             "cti_subtypes": {
-                "room_resources": len(room_resources),
-                "lab_resources": len(lab_resources),
-                "equipment_resources": len(equipment_resources),
-                "support_resources": len(support_resources),
+                "rooms": len(rooms),
+                "equipment_items": len(equipment_items),
+                "support_services": len(support_services),
             },
             "facilities_total": len(facilities),
             "resource_facilities_links": len(resource_facilities),
-            "resources_by_type": dict(sorted(type_counts.items())),
-            "resources_by_eligibility": dict(sorted(eligibility_counts.items())),
-            "resources_by_checkin_method": dict(sorted(checkin_counts.items())),
-            "resources_linked_to_building": with_building,
-            "resources_with_facilities": with_facilities,
+            "resources_by_type": dict(sorted(Counter(r["resource_type"] for r in resources).items())),
+            "resources_by_eligibility": dict(sorted(Counter(r["booking_eligibility"] for r in resources).items())),
         },
         "departments": departments,
         "buildings": buildings,
         "booking_statuses": BOOKING_STATUSES,
         "resources": resources,
-        "room_resources": room_resources,
-        "lab_resources": lab_resources,
-        "equipment_resources": equipment_resources,
-        "support_resources": support_resources,
+        "rooms": rooms,
+        "equipment_items": equipment_items,
+        "support_services": support_services,
         "facilities": facilities,
         "resource_facilities": resource_facilities,
     }

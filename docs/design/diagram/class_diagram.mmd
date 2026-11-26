@@ -1,0 +1,108 @@
+classDiagram
+    class Resource {
+        <<abstract>>
+        +str resource_id
+        +str resource_name
+        +ResourceType resource_type
+        +str department_id
+        +Optional~str~ building_id
+        +str location
+        +Optional~str~ description
+        +bool requires_approval
+        +BookingEligibility booking_eligibility
+        +CheckinMethod checkin_method
+        +ResourceStatus status
+        +list~str~ facilities
+        +validate_active() void
+        +initial_status(actor) BookingStatusId
+        +generate_access_pin(status_id) Optional~str~
+        +max_concurrent_bookings()* int
+        +max_duration_seconds(config)* int
+        +validate_booking_request(start_time, end_time, config, group_size)* void
+        +subtype_table()* str
+        +subtype_payload()* dict
+    }
+
+    class RoomResource {
+        +int capacity
+        +RoomStyle room_style
+        +NoiseZone noise_zone
+        +int min_group_size
+        +max_concurrent_bookings() int
+        +max_duration_seconds(config) int
+        +validate_booking_request(start_time, end_time, config, group_size) void
+        +subtype_table() str
+        +subtype_payload() dict
+    }
+
+    class EquipmentResource {
+        +str category
+        +int quantity
+        +Optional~str~ specifications
+        +max_concurrent_bookings() int
+        +max_duration_seconds(config) int
+        +validate_booking_request(start_time, end_time, config, group_size) void
+        +subtype_table() str
+        +subtype_payload() dict
+    }
+
+    class AcademicSupportResource {
+        +SupportArea support_area
+        +SessionKind session_kind
+        +DeliveryMode delivery_mode
+        +int max_attendees
+        +Optional~str~ host_user_id
+        +max_concurrent_bookings() int
+        +max_duration_seconds(config) int
+        +validate_booking_request(start_time, end_time, config, group_size) void
+        +subtype_table() str
+        +subtype_payload() dict
+    }
+
+    class ResourceFactory {
+        <<factory>>
+        +from_db_rows(parent_row, subtype_row, facilities)$ Resource
+        +from_create_dto(dto)$ Resource
+    }
+
+    class PolicyGuard {
+        +require_action(actor, action) void
+        +allowed_eligibilities(actor) Optional~tuple~str~~
+        +assert_eligible_for_resource(actor, target_user, resource) void
+        +assert_booking_owner_or_staff(actor, booking) void
+        +project_booking(actor, record) BookingRecord
+        +pseudonymise_user_id(user_id) str
+    }
+
+    class BookingService {
+        -CatalogRepository catalog_repo
+        -BookingRepository booking_repo
+        -PolicyGuard policy
+        -BookingPolicyConfig config
+        +find_available(actor, query) list~Resource~
+        +create_booking(actor, dto) BookingRecord
+        +update_booking(actor, booking_id, dto) BookingRecord
+        +transition_status(actor, booking_id, new_status) BookingRecord
+        +soft_delete_booking(actor, booking_id) void
+        +import_csv(actor, csv_path) ImportSummary
+    }
+
+    class AnalyticsService {
+        -AnalyticsRepository analytics_repo
+        -PolicyGuard policy
+        +overview(actor) OverviewKPI
+        +resource_demand(actor, limit) list~DemandItem~
+        +underused_resources(actor, max_bookings) list~DemandItem~
+        +peak_heatmap(actor) list~HeatmapCell~
+        +weekly_trends(actor) list~TrendPoint~
+        +cancellations(actor) dict
+        +course_fairness(actor, min_cohort) list~FairnessRow~
+    }
+
+    Resource <|-- RoomResource
+    Resource <|-- EquipmentResource
+    Resource <|-- AcademicSupportResource
+    ResourceFactory ..> Resource : creates
+    BookingService --> PolicyGuard : enforces
+    BookingService ..> Resource : validates via
+    AnalyticsService --> PolicyGuard : redacts via

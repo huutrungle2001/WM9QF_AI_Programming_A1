@@ -23,6 +23,7 @@ erDiagram
         TEXT course
         TEXT department_id FK
         INTEGER has_accessibility_access
+        INTEGER is_active
     }
 
     RESOURCES {
@@ -31,42 +32,36 @@ erDiagram
         TEXT resource_type
         TEXT department_id FK
         TEXT building_id FK
-        TEXT location_detail
-        INTEGER capacity
-        TEXT booking_unit
+        TEXT location
+        TEXT description
         INTEGER requires_approval
         TEXT booking_eligibility
         TEXT checkin_method
         TEXT status
     }
 
-    ROOM_RESOURCES {
+    ROOMS {
         TEXT resource_id PK,FK
-        TEXT room_layout
-        TEXT open_hours
-        TEXT info_url
+        INTEGER capacity
+        TEXT room_style
+        TEXT noise_zone
+        INTEGER min_group_size
     }
 
-    LAB_RESOURCES {
+    EQUIPMENT_ITEMS {
         TEXT resource_id PK,FK
-        INTEGER has_linux
-        INTEGER bookable_for_teaching
-        TEXT opening_hours
+        TEXT category
+        INTEGER quantity
+        TEXT specifications
     }
 
-    EQUIPMENT_RESOURCES {
+    SUPPORT_SERVICES {
         TEXT resource_id PK,FK
-        TEXT equipment_category
-        INTEGER max_loan_days
-        TEXT policy_ref
-    }
-
-    SUPPORT_RESOURCES {
-        TEXT resource_id PK,FK
-        TEXT delivery_mode
+        TEXT support_area
         TEXT session_kind
-        INTEGER scheduled_start
-        INTEGER scheduled_end
+        TEXT delivery_mode
+        INTEGER max_attendees
+        TEXT host_user_id FK
     }
 
     FACILITIES {
@@ -98,15 +93,16 @@ erDiagram
         TEXT access_pin
         INTEGER created_at
         INTEGER updated_at
+        INTEGER deleted_at
     }
 
     DEPARTMENTS ||--o{ USERS : "belongs to"
     DEPARTMENTS ||--o{ RESOURCES : "manages"
     BUILDINGS ||--o{ RESOURCES : "houses"
-    RESOURCES ||--o| ROOM_RESOURCES : "is a room (1:1)"
-    RESOURCES ||--o| LAB_RESOURCES : "is a PC lab (1:1)"
-    RESOURCES ||--o| EQUIPMENT_RESOURCES : "is equipment (1:1)"
-    RESOURCES ||--o| SUPPORT_RESOURCES : "is support (1:1)"
+    RESOURCES ||--o| ROOMS : "1:1 room/lab"
+    RESOURCES ||--o| EQUIPMENT_ITEMS : "1:1 equipment"
+    RESOURCES ||--o| SUPPORT_SERVICES : "1:1 support"
+    USERS ||--o{ SUPPORT_SERVICES : "hosts"
     RESOURCES ||--o{ RESOURCE_FACILITIES : "has"
     FACILITIES ||--o{ RESOURCE_FACILITIES : "tagged on"
     USERS ||--o{ BOOKINGS : "makes"

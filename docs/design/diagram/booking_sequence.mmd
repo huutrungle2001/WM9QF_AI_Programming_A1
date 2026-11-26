@@ -1,0 +1,30 @@
+sequenceDiagram
+    autonumber
+    actor User as Client / CLI (ActorContext)
+    participant Adapter as FastAPI Router / CLI
+    participant Policy as PolicyGuard
+    participant Svc as BookingService
+    participant Dom as Resource (OOP Subclass)
+    participant Repo as BookingRepo / CatalogRepo
+    participant DB as SQLite3 (BEGIN IMMEDIATE)
+
+    User->>Adapter: POST /api/v1/bookings (X-Role, X-User-Id, payload)
+    Adapter->>Svc: create_booking(actor, BookingCreate)
+    Svc->>Policy: require_action(actor, 'booking:create')
+    Svc->>Repo: get_user(target_user_id) & get_resource_with_subtype(resource_id)
+    Repo-->>Svc: User + Resource subclass via ResourceFactory
+    Svc->>Policy: assert_can_book_for(actor, target_user, resource)
+    Svc->>Dom: validate_booking_request(start_time, end_time, group_size)
+    Dom-->>Svc: ok (duration <= policy max, status == active)
+    Svc->>DB: BEGIN IMMEDIATE (write lock prevents double-booking race)
+    Svc->>Repo: count_resource_overlaps(resource_id, start, end)
+    Svc->>Repo: count_user_overlaps(user_id, start, end)
+    alt exclusive clash or pooled count >= capacity or user clash
+        Svc->>DB: ROLLBACK
+        Svc-->>Adapter: raise ConflictError (HTTP 409)
+    else slot available
+        Svc->>Dom: initial_status(actor) & generate_pin_if_needed()
+        Svc->>Repo: insert_booking(...) -> booking_id
+        Svc->>DB: COMMIT
+        Svc-->>Adapter: BookingRecord (HTTP 201)
+    end
