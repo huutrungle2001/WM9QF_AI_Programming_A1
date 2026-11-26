@@ -58,11 +58,8 @@ flowchart TD
 ```text
 assessments/A1/
 ├── docs/
-│   ├── brief.md
-│   ├── scenario.md
-│   ├── rubric.md
-│   ├── models.md
-│   └── system_design.md
+│   ├── assessment/               # brief.md, scenario.md, rubric.md
+│   └── design/                   # models.md, system_design.md, erd.mmd, erd.svg, erd.png
 ├── src/
 │   ├── config.py                 # DB path, BookingPolicyConfig (quotas, horizons)
 │   ├── db.py                     # DatabaseManager, schema DDL, connection context
@@ -108,24 +105,24 @@ All API endpoints accept role/actor context via request headers (`X-Role`, optio
 | Method | Endpoint | Purpose | Primary Roles |
 | :--- | :--- | :--- | :--- |
 | `GET / POST` | `/api/v1/departments` | List or create departments | Read: All / Write: `admin` |
-| `PATCH / DELETE` | `/api/v1/departments/{dept_code}` | Update or remove department | `admin` |
-| `GET / POST` | `/api/v1/buildings` | List (filter by `zone`/`campus`) or create campus buildings with GPS coordinates | Read: All / Write: `admin` |
+| `PATCH / DELETE` | `/api/v1/departments/{department_id}` | Update or remove department | `admin` |
+| `GET / POST` | `/api/v1/buildings` | List (filter by `zone`) or create campus buildings with GPS coordinates | Read: All / Write: `admin` |
 | `PATCH / DELETE` | `/api/v1/buildings/{building_id}` | Update or remove building | `admin` |
 | `GET / POST` | `/api/v1/users` | List or create users | Read: `admin`, `manager` / Write: `admin` |
 | `PATCH / DELETE` | `/api/v1/users/{user_id}` | Update or remove user | `admin` |
-| `GET / POST` | `/api/v1/resources` | List (filter by `type`, `dept`, `zone`, `building_id`, `facility`, `status`) or add resource | Read: All / Write: `admin`, `manager` |
+| `GET / POST` | `/api/v1/resources` | List (filter by `resource_type`, `department_id`, `zone`, `building_id`, `facility`, `status`) or add resource | Read: All / Write: `admin`, `manager` |
 | `PATCH / DELETE` | `/api/v1/resources/{resource_id}` | Update capacity/location/status (e.g. `maintenance`) or remove | `admin`, `manager` |
 
 ### 5.3 Bookings & Availability
 
 | Method | Endpoint | Purpose | Primary Roles |
 | :--- | :--- | :--- | :--- |
-| `GET` | `/api/v1/availability` | Find active resources free for `booking_date`, `start_time`, `end_time` (optional filters) | All |
-| `GET` | `/api/v1/bookings` | Search & filter bookings (`user_id`, `resource_id`, `resource_type`, `dept_code`, `course`, `status_code`, `date_from`, `date_to`) | All *(scoped/redacted by role)* |
+| `GET` | `/api/v1/availability` | Find active resources free for `start_time`..`end_time` (Unix epoch seconds or ISO-8601 UTC; optional type/zone/facility filters) | All |
+| `GET` | `/api/v1/bookings` | Search & filter bookings (`user_id`, `resource_id`, `resource_type`, `department_id`, `course`, `status_id`, `from_ts`, `to_ts`) | All *(scoped/redacted by role)* |
 | `POST` | `/api/v1/bookings` | Create booking with resource-clash, user-clash, active-status, and quota validation | `admin`, `manager`, `member` |
 | `GET` | `/api/v1/bookings/{booking_id}` | Retrieve single booking record | All *(scoped/redacted by role)* |
-| `PATCH` | `/api/v1/bookings/{booking_id}` | Reschedule time/date, update status, or edit reason/notes (re-runs conflict check) | `admin`, `manager`, owner `member` |
-| `POST` | `/api/v1/bookings/{booking_id}/cancel` | Soft-cancel booking (`status_code = 'cancelled'`), releasing slot while keeping history | `admin`, `manager`, owner `member` |
+| `PATCH` | `/api/v1/bookings/{booking_id}` | Reschedule `start_time`/`end_time`, update status, or edit reference/notes (re-runs conflict check) | `admin`, `manager`, owner `member` |
+| `POST` | `/api/v1/bookings/{booking_id}/cancel` | Soft-cancel booking (`status_id = 'cancelled'`), releasing slot while keeping history | `admin`, `manager`, owner `member` |
 | `DELETE` | `/api/v1/bookings/{booking_id}` | Hard delete record (housekeeping / GDPR erasure) | `admin` |
 
 ### 5.4 Analytics & Visualisations

@@ -1,0 +1,171 @@
+{
+  "captured_at": "2026-11-26",
+  "source": "https://warwick.ac.uk/services/library/using/libspaces/",
+  "study_sites": [
+    {
+      "name": "Main Library",
+      "building": "Library",
+      "opening_hours": "24 hours, Monday to Sunday",
+      "status": "active",
+      "features": ["5 floors", "Silent/quiet/collaborative zones", "PCs", "Accessible Study Rooms", "Online Meeting Room (Floor 2 Extension)", "Sensory Study Room", "Breathing Space", "Study Lounge", "Eating Place"]
+    },
+    {
+      "name": "Wolfson Research Exchange",
+      "building": "Library",
+      "location_detail": "Main Library — Floor 3 Extension",
+      "opening_hours": "24 hours, Monday to Sunday",
+      "status": "active",
+      "eligibility": "research_students_and_staff",
+      "features": ["Study spaces", "3 bookable seminar rooms", "Termly lockers", "Kitchen area", "PCs & printers"]
+    },
+    {
+      "name": "Biomed Grid - Gibbet Hill Campus",
+      "building": "Gibbet Hill - Medical School",
+      "opening_hours": "Monday to Sunday 08:00-23:59",
+      "status": "active",
+      "eligibility": "gibbet_hill_students",
+      "features": ["Reference books", "Individual & group study", "PCs & printers"]
+    },
+    {
+      "name": "Learning Grid Rootes",
+      "building": "Rootes",
+      "opening_hours": "Monday to Sunday 08:00-22:00",
+      "status": "active",
+      "eligibility": "all_students",
+      "features": ["Collaborative study space", "Bookable Group Study Rooms", "PCs & printers"]
+    },
+    {
+      "name": "Learning Grid - University House",
+      "building": "University House - Learning Grid",
+      "opening_hours": "Temporarily closed (reopening date TBC; building closure from 18 Dec 2026)",
+      "status": "maintenance",
+      "eligibility": "all_students",
+      "features": ["Quiet and collaborative areas", "Accessible Study Room", "PCs & printers"]
+    },
+    {
+      "name": "Postgrad Hub - Junction",
+      "building": "Junction",
+      "opening_hours": "Monday to Sunday 08:00-22:00",
+      "status": "active",
+      "eligibility": "pg_students",
+      "features": ["Postgraduate study space", "5 Group Study Rooms", "Accessible Study Room (Room 7)", "Relaxation room", "PCs & printers"]
+    }
+  ],
+  "bookable_specialist_rooms": [
+    {
+      "resource_id": "LIB-OMR-1",
+      "name": "Library Online Meeting Room (Floor 2 Extension)",
+      "resource_type": "study_room",
+      "building": "Library",
+      "location_detail": "Main Library — Floor 2 Extension",
+      "capacity": 2,
+      "opening_hours": "08:00-22:00",
+      "requires_approval": 0,
+      "booking_eligibility": "all_users",
+      "checkin_method": "pin",
+      "can_students_book": true,
+      "booking_portal": "https://roombooking.lib.warwick.ac.uk/"
+    },
+    {
+      "resource_id": "LIB-CCP",
+      "name": "Creative Community Place (formerly Teaching Grid)",
+      "resource_type": "group_space",
+      "building": "Library",
+      "location_detail": "Main Library — Floor 2",
+      "capacity": 35,
+      "opening_hours": "08:00-22:00",
+      "requires_approval": 1,
+      "booking_eligibility": "staff_only",
+      "checkin_method": "none",
+      "can_students_book": false,
+      "booking_portal": "https://warwick.ac.uk/services/library/using/libspaces/creativecommunityplace-availability/book-creative-community-request"
+    },
+    {
+      "resource_id": "LIB-TLS",
+      "name": "Teaching and Learning Space (formerly Co-Creation Space)",
+      "resource_type": "group_space",
+      "building": "Library",
+      "location_detail": "Main Library — Floor 2",
+      "capacity": 30,
+      "opening_hours": "08:00-22:00",
+      "requires_approval": 1,
+      "booking_eligibility": "staff_only",
+      "checkin_method": "none",
+      "can_students_book": false,
+      "booking_portal": "https://warwick.ac.uk/services/library/using/libspaces/the-teaching-and-learning-space-availability/teaching-and-learning-space-request"
+    },
+    {
+      "resource_id": "LIB-GATHERING",
+      "name": "Gathering Space",
+      "resource_type": "group_space",
+      "building": "Library",
+      "location_detail": "Main Library — Floor 2",
+      "capacity": 40,
+      "opening_hours": "08:00-22:00",
+      "requires_approval": 1,
+      "booking_eligibility": "staff_only",
+      "checkin_method": "none",
+      "can_students_book": false,
+      "booking_portal": "https://warwick.ac.uk/services/library/using/libspaces/gatheringspace/gathering-space-availability/gathering-space-request/"
+    },
+    {
+      "resource_id": "LIB-WRE-SEM-1",
+      "name": "Wolfson Research Exchange Seminar Room 1",
+      "resource_type": "group_space",
+      "building": "Library",
+      "location_detail": "Main Library — Floor 3 Extension (Wolfson Research Exchange)",
+      "capacity": 18,
+      "opening_hours": "08:00-22:00",
+      "requires_approval": 1,
+      "booking_eligibility": "pgr_and_staff",
+      "checkin_method": "card_swipe",
+      "can_students_book": true,
+      "eligibility_note": "Research students (PGR) and staff",
+      "booking_portal": "https://warwick.ac.uk/services/library/using/libspaces/book-research-exchange-space"
+    },
+    {
+      "resource_id": "LIB-WRE-SEM-2",
+      "name": "Wolfson Research Exchange Seminar Room 2",
+      "resource_type": "group_space",
+      "building": "Library",
+      "location_detail": "Main Library — Floor 3 Extension (Wolfson Research Exchange)",
+      "capacity": 18,
+      "opening_hours": "08:00-22:00",
+      "requires_approval": 1,
+      "booking_eligibility": "pgr_and_staff",
+      "checkin_method": "card_swipe",
+      "can_students_book": true,
+      "eligibility_note": "Research students (PGR) and staff",
+      "booking_portal": "https://warwick.ac.uk/services/library/using/libspaces/book-research-exchange-space"
+    },
+    {
+      "resource_id": "LIB-WRE-SEM-3",
+      "name": "Wolfson Research Exchange Seminar Room 3",
+      "resource_type": "group_space",
+      "building": "Library",
+      "location_detail": "Main Library — Floor 3 Extension (Wolfson Research Exchange)",
+      "capacity": 18,
+      "opening_hours": "08:00-22:00",
+      "requires_approval": 1,
+      "booking_eligibility": "pgr_and_staff",
+      "checkin_method": "card_swipe",
+      "can_students_book": true,
+      "eligibility_note": "Research students (PGR) and staff",
+      "booking_portal": "https://warwick.ac.uk/services/library/using/libspaces/book-research-exchange-space"
+    },
+    {
+      "resource_id": "LIB-UH-GRID",
+      "name": "Learning Grid University House — Study Space",
+      "resource_type": "group_space",
+      "building": "University House - Learning Grid",
+      "location_detail": "University House — Learning Grid (temporarily closed)",
+      "capacity": 40,
+      "opening_hours": "Temporarily closed",
+      "requires_approval": 0,
+      "booking_eligibility": "students_only",
+      "checkin_method": "card_swipe",
+      "can_students_book": false,
+      "status": "maintenance"
+    }
+  ]
+}

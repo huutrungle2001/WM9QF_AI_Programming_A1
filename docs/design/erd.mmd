@@ -1,0 +1,116 @@
+erDiagram
+    DEPARTMENTS {
+        TEXT department_id PK
+        TEXT department_name UK
+        TEXT faculty
+    }
+
+    BUILDINGS {
+        TEXT building_id PK
+        TEXT building_name
+        TEXT zone
+        REAL lat
+        REAL lon
+        INTEGER floor_count
+    }
+
+    USERS {
+        TEXT user_id PK
+        TEXT full_name
+        TEXT email UK
+        TEXT user_type
+        TEXT role
+        TEXT course
+        TEXT department_id FK
+        INTEGER has_accessibility_access
+    }
+
+    RESOURCES {
+        TEXT resource_id PK
+        TEXT resource_name
+        TEXT resource_type
+        TEXT department_id FK
+        TEXT building_id FK
+        TEXT location_detail
+        INTEGER capacity
+        TEXT booking_unit
+        INTEGER requires_approval
+        TEXT booking_eligibility
+        TEXT checkin_method
+        TEXT status
+    }
+
+    ROOM_RESOURCES {
+        TEXT resource_id PK,FK
+        TEXT room_layout
+        TEXT open_hours
+        INTEGER wrb_student_bookable
+        TEXT info_url
+    }
+
+    LAB_RESOURCES {
+        TEXT resource_id PK,FK
+        INTEGER has_linux
+        INTEGER bookable_for_teaching
+        TEXT opening_hours
+    }
+
+    EQUIPMENT_RESOURCES {
+        TEXT resource_id PK,FK
+        TEXT equipment_category
+        INTEGER max_loan_days
+        TEXT policy_ref
+    }
+
+    SUPPORT_RESOURCES {
+        TEXT resource_id PK,FK
+        TEXT delivery_mode
+        TEXT session_kind
+        TEXT external_ref_id
+        INTEGER scheduled_start
+        INTEGER scheduled_end
+    }
+
+    FACILITIES {
+        TEXT facility_id PK
+        TEXT facility_name UK
+    }
+
+    RESOURCE_FACILITIES {
+        TEXT resource_id PK,FK
+        TEXT facility_id PK,FK
+    }
+
+    BOOKING_STATUSES {
+        TEXT status_id PK
+        TEXT description
+        INTEGER blocks_slot
+    }
+
+    BOOKINGS {
+        INTEGER booking_id PK
+        TEXT user_id FK
+        TEXT resource_id FK
+        INTEGER start_time
+        INTEGER end_time
+        TEXT status_id FK
+        TEXT reason_category
+        TEXT public_reference
+        TEXT private_notes
+        TEXT access_pin
+        INTEGER created_at
+        INTEGER updated_at
+    }
+
+    DEPARTMENTS ||--o{ USERS : "belongs to"
+    DEPARTMENTS ||--o{ RESOURCES : "manages"
+    BUILDINGS ||--o{ RESOURCES : "houses"
+    RESOURCES ||--o| ROOM_RESOURCES : "is a room (1:1)"
+    RESOURCES ||--o| LAB_RESOURCES : "is a PC lab (1:1)"
+    RESOURCES ||--o| EQUIPMENT_RESOURCES : "is equipment (1:1)"
+    RESOURCES ||--o| SUPPORT_RESOURCES : "is support (1:1)"
+    RESOURCES ||--o{ RESOURCE_FACILITIES : "has"
+    FACILITIES ||--o{ RESOURCE_FACILITIES : "tagged on"
+    USERS ||--o{ BOOKINGS : "makes"
+    RESOURCES ||--o{ BOOKINGS : "is booked via"
+    BOOKING_STATUSES ||--o{ BOOKINGS : "classifies"
