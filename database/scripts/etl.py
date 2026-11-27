@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ETL pipeline: Extract Warwick raw snapshots -> Transform to 3NF CTI -> Load catalog.json.
+"""ETL pipeline: Extract Warwick raw snapshots -> Transform to 3NF CTI -> Load seed_data.json.
 
 Reads static lookup/alias tables from database/scripts/etl_mappings.json and produces
 the canonical seed catalogue matching docs/design/03_data_models.md.
@@ -18,7 +18,7 @@ from typing import Any
 SCRIPT_DIR = Path(__file__).resolve().parent
 DB_DIR = SCRIPT_DIR.parent
 DEFAULT_RAW_DIR = DB_DIR / "raw"
-DEFAULT_OUT_PATH = DB_DIR / "catalog.json"
+DEFAULT_OUT_PATH = DB_DIR / "seed_data.json"
 DEFAULT_MAPPINGS_PATH = SCRIPT_DIR / "etl_mappings.json"
 
 
@@ -620,7 +620,7 @@ def build_catalog(raw_dir: Path, mappings_path: Path = DEFAULT_MAPPINGS_PATH) ->
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="ETL Warwick raw snapshots into database/catalog.json")
+    parser = argparse.ArgumentParser(description="ETL Warwick raw snapshots into database/seed_data.json")
     parser.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
     parser.add_argument("--mappings", type=Path, default=DEFAULT_MAPPINGS_PATH)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT_PATH)

@@ -6,7 +6,7 @@ This document captures the empirical campus-portal audit, non-negotiable enginee
 
 ## 1. Empirical Audit of Existing Warwick Booking Systems
 
-Before designing the unified schema, we audited real University of Warwick booking portals (endpoints recorded in `database/apis.json`, raw snapshots and slide screenshots archived under `database/raw/`). The audit directly confirms the scenario's core problem statement: campus learning resources are fragmented across incompatible silos.
+Before designing the unified schema, we audited real University of Warwick booking portals (portal map & endpoints recorded in `database/raw/sources.json`, raw snapshots and slide screenshots archived under `database/raw/`). The audit directly confirms the scenario's core problem statement: campus learning resources are fragmented across incompatible silos.
 
 | Portal / Source | What It Manages | Observed Access / Booking Behaviour | Fragmentation Pain Point |
 | :--- | :--- | :--- | :--- |
@@ -23,9 +23,9 @@ Before designing the unified schema, we audited real University of Warwick booki
 
 **Core Principle**: *Design the relational schema and OOP domain strictly for the target domain first; treat raw Warwick portal exports purely as a seed adapter (`database/scripts/etl.py`).* Legacy portal fields (e.g. `source_system`, `source_external_id`, `request_only="P"`, HTML blobs) must never leak into canonical database tables.
 
-Mapping the 5 scenario resource categories into our normalised `database/catalog.json` yields **531 realistic campus resources** across **58 departments**, **205 buildings**, **67 facilities**, and **3,126 resource-facility links** (including **211 rooms with verified 360° panorama `image_url`s**):
+Mapping the 5 scenario resource categories into our normalised `database/seed_data.json` yields **531 realistic campus resources** across **58 departments**, **205 buildings**, **67 facilities**, and **3,126 resource-facility links** (including **211 rooms with verified 360° panorama `image_url`s**):
 
-| Scenario Category (`resource_type`) | CTI Subtype Table | Seeded Count | Real-World Examples in `catalog.json` |
+| Scenario Category (`resource_type`) | CTI Subtype Table | Seeded Count | Real-World Examples in `seed_data.json` |
 | :--- | :--- | :---: | :--- |
 | `study_room` | `rooms` | 180 | Central small study rooms, 7 Accessible Study Rooms, Online Meeting Room, consultation rooms |
 | `group_space` | `rooms` | 290 | Rootes Group Study 1–2, PG Hub Rooms, Wolfson Research Exchange, central/departmental seminar & lecture rooms |

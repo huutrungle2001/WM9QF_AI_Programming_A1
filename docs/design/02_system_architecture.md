@@ -72,17 +72,15 @@ assessments/A1/
 │   └── SDLC.md                            # SDLC evaluation, stakeholder interview guide/log, TDD evidence, reflection
 │
 ├── database/                              # Data sources, ETL pipeline, canonical DDL & SQLite runtime DB
-│   ├── raw/                               # 6 Warwick portal snapshots + 11 slide screenshots
+│   ├── raw/                               # sources.json (sitemap + apis), 6 Warwick portal snapshots + 11 slide screenshots
 │   ├── scripts/
-│   │   ├── etl.py                         # raw/*.json -> catalog.json (11-table 3NF CTI)
+│   │   ├── etl.py                         # raw/*.json -> seed_data.json (11-table 3NF CTI)
 │   │   ├── etl_mappings.json              # Static portal aliases & curated equipment catalogue
-│   │   └── seed_db.py                     # Load catalog.json + synthetic users & multi-week bookings into SQLite
-│   ├── apis.json                          # Discovered Warwick source API inventory
-│   ├── sitemap.json                       # Portal inventory & observed real-world permission rules
+│   │   └── seed_db.py                     # Load seed_data.json + synthetic users & multi-week bookings into SQLite
 │   ├── schema.sql                         # Canonical 11-table 3NF CTI SQLite DDL (Single Source of Truth)
-│   ├── catalog.json                       # Normalized Warwick catalogue (531 resources, 205 buildings, 58 depts)
+│   ├── seed_data.json                     # Normalised Warwick seed data (531 resources, 205 buildings, 58 depts)
 │   ├── samples/                           # Sample CSV files for batch import & error-reporting demos
-│   └── campus_bookings.db                 # Runtime SQLite database (gitignored; reproducible via seed_db.py)
+│   └── resource_bookings.db               # Runtime SQLite database (gitignored; reproducible via seed_db.py)
 │
 ├── server/                                # Python 3 Backend: OOP Domain + REST API + CLI + Analytics + TDD
 │   ├── pyproject.toml                     # pytest and project metadata
@@ -176,7 +174,7 @@ flowchart LR
     Routers --> Services["server/app/services/ (PolicyGuard + Core Logic)"]
     Services --> Domain["server/app/domain/ (OOP Resource Hierarchy)"]
     Services --> Repos["server/app/repositories/ (Parameterised SQL)"]
-    Repos --> DB["database/campus_bookings.db (SQLite3)"]
+    Repos --> DB["database/resource_bookings.db (SQLite3)"]
     ETL["database/scripts/ (etl.py, seed_db.py)"] --> DB
 ```
 

@@ -6,8 +6,8 @@ Granular, checkable tasks derived from `PLAN.md`. Tick off items sequentially pe
 
 ## Phase 0 — Research & Design Foundation *(Completed)*
 
-- [x] `T0.1` `[DOCS]` Audit 6 Warwick campus portals, archive snapshots & screenshots in `database/raw/` and `database/apis.json`
-- [x] `T0.2` `[DATA]` Build `database/scripts/etl.py` (+ `etl_mappings.json`) and generate `database/catalog.json` (531 resources, 67 facilities, 3,126 links, 211 360° `image_url`s)
+- [x] `T0.1` `[DOCS]` Audit 6 Warwick campus portals, archive snapshots, screenshots & `database/raw/sources.json` (`sitemap` + `apis`)
+- [x] `T0.2` `[DATA]` Build `database/scripts/etl.py` (+ `etl_mappings.json`) and generate `database/seed_data.json` (531 resources, 67 facilities, 3,126 links, 211 360° `image_url`s)
 - [x] `T0.3` `[DOCS]` Finalise design suite `docs/design/00_research.md` .. `06_tdd_plan.md` + 6 diagrams (`.mmd` + `.png`)
 - [x] `T0.4` `[DOCS]` Create `docs/SDLC.md`, `PLAN.md`, and `TODO.md`
 
@@ -20,7 +20,7 @@ Granular, checkable tasks derived from `PLAN.md`. Tick off items sequentially pe
 - [ ] `T1.3` `[GREEN]` Write `database/schema.sql` (11 tables, FKs, `CHECK` constraints, 5 partial/composite indexes)
 - [ ] `T1.4` `[GREEN]` Implement `server/app/config.py` (`AppSettings`, `BookingPolicyConfig`) and `server/app/database.py` (`DatabaseManager` with `PRAGMA foreign_keys=ON` & `BEGIN IMMEDIATE`)
 - [ ] `T1.5` `[GREEN]` Implement `server/app/domain/enums.py`, `exceptions.py`, and `resources.py` (`Resource(ABC)`, `RoomResource`, `EquipmentResource`, `AcademicSupportResource`, `ResourceFactory`)
-- [ ] `T1.6` `[GREEN]` Implement `database/scripts/seed_db.py` (load `catalog.json` + 50 synthetic users + ~400 multi-week bookings with exam-week peak)
+- [ ] `T1.6` `[GREEN]` Implement `database/scripts/seed_db.py` (load `seed_data.json` + 50 synthetic users + ~400 multi-week bookings with exam-week peak)
 - [ ] `T1.7` `[REFACTOR]` Run `pytest server/tests/test_db_and_domain.py -v` and `python3 database/scripts/seed_db.py --reset` -> verify zero FK errors and commit Phase 1
 
 ---

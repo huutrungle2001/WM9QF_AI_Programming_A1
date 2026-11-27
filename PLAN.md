@@ -25,12 +25,12 @@ This document is the detailed technical execution plan translating `docs/design/
   - `enums.py`: `Role`, `UserType`, `ResourceType`, `RoomStyle`, `BookingEligibility`, `CheckinMethod`, `ResourceStatus`, `BookingStatusId`.
   - `exceptions.py`: `DomainError`, `UnauthorizedError`, `ForbiddenError`, `NotFoundError`, `ConflictError`, `ValidationError`.
   - `resources.py`: `Resource(ABC)` + `RoomResource` (`max_concurrent_bookings=1`), `EquipmentResource` (`=quantity`), `AcademicSupportResource` (`=max_attendees`) + `ResourceFactory`.
-- `database/scripts/seed_db.py`: Idempotent/deterministic seeder loading `database/catalog.json` (58 departments, 205 buildings, 6 booking statuses, 531 resources, 67 facilities, 3,126 links) plus 50 realistic synthetic users across all 4 roles/user types and ~400 multi-week bookings with a realistic exam-week demand spike, cancellations, rejections, and no-shows.
+- `database/scripts/seed_db.py`: Idempotent/deterministic seeder loading `database/seed_data.json` (58 departments, 205 buildings, 6 booking statuses, 531 resources, 67 facilities, 3,126 links) plus 50 realistic synthetic users across all 4 roles/user types and ~400 multi-week bookings with a realistic exam-week demand spike, cancellations, rejections, and no-shows.
 - `server/tests/conftest.py` & `server/tests/test_db_and_domain.py`.
 
 ### Exit Criteria
 - `pytest server/tests/test_db_and_domain.py -v` passes 100%.
-- Running `python3 database/scripts/seed_db.py --reset` builds `database/campus_bookings.db` cleanly with zero FK violations (`PRAGMA foreign_key_check` empty).
+- Running `python3 database/scripts/seed_db.py --reset` builds `database/resource_bookings.db` cleanly with zero FK violations (`PRAGMA foreign_key_check` empty).
 
 ---
 

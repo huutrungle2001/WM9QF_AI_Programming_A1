@@ -4,5 +4,5 @@ flowchart LR
     Routers --> Services["server/app/services/ (PolicyGuard + Core Logic)"]
     Services --> Domain["server/app/domain/ (OOP Resource Hierarchy)"]
     Services --> Repos["server/app/repositories/ (Parameterised SQL)"]
-    Repos --> DB["database/campus_bookings.db (SQLite3)"]
+    Repos --> DB["database/resource_bookings.db (SQLite3)"]
     ETL["database/scripts/ (etl.py, seed_db.py)"] --> DB
