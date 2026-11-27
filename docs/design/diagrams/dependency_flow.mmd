@@ -1,0 +1,8 @@
+flowchart LR
+    Client["client/ (Web UI)"] -->|HTTP JSON| Routers["server/app/routers/ (FastAPI)"]
+    CLI["server/app/cli/ (CLI)"] --> Services
+    Routers --> Services["server/app/services/ (PolicyGuard + Core Logic)"]
+    Services --> Domain["server/app/domain/ (OOP Resource Hierarchy)"]
+    Services --> Repos["server/app/repositories/ (Parameterised SQL)"]
+    Repos --> DB["database/campus_bookings.db (SQLite3)"]
+    ETL["database/scripts/ (normalize.py, seed_db.py)"] --> DB

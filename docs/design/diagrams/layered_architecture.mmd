@@ -1,0 +1,37 @@
+flowchart TD
+    CLI["CLI Interface (Typer / Interactive Menu)"] --> Policy
+    API["FastAPI REST API (/api/v1 + OpenAPI /docs)"] --> Policy
+
+    subgraph Core["Application Core"]
+        Policy["Policy & Privacy Layer (RBAC Guard + PII Redaction)"]
+        CatalogSvc["CatalogService (Departments, Users, Resources)"]
+        BookingSvc["BookingService (CRUD, Availability, Clash & Quota Rules)"]
+        AnalyticsSvc["AnalyticsService (Demand, Peaks, Cancellations, Trends, Fairness)"]
+        ChartSvc["ChartService (Matplotlib / Seaborn PNG Exports)"]
+        ImportSvc["Seed & CSV Import Service"]
+
+        Policy --> CatalogSvc
+        Policy --> BookingSvc
+        Policy --> AnalyticsSvc
+        Policy --> ChartSvc
+        Policy --> ImportSvc
+    end
+
+    subgraph Persistence["Persistence Layer (100% Parameterised SQL)"]
+        CatalogRepo["CatalogRepository"]
+        BookingRepo["BookingRepository"]
+        AnalyticsRepo["AnalyticsRepository"]
+        DB["DatabaseManager (SQLite3 + PRAGMA foreign_keys=ON)"]
+
+        CatalogRepo --> DB
+        BookingRepo --> DB
+        AnalyticsRepo --> DB
+    end
+
+    CatalogSvc --> CatalogRepo
+    BookingSvc --> BookingRepo
+    BookingSvc --> CatalogRepo
+    AnalyticsSvc --> AnalyticsRepo
+    ChartSvc --> AnalyticsSvc
+    ImportSvc --> CatalogRepo
+    ImportSvc --> BookingRepo

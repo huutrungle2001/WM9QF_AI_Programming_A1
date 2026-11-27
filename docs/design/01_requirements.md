@@ -2,18 +2,18 @@
 
 ## 1. Functional Requirements (FR)
 
-| ID | Requirement | Target Actors | Verification |
-| :--- | :--- | :--- | :--- |
-| **FR-01** | Manage campus catalogue: create, view, filter, update, and soft-retire `departments`, `buildings`, `users`, `resources` (CTI subtypes), and `facilities`. | `admin`, `manager` | `test_catalog_crud.py` |
-| **FR-02** | Browse & search resources by `resource_type`, `zone`, `building_id`, `department_id`, `min_capacity`, `facility`, and `status`, automatically filtered to eligible resources for `member` via Policy-to-SQL pushdown. | All | `test_policy_and_privacy.py` |
-| **FR-03** | Check real-time slot availability (`GET /api/v1/availability`) for any UTC Unix window `[start_time, end_time)` using each resource subtype's concurrency limit (`1` for rooms, `quantity` for equipment, `max_attendees` for support). | All | `test_bookings_and_conflicts.py` |
-| **FR-04** | Create bookings with 2-way overlap prevention (subtype concurrency limit + user double-booking), configurable duration limits (`BookingPolicyConfig`), and automatic `pending` vs `confirmed` state selection. | `admin`, `manager`, `member` | `test_bookings_and_conflicts.py` |
-| **FR-05** | Approve or reject `pending` requests, reschedule existing bookings (re-running full conflict & duration validation), and transition bookings to `cancelled`, `completed`, or `no_show`. | `admin`, `manager`, owner `member` | `test_bookings_and_conflicts.py` |
-| **FR-06** | Soft-delete bookings (`deleted_at`), retire resources (`status='retired'`), and deactivate users (`is_active=0`)—preserving historical integrity and auditability (zero hard deletes). | `admin` | `test_bookings_and_conflicts.py` |
-| **FR-07** | Seed deterministic campus data from `database/catalog.json` + synthetic multi-week bookings, and support CSV batch import with line-numbered validation/conflict reporting. | `admin`, `manager` | `test_db_and_domain.py` |
-| **FR-08** | Generate operational & fairness analytics: overview KPIs, most-booked & underused resources, day-of-week x hour demand heatmap, weekly booking trends (pressure periods), cancellation/no-show breakdown, and course fairness (`k >= 5`). | `admin`, `manager`, `student_services` | `test_analytics_and_charts.py` |
-| **FR-09** | Export publication-ready PNG visualisations (resource demand bar chart, day-by-hour heatmap, weekly trend line, course fairness chart) to `server/reports/charts/`. | `admin`, `manager`, `student_services` | `test_analytics_and_charts.py` |
-| **FR-10** | Expose identical capabilities through both a FastAPI REST API (`/api/v1` + OpenAPI `/docs`) and a Python CLI (interactive menu + scriptable subcommands). | All | `test_api_and_cli.py` |
+| ID        | Requirement                                                                                                                                                                                                                               | Target Actors                          | Verification                     |
+| :--------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------- | :-------------------------------- |
+| **FR-01** | Manage campus catalogue: create, view, filter, update, and soft-retire `departments`, `buildings`, `users`, `resources` (CTI subtypes), and `facilities`.                                                                                 | `admin`, `manager`                     | `test_catalog_crud.py`           |
+| **FR-02** | Browse & search resources by `resource_type`, `zone`, `building_id`, `department_id`, `min_capacity`, `facility`, and `status`, automatically filtered to eligible resources for `member` via Policy-to-SQL pushdown.                     | All                                    | `test_policy_and_privacy.py`     |
+| **FR-03** | Check real-time slot availability (`GET /api/v1/availability`) for any UTC Unix window `[start_time, end_time)` using each resource subtype's concurrency limit (`1` for rooms, `quantity` for equipment, `max_attendees` for support).   | All                                    | `test_bookings_and_conflicts.py` |
+| **FR-04** | Create bookings with 2-way overlap prevention (subtype concurrency limit + user double-booking), configurable duration limits (`BookingPolicyConfig`), and automatic `pending` vs `confirmed` state selection.                            | `admin`, `manager`, `member`           | `test_bookings_and_conflicts.py` |
+| **FR-05** | Approve or reject `pending` requests, reschedule existing bookings (re-running full conflict & duration validation), and transition bookings to `cancelled`, `completed`, or `no_show`.                                                   | `admin`, `manager`, owner `member`     | `test_bookings_and_conflicts.py` |
+| **FR-06** | Soft-delete bookings (`deleted_at`), retire resources (`status='retired'`), and deactivate users (`is_active=0`)—preserving historical integrity and auditability (zero hard deletes).                                                    | `admin`                                | `test_bookings_and_conflicts.py` |
+| **FR-07** | Seed deterministic campus data from `database/catalog.json` + synthetic multi-week bookings, and support CSV batch import with line-numbered validation/conflict reporting.                                                               | `admin`, `manager`                     | `test_db_and_domain.py`          |
+| **FR-08** | Generate operational & fairness analytics: overview KPIs, most-booked & underused resources, day-of-week x hour demand heatmap, weekly booking trends (pressure periods), cancellation/no-show breakdown, and course fairness (`k >= 5`). | `admin`, `manager`, `student_services` | `test_analytics_and_charts.py`   |
+| **FR-09** | Export publication-ready PNG visualisations (resource demand bar chart, day-by-hour heatmap, weekly trend line, course fairness chart) to `server/reports/charts/`.                                                                       | `admin`, `manager`, `student_services` | `test_analytics_and_charts.py`   |
+| **FR-10** | Expose identical capabilities through both a FastAPI REST API (`/api/v1` + OpenAPI `/docs`) and a Python CLI (interactive menu + scriptable subcommands).                                                                                 | All                                    | `test_api_and_cli.py`            |
 
 ---
 
@@ -44,7 +44,7 @@
 
 ## 4. Booking Lifecycle State Machine
 
-*Rendered exports: `docs/design/diagram/booking_state.{mmd,svg,png}`.*
+*Rendered exports: `docs/design/diagrams/booking_state.{mmd,svg,png}`.*
 
 ```mermaid
 stateDiagram-v2
@@ -77,7 +77,7 @@ stateDiagram-v2
 
 ## 5. Core Flow Sequence Diagram (`POST /api/v1/bookings`)
 
-*Rendered exports: `docs/design/diagram/booking_sequence.{mmd,svg,png}`.*
+*Rendered exports: `docs/design/diagrams/booking_sequence.{mmd,svg,png}`.*
 
 ```mermaid
 sequenceDiagram
@@ -105,7 +105,7 @@ sequenceDiagram
         Svc->>DB: ROLLBACK
         Svc-->>Adapter: raise ConflictError (HTTP 409)
     else slot available
-        Svc->>Dom: initial_status(actor) & generate_pin_if_needed()
+        Svc->>Dom: initial_status(actor)
         Svc->>Repo: insert_booking(...) -> booking_id
         Svc->>DB: COMMIT
         Svc-->>Adapter: BookingRecord (HTTP 201)

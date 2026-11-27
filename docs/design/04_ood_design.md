@@ -6,7 +6,7 @@ This document defines the Python OOP domain model (`server/app/domain/`), design
 
 ## 1. Class Diagram
 
-*Rendered exports: `docs/design/diagram/class_diagram.{mmd,svg,png}`.*
+*Rendered exports: `docs/design/diagrams/class_diagram.{mmd,svg,png}`.*
 
 ```mermaid
 classDiagram

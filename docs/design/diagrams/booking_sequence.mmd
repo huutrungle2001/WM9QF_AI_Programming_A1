@@ -23,7 +23,7 @@ sequenceDiagram
         Svc->>DB: ROLLBACK
         Svc-->>Adapter: raise ConflictError (HTTP 409)
     else slot available
-        Svc->>Dom: initial_status(actor) & generate_pin_if_needed()
+        Svc->>Dom: initial_status(actor)
         Svc->>Repo: insert_booking(...) -> booking_id
         Svc->>DB: COMMIT
         Svc-->>Adapter: BookingRecord (HTTP 201)
