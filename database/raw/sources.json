@@ -15,7 +15,7 @@
         ],
         "permissions_and_rules": {
           "who_can_book": "Current Warwick students and staff (separate Scientia logon; teaching work areas are staff-only).",
-          "approval": "Verified live as PGT student u5838393: 152 CENTRAL rooms on Main Site appear, ALL flagged Request? = P (pending Central Timetabling approval, 1 working day notice); local departmental rooms and teaching work areas are hidden from students.",
+          "approval": "Verified live as a PGT student: 152 CENTRAL rooms on Main Site appear, ALL flagged Request? = P (pending Central Timetabling approval, 1 working day notice); local departmental rooms and teaching work areas are hidden from students.",
           "capacity_rule": "Shows rooms up to 1.5x entered group size to prevent small groups booking oversized rooms.",
           "booking_slots": "Hourly slots 09:00-22:00 (duration 1h-13h), single date or recurring multi-day/week; filters by Group Size (1-500), Zone (Main/Gibbet Hill/Westwood), and 13 AV/facility suitabilities.",
           "privacy_split": "Two text fields: 'Meaningful Reference' (public on timetable reports) vs 'Other information' (private to booking staff).",
@@ -42,10 +42,10 @@
           "group_space"
         ],
         "permissions_and_rules": {
-          "verified_student_view": "Logged in as PGT student u5838393 on RoomBooking.dll: only 2 room types visible ('Group Study Room', 'Online Meeting Room'); 'Accessible Study Room' is completely hidden unless registered with Disability Services. Actions limited to Create Booking + View/Cancel Existing Booking.",
+          "verified_student_view": "Logged in as a PGT student on RoomBooking.dll: only 2 room types visible ('Group Study Room', 'Online Meeting Room'); 'Accessible Study Room' is completely hidden unless registered with Disability Services. Actions limited to Create Booking + View/Cancel Existing Booking.",
           "accessible_study_rooms": "Restricted to students registered with Disability Services; max 3 hours/day (1h + 2h slots); book up to 4 weeks ahead; mandatory ID card tap at door or auto-cancelled as no-show.",
           "pg_hub_rooms": "Postgraduate student groups only (no staff, no solo calls); max 3 hours guideline; Rooms 1-5 moved to first-come-first-served, Room 7 remains bookable (Disability Services).",
-          "creative_community_place": "Restricted (HTTP 403 for PGT student u5838393 — staff/authorised requestors only).",
+          "creative_community_place": "Restricted (HTTP 403 for standard PGT student — staff/authorised requestors only).",
           "research_exchange_and_tls": "SSO-gated SiteBuilder request forms accessible to PG students and staff (requires approval)."
         },
         "raw_snapshots": [
@@ -254,7 +254,7 @@
         "method": "sso",
         "login_url": "https://myadvantage.warwick.ac.uk/",
         "sso_path": "/providers/saml/SsoPostRedirect/1",
-        "account_hint": "u5838393@live.warwick.ac.uk"
+        "account_hint": "<warwick-student-account>"
       },
       "endpoints": {
         "appointment_topics": {
