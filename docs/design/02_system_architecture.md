@@ -68,7 +68,7 @@ assessments/A1/
 │
 ├── docs/                                  # Assessment brief, design specs, and LO5 reflections
 │   ├── assessment/                        # brief.md, scenario.md, rubric.md
-│   ├── design/                            # 00_research.md .. 06_tdd_plan.md, diagrams/
+│   ├── design/                            # 00_research.md .. 07_ui_ux_design.md, diagrams/
 │   └── SDLC.md                            # SDLC evaluation, stakeholder interview guide/log, TDD evidence, reflection
 │
 ├── database/                              # Data sources, ETL pipeline, canonical DDL & SQLite runtime DB
