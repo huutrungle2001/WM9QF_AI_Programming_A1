@@ -24,7 +24,7 @@ To balance **OOA/OOD inheritance** with pragmatic flexibility (avoiding brittle 
 
 ### Entity-Relationship Diagram (ERD)
 
-*Rendered vector/raster exports live in `docs/design/diagrams/` (`erd.mmd`, `erd.svg`, `erd.png`).*
+*Rendered exports live in `docs/design/diagrams/` (`erd.mmd`, `erd.png`).*
 
 ```mermaid
 erDiagram

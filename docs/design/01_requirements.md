@@ -44,7 +44,7 @@
 
 ## 4. Booking Lifecycle State Machine
 
-*Rendered exports: `docs/design/diagrams/booking_state.{mmd,svg,png}`.*
+*Rendered exports: `docs/design/diagrams/booking_state.{mmd,png}`.*
 
 ```mermaid
 stateDiagram-v2
@@ -77,7 +77,7 @@ stateDiagram-v2
 
 ## 5. Core Flow Sequence Diagram (`POST /api/v1/bookings`)
 
-*Rendered exports: `docs/design/diagrams/booking_sequence.{mmd,svg,png}`.*
+*Rendered exports: `docs/design/diagrams/booking_sequence.{mmd,png}`.*
 
 ```mermaid
 sequenceDiagram
