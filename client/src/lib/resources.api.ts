@@ -7,6 +7,7 @@ import type {
   BuildingOut,
   DepartmentCreate,
   DepartmentOut,
+  FacilityCreate,
   FacilityOut,
   ResourceCreate,
   ResourceFilter,
@@ -137,6 +138,17 @@ export async function createBuilding(
 
 export async function listFacilities(actor: ActorContext): Promise<FacilityOut[]> {
   return apiRequest<FacilityOut[]>("/facilities", { actor });
+}
+
+export async function createFacility(
+  actor: ActorContext,
+  payload: FacilityCreate
+): Promise<FacilityOut> {
+  return apiRequest<FacilityOut>("/facilities", {
+    method: "POST",
+    actor,
+    body: payload,
+  });
 }
 
 export async function listBookingStatuses(

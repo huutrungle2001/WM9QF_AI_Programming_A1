@@ -159,7 +159,11 @@ export function ActorProvider({ children }: { children: React.ReactNode }) {
 
   // Mount data-fetching children only after the saved identity is resolved.
   if (actorId === null) {
-    return <p role="status" className="p-6 text-sm text-slate-600">Loading demo role…</p>;
+    return (
+      <div role="status" className="flex min-h-screen items-center justify-center bg-paper text-sm text-slate-muted">
+        Loading workspace…
+      </div>
+    );
   }
 
   return (

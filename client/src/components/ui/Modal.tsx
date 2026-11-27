@@ -33,30 +33,30 @@ export function Modal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-[2px]"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/35 backdrop-blur-[2px]"
       role="dialog"
       aria-modal="true"
       onClick={onClose}
     >
       <div
-        className={`w-full ${maxWidthClass} rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden`}
+        className={`w-full ${maxWidthClass} rounded-[20px] bg-paper shadow-steep-float border border-hairline overflow-hidden`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between gap-4 border-b border-slate-200 px-6 py-4">
+        <div className="flex items-start justify-between gap-4 border-b border-hairline px-6 py-4">
           <div>
-            <h2 className="text-base font-semibold text-slate-900">{title}</h2>
-            {subtitle && <p className="mt-0.5 text-xs text-slate-500">{subtitle}</p>}
+            <h2 className="text-[16px] font-semibold tracking-[-0.015em] text-ink">{title}</h2>
+            {subtitle && <p className="mt-0.5 text-[13px] text-slate-muted">{subtitle}</p>}
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full text-slate-muted hover:bg-mist hover:text-ink transition-colors"
             aria-label="Close modal"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
-        <div className="px-6 py-5 max-h-[80vh] overflow-y-auto">{children}</div>
+        <div className="px-6 py-5 max-h-[82vh] overflow-y-auto">{children}</div>
       </div>
     </div>
   );

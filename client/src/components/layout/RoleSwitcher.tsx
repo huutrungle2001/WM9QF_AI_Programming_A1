@@ -1,72 +1,98 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Check, ChevronDown, ShieldAlert, Accessibility, UserCog } from "lucide-react";
+import { Accessibility, Check, ChevronDown, Shield } from "lucide-react";
 import { useActor } from "@/hooks/useActor";
-import { ROLE_LABELS, type Role } from "@/types";
-import { Badge, type BadgeTone } from "@/components/ui/Badge";
+import { ROLE_LABELS } from "@/types";
 
-const ROLE_TONES: Record<Role, BadgeTone> = {
-  admin: "plum",
-  manager: "indigo",
-  student_services: "redacted",
-  member: "emerald",
-};
+interface RoleSwitcherProps {
+  variant?: "pill" | "sidebar";
+}
 
-export function RoleSwitcher() {
+function initialsFor(fullName: string): string {
+  return fullName
+    .split(" ")
+    .filter((part) => !part.endsWith("."))
+    .slice(0, 2)
+    .map((p) => p[0])
+    .join("");
+}
+
+export function RoleSwitcher({ variant = "pill" }: RoleSwitcherProps) {
   const { actor, presets, setActorById } = useActor();
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!open) return;
     const onOutsideClick = (e: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setOpen(false);
       }
     };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
     document.addEventListener("mousedown", onOutsideClick);
-    return () => document.removeEventListener("mousedown", onOutsideClick);
-  }, []);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onOutsideClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  const isSidebar = variant === "sidebar";
 
   return (
     <div className="relative" ref={containerRef}>
       <button
         type="button"
+        aria-expanded={open}
+        aria-haspopup="listbox"
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-left shadow-sm hover:border-warwick-300 hover:bg-warwick-50/40 transition-colors"
+        className={
+          isSidebar
+            ? "flex w-full items-center justify-between gap-2 rounded-[10px] border border-hairline bg-paper px-2.5 py-2 text-left transition-colors hover:border-smoke/70"
+            : "flex items-center gap-2 rounded-full border border-hairline bg-paper py-1 pl-1.5 pr-3 text-left transition-colors hover:border-smoke/70 hover:bg-fog"
+        }
       >
-        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-warwick-700 text-xs font-semibold text-white">
-          {actor.full_name
-            .split(" ")
-            .filter((part) => !part.endsWith("."))
-            .slice(0, 2)
-            .map((p) => p[0])
-            .join("")}
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ink text-[11px] font-semibold text-paper">
+            {initialsFor(actor.full_name)}
+          </span>
+          <span className="min-w-0 truncate">
+            <span className="block truncate text-[13px] font-medium text-ink leading-tight">
+              {actor.label}
+            </span>
+            {isSidebar && (
+              <span className="block truncate text-[11px] text-slate-muted leading-tight mt-0.5">
+                {ROLE_LABELS[actor.role]}
+              </span>
+            )}
+          </span>
+          {!isSidebar && (
+            <span className="hidden md:inline text-[12px] text-slate-muted">
+              · {ROLE_LABELS[actor.role]}
+            </span>
+          )}
         </div>
-        <div className="hidden sm:block leading-tight">
-          <div className="flex items-center gap-1.5">
-            <span className="text-xs font-semibold text-slate-900">{actor.label}</span>
-            <span className="font-mono text-[10px] text-slate-500">{actor.id}</span>
-          </div>
-          <div className="text-[11px] text-slate-500">{actor.full_name}</div>
-        </div>
-        <Badge tone={ROLE_TONES[actor.role]} className="hidden md:inline-flex">
-          {ROLE_LABELS[actor.role]}
-        </Badge>
-        <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
+        <ChevronDown
+          className={`h-3.5 w-3.5 shrink-0 text-slate-muted transition-transform ${open ? "rotate-180" : ""}`}
+        />
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-80 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl z-50">
-          <div className="flex items-center justify-between px-2.5 py-2 border-b border-slate-100">
-            <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-800">
-              <UserCog className="h-3.5 w-3.5 text-warwick-700" />
-              Demo Actor / Role Switcher
-            </div>
-            <span className="font-mono text-[10px] text-slate-400">X-Role · X-User-Id</span>
+        <div
+          className={`absolute z-50 mt-2 w-[300px] rounded-[16px] border border-hairline bg-paper p-1.5 shadow-steep-float ${
+            isSidebar ? "left-0" : "right-0"
+          }`}
+        >
+          <div className="flex items-center justify-between px-2.5 py-2 border-b border-hairline">
+            <span className="text-[12px] font-semibold text-ink">Switch demo role</span>
+            <span className="font-mono text-[10.5px] text-ash">X-Role</span>
           </div>
 
-          <div className="mt-1 space-y-0.5 max-h-96 overflow-y-auto">
+          <div className="mt-1 space-y-0.5 max-h-[360px] overflow-y-auto">
             {presets.map((preset) => {
               const selected = preset.id === actor.id;
               return (
@@ -77,49 +103,37 @@ export function RoleSwitcher() {
                     setActorById(preset.id);
                     setOpen(false);
                   }}
-                  className={`w-full flex items-start justify-between gap-2 rounded-xl px-2.5 py-2 text-left transition-colors ${
-                    selected
-                      ? "bg-warwick-50 ring-1 ring-warwick-200"
-                      : "hover:bg-slate-50"
+                  className={`w-full flex items-start justify-between gap-2 rounded-[10px] px-2.5 py-2 text-left transition-colors ${
+                    selected ? "bg-mist text-ink" : "hover:bg-fog"
                   }`}
                 >
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5 flex-wrap">
-                      <span className="text-xs font-semibold text-slate-900">
+                      <span className="text-[13px] font-medium text-ink">
                         {preset.label}
                       </span>
-                      <span className="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[10px] text-slate-600">
+                      <span className="font-mono text-[10.5px] text-slate-muted">
                         {preset.id}
                       </span>
                       {preset.role === "student_services" && (
-                        <span
-                          title="PII redacted & k>=5 suppressed"
-                          className="inline-flex items-center gap-0.5 text-[10px] font-medium text-fuchsia-700"
-                        >
-                          <ShieldAlert className="h-3 w-3" />
+                        <span className="inline-flex items-center gap-0.5 rounded-full bg-blush px-1.5 py-0.5 text-[10px] font-medium text-sienna">
+                          <Shield className="h-2.5 w-2.5" />
                           Redacted
                         </span>
                       )}
                       {preset.has_accessibility_access && (
-                        <span
-                          title="Accessibility rooms unlocked"
-                          className="inline-flex items-center gap-0.5 text-[10px] font-medium text-indigo-700"
-                        >
-                          <Accessibility className="h-3 w-3" />
+                        <span className="inline-flex items-center gap-0.5 rounded-full bg-mist px-1.5 py-0.5 text-[10px] font-medium text-ink">
+                          <Accessibility className="h-2.5 w-2.5" />
                           Accessible
                         </span>
                       )}
                     </div>
-                    <p className="mt-0.5 text-[11px] text-slate-600 truncate">
-                      {preset.full_name}
-                    </p>
-                    <p className="text-[10px] text-slate-400 truncate">
-                      {preset.subtitle}
+                    <p className="mt-0.5 text-[11.5px] text-slate-muted truncate">
+                      {preset.full_name} · {preset.subtitle}
                     </p>
                   </div>
-                  <div className="flex flex-col items-end gap-1 shrink-0">
-                    <Badge tone={ROLE_TONES[preset.role]}>{preset.role}</Badge>
-                    {selected && <Check className="h-3.5 w-3.5 text-warwick-700" />}
+                  <div className="flex items-center pt-0.5 shrink-0">
+                    {selected && <Check className="h-3.5 w-3.5 text-ink" />}
                   </div>
                 </button>
               );

@@ -1,329 +1,355 @@
 "use client";
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { Compass, Info, Sparkles } from "lucide-react";
-import type {
-  AvailabilitySlot,
-  FacilityOut,
-  ResourceOut,
+import React, { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import {
+  ArrowRight,
+  BookOpen,
+  Cpu,
+  GraduationCap,
+  Monitor,
+  Search,
+  Users,
+} from "lucide-react";
+import {
+  RESOURCE_TYPE_LABELS,
+  type BuildingOut,
+  type DepartmentOut,
+  type FacilityOut,
+  type ResourceOut,
+  type ResourceType,
 } from "@/types";
 import {
-  checkAvailability,
+  listBuildings,
+  listDepartments,
   listFacilities,
   listResources,
 } from "@/lib/resources.api";
-import { ApiError } from "@/lib/api-client";
-import { dateTimeLocalToEpoch, defaultWindowForType } from "@/lib/format";
+import { formatNumber } from "@/lib/format";
 import { useActor } from "@/hooks/useActor";
-import {
-  FilterBar,
-  type ExplorerFilterState,
-} from "@/components/resources/FilterBar";
-import { ResourceCard } from "@/components/resources/ResourceCard";
-import { BookingDrawer } from "@/components/bookings/BookingDrawer";
-import { ErrorBanner } from "@/components/ui/ErrorBanner";
-import { EmptyState } from "@/components/ui/EmptyState";
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 
-const PAGE_SIZE = 48;
+const CATEGORY_CARDS: {
+  type: ResourceType;
+  title: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+}[] = [
+  {
+    type: "study_room",
+    title: "Study Rooms",
+    description: "Quiet individual desks, accessible study rooms, and seminar spaces across campus.",
+    icon: BookOpen,
+  },
+  {
+    type: "group_space",
+    title: "Group Spaces",
+    description: "Collaborative pods and presentation rooms with large displays and whiteboards.",
+    icon: Users,
+  },
+  {
+    type: "computer_lab",
+    title: "Computer Labs",
+    description: "Departmental workstations equipped for coding, CAD, data science, and teaching.",
+    icon: Monitor,
+  },
+  {
+    type: "specialist_equipment",
+    title: "Specialist Equipment",
+    description: "Multi-day loans for VR/XR headsets, laptops, cameras, and lab prototyping kits.",
+    icon: Cpu,
+  },
+  {
+    type: "academic_support",
+    title: "Academic Support",
+    description: "1-on-1 writing mentors, careers advice, maths help, and online MS Teams workshops.",
+    icon: GraduationCap,
+  },
+];
 
-function createInitialFilters(): ExplorerFilterState {
-  const defaults = defaultWindowForType("group_space");
-  return {
-    resourceType: "all",
-    search: "",
-    zone: "",
-    facility: "",
-    minCapacity: "",
-    availabilityEnabled: false,
-    startLocal: defaults.startLocal,
-    endLocal: defaults.endLocal,
-  };
-}
-
-export default function ResourceExplorerPage() {
-  const { actor, actorHeadersContext, canBook } = useActor();
-  const [filters, setFilters] = useState<ExplorerFilterState>(createInitialFilters);
-  const [facilities, setFacilities] = useState<FacilityOut[]>([]);
-  const [resources, setResources] = useState<ResourceOut[]>([]);
-  const [availabilitySlots, setAvailabilitySlots] = useState<AvailabilitySlot[] | null>(null);
+export default function LandingPage() {
+  const router = useRouter();
+  const { actor, actorHeadersContext } = useActor();
+  const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
-  const [availabilityLoading, setAvailabilityLoading] = useState(false);
-  const [error, setError] = useState<{ message: string; code?: string } | null>(null);
-  const [limit, setLimit] = useState(PAGE_SIZE);
-
-  const [bookingTarget, setBookingTarget] = useState<ResourceOut | null>(null);
+  const [resources, setResources] = useState<ResourceOut[]>([]);
+  const [buildings, setBuildings] = useState<BuildingOut[]>([]);
+  const [departments, setDepartments] = useState<DepartmentOut[]>([]);
+  const [facilities, setFacilities] = useState<FacilityOut[]>([]);
 
   useEffect(() => {
     let active = true;
-    listFacilities(actorHeadersContext)
-      .then((data) => {
-        if (active) setFacilities(data);
+    setLoading(true);
+    Promise.all([
+      listResources(actorHeadersContext, { limit: 1000 }),
+      listBuildings(actorHeadersContext),
+      listDepartments(actorHeadersContext),
+      listFacilities(actorHeadersContext),
+    ])
+      .then(([resList, bldList, deptList, facList]) => {
+        if (!active) return;
+        setResources(resList);
+        setBuildings(bldList);
+        setDepartments(deptList);
+        setFacilities(facList);
       })
       .catch(() => {
-        if (active) setFacilities([]);
+        // Landing page degrades gracefully if API is unreachable
+      })
+      .finally(() => {
+        if (active) setLoading(false);
       });
     return () => {
       active = false;
     };
-  }, [actorHeadersContext]);
+  }, [actor.id, actorHeadersContext]);
 
-  const fetchCatalog = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const data = await listResources(actorHeadersContext, {
-        resource_type: filters.resourceType === "all" ? undefined : filters.resourceType,
-        zone: filters.zone || undefined,
-        facility: filters.facility || undefined,
-        min_capacity: filters.minCapacity ? Number(filters.minCapacity) : undefined,
-        search: filters.search.trim() || undefined,
-        status: "active",
-        limit,
-        offset: 0,
-      });
-      setResources(data);
-    } catch (err) {
-      if (err instanceof ApiError) {
-        setError({ message: err.detail, code: err.code });
-      } else {
-        setError({ message: "Unable to load campus resources." });
-      }
-      setResources([]);
-    } finally {
-      setLoading(false);
+  const countsByType = useMemo(() => {
+    const map: Record<ResourceType, number> = {
+      study_room: 0,
+      group_space: 0,
+      computer_lab: 0,
+      specialist_equipment: 0,
+      academic_support: 0,
+    };
+    for (const r of resources) {
+      map[r.resource_type] = (map[r.resource_type] ?? 0) + 1;
     }
-  }, [
-    actorHeadersContext,
-    filters.resourceType,
-    filters.zone,
-    filters.facility,
-    filters.minCapacity,
-    filters.search,
-    limit,
-  ]);
+    return map;
+  }, [resources]);
 
-  const runAvailabilityCheck = useCallback(async () => {
-    const startSec = dateTimeLocalToEpoch(filters.startLocal);
-    const endSec = dateTimeLocalToEpoch(filters.endLocal);
-    if (!startSec || !endSec || endSec <= startSec) {
-      setError({
-        message: "Availability end time must be strictly after start time.",
-        code: "invalid_window",
-      });
-      return;
-    }
+  const maxTypeCount = useMemo(
+    () => Math.max(1, ...Object.values(countsByType)),
+    [countsByType]
+  );
 
-    setAvailabilityLoading(true);
-    setError(null);
-    try {
-      const slots = await checkAvailability(actorHeadersContext, {
-        start_time: startSec,
-        end_time: endSec,
-        resource_type: filters.resourceType === "all" ? undefined : filters.resourceType,
-        zone: filters.zone || undefined,
-        facility: filters.facility || undefined,
-        min_capacity: filters.minCapacity ? Number(filters.minCapacity) : undefined,
-      });
-      setAvailabilitySlots(slots);
-    } catch (err) {
-      if (err instanceof ApiError) {
-        setError({ message: err.detail, code: err.code });
-      } else {
-        setError({ message: "Availability lookup failed." });
-      }
-      setAvailabilitySlots(null);
-    } finally {
-      setAvailabilityLoading(false);
-    }
-  }, [
-    actorHeadersContext,
-    filters.startLocal,
-    filters.endLocal,
-    filters.resourceType,
-    filters.zone,
-    filters.facility,
-    filters.minCapacity,
-  ]);
-
-  // Debounce catalogue fetch when filters or actor change
-  useEffect(() => {
-    if (filters.availabilityEnabled) {
-      void runAvailabilityCheck();
-      return;
-    }
-    setAvailabilitySlots(null);
-    const timer = window.setTimeout(() => {
-      void fetchCatalog();
-    }, 160);
-    return () => window.clearTimeout(timer);
-  }, [fetchCatalog, filters.availabilityEnabled, runAvailabilityCheck, actor.id]);
-
-  // Apply local search filter when availability endpoint is active
-  const displayedItems = useMemo(() => {
-    if (filters.availabilityEnabled && availabilitySlots) {
-      const q = filters.search.trim().toLowerCase();
-      return availabilitySlots
-        .filter((slot) => {
-          if (!q) return true;
-          const r = slot.resource;
-          return (
-            r.resource_name.toLowerCase().includes(q) ||
-            r.resource_id.toLowerCase().includes(q) ||
-            r.location.toLowerCase().includes(q) ||
-            (r.building_name?.toLowerCase().includes(q) ?? false)
-          );
-        })
-        .map((slot) => ({ resource: slot.resource, availability: slot }));
-    }
-    return resources.map((r) => ({ resource: r, availability: undefined }));
-  }, [filters.availabilityEnabled, filters.search, availabilitySlots, resources]);
-
-  const handleReset = () => {
-    setFilters(createInitialFilters());
-    setLimit(PAGE_SIZE);
-    setAvailabilitySlots(null);
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = query.trim();
+    router.push(trimmed ? `/resources?q=${encodeURIComponent(trimmed)}` : "/resources");
   };
 
-  const isBusy = filters.availabilityEnabled ? availabilityLoading : loading;
-
   return (
-    <div className="space-y-6">
-      {/* Contextual Policy Banner */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-warwick-200/80 bg-gradient-to-r from-warwick-50 via-white to-indigo-50/40 px-5 py-3.5">
-        <div className="flex items-center gap-2.5 text-xs text-slate-700">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-warwick-700 text-white shrink-0">
-            <Sparkles className="h-3.5 w-3.5" />
-          </div>
-          <div>
-            <span className="font-semibold text-slate-900">
-              Viewing as {actor.label} ({actor.full_name})
-            </span>
-            <span className="hidden sm:inline text-slate-500">
-              {" "}
-              — Catalogue eligibility is enforced server-side via PolicyGuard SQL pushdown.
-            </span>
-          </div>
-        </div>
-        <div className="flex items-center gap-2">
-          <Badge tone="plum" className="tabular-nums">
-            {displayedItems.length} {filters.availabilityEnabled ? "free resources" : "resources"}
-          </Badge>
-          {actor.has_accessibility_access && (
-            <Badge tone="emerald">Accessibility Rooms Unlocked</Badge>
-          )}
-        </div>
-      </div>
+    <div className="bg-paper">
+      {/* Split Screen Hero */}
+      <section className="mx-auto max-w-[1200px] px-4 pt-12 pb-16 sm:px-6 sm:pt-20 sm:pb-24">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
+          {/* Left Column */}
+          <div className="lg:col-span-7 space-y-6">
+            <p className="text-[13px] font-medium text-slate-muted">
+              University of Warwick · Campus Learning Resources
+            </p>
 
-      <FilterBar
-        filters={filters}
-        facilities={facilities}
-        onChange={(next) => {
-          setFilters(next);
-          if (!next.availabilityEnabled) {
-            setAvailabilitySlots(null);
-          }
-        }}
-        onReset={handleReset}
-        onCheckAvailability={() => void runAvailabilityCheck()}
-        availabilityLoading={availabilityLoading}
-      />
+            <h1 className="text-[38px] sm:text-[50px] font-semibold leading-[1.08] tracking-[-0.025em] text-ink">
+              One place for every Warwick study room, lab, kit &amp; support session.
+            </h1>
 
-      {error && (
-        <ErrorBanner
-          message={error.message}
-          code={error.code}
-          onRetry={() =>
-            filters.availabilityEnabled ? void runAvailabilityCheck() : void fetchCatalog()
-          }
-        />
-      )}
+            <p className="max-w-[540px] text-[17px] leading-[1.5] text-slate-muted">
+              Check real-time availability, reserve spaces across four campus zones, and manage
+              every booking from a single unified portal.
+            </p>
 
-      {isBusy ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {Array.from({ length: 6 }).map((_, idx) => (
-            <div
-              key={idx}
-              className="h-64 rounded-2xl border border-slate-200 bg-white p-5 animate-pulse"
+            {/* Steep Composer-style quick search */}
+            <form
+              onSubmit={handleSearchSubmit}
+              className="flex max-w-[540px] items-center gap-2 rounded-[16px] border border-hairline bg-paper p-2 pl-4 shadow-steep-subtle focus-within:border-ink/40 transition-colors"
             >
-              <div className="h-4 w-28 rounded bg-slate-200" />
-              <div className="mt-3 h-5 w-3/4 rounded bg-slate-200" />
-              <div className="mt-2 h-3.5 w-1/2 rounded bg-slate-100" />
-              <div className="mt-5 h-10 w-full rounded-xl bg-slate-100" />
-              <div className="mt-4 flex gap-2">
-                <div className="h-5 w-20 rounded-full bg-slate-100" />
-                <div className="h-5 w-20 rounded-full bg-slate-100" />
+              <Search className="h-4 w-4 shrink-0 text-ash" />
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search FAB5.07, Rootes study pods, VR kits, writing..."
+                aria-label="Search campus resources"
+                className="min-w-0 flex-1 bg-transparent text-[15px] text-ink outline-none placeholder:text-smoke"
+              />
+              <button
+                type="submit"
+                aria-label="Search resources"
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-paper transition-opacity hover:opacity-85"
+              >
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </form>
+
+            {/* Paired Steep Pill CTAs */}
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <Link
+                href="/resources"
+                className="inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-[15px] font-medium text-paper transition-opacity hover:opacity-85"
+              >
+                Explore Resources
+              </Link>
+              <Link
+                href="/bookings"
+                className="inline-flex items-center justify-center rounded-full border border-ink bg-transparent px-6 py-3 text-[15px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
+              >
+                My Bookings
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Column: Clean Floating Live Campus Artifact */}
+          <div className="lg:col-span-5">
+            <div className="steep-floating border border-hairline/70 p-6 sm:p-7">
+              <div className="flex items-baseline justify-between gap-2 pb-5 border-b border-hairline">
+                <div>
+                  <p className="text-[12.5px] font-medium text-slate-muted">
+                    Live campus directory
+                  </p>
+                  <p className="mt-1 text-[34px] font-semibold leading-none tracking-[-0.025em] text-ink tabular-nums">
+                    {loading ? "—" : formatNumber(resources.length)}
+                  </p>
+                  <p className="mt-1 text-[13px] text-ash">
+                    Eligible resources for {actor.label}
+                  </p>
+                </div>
+                <Link
+                  href="/resources"
+                  className="text-[13px] font-medium text-ink hover:underline underline-offset-4"
+                >
+                  View all →
+                </Link>
+              </div>
+
+              {/* 3 compact live campus totals */}
+              <div className="grid grid-cols-3 gap-3 py-5 border-b border-hairline tabular-nums">
+                <div>
+                  <div className="text-[20px] font-semibold tracking-[-0.02em] text-ink">
+                    {loading ? "—" : formatNumber(buildings.length)}
+                  </div>
+                  <div className="mt-0.5 text-[12px] text-slate-muted">Buildings</div>
+                </div>
+                <div>
+                  <div className="text-[20px] font-semibold tracking-[-0.02em] text-ink">
+                    {loading ? "—" : formatNumber(departments.length)}
+                  </div>
+                  <div className="mt-0.5 text-[12px] text-slate-muted">Departments</div>
+                </div>
+                <div>
+                  <div className="text-[20px] font-semibold tracking-[-0.02em] text-ink">
+                    {loading ? "—" : formatNumber(facilities.length)}
+                  </div>
+                  <div className="mt-0.5 text-[12px] text-slate-muted">AV &amp; Facilities</div>
+                </div>
+              </div>
+
+              {/* Quiet proportional breakdown by resource type */}
+              <div className="pt-5 space-y-3">
+                {(Object.keys(countsByType) as ResourceType[]).map((type) => {
+                  const count = countsByType[type];
+                  const widthPct = Math.max(6, Math.round((count / maxTypeCount) * 100));
+                  return (
+                    <Link
+                      key={type}
+                      href={`/resources?type=${type}`}
+                      className="group block"
+                    >
+                      <div className="flex items-center justify-between text-[13px] tabular-nums">
+                        <span className="font-medium text-ink group-hover:underline underline-offset-4">
+                          {RESOURCE_TYPE_LABELS[type]}
+                        </span>
+                        <span className="text-slate-muted">
+                          {loading ? "—" : formatNumber(count)}
+                        </span>
+                      </div>
+                      <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-mist">
+                        <div
+                          className="h-full rounded-full bg-ink/80 transition-all duration-300 group-hover:bg-sienna"
+                          style={{ width: loading ? "0%" : `${widthPct}%` }}
+                        />
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      ) : displayedItems.length === 0 ? (
-        <EmptyState
-          icon={<Compass className="h-5 w-5" />}
-          title="No matching resources found"
-          description={
-            filters.availabilityEnabled
-              ? "No eligible active resources have free capacity in that time window. Try widening the filters or picking a different slot."
-              : "Try clearing one of your filters or switching to another demo role to inspect different eligibility tiers."
-          }
-          action={
-            <Button variant="secondary" size="sm" onClick={handleReset}>
-              Clear All Filters
-            </Button>
-          }
-        />
-      ) : (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {displayedItems.map(({ resource, availability }) => (
-              <ResourceCard
-                key={resource.resource_id}
-                resource={resource}
-                availability={availability}
-                canBook={canBook}
-                onBook={(res) => setBookingTarget(res)}
-              />
-            ))}
+      </section>
+
+      {/* Bento Grid: 5 Resource Categories + 1 Blush/Sienna Editorial Highlight */}
+      <section className="border-t border-hairline bg-fog/60">
+        <div className="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 sm:py-20">
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
+            <div>
+              <h2 className="text-[28px] sm:text-[34px] font-semibold tracking-[-0.02em] text-ink">
+                Browse by resource type
+              </h2>
+              <p className="mt-1.5 text-[15px] text-slate-muted">
+                Jump directly into tailored filters for rooms, equipment pools, or advisory sessions.
+              </p>
+            </div>
+            <Link
+              href="/resources"
+              className="text-[14.5px] font-medium text-ink hover:underline underline-offset-4"
+            >
+              Browse entire catalogue →
+            </Link>
           </div>
 
-          {!filters.availabilityEnabled && resources.length >= limit && (
-            <div className="flex flex-col items-center gap-2 pt-2">
-              <Button
-                variant="secondary"
-                onClick={() => setLimit((prev) => prev + PAGE_SIZE)}
-              >
-                Load More Resources
-              </Button>
-              <span className="inline-flex items-center gap-1 text-xs text-slate-400">
-                <Info className="h-3.5 w-3.5" />
-                Showing first {resources.length} matching records
-              </span>
-            </div>
-          )}
-        </>
-      )}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {CATEGORY_CARDS.map((card) => {
+              const Icon = card.icon;
+              const count = countsByType[card.type];
+              return (
+                <Link
+                  key={card.type}
+                  href={`/resources?type=${card.type}`}
+                  className="group steep-mist-card flex flex-col justify-between p-7 transition-colors hover:bg-mist/75"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-paper text-ink">
+                        <Icon className="h-[18px] w-[18px] stroke-[1.75]" />
+                      </span>
+                      <span className="text-[13px] font-medium text-slate-muted tabular-nums">
+                        {loading ? "—" : `${formatNumber(count)} available`}
+                      </span>
+                    </div>
+                    <h3 className="mt-6 text-[20px] font-semibold tracking-[-0.015em] text-ink">
+                      {card.title}
+                    </h3>
+                    <p className="mt-2 text-[14.5px] leading-[1.5] text-slate-muted">
+                      {card.description}
+                    </p>
+                  </div>
 
-      <BookingDrawer
-        resource={bookingTarget}
-        open={Boolean(bookingTarget)}
-        onClose={() => setBookingTarget(null)}
-        initialStartEpoch={
-          filters.availabilityEnabled
-            ? dateTimeLocalToEpoch(filters.startLocal)
-            : undefined
-        }
-        initialEndEpoch={
-          filters.availabilityEnabled
-            ? dateTimeLocalToEpoch(filters.endLocal)
-            : undefined
-        }
-        onSuccess={() => {
-          if (filters.availabilityEnabled) {
-            void runAvailabilityCheck();
-          }
-        }}
-      />
+                  <div className="mt-7 text-[14px] font-medium text-ink group-hover:underline underline-offset-4">
+                    Explore {card.title.toLowerCase()} →
+                  </div>
+                </Link>
+              );
+            })}
+
+            {/* 6th Bento Tile: Single tasteful blush/sienna editorial highlight */}
+            <div className="steep-blush-card flex flex-col justify-between p-7">
+              <div>
+                <p className="text-[12.5px] font-medium uppercase tracking-[0.04em] opacity-80">
+                  Unified Campus Portal
+                </p>
+                <h3 className="mt-4 text-[22px] font-semibold leading-[1.25] tracking-[-0.015em]">
+                  Six fragmented campus booking portals, consolidated into one.
+                </h3>
+                <p className="mt-3 text-[14.5px] leading-[1.5] opacity-90">
+                  Library study pods, central teaching rooms, WMG kit loans, accessibility
+                  spaces, and academic mentoring — with automatic conflict prevention and fair
+                  course-level analytics.
+                </p>
+              </div>
+              <div className="mt-7 flex items-center justify-between text-[13.5px] font-medium">
+                <span>Real-time slot checks</span>
+                <Link
+                  href="/bookings"
+                  className="underline underline-offset-4 hover:opacity-80"
+                >
+                  Manage bookings →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

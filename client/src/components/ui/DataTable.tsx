@@ -24,15 +24,15 @@ export function DataTable<T>({
   rowClassName,
 }: DataTableProps<T>) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-card">
-      <table className="min-w-full divide-y divide-slate-200 text-sm">
-        <thead className="bg-slate-50/80">
+    <div className="overflow-x-auto rounded-[12px] border border-hairline bg-paper">
+      <table className="min-w-full divide-y divide-hairline text-[13.5px]">
+        <thead className="bg-fog">
           <tr>
             {columns.map((col) => (
               <th
                 key={col.key}
                 scope="col"
-                className={`px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500 ${
+                className={`px-4 py-2.5 text-[11.5px] font-medium uppercase tracking-[0.04em] text-slate-muted ${
                   col.align === "right"
                     ? "text-right"
                     : col.align === "center"
@@ -45,12 +45,12 @@ export function DataTable<T>({
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-slate-100 bg-white">
+        <tbody className="divide-y divide-hairline bg-paper">
           {rows.length === 0 ? (
             <tr>
               <td
                 colSpan={columns.length}
-                className="px-4 py-10 text-center text-sm text-slate-500"
+                className="px-4 py-12 text-center text-[14px] text-slate-muted"
               >
                 {emptyMessage}
               </td>
@@ -59,12 +59,12 @@ export function DataTable<T>({
             rows.map((row) => (
               <tr
                 key={rowKey(row)}
-                className={`hover:bg-slate-50/80 transition-colors ${rowClassName ? rowClassName(row) : ""}`}
+                className={`hover:bg-fog transition-colors ${rowClassName ? rowClassName(row) : ""}`}
               >
                 {columns.map((col) => (
                   <td
                     key={col.key}
-                    className={`px-4 py-3 align-middle text-slate-700 ${
+                    className={`px-4 py-3 align-middle text-ink ${
                       col.align === "right"
                         ? "text-right"
                         : col.align === "center"

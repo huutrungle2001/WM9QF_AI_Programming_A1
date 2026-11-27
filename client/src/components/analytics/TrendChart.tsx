@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { TrendingUp } from "lucide-react";
 import type { TrendPoint } from "@/types";
-import { Badge } from "@/components/ui/Badge";
 
 interface TrendChartProps {
   points: TrendPoint[];
@@ -26,66 +24,72 @@ export function TrendChart({ points }: TrendChartProps) {
 
   if (points.length === 0) {
     return (
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center text-sm text-slate-500 shadow-card">
+      <div className="rounded-[16px] border border-hairline bg-paper p-6 text-center text-[14px] text-slate-muted">
         No weekly trend data available yet.
       </div>
     );
   }
 
-  const svgWidth = 680;
+  const svgWidth = 700;
   const svgHeight = 250;
-  const padLeft = 42;
+  const padLeft = 40;
   const padRight = 20;
-  const padTop = 26;
+  const padTop = 24;
   const padBottom = 38;
   const chartW = svgWidth - padLeft - padRight;
   const chartH = svgHeight - padTop - padBottom;
   const stepX = chartW / points.length;
-  const barW = Math.min(44, Math.max(18, stepX * 0.56));
+  const barW = Math.min(42, Math.max(16, stepX * 0.54));
 
   const yFor = (val: number) => padTop + chartH - (val / maxCount) * chartH;
   const xCenter = (idx: number) => padLeft + stepX * idx + stepX / 2;
 
   const linePath = points
-    .map((pt, idx) => `${idx === 0 ? "M" : "L"} ${xCenter(idx).toFixed(1)} ${yFor(pt.booking_count).toFixed(1)}`)
+    .map(
+      (pt, idx) =>
+        `${idx === 0 ? "M" : "L"} ${xCenter(idx).toFixed(1)} ${yFor(pt.booking_count).toFixed(1)}`
+    )
     .join(" ");
 
   const yTicks = [0, 0.25, 0.5, 0.75, 1].map((r) => Math.round(maxCount * r));
-  const selected = activeIdx !== null ? points[activeIdx] : peakIndex >= 0 ? points[peakIndex] : null;
+  const selected =
+    activeIdx !== null
+      ? points[activeIdx]
+      : peakIndex >= 0
+        ? points[peakIndex]
+        : null;
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
-      <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+    <div className="rounded-[16px] border border-hairline bg-paper p-6">
+      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
         <div>
-          <h3 className="text-sm font-semibold text-slate-900">
-            Weekly Booking Trends & Pressure Peak
+          <h3 className="text-[15.5px] font-semibold tracking-[-0.015em] text-ink">
+            Weekly Booking Trends
           </h3>
-          <p className="mt-0.5 text-xs text-slate-500">
-            Weekly booking volume and total reserved hours across the teaching term
+          <p className="mt-0.5 text-[12.5px] text-slate-muted">
+            Weekly booking volume and reserved hours across term
           </p>
         </div>
         {peakIndex >= 0 && (
-          <Badge tone="plum">
-            <TrendingUp className="h-3 w-3" />
-            Peak Week: {points[peakIndex].week_label} ({points[peakIndex].booking_count} bookings)
-          </Badge>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-blush px-3 py-1 text-[12px] font-medium text-sienna tabular-nums">
+            Peak: {points[peakIndex].week_label} ({points[peakIndex].booking_count})
+          </span>
         )}
       </div>
 
-      {/* Selected / Peak Readout */}
       {selected && (
-        <div className="mb-3 flex flex-wrap items-center gap-4 rounded-xl bg-slate-50 px-3.5 py-2 text-xs border border-slate-100 tabular-nums">
-          <span className="font-semibold text-slate-900">
-            {activeIdx !== null ? "Selected:" : "Peak:"} {selected.week_label}
+        <div className="mb-4 flex flex-wrap items-center gap-5 rounded-[12px] bg-fog border border-hairline px-4 py-2.5 text-[12.5px] tabular-nums">
+          <span className="font-semibold text-ink">
+            {activeIdx !== null ? "Selected" : "Peak week"}: {selected.week_label}
           </span>
-          <span className="text-slate-600">
-            Bookings: <strong className="text-warwick-800">{selected.booking_count}</strong>
+          <span className="text-slate-muted">
+            Bookings: <strong className="font-semibold text-ink">{selected.booking_count}</strong>
           </span>
-          <span className="text-slate-600">
-            Hours: <strong className="text-slate-900">{selected.total_hours.toFixed(1)}h</strong>
+          <span className="text-slate-muted">
+            Hours: <strong className="font-semibold text-ink">{selected.total_hours.toFixed(1)}h</strong>
           </span>
-          <span className="text-slate-600">
-            Cancelled: <strong className="text-rose-700">{selected.cancelled_count}</strong>
+          <span className="text-slate-muted">
+            Cancelled: <strong className="font-semibold text-sienna">{selected.cancelled_count}</strong>
           </span>
         </div>
       )}
@@ -97,7 +101,6 @@ export function TrendChart({ points }: TrendChartProps) {
           role="img"
           aria-label="Weekly booking trends chart"
         >
-          {/* Horizontal grid lines */}
           {yTicks.map((tick, idx) => {
             const y = yFor(tick);
             return (
@@ -107,14 +110,15 @@ export function TrendChart({ points }: TrendChartProps) {
                   x2={svgWidth - padRight}
                   y1={y}
                   y2={y}
-                  stroke="#e2e8f0"
+                  stroke="#ececec"
                   strokeDasharray={tick === 0 ? undefined : "3 3"}
                 />
                 <text
                   x={padLeft - 8}
                   y={y + 4}
                   textAnchor="end"
-                  className="fill-slate-400 text-[10px] font-mono"
+                  fill="#979799"
+                  fontSize="10.5"
                 >
                   {tick}
                 </text>
@@ -122,24 +126,25 @@ export function TrendChart({ points }: TrendChartProps) {
             );
           })}
 
-          {/* Bars */}
+          {/* Monochrome bars */}
           {points.map((pt, idx) => {
             const isPeak = idx === peakIndex;
             const isActive = idx === activeIdx;
             const x = xCenter(idx) - barW / 2;
             const y = yFor(pt.booking_count);
             const h = Math.max(2, padTop + chartH - y);
-            const cancelH =
-              pt.cancelled_count > 0
-                ? Math.max(2, (pt.cancelled_count / maxCount) * chartH)
-                : 0;
+            const fill = isActive
+              ? "#17191c"
+              : isPeak
+                ? "#d4d4d8"
+                : "#f2f2f3";
 
             return (
               <g
                 key={pt.week_label}
-                className="cursor-pointer"
                 onMouseEnter={() => setActiveIdx(idx)}
                 onMouseLeave={() => setActiveIdx(null)}
+                className="cursor-pointer"
               >
                 <rect
                   x={x}
@@ -147,39 +152,17 @@ export function TrendChart({ points }: TrendChartProps) {
                   width={barW}
                   height={h}
                   rx={6}
-                  className={
-                    isPeak
-                      ? "fill-warwick-600 transition-colors"
-                      : isActive
-                        ? "fill-indigo-400 transition-colors"
-                        : "fill-warwick-200 hover:fill-warwick-300 transition-colors"
-                  }
+                  fill={fill}
+                  stroke={isPeak || isActive ? "#17191c" : "#ececec"}
+                  strokeWidth={isActive ? 1.2 : 1}
                 />
-                {cancelH > 0 && (
-                  <rect
-                    x={x}
-                    y={padTop + chartH - cancelH}
-                    width={barW}
-                    height={cancelH}
-                    rx={3}
-                    className="fill-rose-400/75"
-                  />
-                )}
-                <text
-                  x={xCenter(idx)}
-                  y={y - 7}
-                  textAnchor="middle"
-                  className={`text-[10px] font-semibold ${
-                    isPeak ? "fill-warwick-800" : "fill-slate-600"
-                  }`}
-                >
-                  {pt.booking_count}
-                </text>
                 <text
                   x={xCenter(idx)}
                   y={svgHeight - 14}
                   textAnchor="middle"
-                  className="fill-slate-500 text-[10px] font-mono"
+                  fill={isPeak || isActive ? "#17191c" : "#777b86"}
+                  fontSize="10.5"
+                  fontWeight={isPeak || isActive ? 600 : 400}
                 >
                   {pt.week_label}
                 </text>
@@ -187,45 +170,34 @@ export function TrendChart({ points }: TrendChartProps) {
             );
           })}
 
-          {/* Overlay Trend Line */}
+          {/* Sienna trend line */}
           <path
             d={linePath}
             fill="none"
-            stroke="#3b1f44"
+            stroke="#5d2a1a"
             strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="pointer-events-none"
           />
-          {points.map((pt, idx) => (
-            <circle
-              key={`dot-${pt.week_label}`}
-              cx={xCenter(idx)}
-              cy={yFor(pt.booking_count)}
-              r={idx === peakIndex ? 4.5 : 3}
-              className={
-                idx === peakIndex
-                  ? "fill-white stroke-warwick-800 stroke-[2.5] pointer-events-none"
-                  : "fill-warwick-700 pointer-events-none"
-              }
-            />
-          ))}
-        </svg>
-      </div>
 
-      <div className="mt-2 flex items-center gap-4 text-[11px] text-slate-500">
-        <span className="inline-flex items-center gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-sm bg-warwick-200" />
-          Weekly Bookings
-        </span>
-        <span className="inline-flex items-center gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-sm bg-warwick-600" />
-          Exam Pressure Peak
-        </span>
-        <span className="inline-flex items-center gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-sm bg-rose-400/80" />
-          Cancelled Share
-        </span>
+          {/* Data points */}
+          {points.map((pt, idx) => {
+            const isPeak = idx === peakIndex;
+            const isActive = idx === activeIdx;
+            return (
+              <circle
+                key={`pt-${pt.week_label}`}
+                cx={xCenter(idx)}
+                cy={yFor(pt.booking_count)}
+                r={isPeak || isActive ? 4.5 : 3}
+                fill={isPeak ? "#5d2a1a" : "#ffffff"}
+                stroke="#5d2a1a"
+                strokeWidth={2}
+                pointerEvents="none"
+              />
+            );
+          })}
+        </svg>
       </div>
     </div>
   );

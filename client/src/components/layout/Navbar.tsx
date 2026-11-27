@@ -1,119 +1,95 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, RefreshCw, Wifi, WifiOff } from "lucide-react";
-import { checkHealth, type HealthStatus } from "@/lib/api-client";
+import { useActor } from "@/hooks/useActor";
 import { RoleSwitcher } from "./RoleSwitcher";
 
-const ROUTE_TITLES: Record<string, { title: string; subtitle: string }> = {
-  "/": {
-    title: "Unified Resource Explorer",
-    subtitle: "Discover and book Warwick study rooms, labs, equipment, and academic support",
-  },
-  "/bookings": {
-    title: "Bookings",
-    subtitle: "Role-scoped reservations, status lifecycle, and rescheduling",
-  },
-  "/approvals": {
-    title: "Approvals Queue",
-    subtitle: "Review pending requests requiring departmental or manager sign-off",
-  },
-  "/analytics": {
-    title: "Analytics & Fairness",
-    subtitle: "Utilisation KPIs, peak demand heatmap, semester trends & k>=5 privacy reporting",
-  },
-  "/admin": {
-    title: "Admin & Catalogue",
-    subtitle: "Polymorphic resource creation, CSV batch import, users & departments",
-  },
-};
-
-interface NavbarProps {
-  onOpenMobile: () => void;
+export function WarwickSpacesMark({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect width="28" height="28" rx="8" fill="#17191c" />
+      <path
+        d="M7.5 10L10.5 18.5L14 11.5L17.5 18.5L20.5 10"
+        stroke="#ffffff"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 }
 
-export function Navbar({ onOpenMobile }: NavbarProps) {
+export function Navbar() {
   const pathname = usePathname();
-  const [health, setHealth] = useState<HealthStatus | null>(null);
-  const [checking, setChecking] = useState(false);
+  const { canViewAnalytics } = useActor();
 
-  const probe = useCallback(async () => {
-    setChecking(true);
-    const result = await checkHealth();
-    setHealth(result);
-    setChecking(false);
-  }, []);
-
-  useEffect(() => {
-    void probe();
-    const timer = window.setInterval(() => {
-      void probe();
-    }, 30000);
-    return () => window.clearInterval(timer);
-  }, [probe]);
-
-  const meta = pathname.startsWith("/resources/")
-    ? {
-        title: "Resource Detail",
-        subtitle: "Metadata, room panorama preview, campus coordinates & booking",
-      }
-    : (ROUTE_TITLES[pathname] ?? {
-        title: "Campus Learning Resources",
-        subtitle: "University of Warwick Booking Platform",
-      });
+  const links = [
+    { href: "/", label: "Overview", active: pathname === "/" },
+    {
+      href: "/resources",
+      label: "Resources",
+      active: pathname === "/resources" || pathname.startsWith("/resources/"),
+    },
+    {
+      href: "/bookings",
+      label: "My Bookings",
+      active: pathname === "/bookings" || pathname.startsWith("/bookings/"),
+    },
+  ];
 
   return (
-    <header className="sticky top-0 z-20 flex h-16 items-center justify-between gap-4 border-b border-slate-200 bg-white/90 px-4 sm:px-6 backdrop-blur-md">
-      <div className="flex items-center gap-3 min-w-0">
-        <button
-          type="button"
-          onClick={onOpenMobile}
-          className="lg:hidden rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
-          aria-label="Open navigation"
-        >
-          <Menu className="h-5 w-5" />
-        </button>
-        <div className="min-w-0">
-          <h1 className="text-sm sm:text-base font-semibold text-slate-900 truncate">
-            {meta.title}
-          </h1>
-          <p className="hidden md:block text-xs text-slate-500 truncate">
-            {meta.subtitle}
-          </p>
+    <header className="sticky top-0 z-30 w-full border-b border-hairline bg-paper/95 backdrop-blur-sm">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-4 sm:px-6">
+        <div className="flex items-center gap-6 sm:gap-8 min-w-0">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center gap-2.5 text-ink transition-opacity hover:opacity-80"
+          >
+            <WarwickSpacesMark className="h-7 w-7" />
+            <span className="text-[15.5px] font-semibold tracking-[-0.02em]">
+              Warwick Spaces
+            </span>
+          </Link>
+
+          <nav
+            aria-label="Primary navigation"
+            className="flex items-center gap-4 sm:gap-6 text-[14.5px]"
+          >
+            {links.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`py-1 transition-colors whitespace-nowrap ${
+                  item.active
+                    ? "font-medium text-ink"
+                    : "text-slate-muted hover:text-ink"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+            {canViewAnalytics && (
+              <Link
+                href="/admin"
+                className="hidden sm:inline-block py-1 text-slate-muted transition-colors hover:text-ink whitespace-nowrap"
+              >
+                Admin Console
+              </Link>
+            )}
+          </nav>
         </div>
-      </div>
 
-      <div className="flex items-center gap-2.5 shrink-0">
-        <button
-          type="button"
-          onClick={() => void probe()}
-          title="Check FastAPI /health connectivity"
-          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset transition-colors ${
-            health === null
-              ? "bg-slate-100 text-slate-600 ring-slate-200"
-              : health.ok
-                ? "bg-emerald-50 text-emerald-700 ring-emerald-200 hover:bg-emerald-100/70"
-                : "bg-rose-50 text-rose-700 ring-rose-200 hover:bg-rose-100/70"
-          }`}
-        >
-          {checking ? (
-            <RefreshCw className="h-3 w-3 animate-spin" />
-          ) : health?.ok ? (
-            <Wifi className="h-3 w-3" />
-          ) : (
-            <WifiOff className="h-3 w-3" />
-          )}
-          <span className="hidden sm:inline">
-            {health === null
-              ? "Checking API"
-              : health.ok
-                ? `API Online · ${health.latencyMs}ms`
-                : "API Offline"}
-          </span>
-        </button>
-
-        <RoleSwitcher />
+        <div className="flex items-center gap-3 shrink-0">
+          <RoleSwitcher variant="pill" />
+        </div>
       </div>
     </header>
   );

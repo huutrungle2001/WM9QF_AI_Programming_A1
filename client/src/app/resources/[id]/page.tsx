@@ -3,20 +3,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import {
-  Archive,
-  ArrowLeft,
-  Building2,
-  CalendarPlus,
-  CheckCircle2,
-  Cpu,
-  GraduationCap,
-  KeyRound,
-  Layers,
-  ShieldCheck,
-  Users,
-  Wrench,
-} from "lucide-react";
+import { Archive, ArrowLeft, CheckCircle2, Wrench } from "lucide-react";
 import {
   CHECKIN_LABELS,
   ELIGIBILITY_LABELS,
@@ -32,8 +19,7 @@ import { ApiError } from "@/lib/api-client";
 import { useActor } from "@/hooks/useActor";
 import { PanoramaViewer } from "@/components/resources/PanoramaViewer";
 import { CampusMap } from "@/components/resources/CampusMap";
-import { BookingDrawer } from "@/components/bookings/BookingDrawer";
-import { Badge } from "@/components/ui/Badge";
+import { BookingPanel } from "@/components/bookings/BookingPanel";
 import { Button } from "@/components/ui/Button";
 import { ErrorBanner } from "@/components/ui/ErrorBanner";
 
@@ -41,12 +27,11 @@ export default function ResourceDetailPage() {
   const params = useParams<{ id: string }>();
   const router = useRouter();
   const resourceId = decodeURIComponent(params.id ?? "");
-  const { actor, actorHeadersContext, canBook, canManageCatalogue } = useActor();
+  const { actor, actorHeadersContext, canManageCatalogue } = useActor();
 
   const [resource, setResource] = useState<ResourceOut | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<{ message: string; code?: string } | null>(null);
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const [actionLoading, setActionLoading] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
 
@@ -101,7 +86,7 @@ export default function ResourceDetailPage() {
     setActionLoading(true);
     try {
       await retireResource(actorHeadersContext, resource.resource_id);
-      router.push("/");
+      router.push("/resources");
     } catch (err) {
       setError({
         message: err instanceof ApiError ? err.detail : "Failed to retire resource.",
@@ -112,12 +97,14 @@ export default function ResourceDetailPage() {
 
   if (loading) {
     return (
-      <div className="space-y-6 animate-pulse">
-        <div className="h-8 w-44 rounded-lg bg-slate-200" />
-        <div className="h-44 rounded-2xl bg-white border border-slate-200" />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="h-72 rounded-2xl bg-white border border-slate-200" />
-          <div className="h-72 rounded-2xl bg-white border border-slate-200" />
+      <div className="mx-auto max-w-[1200px] px-4 py-10 sm:px-6 space-y-6 animate-pulse">
+        <div className="h-5 w-36 rounded-full bg-mist" />
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-8 space-y-6">
+            <div className="h-24 rounded-[24px] bg-mist/70" />
+            <div className="h-80 rounded-[24px] bg-mist/70" />
+          </div>
+          <div className="lg:col-span-4 h-96 rounded-[24px] bg-mist/70" />
         </div>
       </div>
     );
@@ -125,13 +112,13 @@ export default function ResourceDetailPage() {
 
   if (error || !resource) {
     return (
-      <div className="space-y-4">
+      <div className="mx-auto max-w-[1200px] px-4 py-10 sm:px-6 space-y-5">
         <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-warwick-700"
+          href="/resources"
+          className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-slate-muted hover:text-ink"
         >
-          <ArrowLeft className="h-3.5 w-3.5" />
-          Back to Resource Explorer
+          <ArrowLeft className="h-4 w-4" />
+          Back to Resources
         </Link>
         <ErrorBanner
           message={error?.message ?? "Resource not found."}
@@ -152,89 +139,220 @@ export default function ResourceDetailPage() {
     ? resource.details
     : null;
 
+  const concurrencyCeiling =
+    resource.max_concurrent_bookings ??
+    (equipmentDetails
+      ? equipmentDetails.quantity
+      : supportDetails
+        ? supportDetails.max_attendees
+        : 1);
+
   return (
-    <div className="space-y-6">
+    <div className="mx-auto max-w-[1200px] px-4 py-10 sm:px-6 space-y-6">
+      {/* Breadcrumb */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-warwick-700 transition-colors"
+          href="/resources"
+          className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-slate-muted hover:text-ink transition-colors"
         >
-          <ArrowLeft className="h-3.5 w-3.5" />
-          Back to Resource Explorer
+          <ArrowLeft className="h-4 w-4" />
+          Back to Resources
         </Link>
-        <span className="font-mono text-xs text-slate-400">
-          ID: {resource.resource_id}
-        </span>
+        <span className="font-mono text-[12px] text-ash">{resource.resource_id}</span>
       </div>
 
       {feedback && (
-        <div className="flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-medium text-emerald-800">
-          <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+        <div className="flex items-center gap-2 rounded-[14px] bg-mist px-4 py-3 text-[13.5px] font-medium text-ink">
+          <CheckCircle2 className="h-4 w-4 shrink-0" />
           {feedback}
         </div>
       )}
 
-      {/* Hero Header Card */}
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-5">
-          <div className="space-y-3 min-w-0">
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge tone="plum">
+      {/* 65 / 35 Split Screen */}
+      <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+        {/* Left 65% Column (8 cols) */}
+        <div className="lg:col-span-8 space-y-7 min-w-0">
+          {/* Editorial Title Block */}
+          <div className="space-y-3">
+            <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] text-slate-muted">
+              <span className="font-medium text-ink">
                 {RESOURCE_TYPE_SINGULAR[resource.resource_type]}
-              </Badge>
-              <Badge
-                tone={
-                  resource.status === "active"
-                    ? "emerald"
-                    : resource.status === "maintenance"
-                      ? "amber"
-                      : "rose"
-                }
-              >
-                {resource.status}
-              </Badge>
-              <Badge tone="indigo">
-                {ELIGIBILITY_LABELS[resource.booking_eligibility]}
-              </Badge>
-              {resource.requires_approval ? (
-                <Badge tone="amber">Manager Approval Required</Badge>
-              ) : (
-                <Badge tone="emerald">Instant Confirmation</Badge>
+              </span>
+              <span className="text-smoke">·</span>
+              <span>{ELIGIBILITY_LABELS[resource.booking_eligibility]}</span>
+              {resource.status !== "active" && (
+                <>
+                  <span className="text-smoke">·</span>
+                  <span className="font-medium text-sienna capitalize">
+                    {resource.status}
+                  </span>
+                </>
               )}
             </div>
 
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-                {resource.resource_name}
-              </h2>
-              <p className="mt-1 text-sm text-slate-500">
-                {resource.department_name
-                  ? `${resource.department_name} (${resource.department_id})`
-                  : resource.department_id}
-                {resource.building_name ? ` · ${resource.building_name}` : ""}
-              </p>
-            </div>
+            <h1 className="text-[30px] sm:text-[38px] font-semibold leading-[1.12] tracking-[-0.025em] text-ink">
+              {resource.resource_name}
+            </h1>
 
-            {resource.description && (
-              <p className="max-w-3xl text-sm text-slate-600 leading-relaxed">
-                {resource.description}
-              </p>
-            )}
+            <p className="text-[15px] text-slate-muted">
+              {resource.department_name
+                ? `${resource.department_name} (${resource.department_id})`
+                : resource.department_id}
+              {resource.building_name ? ` · ${resource.building_name}` : ` · ${resource.location}`}
+            </p>
           </div>
 
-          <div className="flex flex-wrap lg:flex-col items-stretch gap-2 shrink-0 lg:w-52">
-            <Button
-              variant="primary"
-              size="lg"
-              disabled={!canBook || resource.status !== "active"}
-              onClick={() => setDrawerOpen(true)}
-            >
-              <CalendarPlus className="h-4 w-4" />
-              {resource.requires_approval ? "Request Booking" : "Book This Resource"}
-            </Button>
+          {/* 360° / Room Photo Viewer */}
+          <PanoramaViewer
+            imageUrl={resource.image_url}
+            resourceName={resource.resource_name}
+            location={resource.location}
+          />
 
-            {canManageCatalogue && resource.status !== "retired" && (
-              <div className="flex gap-2">
+          {/* Subtype Specifications Strip */}
+          <section className="rounded-[24px] bg-mist p-6">
+            <h2 className="text-[13px] font-medium uppercase tracking-[0.04em] text-slate-muted mb-4">
+              Specifications
+            </h2>
+            <div className="grid grid-cols-2 gap-5 sm:grid-cols-4 tabular-nums">
+              {roomDetails && (
+                <>
+                  <div>
+                    <div className="text-[12px] text-slate-muted">Capacity</div>
+                    <div className="mt-1 text-[20px] font-semibold tracking-[-0.015em] text-ink">
+                      {roomDetails.capacity} seats
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[12px] text-slate-muted">Room style</div>
+                    <div className="mt-1 text-[17px] font-semibold text-ink">
+                      {ROOM_STYLE_LABELS[roomDetails.room_style]}
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {equipmentDetails && (
+                <>
+                  <div>
+                    <div className="text-[12px] text-slate-muted">Pool quantity</div>
+                    <div className="mt-1 text-[20px] font-semibold tracking-[-0.015em] text-ink">
+                      {equipmentDetails.quantity} units
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[12px] text-slate-muted">Category</div>
+                    <div className="mt-1 text-[17px] font-semibold text-ink capitalize">
+                      {equipmentDetails.category.replace(/_/g, " ")}
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {supportDetails && (
+                <>
+                  <div>
+                    <div className="text-[12px] text-slate-muted">Max attendees</div>
+                    <div className="mt-1 text-[20px] font-semibold tracking-[-0.015em] text-ink">
+                      {supportDetails.max_attendees}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[12px] text-slate-muted">Host team</div>
+                    <div className="mt-1 text-[15px] font-semibold text-ink">
+                      {supportDetails.host_name ?? supportDetails.category}
+                    </div>
+                  </div>
+                </>
+              )}
+
+              <div>
+                <div className="text-[12px] text-slate-muted">Check-in</div>
+                <div className="mt-1 text-[15px] font-semibold text-ink">
+                  {CHECKIN_LABELS[resource.checkin_method]}
+                </div>
+              </div>
+
+              <div>
+                <div className="text-[12px] text-slate-muted">Concurrent slots</div>
+                <div className="mt-1 text-[20px] font-semibold tracking-[-0.015em] text-ink">
+                  {concurrencyCeiling}
+                </div>
+              </div>
+            </div>
+
+            {equipmentDetails?.specifications && (
+              <div className="mt-5 border-t border-hairline pt-4">
+                <div className="text-[12px] font-medium text-slate-muted">
+                  Hardware specifications
+                </div>
+                <p className="mt-1 text-[14px] leading-[1.55] text-ink">
+                  {equipmentDetails.specifications}
+                </p>
+              </div>
+            )}
+          </section>
+
+          {/* Description & Typographic Facilities */}
+          <section className="space-y-6 border-t border-hairline pt-6">
+            {resource.description && (
+              <div>
+                <h2 className="text-[16px] font-semibold text-ink">About this resource</h2>
+                <p className="mt-2 text-[15px] leading-[1.65] text-ink/90">
+                  {resource.description}
+                </p>
+              </div>
+            )}
+
+            <div>
+              <h2 className="text-[16px] font-semibold text-ink">
+                Facilities &amp; AV ({resource.facilities.length})
+              </h2>
+              {resource.facilities.length > 0 ? (
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[14px] text-slate-muted">
+                  {resource.facilities.map((fac) => (
+                    <span key={fac} className="inline-flex items-center gap-1.5">
+                      <span className="h-1 w-1 rounded-full bg-ash" />
+                      <span>{fac}</span>
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-2 text-[14px] text-ash">
+                  No AV or facility tags listed for this resource.
+                </p>
+              )}
+            </div>
+          </section>
+
+          {/* Campus Location Card */}
+          <CampusMap
+            buildingName={resource.building_name}
+            buildingId={resource.building_id}
+            location={resource.location}
+            zone={resource.zone}
+            lat={resource.lat}
+            lon={resource.lon}
+          />
+        </div>
+
+        {/* Right 35% Sticky Column (4 cols) */}
+        <aside className="lg:col-span-4 lg:sticky lg:top-24 space-y-4">
+          <BookingPanel
+            resource={resource}
+            onSuccess={(created) =>
+              setFeedback(
+                `Booking #${created.booking_id} recorded (${created.status_id}).`
+              )
+            }
+          />
+
+          {canManageCatalogue && resource.status !== "retired" && (
+            <div className="rounded-[20px] border border-hairline bg-fog p-4 space-y-2.5">
+              <p className="text-[12px] font-medium text-slate-muted">
+                Catalogue controls
+              </p>
+              <div className="flex items-center gap-2">
                 <Button
                   variant="secondary"
                   size="sm"
@@ -243,176 +361,23 @@ export default function ResourceDetailPage() {
                   onClick={() => void handleToggleMaintenance()}
                 >
                   <Wrench className="h-3.5 w-3.5" />
-                  {resource.status === "maintenance" ? "Activate" : "Maintenance"}
+                  {resource.status === "maintenance" ? "Set Active" : "Maintenance"}
                 </Button>
                 <Button
-                  variant="ghost"
+                  variant="blush"
                   size="sm"
-                  className="text-rose-600 hover:bg-rose-50 hover:text-rose-700"
                   disabled={actionLoading}
                   onClick={() => void handleRetire()}
                   title="Soft retire resource"
                 >
                   <Archive className="h-3.5 w-3.5" />
+                  Retire
                 </Button>
               </div>
-            )}
-          </div>
-        </div>
-
-        {/* Subtype Specifications Grid */}
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-5 border-t border-slate-100">
-          {roomDetails && (
-            <>
-              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-100">
-                <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
-                  <Users className="h-3.5 w-3.5" />
-                  Room Capacity
-                </div>
-                <div className="mt-1 text-lg font-bold text-slate-900 tabular-nums">
-                  {roomDetails.capacity} people
-                </div>
-              </div>
-              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-100">
-                <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
-                  <Layers className="h-3.5 w-3.5" />
-                  Room Style
-                </div>
-                <div className="mt-1 text-lg font-bold text-slate-900">
-                  {ROOM_STYLE_LABELS[roomDetails.room_style]}
-                </div>
-              </div>
-            </>
+            </div>
           )}
-
-          {equipmentDetails && (
-            <>
-              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-100">
-                <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
-                  <Cpu className="h-3.5 w-3.5" />
-                  Pool Quantity
-                </div>
-                <div className="mt-1 text-lg font-bold text-slate-900 tabular-nums">
-                  {equipmentDetails.quantity} units
-                </div>
-              </div>
-              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-100">
-                <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
-                  <Layers className="h-3.5 w-3.5" />
-                  Equipment Category
-                </div>
-                <div className="mt-1 text-lg font-bold text-slate-900 capitalize">
-                  {equipmentDetails.category.replace(/_/g, " ")}
-                </div>
-              </div>
-            </>
-          )}
-
-          {supportDetails && (
-            <>
-              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-100">
-                <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
-                  <GraduationCap className="h-3.5 w-3.5" />
-                  Max Attendees
-                </div>
-                <div className="mt-1 text-lg font-bold text-slate-900 tabular-nums">
-                  {supportDetails.max_attendees}
-                </div>
-              </div>
-              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-100">
-                <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
-                  <Users className="h-3.5 w-3.5" />
-                  Host / Service Team
-                </div>
-                <div className="mt-1 text-sm font-bold text-slate-900">
-                  {supportDetails.host_name ?? supportDetails.category}
-                </div>
-              </div>
-            </>
-          )}
-
-          <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-100">
-            <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
-              <KeyRound className="h-3.5 w-3.5" />
-              Check-In Method
-            </div>
-            <div className="mt-1 text-sm font-bold text-slate-900">
-              {CHECKIN_LABELS[resource.checkin_method]}
-            </div>
-          </div>
-
-          <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-100">
-            <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
-              <ShieldCheck className="h-3.5 w-3.5" />
-              Concurrency Ceiling
-            </div>
-            <div className="mt-1 text-lg font-bold text-slate-900 tabular-nums">
-              {resource.max_concurrent_bookings ??
-                (equipmentDetails
-                  ? equipmentDetails.quantity
-                  : supportDetails
-                    ? supportDetails.max_attendees
-                    : 1)}{" "}
-              <span className="text-xs font-normal text-slate-500">slot(s)</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Equipment technical specs callout */}
-        {equipmentDetails && equipmentDetails.specifications && (
-          <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50/60 p-4 text-xs text-slate-700">
-            <div className="font-semibold text-slate-900 mb-1">Technical Specifications</div>
-            <p className="leading-relaxed">{equipmentDetails.specifications}</p>
-          </div>
-        )}
-
-        {/* Facility Tags */}
-        <div className="mt-5 pt-4 border-t border-slate-100">
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 mb-2.5">
-            <Building2 className="h-3.5 w-3.5 text-warwick-700" />
-            Facilities & Amenities ({resource.facilities.length})
-          </div>
-          {resource.facilities.length > 0 ? (
-            <div className="flex flex-wrap gap-1.5">
-              {resource.facilities.map((fac) => (
-                <Badge key={fac} tone="slate" className="text-xs">
-                  {fac}
-                </Badge>
-              ))}
-            </div>
-          ) : (
-            <p className="text-xs text-slate-400">No facility tags recorded for this resource.</p>
-          )}
-        </div>
-      </section>
-
-      {/* Visual Media & Campus Map */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <PanoramaViewer
-          imageUrl={resource.image_url}
-          resourceName={resource.resource_name}
-          location={resource.location}
-        />
-        <CampusMap
-          buildingName={resource.building_name}
-          buildingId={resource.building_id}
-          location={resource.location}
-          zone={resource.zone}
-          lat={resource.lat}
-          lon={resource.lon}
-        />
+        </aside>
       </div>
-
-      <BookingDrawer
-        resource={resource}
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        onSuccess={(created) =>
-          setFeedback(
-            `Created booking #${created.booking_id} (${created.status_id}).`
-          )
-        }
-      />
     </div>
   );
 }

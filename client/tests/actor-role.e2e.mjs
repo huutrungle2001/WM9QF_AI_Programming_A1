@@ -23,7 +23,8 @@ test("booking data is scoped to the active demo actor on switch and reload", () 
   const { browserPageId } = orca("tab", "create", "--url", url.href);
   const page = (...args) => orca(...args, "--page", browserPageId);
   const read = (expression) => JSON.parse(page("eval", "--expression", expression).result);
-  const waitForRows = () => page("wait", "--selector", "main tbody tr");
+  const waitForRows = () =>
+    page("wait", "--selector", "[data-testid='bookings-master-list'] [data-booking-row]");
   const roleRef = (pattern) => {
     const { refs } = page("snapshot", "--interactive", "--depth", "5");
     const match = Object.entries(refs).find(([, entry]) =>
@@ -32,23 +33,25 @@ test("booking data is scoped to the active demo actor on switch and reload", () 
     return `@${match[0]}`;
   };
   const chooseRole = (pattern) => {
-    page("click", "--element", roleRef(/Administrator|Campus Member|Student Services$/));
+    page("click", "--element", roleRef(/Administrator|Campus Member|Student Services|Resources Manager/));
     page("click", "--element", roleRef(pattern), "--expect-url", url.href);
     waitForRows();
   };
-  const userCells = () => read(`JSON.stringify(Array.from(
-    document.querySelectorAll('main tbody tr'), row => row.cells[1].innerText))`);
+  const userIds = () => read(`JSON.stringify(Array.from(
+    document.querySelectorAll("[data-testid='bookings-master-list'] [data-booking-row]"),
+    row => row.getAttribute("data-user-id") || ""
+  ))`);
 
   try {
     waitForRows();
     chooseRole(/^Admin ADMIN1/);
-    assert.ok(new Set(userCells()).size > 1, "admin should see multiple users");
+    assert.ok(new Set(userIds()).size > 1, "admin should see multiple users");
 
     chooseRole(/^PG Student S1001/);
     const assertMemberRows = () => {
-      const users = userCells();
+      const users = userIds();
       assert.ok(users.length);
-      assert.ok(users.every((cell) => cell.split("\n").includes("S1001")),
+      assert.ok(users.every((uid) => uid === "S1001"),
         "all booking rows must belong to the selected member");
     };
     assertMemberRows();
@@ -62,9 +65,14 @@ test("booking data is scoped to the active demo actor on switch and reload", () 
 
     chooseRole(/^Admin ADMIN1/);
     chooseRole(/^Student Services SS1/);
-    const users = userCells();
-    assert.ok(users.length && users.every((cell) => cell.startsWith("ANON-")));
-    assert.equal(read(`JSON.stringify(document.querySelectorAll('main tbody tr button').length)`), 0);
+    const users = userIds();
+    assert.ok(users.length && users.every((uid) => uid.startsWith("ANON-")),
+      "student_services must only receive ANON- pseudonymised IDs");
+    assert.equal(
+      read(`JSON.stringify(document.querySelectorAll("[data-testid='booking-inspector-actions'] button").length)`),
+      0,
+      "student_services must not have mutating booking controls"
+    );
   } finally {
     orca("tab", "close", "--page", browserPageId);
   }

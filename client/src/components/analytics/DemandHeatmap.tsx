@@ -1,166 +1,111 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { Flame } from "lucide-react";
 import type { HeatmapCell } from "@/types";
-import { Badge } from "@/components/ui/Badge";
 
-const DEFAULT_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const HOURS = Array.from({ length: 24 }, (_, i) => i);
 
 interface DemandHeatmapProps {
   cells: HeatmapCell[];
 }
 
-function cellBgClass(count: number, max: number): string {
-  if (count <= 0 || max <= 0) return "bg-slate-100 text-slate-300";
+function cellTone(count: number, max: number): string {
+  if (count <= 0 || max <= 0) return "bg-fog text-ash/60";
   const ratio = count / max;
-  if (ratio < 0.2) return "bg-warwick-100 text-warwick-800";
-  if (ratio < 0.4) return "bg-warwick-200 text-warwick-900";
-  if (ratio < 0.6) return "bg-warwick-400 text-white";
-  if (ratio < 0.8) return "bg-warwick-600 text-white";
-  return "bg-warwick-800 text-white";
+  if (ratio <= 0.25) return "bg-mist text-ink";
+  if (ratio <= 0.5) return "bg-smoke/45 text-ink";
+  if (ratio <= 0.75) return "bg-blush text-sienna font-medium";
+  if (ratio < 0.92) return "bg-sienna text-paper font-medium";
+  return "bg-ink text-paper font-semibold";
 }
 
 export function DemandHeatmap({ cells }: DemandHeatmapProps) {
   const [hovered, setHovered] = useState<{
-    dayName: string;
+    day: string;
     hour: number;
     count: number;
   } | null>(null);
 
-  const { matrix, maxCount, peakCell, totalCount, dayNames } = useMemo(() => {
+  const { grid, maxCount, peakCell } = useMemo(() => {
     const map = new Map<string, number>();
-    const names = [...DEFAULT_DAYS];
     let max = 0;
-    let total = 0;
-    let peak: { dayName: string; hour: number; count: number } | null = null;
+    let peak: { day: string; hour: number; count: number } | null = null;
 
-    for (const c of cells) {
-      if (c.day_of_week >= 0 && c.day_of_week <= 6 && c.day_name) {
-        names[c.day_of_week] = c.day_name.slice(0, 3);
-      }
-      const key = `${c.day_of_week}-${c.hour}`;
-      map.set(key, c.booking_count);
-      total += c.booking_count;
-      if (c.booking_count > max) {
-        max = c.booking_count;
+    for (const cell of cells) {
+      const key = `${cell.day_of_week}-${cell.hour}`;
+      map.set(key, cell.booking_count);
+      if (cell.booking_count > max) {
+        max = cell.booking_count;
         peak = {
-          dayName: c.day_name || names[c.day_of_week] || `Day ${c.day_of_week}`,
-          hour: c.hour,
-          count: c.booking_count,
+          day: DAY_NAMES[cell.day_of_week] ?? cell.day_name,
+          hour: cell.hour,
+          count: cell.booking_count,
         };
       }
     }
-
-    return {
-      matrix: map,
-      maxCount: max,
-      peakCell: peak,
-      totalCount: total,
-      dayNames: names,
-    };
+    return { grid: map, maxCount: max, peakCell: peak };
   }, [cells]);
 
+  const activeReadout = hovered ?? peakCell;
+
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+    <div className="rounded-[16px] border border-hairline bg-paper p-6">
       <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
         <div>
-          <h3 className="text-sm font-semibold text-slate-900">
+          <h3 className="text-[15.5px] font-semibold tracking-[-0.015em] text-ink">
             7 × 24 Demand Heatmap
           </h3>
-          <p className="mt-0.5 text-xs text-slate-500">
-            Booking starts distributed across weekday and UTC hour slots ({totalCount} total slots)
+          <p className="mt-0.5 text-[12.5px] text-slate-muted">
+            Booking starts distributed across weekday and UTC hour
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          {peakCell && peakCell.count > 0 && (
-            <Badge tone="plum">
-              <Flame className="h-3 w-3" />
-              Peak: {peakCell.dayName} {String(peakCell.hour).padStart(2, "0")}:00 ({peakCell.count})
-            </Badge>
-          )}
-        </div>
+
+        {activeReadout && (
+          <div className="rounded-full bg-mist px-3 py-1 text-[12px] font-medium text-ink tabular-nums">
+            {hovered ? "Hovered" : "Peak"}: {activeReadout.day}{" "}
+            {String(activeReadout.hour).padStart(2, "0")}:00 ·{" "}
+            {activeReadout.count} bookings
+          </div>
+        )}
       </div>
 
-      {/* Live Hover Callout */}
-      <div className="mb-3 flex items-center justify-between text-xs min-h-[24px]">
-        <div className="text-slate-600 tabular-nums">
-          {hovered ? (
-            <span>
-              <strong className="text-slate-900">
-                {hovered.dayName} · {String(hovered.hour).padStart(2, "0")}:00–
-                {String((hovered.hour + 1) % 24).padStart(2, "0")}:00 UTC
-              </strong>
-              : <strong className="text-warwick-700">{hovered.count}</strong>{" "}
-              {hovered.count === 1 ? "booking" : "bookings"}
-            </span>
-          ) : (
-            <span className="text-slate-400">
-              Hover any hour cell to inspect exact slot demand.
-            </span>
-          )}
-        </div>
-
-        {/* Intensity Legend */}
-        <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-500">
-          <span>Low</span>
-          <span className="h-3 w-3 rounded bg-slate-100 ring-1 ring-slate-200" />
-          <span className="h-3 w-3 rounded bg-warwick-100" />
-          <span className="h-3 w-3 rounded bg-warwick-200" />
-          <span className="h-3 w-3 rounded bg-warwick-400" />
-          <span className="h-3 w-3 rounded bg-warwick-600" />
-          <span className="h-3 w-3 rounded bg-warwick-800" />
-          <span>Peak</span>
-        </div>
-      </div>
-
-      {/* 7x24 Responsive Grid */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto pb-1">
         <div className="min-w-[680px]">
-          {/* Hour Header */}
           <div className="grid grid-cols-[44px_repeat(24,minmax(0,1fr))] gap-1 mb-1.5">
             <div />
-            {HOURS.map((h) => (
+            {HOURS.map((hr) => (
               <div
-                key={h}
-                className="text-center font-mono text-[10px] text-slate-400 tabular-nums"
+                key={hr}
+                className="text-center font-mono text-[10px] text-ash tabular-nums"
               >
-                {h % 2 === 0 ? String(h).padStart(2, "0") : ""}
+                {hr % 2 === 0 ? String(hr).padStart(2, "0") : ""}
               </div>
             ))}
           </div>
 
-          {/* Day Rows */}
           <div className="space-y-1">
-            {dayNames.map((dayName, dayIdx) => (
+            {DAY_NAMES.map((day, dayIdx) => (
               <div
-                key={dayIdx}
+                key={day}
                 className="grid grid-cols-[44px_repeat(24,minmax(0,1fr))] gap-1 items-center"
               >
-                <div className="text-xs font-medium text-slate-600 pr-2 text-right">
-                  {dayName}
-                </div>
-                {HOURS.map((hour) => {
-                  const count = matrix.get(`${dayIdx}-${hour}`) ?? 0;
-                  const isHovered =
-                    hovered?.dayName === dayName && hovered?.hour === hour;
+                <span className="text-[11.5px] font-medium text-slate-muted">
+                  {day}
+                </span>
+                {HOURS.map((hr) => {
+                  const count = grid.get(`${dayIdx}-${hr}`) ?? 0;
                   return (
                     <button
-                      key={hour}
+                      key={hr}
                       type="button"
-                      onMouseEnter={() => setHovered({ dayName, hour, count })}
-                      onFocus={() => setHovered({ dayName, hour, count })}
+                      onMouseEnter={() => setHovered({ day, hour: hr, count })}
                       onMouseLeave={() => setHovered(null)}
-                      aria-label={`${dayName} ${String(hour).padStart(2, "0")}:00 - ${count} bookings`}
-                      className={`h-7 rounded-md text-[10px] font-semibold tabular-nums flex items-center justify-center transition-transform ${cellBgClass(
+                      title={`${day} ${String(hr).padStart(2, "0")}:00 — ${count} bookings`}
+                      className={`h-7 rounded-[6px] text-[10.5px] tabular-nums transition-transform hover:scale-[1.06] ${cellTone(
                         count,
                         maxCount
-                      )} ${
-                        isHovered
-                          ? "scale-110 ring-2 ring-warwick-900 z-10 shadow-sm"
-                          : "hover:ring-1 hover:ring-warwick-500"
-                      }`}
+                      )}`}
                     >
                       {count > 0 ? count : ""}
                     </button>
@@ -170,6 +115,18 @@ export function DemandHeatmap({ cells }: DemandHeatmapProps) {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Legend */}
+      <div className="mt-4 flex flex-wrap items-center justify-end gap-2 text-[11.5px] text-slate-muted">
+        <span>Low</span>
+        <span className="h-3.5 w-3.5 rounded-[4px] border border-hairline bg-fog" />
+        <span className="h-3.5 w-3.5 rounded-[4px] bg-mist" />
+        <span className="h-3.5 w-3.5 rounded-[4px] bg-smoke/45" />
+        <span className="h-3.5 w-3.5 rounded-[4px] bg-blush" />
+        <span className="h-3.5 w-3.5 rounded-[4px] bg-sienna" />
+        <span className="h-3.5 w-3.5 rounded-[4px] bg-ink" />
+        <span>Peak</span>
       </div>
     </div>
   );

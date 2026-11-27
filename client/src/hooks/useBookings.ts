@@ -32,7 +32,10 @@ export function useBookings(filters: BookingFilter = {}) {
   }, [actorHeadersContext, serializedFilters]);
 
   useEffect(() => {
-    void refresh();
+    const timer = window.setTimeout(() => {
+      void refresh();
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, [refresh, actor.id]);
 
   return { bookings, loading, error, refresh };

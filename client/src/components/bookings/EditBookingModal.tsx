@@ -82,7 +82,7 @@ export function EditBookingModal({
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-semibold text-slate-700">
+            <label className="block text-[12.5px] font-medium text-ink">
               Start Time (UTC)
             </label>
             <input
@@ -90,11 +90,11 @@ export function EditBookingModal({
               required
               value={startLocal}
               onChange={(e) => setStartLocal(e.target.value)}
-              className="mt-1.5 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums focus:border-warwick-600 focus:outline-none focus:ring-2 focus:ring-warwick-600/20"
+              className="mt-1.5 w-full rounded-[12px] border border-hairline bg-paper px-3 py-2 text-[13.5px] text-ink tabular-nums focus:border-ink focus:outline-none"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-slate-700">
+            <label className="block text-[12.5px] font-medium text-ink">
               End Time (UTC)
             </label>
             <input
@@ -102,35 +102,35 @@ export function EditBookingModal({
               required
               value={endLocal}
               onChange={(e) => setEndLocal(e.target.value)}
-              className="mt-1.5 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums focus:border-warwick-600 focus:outline-none focus:ring-2 focus:ring-warwick-600/20"
+              className="mt-1.5 w-full rounded-[12px] border border-hairline bg-paper px-3 py-2 text-[13.5px] text-ink tabular-nums focus:border-ink focus:outline-none"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-slate-700">Purpose</label>
+          <label className="block text-[12.5px] font-medium text-ink">Purpose</label>
           <input
             type="text"
             maxLength={500}
             value={purpose}
             onChange={(e) => setPurpose(e.target.value)}
-            className="mt-1.5 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-warwick-600 focus:outline-none focus:ring-2 focus:ring-warwick-600/20"
+            className="mt-1.5 w-full rounded-[12px] border border-hairline bg-paper px-3 py-2 text-[13.5px] text-ink focus:border-ink focus:outline-none"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-slate-700">Notes</label>
+          <label className="block text-[12.5px] font-medium text-ink">Notes</label>
           <textarea
             rows={3}
             maxLength={1000}
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            className="mt-1.5 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-warwick-600 focus:outline-none focus:ring-2 focus:ring-warwick-600/20"
+            className="mt-1.5 w-full rounded-[12px] border border-hairline bg-paper px-3 py-2 text-[13.5px] text-ink focus:border-ink focus:outline-none"
           />
         </div>
 
         {error && (
-          <div className="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs font-medium text-rose-800">
+          <div className="rounded-[12px] bg-blush px-3.5 py-2.5 text-[13px] font-medium text-sienna">
             {error}
           </div>
         )}

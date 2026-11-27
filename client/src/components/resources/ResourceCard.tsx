@@ -2,20 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
+import { MapPin } from "lucide-react";
 import {
-  ArrowUpRight,
-  BookOpen,
-  CalendarPlus,
-  Camera,
-  Cpu,
-  GraduationCap,
-  KeyRound,
-  MapPin,
-  Monitor,
-  Users,
-} from "lucide-react";
-import {
-  CHECKIN_LABELS,
   ELIGIBILITY_LABELS,
   RESOURCE_TYPE_SINGULAR,
   ROOM_STYLE_LABELS,
@@ -24,33 +12,34 @@ import {
   isSupportDetails,
   type AvailabilitySlot,
   type ResourceOut,
-  type ResourceType,
 } from "@/types";
-import { Badge, type BadgeTone } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-
-const TYPE_ICONS: Record<ResourceType, React.ComponentType<{ className?: string }>> = {
-  study_room: BookOpen,
-  group_space: Users,
-  computer_lab: Monitor,
-  specialist_equipment: Cpu,
-  academic_support: GraduationCap,
-};
-
-const ELIGIBILITY_TONES: Record<string, BadgeTone> = {
-  all_users: "slate",
-  students_only: "indigo",
-  staff_only: "plum",
-  pg_only: "plum",
-  pgr_and_staff: "indigo",
-  disability_only: "emerald",
-};
 
 interface ResourceCardProps {
   resource: ResourceOut;
   availability?: AvailabilitySlot;
   onBook: (resource: ResourceOut) => void;
   canBook?: boolean;
+  surface?: "paper" | "mist";
+}
+
+function primaryMetricFor(resource: ResourceOut): string {
+  if (isRoomDetails(resource.details, resource.resource_type)) {
+    return `${resource.details.capacity} seats · ${ROOM_STYLE_LABELS[resource.details.room_style]}`;
+  }
+  if (isEquipmentDetails(resource.details, resource.resource_type)) {
+    const cat = resource.details.category.replace(/_/g, " ");
+    return `${resource.details.quantity} units · ${cat.charAt(0).toUpperCase() + cat.slice(1)}`;
+  }
+  if (isSupportDetails(resource.details, resource.resource_type)) {
+    const mode = resource.building_id === null ? "Online" : "In-person";
+    const size =
+      resource.details.max_attendees === 1
+        ? "1-on-1"
+        : `Up to ${resource.details.max_attendees}`;
+    return `${size} · ${mode}`;
+  }
+  return RESOURCE_TYPE_SINGULAR[resource.resource_type];
 }
 
 export function ResourceCard({
@@ -58,184 +47,111 @@ export function ResourceCard({
   availability,
   onBook,
   canBook = true,
+  surface = "paper",
 }: ResourceCardProps) {
-  const TypeIcon = TYPE_ICONS[resource.resource_type];
-  const roomDetails = isRoomDetails(resource.details, resource.resource_type)
-    ? resource.details
-    : null;
-  const equipmentDetails = isEquipmentDetails(resource.details, resource.resource_type)
-    ? resource.details
-    : null;
-  const supportDetails = isSupportDetails(resource.details, resource.resource_type)
-    ? resource.details
-    : null;
+  const metric = primaryMetricFor(resource);
+  const secondaryNote =
+    resource.status !== "active"
+      ? resource.status === "maintenance"
+        ? "Maintenance"
+        : "Retired"
+      : resource.requires_approval
+        ? "Approval required"
+        : resource.booking_eligibility !== "all_users"
+          ? ELIGIBILITY_LABELS[resource.booking_eligibility]
+          : "Instant booking";
 
-  const visibleFacilities = resource.facilities.slice(0, 3);
-  const extraFacilities = Math.max(0, resource.facilities.length - 3);
+  const locationLine = resource.building_name
+    ? resource.zone
+      ? `${resource.building_name} · ${resource.zone}`
+      : resource.building_name
+    : resource.location;
 
   return (
-    <article className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-card hover:shadow-card-hover hover:border-warwick-200 transition-all">
+    <article
+      className={`group flex flex-col justify-between rounded-[24px] p-5 sm:p-6 transition-colors ${
+        surface === "mist"
+          ? "bg-mist hover:bg-mist/80"
+          : "border border-hairline bg-paper hover:bg-fog"
+      }`}
+    >
       <div>
-        {/* Top Row: Type & Status/Approval */}
-        <div className="flex items-start justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-warwick-50 text-warwick-700 ring-1 ring-warwick-200/70">
-              <TypeIcon className="h-4 w-4" />
-            </div>
-            <div className="leading-tight">
-              <span className="text-[11px] font-semibold uppercase tracking-wide text-warwick-700">
-                {RESOURCE_TYPE_SINGULAR[resource.resource_type]}
-              </span>
-              <div className="font-mono text-[10px] text-slate-400">
-                {resource.resource_id}
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-1.5 flex-wrap justify-end">
+        {/* Quiet top metadata row */}
+        <div className="flex items-center justify-between gap-2 text-[12px] text-ash">
+          <span className="truncate font-medium text-slate-muted">
+            {RESOURCE_TYPE_SINGULAR[resource.resource_type]}
+          </span>
+          <div className="flex items-center gap-2 shrink-0">
             {resource.image_url && (
               <span
-                title="Room photo / 360° preview available"
-                className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600"
+                title="360° / Room photo available"
+                className="font-mono text-[11px] font-medium text-ink"
               >
-                <Camera className="h-3 w-3 text-warwick-600" />
-                Photo
+                360°
               </span>
             )}
-            {resource.status !== "active" && (
-              <Badge tone={resource.status === "maintenance" ? "amber" : "rose"}>
-                {resource.status}
-              </Badge>
-            )}
+            <span className="font-mono text-[11px] text-ash">
+              {resource.resource_id}
+            </span>
           </div>
         </div>
 
-        {/* Title & Location */}
+        {/* Resource title */}
         <Link
           href={`/resources/${encodeURIComponent(resource.resource_id)}`}
-          className="mt-3 block group/link"
+          className="mt-2.5 block"
         >
-          <h3 className="text-sm font-semibold text-slate-900 group-hover/link:text-warwick-700 transition-colors line-clamp-2">
+          <h3 className="text-[17px] font-semibold leading-[1.3] tracking-[-0.015em] text-ink group-hover:underline underline-offset-4 line-clamp-2">
             {resource.resource_name}
           </h3>
         </Link>
 
-        <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-500">
-          <MapPin className="h-3.5 w-3.5 shrink-0 text-slate-400" />
-          <span className="truncate">
-            {resource.building_name ?? resource.location}
-            {resource.zone ? ` · ${resource.zone}` : ""}
-          </span>
+        {/* Location */}
+        <p className="mt-1.5 flex items-center gap-1.5 text-[13.5px] text-slate-muted">
+          <MapPin className="h-3.5 w-3.5 shrink-0 text-ash" />
+          <span className="truncate">{locationLine}</span>
         </p>
 
-        {/* Subtype Metric Strip */}
-        <div className="mt-3.5 flex flex-wrap items-center gap-x-4 gap-y-1.5 rounded-xl bg-slate-50 px-3 py-2 text-xs text-slate-700 border border-slate-100">
-          {roomDetails && (
-            <>
-              <span className="inline-flex items-center gap-1.5 tabular-nums">
-                <Users className="h-3.5 w-3.5 text-slate-400" />
-                <strong>{roomDetails.capacity}</strong> seats
-              </span>
-              <span className="text-slate-300">·</span>
-              <span className="text-slate-600">
-                {ROOM_STYLE_LABELS[roomDetails.room_style]}
-              </span>
-            </>
-          )}
-          {equipmentDetails && (
-            <>
-              <span className="inline-flex items-center gap-1.5 tabular-nums">
-                <Cpu className="h-3.5 w-3.5 text-slate-400" />
-                <strong>{equipmentDetails.quantity}</strong> units
-              </span>
-              <span className="text-slate-300">·</span>
-              <span className="capitalize text-slate-600">
-                {equipmentDetails.category.replace(/_/g, " ")}
-              </span>
-            </>
-          )}
-          {supportDetails && (
-            <>
-              <span className="inline-flex items-center gap-1.5 tabular-nums">
-                <GraduationCap className="h-3.5 w-3.5 text-slate-400" />
-                Max <strong>{supportDetails.max_attendees}</strong>
-              </span>
-              {supportDetails.host_name && (
-                <>
-                  <span className="text-slate-300">·</span>
-                  <span className="truncate text-slate-600">{supportDetails.host_name}</span>
-                </>
-              )}
-            </>
-          )}
+        {/* Single primary metric + quiet secondary indicator (max 2 indicators total) */}
+        <div className="mt-4 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] tabular-nums">
+          <span className="font-medium text-ink">{metric}</span>
+          <span className="text-smoke">·</span>
+          <span
+            className={
+              resource.requires_approval || resource.status !== "active"
+                ? "text-sienna font-medium"
+                : "text-slate-muted"
+            }
+          >
+            {secondaryNote}
+          </span>
         </div>
 
-        {/* Policy & Check-in Badges */}
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          <Badge tone={ELIGIBILITY_TONES[resource.booking_eligibility] ?? "slate"}>
-            {ELIGIBILITY_LABELS[resource.booking_eligibility]}
-          </Badge>
-          {resource.requires_approval ? (
-            <Badge tone="amber">Approval Required</Badge>
-          ) : (
-            <Badge tone="emerald">Auto-Confirm</Badge>
-          )}
-          {resource.checkin_method !== "none" && (
-            <Badge tone="slate">
-              <KeyRound className="h-3 w-3" />
-              {CHECKIN_LABELS[resource.checkin_method]}
-            </Badge>
-          )}
-        </div>
-
-        {/* Availability Remaining Slots Badge */}
+        {/* Availability slot readout when live availability filter is active */}
         {availability && (
-          <div className="mt-3 flex items-center justify-between rounded-xl bg-emerald-50 border border-emerald-200/80 px-3 py-1.5 text-xs text-emerald-800">
-            <span className="font-medium">Available in selected window</span>
-            <span className="font-semibold tabular-nums">
-              {availability.remaining_slots} / {availability.max_concurrent_bookings} free
-            </span>
-          </div>
-        )}
-
-        {/* Facilities */}
-        {visibleFacilities.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1">
-            {visibleFacilities.map((fac) => (
-              <span
-                key={fac}
-                className="rounded-md bg-slate-100/90 px-2 py-0.5 text-[11px] text-slate-600"
-              >
-                {fac}
-              </span>
-            ))}
-            {extraFacilities > 0 && (
-              <span className="rounded-md bg-slate-100/90 px-2 py-0.5 text-[11px] font-medium text-slate-500">
-                +{extraFacilities} more
-              </span>
-            )}
-          </div>
+          <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-mist px-2.5 py-0.5 text-[12px] font-medium text-ink tabular-nums">
+            <span className="h-1.5 w-1.5 rounded-full bg-ink" />
+            {availability.remaining_slots} of {availability.max_concurrent_bookings} free
+          </p>
         )}
       </div>
 
-      {/* Footer Actions */}
-      <div className="mt-5 flex items-center gap-2 pt-3.5 border-t border-slate-100">
+      {/* Bottom action row */}
+      <div className="mt-6 flex items-center justify-between gap-3 pt-4 border-t border-hairline">
         <Button
           variant="primary"
           size="sm"
-          className="flex-1"
+          shape="pill"
           disabled={!canBook || resource.status !== "active"}
           onClick={() => onBook(resource)}
         >
-          <CalendarPlus className="h-3.5 w-3.5" />
-          {resource.requires_approval ? "Request Slot" : "Book Now"}
+          {resource.requires_approval ? "Request" : "Book"}
         </Button>
         <Link
           href={`/resources/${encodeURIComponent(resource.resource_id)}`}
-          className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+          className="text-[13.5px] font-medium text-ink hover:underline underline-offset-4"
         >
-          Details
-          <ArrowUpRight className="h-3.5 w-3.5" />
+          Details →
         </Link>
       </div>
     </article>
