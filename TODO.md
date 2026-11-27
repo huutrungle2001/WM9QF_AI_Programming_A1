@@ -15,13 +15,13 @@ Granular, checkable tasks derived from `PLAN.md`. Tick off items sequentially pe
 
 ## Phase 1 — Database Schema, Domain OOP & Deterministic Seed
 
-- [ ] `T1.1` `[SETUP]` Create `server/pyproject.toml`, `server/requirements.txt`, and package `__init__.py` files under `server/app/`
-- [ ] `T1.2` `[RED]` Create `server/tests/conftest.py` (isolated SQLite DB fixture) and write failing tests in `server/tests/test_db_and_domain.py`
-- [ ] `T1.3` `[GREEN]` Write `database/schema.sql` (11 tables, FKs, `CHECK` constraints, 5 partial/composite indexes)
-- [ ] `T1.4` `[GREEN]` Implement `server/app/config.py` (`AppSettings`, `BookingPolicyConfig`) and `server/app/database.py` (`DatabaseManager` with `PRAGMA foreign_keys=ON` & `BEGIN IMMEDIATE`)
-- [ ] `T1.5` `[GREEN]` Implement `server/app/domain/enums.py`, `exceptions.py`, and `resources.py` (`Resource(ABC)`, `RoomResource`, `EquipmentResource`, `AcademicSupportResource`, `ResourceFactory`)
-- [ ] `T1.6` `[GREEN]` Implement `database/scripts/seed_db.py` (load `seed_data.json` + 50 synthetic users + ~400 multi-week bookings with exam-week peak)
-- [ ] `T1.7` `[REFACTOR]` Run `pytest server/tests/test_db_and_domain.py -v` and `python3 database/scripts/seed_db.py --reset` -> verify zero FK errors and commit Phase 1
+- [x] `T1.1` `[SETUP]` Create `server/pyproject.toml`, `server/requirements.txt`, and package `__init__.py` files under `server/app/`
+- [x] `T1.2` `[RED]` Create `server/tests/conftest.py` (isolated SQLite DB fixture) and write failing tests in `server/tests/test_db_and_domain.py`
+- [x] `T1.3` `[GREEN]` Write `database/schema.sql` (11 tables, FKs, `CHECK` constraints, 5 partial/composite indexes)
+- [x] `T1.4` `[GREEN]` Implement `server/app/config.py` (`AppSettings`, `BookingPolicyConfig`) and `server/app/database.py` (`DatabaseManager` with `PRAGMA foreign_keys=ON` & `BEGIN IMMEDIATE`)
+- [x] `T1.5` `[GREEN]` Implement `server/app/domain/enums.py`, `exceptions.py`, and `resources.py` (`Resource(ABC)`, `RoomResource`, `EquipmentResource`, `AcademicSupportResource`, `ResourceFactory`)
+- [x] `T1.6` `[GREEN]` Implement `database/scripts/seed_db.py` (load `seed_data.json` + 50 synthetic users + ~400 multi-week bookings with exam-week peak)
+- [x] `T1.7` `[REFACTOR]` Run `pytest server/tests/test_db_and_domain.py -v` and `python3 database/scripts/seed_db.py --reset` -> verify zero FK errors and commit Phase 1
 
 ---
 
