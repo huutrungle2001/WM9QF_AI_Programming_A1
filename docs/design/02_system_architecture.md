@@ -74,7 +74,8 @@ assessments/A1/
 ├── database/                              # Data sources, ETL pipeline, canonical DDL & SQLite runtime DB
 │   ├── raw/                               # 6 Warwick portal snapshots + 11 slide screenshots
 │   ├── scripts/
-│   │   ├── normalize.py                   # raw/*.json -> catalog.json (11-table 3NF CTI)
+│   │   ├── etl.py                         # raw/*.json -> catalog.json (11-table 3NF CTI)
+│   │   ├── etl_mappings.json              # Static portal aliases & curated equipment catalogue
 │   │   └── seed_db.py                     # Load catalog.json + synthetic users & multi-week bookings into SQLite
 │   ├── apis.json                          # Discovered Warwick source API inventory
 │   ├── sitemap.json                       # Portal inventory & observed real-world permission rules
@@ -176,7 +177,7 @@ flowchart LR
     Services --> Domain["server/app/domain/ (OOP Resource Hierarchy)"]
     Services --> Repos["server/app/repositories/ (Parameterised SQL)"]
     Repos --> DB["database/campus_bookings.db (SQLite3)"]
-    ETL["database/scripts/ (normalize.py, seed_db.py)"] --> DB
+    ETL["database/scripts/ (etl.py, seed_db.py)"] --> DB
 ```
 
 - **`database/` owns data provenance & DDL**: `database/schema.sql` is the canonical DDL loaded by `server/app/database.py`, avoiding duplicated SQL definitions.

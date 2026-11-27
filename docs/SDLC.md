@@ -89,7 +89,7 @@ Evidence to capture for the presentation slides:
 
 | Team Member | Primary Responsibilities | Key Files / Modules | Verification & Review |
 | :--- | :--- | :--- | :--- |
-| *Member 1* | Portal audit, 3NF CTI DB design, `schema.sql`, `normalize.py`, `seed_db.py`, Domain OOP | `database/`, `server/app/domain/` | `test_db_and_domain.py` |
+| *Member 1* | Portal audit, 3NF CTI DB design, `schema.sql`, `etl.py`, `seed_db.py`, Domain OOP | `database/`, `server/app/domain/` | `test_db_and_domain.py` |
 | *Member 2* | Repositories, Booking conflict engine, RBAC/Privacy `PolicyGuard` | `server/app/repositories/`, `server/app/services/` | `test_catalog_crud.py`, `test_bookings_and_conflicts.py`, `test_policy_and_privacy.py` |
 | *Member 3* | Analytics SQL, Matplotlib charts, FastAPI routers, CLI & presentation | `analytics_*`, `chart_service.py`, `routers/`, `cli/` | `test_analytics_and_charts.py`, `test_api_and_cli.py` |
 
@@ -99,7 +99,7 @@ Evidence to capture for the presentation slides:
 
 ### Challenges Encountered & How We Responded
 - **Over-modelling vs Flexibility**: Early schema drafts included separate tables for 5 resource types plus portal-specific fields (`noise_zone`, `min_group_size`, `access_pin`, `delivery_mode`). Auditing real Warwick datasets revealed high redundancy (e.g. `noise_zone` duplicated `resource_type` on 99.6% of rooms; `access_pin` applied to <1% of resources). Refactoring to a lean 11-table CTI schema before writing implementation code avoided costly later migrations.
-- **Inconsistent External Data**: Warwick's WRB portal and AV room pages occasionally disagreed on room capacity and building naming (e.g. `"Ramphal, University of Warwick"` vs `"Ramphal"`). Isolating all data cleaning inside `database/scripts/normalize.py` kept the application schema completely clean.
+- **Inconsistent External Data**: Warwick's WRB portal and AV room pages occasionally disagreed on room capacity and building naming (e.g. `"Ramphal, University of Warwick"` vs `"Ramphal"`). Isolating all data cleaning inside `database/scripts/etl.py` kept the application schema completely clean.
 
 ### Current Prototype Limitations & Future Roadmap
 1. **Authentication**: Prototype uses lightweight `X-Role` / `X-User-Id` headers via `ActorContext`; production deployment would replace only the FastAPI dependency with Warwick SSO (OAuth2 / SAML / JWT).

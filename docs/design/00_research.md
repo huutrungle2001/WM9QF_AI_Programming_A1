@@ -21,7 +21,7 @@ Before designing the unified schema, we audited real University of Warwick booki
 
 ## 2. Domain Purity Rule & Normalised Seed Coverage
 
-**Core Principle**: *Design the relational schema and OOP domain strictly for the target domain first; treat raw Warwick portal exports purely as a seed adapter (`database/scripts/normalize.py`).* Legacy portal fields (e.g. `source_system`, `source_external_id`, `request_only="P"`, HTML blobs) must never leak into canonical database tables.
+**Core Principle**: *Design the relational schema and OOP domain strictly for the target domain first; treat raw Warwick portal exports purely as a seed adapter (`database/scripts/etl.py`).* Legacy portal fields (e.g. `source_system`, `source_external_id`, `request_only="P"`, HTML blobs) must never leak into canonical database tables.
 
 Mapping the 5 scenario resource categories into our normalised `database/catalog.json` yields **531 realistic campus resources** across **58 departments**, **205 buildings**, **67 facilities**, and **3,126 resource-facility links** (including **211 rooms with verified 360° panorama `image_url`s**):
 

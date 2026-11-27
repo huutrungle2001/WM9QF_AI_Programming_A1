@@ -7,7 +7,7 @@ Granular, checkable tasks derived from `PLAN.md`. Tick off items sequentially pe
 ## Phase 0 — Research & Design Foundation *(Completed)*
 
 - [x] `T0.1` `[DOCS]` Audit 6 Warwick campus portals, archive snapshots & screenshots in `database/raw/` and `database/apis.json`
-- [x] `T0.2` `[DATA]` Build `database/scripts/normalize.py` and generate `database/catalog.json` (531 resources, 67 facilities, 3,126 links, 211 360° `image_url`s)
+- [x] `T0.2` `[DATA]` Build `database/scripts/etl.py` (+ `etl_mappings.json`) and generate `database/catalog.json` (531 resources, 67 facilities, 3,126 links, 211 360° `image_url`s)
 - [x] `T0.3` `[DOCS]` Finalise design suite `docs/design/00_research.md` .. `06_tdd_plan.md` + 6 diagrams (`.mmd` + `.png`)
 - [x] `T0.4` `[DOCS]` Create `docs/SDLC.md`, `PLAN.md`, and `TODO.md`
 
