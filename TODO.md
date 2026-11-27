@@ -27,35 +27,35 @@ Granular, checkable tasks derived from `PLAN.md`. Tick off items sequentially pe
 
 ## Phase 2 — Repositories, Services, Conflict Engine & RBAC/Privacy
 
-- [ ] `T2.1` `[RED]` Write failing tests in `server/tests/test_catalog_crud.py` (CTI CRUD, atomic rollback, facilities filter, soft retire/deactivate, SQL-injection probes)
-- [ ] `T2.2` `[RED]` Write failing tests in `server/tests/test_bookings_and_conflicts.py` (exclusive clash, adjacent boundary `end == next_start`, pooled concurrency, user clash, state transitions, soft delete, CSV import)
-- [ ] `T2.3` `[RED]` Write failing tests in `server/tests/test_policy_and_privacy.py` (4-role RBAC matrix, SQL eligibility pushdown, `403` direct-booking bypass, SHA-256 `ANON-...`, redacted `purpose`/`notes`)
-- [ ] `T2.4` `[GREEN]` Implement Pydantic v2 schemas in `server/app/schemas/` (`actor.py`, `reference.py`, `user.py`, `resource.py`, `booking.py`)
-- [ ] `T2.5` `[GREEN]` Implement `server/app/repositories/reference_repo.py` and `user_repo.py` (100% parameterised SQL)
-- [ ] `T2.6` `[GREEN]` Implement `server/app/repositories/resource_repo.py` (atomic CTI writes, `facilities` sync, eligibility SQL pushdown)
-- [ ] `T2.7` `[GREEN]` Implement `server/app/repositories/booking_repo.py` (`blocks_slot = 1` overlap queries, soft delete)
-- [ ] `T2.8` `[GREEN]` Implement `server/app/services/policy.py` (`PolicyGuard`) and `catalog_service.py` (CRUD + availability lookup)
-- [ ] `T2.9` `[GREEN]` Implement `server/app/services/booking_service.py` (`BEGIN IMMEDIATE` 2-way conflict engine, state machine, soft delete, CSV batch import)
-- [ ] `T2.10` `[REFACTOR]` Run `pytest server/tests/ -v` -> verify all Phase 1–2 tests pass green and commit Phase 2
+- [x] `T2.1` `[RED]` Write failing tests in `server/tests/test_catalog_crud.py` (CTI CRUD, atomic rollback, facilities filter, soft retire/deactivate, SQL-injection probes)
+- [x] `T2.2` `[RED]` Write failing tests in `server/tests/test_bookings_and_conflicts.py` (exclusive clash, adjacent boundary `end == next_start`, pooled concurrency, user clash, state transitions, soft delete, CSV import)
+- [x] `T2.3` `[RED]` Write failing tests in `server/tests/test_policy_and_privacy.py` (4-role RBAC matrix, SQL eligibility pushdown, `403` direct-booking bypass, SHA-256 `ANON-...`, redacted `purpose`/`notes`)
+- [x] `T2.4` `[GREEN]` Implement Pydantic v2 schemas in `server/app/schemas/` (`actor.py`, `reference.py`, `user.py`, `resource.py`, `booking.py`)
+- [x] `T2.5` `[GREEN]` Implement `server/app/repositories/reference_repo.py` and `user_repo.py` (100% parameterised SQL)
+- [x] `T2.6` `[GREEN]` Implement `server/app/repositories/resource_repo.py` (atomic CTI writes, `facilities` sync, eligibility SQL pushdown)
+- [x] `T2.7` `[GREEN]` Implement `server/app/repositories/booking_repo.py` (`blocks_slot = 1` overlap queries, soft delete)
+- [x] `T2.8` `[GREEN]` Implement `server/app/services/policy.py` (`PolicyGuard`) and `catalog_service.py` (CRUD + availability lookup)
+- [x] `T2.9` `[GREEN]` Implement `server/app/services/booking_service.py` (`BEGIN IMMEDIATE` 2-way conflict engine, state machine, soft delete, CSV batch import)
+- [x] `T2.10` `[REFACTOR]` Run `pytest server/tests/ -v` -> verify all Phase 1–2 tests pass green and commit Phase 2
 
 ---
 
 ## Phase 3 — Analytics Queries & Matplotlib Visualisations
 
-- [ ] `T3.1` `[RED]` Write failing tests in `server/tests/test_analytics_and_charts.py` (KPI accuracy, top/underused resources, 7x24 heatmap totals, weekly trend peak, `k >= 5` fairness suppression, 4 PNG files)
-- [ ] `T3.2` `[GREEN]` Implement `server/app/repositories/analytics_repo.py` and `server/app/services/analytics_service.py`
-- [ ] `T3.3` `[GREEN]` Implement `server/app/services/chart_service.py` (generate 4 PNG charts in `server/reports/charts/`)
-- [ ] `T3.4` `[REFACTOR]` Run `pytest server/tests/ -v` and visually verify generated PNG charts -> commit Phase 3
+- [x] `T3.1` `[RED]` Write failing tests in `server/tests/test_analytics_and_charts.py` (KPI accuracy, top/underused resources, 7x24 heatmap totals, weekly trend peak, `k >= 5` fairness suppression, 4 PNG files)
+- [x] `T3.2` `[GREEN]` Implement `server/app/repositories/analytics_repo.py` and `server/app/services/analytics_service.py`
+- [x] `T3.3` `[GREEN]` Implement `server/app/services/chart_service.py` (generate 4 PNG charts in `server/reports/charts/`)
+- [x] `T3.4` `[REFACTOR]` Run the backend suite, verify all 4 PNG exports and commit Phase 3
 
 ---
 
 ## Phase 4 — FastAPI REST Layer, Thin CLI & Documentation
 
-- [ ] `T4.1` `[RED]` Write failing tests in `server/tests/test_api_and_cli.py` (FastAPI `TestClient` CRUD/booking/analytics/error codes `401/403/404/409/422` + CLI smoke tests)
-- [ ] `T4.2` `[GREEN]` Implement `server/app/dependencies.py`, `server/app/routers/` (`health`, `reference`, `users`, `resources`, `bookings`, `analytics`), and `server/app/main.py`
-- [ ] `T4.3` `[GREEN]` Implement thin CLI in `server/app/cli/` (interactive menu + subcommands with formatted f-string tables)
-- [ ] `T4.4` `[DOCS]` Write `README.md` (quickstart for setup, seed, `pytest`, FastAPI, CLI) and update `docs/SDLC.md` with TDD pass results
-- [ ] `T4.5` `[REFACTOR]` Run full `pytest -v` suite + manual CLI & FastAPI `/docs` smoke test -> commit & push Phase 4
+- [x] `T4.1` `[RED]` Write failing tests in `server/tests/test_api_and_cli.py` (FastAPI `TestClient` CRUD/booking/analytics/error codes `401/403/404/409/422` + CLI smoke tests)
+- [x] `T4.2` `[GREEN]` Implement `server/app/dependencies.py`, `server/app/routers/` (`health`, `reference`, `users`, `resources`, `bookings`, `analytics`), and `server/app/main.py`
+- [x] `T4.3` `[GREEN]` Implement thin CLI in `server/app/cli/` (interactive menu + subcommands with formatted f-string tables)
+- [x] `T4.4` `[DOCS]` Write `README.md` (quickstart for setup, seed, `pytest`, FastAPI, CLI) and update `docs/SDLC.md` with TDD pass results
+- [x] `T4.5` `[REFACTOR]` Run the full backend suite, verify CLI/API smoke coverage and commit Phase 4 locally
 
 ---
 
@@ -64,4 +64,6 @@ Granular, checkable tasks derived from `PLAN.md`. Tick off items sequentially pe
 - [ ] `T5.1` `[SDLC]` Conduct mock stakeholder interviews, record outcomes in `docs/SDLC.md`, and adjust `BookingPolicyConfig` if requested
 - [ ] `T5.2` `[ADMIN]` Grant GitHub read access on `WM9QF_AI_Programming_A1` to `WashingtonEnyinna`, `dscroft`, and `amkayhani`
 - [ ] `T5.3` `[SLIDES]` Assemble live presentation deck & demo script (architecture diagrams, Warwick portal screenshots, analytics charts, TDD output)
-- [ ] `T5.4` `[OPTIONAL]` Scaffold `client/` web frontend consuming `/api/v1` (unified resource search, MazeMap pins, 360° room preview)
+- [x] `T5.4` `[OPTIONAL]` Implement and smoke-test the Next.js client against the local `/api/v1` API
+- [ ] `T5.5` `[REVIEW]` Have the group critically evaluate and revise the AI-assisted prototype; document actual contributions and AI use per the brief.
+- [ ] `T5.6` `[ADMIN]` Confirm private repository visibility and review raw data and Git history for personal identifiers before sharing the implementation.

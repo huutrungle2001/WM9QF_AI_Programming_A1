@@ -18,17 +18,22 @@ class AppSettings:
     db_path: Path = REPO_ROOT / "database" / "resource_bookings.db"
     charts_dir: Path = REPO_ROOT / "server" / "reports" / "charts"
     pseudonym_salt: str = "warwick-campus-booking-salt-v1"
+    client_port: int = 3000
 
     @classmethod
     def from_env(cls) -> AppSettings:
         """Construct settings with optional environment variable overrides."""
         defaults = cls()
+        client_port = int(os.environ.get("BOOKING_CLIENT_PORT", defaults.client_port))
+        if not 1 <= client_port <= 65535:
+            raise ValueError("BOOKING_CLIENT_PORT must be between 1 and 65535.")
         return cls(
             schema_path=Path(os.environ.get("BOOKING_SCHEMA_PATH", defaults.schema_path)),
             seed_data_path=Path(os.environ.get("BOOKING_SEED_DATA_PATH", defaults.seed_data_path)),
             db_path=Path(os.environ.get("BOOKING_DB_PATH", defaults.db_path)),
             charts_dir=Path(os.environ.get("BOOKING_CHARTS_DIR", defaults.charts_dir)),
             pseudonym_salt=os.environ.get("BOOKING_PSEUDONYM_SALT", defaults.pseudonym_salt),
+            client_port=client_port,
         )
 
 
