@@ -53,7 +53,7 @@ export function RoleSwitcher({ variant = "pill" }: RoleSwitcherProps) {
         className={
           isSidebar
             ? "flex w-full items-center justify-between gap-2 rounded-[10px] border border-hairline bg-paper px-2.5 py-2 text-left transition-colors hover:border-smoke/70"
-            : "flex items-center gap-2 rounded-full border border-hairline bg-paper py-1 pl-1.5 pr-3 text-left transition-colors hover:border-smoke/70 hover:bg-fog"
+            : "flex max-w-full items-center gap-2 whitespace-nowrap rounded-full border border-hairline bg-paper py-1 pl-1.5 pr-3 text-left transition-colors hover:border-smoke/70 hover:bg-fog"
         }
       >
         <div className="flex items-center gap-2 min-w-0">
@@ -70,8 +70,8 @@ export function RoleSwitcher({ variant = "pill" }: RoleSwitcherProps) {
               </span>
             )}
           </span>
-          {!isSidebar && (
-            <span className="hidden md:inline text-[12px] text-slate-muted">
+          {!isSidebar && ROLE_LABELS[actor.role].toLowerCase() !== actor.label.toLowerCase() && (
+            <span className="sr-only xl:not-sr-only shrink-0 whitespace-nowrap text-[12px] text-slate-muted">
               · {ROLE_LABELS[actor.role]}
             </span>
           )}

@@ -47,8 +47,8 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-30 w-full border-b border-hairline bg-paper/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-4 sm:px-6">
-        <div className="flex items-center gap-6 sm:gap-8 min-w-0">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-4 sm:px-6 md:grid md:grid-cols-[1fr_auto_1fr]">
+        <div className="flex items-center justify-start min-w-0">
           <Link
             href="/"
             className="flex shrink-0 items-center gap-2.5 text-ink transition-opacity hover:opacity-80"
@@ -58,36 +58,40 @@ export function Navbar() {
               Warwick Spaces
             </span>
           </Link>
-
-          <nav
-            aria-label="Primary navigation"
-            className="flex items-center gap-4 sm:gap-6 text-[14.5px]"
-          >
-            {links.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`py-1 transition-colors whitespace-nowrap ${
-                  item.active
-                    ? "font-medium text-ink"
-                    : "text-slate-muted hover:text-ink"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-            {canViewAnalytics && (
-              <Link
-                href="/admin"
-                className="hidden sm:inline-block py-1 text-slate-muted transition-colors hover:text-ink whitespace-nowrap"
-              >
-                Admin Console
-              </Link>
-            )}
-          </nav>
         </div>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <nav
+          aria-label="Primary navigation"
+          className="flex items-center justify-center gap-4 sm:gap-7 text-[14.5px]"
+        >
+          {links.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`py-1 transition-colors whitespace-nowrap ${
+                item.active
+                  ? "font-medium text-ink"
+                  : "text-slate-muted hover:text-ink"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          {canViewAnalytics && (
+            <Link
+              href="/admin"
+              className={`hidden sm:inline-block py-1 transition-colors whitespace-nowrap ${
+                pathname.startsWith("/admin")
+                  ? "font-medium text-ink"
+                  : "text-slate-muted hover:text-ink"
+              }`}
+            >
+              Admin Console
+            </Link>
+          )}
+        </nav>
+
+        <div className="flex items-center justify-end gap-3 shrink-0">
           <RoleSwitcher variant="pill" />
         </div>
       </div>
