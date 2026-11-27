@@ -11,7 +11,7 @@
 
 ## 2. High-Level Architecture
 
-*Rendered exports: `docs/design/diagrams/layered_architecture.{mmd,png}`.*
+*Rendered exports: `docs/design/diagrams/layered_architecture.{mmd,svg,png}`.*
 
 ```mermaid
 flowchart TD
@@ -165,7 +165,7 @@ assessments/A1/
 
 ### One-Way Dependency Flow & Boundary Rules
 
-*Rendered exports: `docs/design/diagrams/dependency_flow.{mmd,png}`.*
+*Rendered exports: `docs/design/diagrams/dependency_flow.{mmd,svg,png}`.*
 
 ```mermaid
 flowchart LR
