@@ -1,0 +1,7 @@
+user_id,resource_id,start_time,end_time,purpose,notes,group_size
+S1001,LIB-GSR-6,2026-12-07T09:00:00Z,2026-12-07T11:00:00Z,WM9QF A1 Sprint Review,Need whiteboard markers,4
+S1002,LIB-GSR-7,2026-12-07T11:00:00Z,2026-12-07T13:00:00Z,BSc CS Algorithm Study Group,Accessible table preferred,3
+S1003,LIB-OMR-1,2026-12-07T14:00:00Z,2026-12-07T15:00:00Z,Supervisor Zoom Check-in,Quiet room for call,1
+S1004,EQ-IDG-LOAN-LAPTOP,2026-12-08T09:00:00Z,2026-12-09T09:00:00Z,Assessment Backup Laptop Loan,Collect from IT Helpdesk,1
+S1005,SUP-1TO1-59,2026-12-08T14:00:00Z,2026-12-08T15:00:00Z,Graduate CV & Cover Letter Review,Draft attached on Teams,1
+

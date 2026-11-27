@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: #17191c;
+  --color-paper: #ffffff;
+  --color-mist: #f2f2f3;
+  --color-fog: #fafafb;
+  --color-hairline: #ececec;
+  --color-slate-muted: #777b86;
+  --color-ash: #979799;
+  --color-smoke: #a3a6af;
+  --color-blush: #fbe1d1;
+  --color-sienna: #5d2a1a;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans selection:bg-blush selection:text-sienna;
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .steep-card {
+    @apply rounded-[24px] border border-hairline bg-paper;
+  }
+
+  .steep-mist-card {
+    @apply rounded-[24px] bg-mist;
+  }
+
+  .steep-blush-card {
+    @apply rounded-[24px] bg-blush text-sienna;
+  }
+
+  .steep-floating {
+    @apply rounded-[20px] bg-paper shadow-steep-float;
+  }
+}

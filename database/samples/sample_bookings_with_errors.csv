@@ -1,0 +1,8 @@
+user_id,resource_id,start_time,end_time,purpose,notes,group_size
+S1001,LIB-GSR-6,2026-12-09T09:00:00Z,2026-12-09T11:00:00Z,Valid morning study session,Clean row 1,4
+S1003,LIB-GSR-6,2026-12-09T10:00:00Z,2026-12-09T12:00:00Z,Overlapping clash on LIB-GSR-6,Should fail with 409 conflict,3
+S1002,INVALID-RESOURCE-999,2026-12-09T13:00:00Z,2026-12-09T14:00:00Z,Unknown resource ID test,Should fail with 404 not found,1
+S1004,LIB-GSR-7,2026-12-09T15:00:00Z,2026-12-09T14:00:00Z,Reversed time range test,Should fail with validation error,2
+S1005,SUP-1TO1-59,2026-12-09T14:00:00Z,2026-12-09T15:00:00Z,Valid career consultation,Clean row 2 after errors,1
+S1001,LIB-CCP,2026-12-09T16:00:00Z,2026-12-09T17:00:00Z,PG student trying staff_only room,Should fail with 403 eligibility error,2
+

@@ -24,7 +24,7 @@ We adopted **Iterative Development paired with Test-Driven Development (TDD)** a
 | **1. Requirements Analysis** | `docs/design/00_research.md` (portal audit), `docs/design/01_requirements.md` (Actors, FR/NFR, Business Rules), Section 2 below (Stakeholder Interviews) |
 | **2. System Architecture** | `docs/design/02_system_architecture.md`, `diagrams/layered_architecture.png`, `diagrams/dependency_flow.png` |
 | **3. Detailed Design** | `docs/design/03_data_models.md` (`diagrams/erd.png`), `docs/design/04_ood_design.md` (`diagrams/class_diagram.png`), `diagrams/booking_state.png`, `diagrams/booking_sequence.png`, `docs/design/05_api_contracts.md` |
-| **4. Implementation** | `database/schema.sql`, `database/scripts/{normalize,seed_db}.py`, `server/app/{domain,schemas,repositories,services,routers,cli}/` |
+| **4. Implementation** | `database/schema.sql`, `database/scripts/{etl,seed_db}.py`, `server/app/{domain,schemas,repositories,services,routers,cli}/` |
 | **5. Testing (TDD)** | `docs/design/06_tdd_plan.md`, `server/tests/` (6 automated `pytest` suites executed Red -> Green -> Refactor per phase) |
 | **6. Deployment & Delivery** | `README.md` (reproducible setup/run guide), FastAPI OpenAPI `/docs`, live CLI & chart demonstration, GitHub repository shared with markers |
 | **7. Maintenance & Evolution** | `BookingPolicyConfig` externalised rules (zero-migration policy tuning), modular `ResourceFactory` for future resource types, Section 5 roadmap |
@@ -77,11 +77,19 @@ Evidence to capture for the presentation slides:
 - Concrete examples of bug/edge-case tests (back-to-back boundary `end == next_start`, concurrent pool exhaustion on equipment/workshops, SQL injection payloads, `403` bypass prevention, `k < 5` cohort suppression).
 - Git commit log showing incremental design -> Phase 1 -> Phase 2 -> Phase 3 -> Phase 4 progression.
 
+### Verification on the automation branch
+
+- `python3 -m pytest server/tests/ -q`: **57 passed**, spanning six test modules.
+- From `client/`, `npm run typecheck` and `npm run build` passed. The local Orca browser regression `node --test client/tests/actor-role.e2e.mjs` passed against a disposable seeded database.
+- Live browser smoke verified resource filters and availability, booking creation and clashes, manager approval, cancellation surviving a reload, analytics and four PNG exports, and the Student Services read-only view. The smoke did not cover every admin or rescheduling path.
+- Integration uncovered a frontend hydration race during role switching and a CORS configuration issue on non-default local ports. Both were fixed with regression tests.
+- Orca workers assisted with implementation and testing. The team still needs to critically review and revise the prototype and document actual human contributions and AI use before submission.
+
 ---
 
 ## 4. Team Collaboration & Git Workflow
 
-- **Repository**: Private GitHub repo `WM9QF_AI_Programming_A1` (grant read access to tutors `WashingtonEnyinna`, `dscroft`, `amkayhani` prior to grading).
+- **Repository**: The course requires a private GitHub repo for submission. Confirm the visibility of `WM9QF_AI_Programming_A1` and grant the required tutors read access before grading.
 - **Commit Discipline**: Conventional Commits (`docs(...)`, `feat(...)`, `test(...)`, `fix(...)`, `refactor(...)`) with small, reviewable phase checkpoints rather than one bulk upload.
 - **Code Standards**: Python 3.11+, type annotations, PEP 8 formatting, 100% parameterised SQL, zero hardcoded absolute paths.
 
@@ -102,8 +110,8 @@ Evidence to capture for the presentation slides:
 - **Inconsistent External Data**: Warwick's WRB portal and AV room pages occasionally disagreed on room capacity and building naming (e.g. `"Ramphal, University of Warwick"` vs `"Ramphal"`). Isolating all data cleaning inside `database/scripts/etl.py` kept the application schema completely clean.
 
 ### Current Prototype Limitations & Future Roadmap
-1. **Authentication**: Prototype uses lightweight `X-Role` / `X-User-Id` headers via `ActorContext`; production deployment would replace only the FastAPI dependency with Warwick SSO (OAuth2 / SAML / JWT).
+1. **Authentication**: `X-Role` / `X-User-Id` headers select a demo actor, not an authenticated identity. Run locally with synthetic users and bookings only. A deployment needs server-verified identity and a server-side minimum privacy threshold.
 2. **Database Scalability**: SQLite with `BEGIN IMMEDIATE` cleanly handles single-node prototype concurrency; high-concurrency university deployment would migrate the same parameterised SQL schema to PostgreSQL with exclusion constraints (`EXCLUDE USING gist`).
 3. **Live Portal Integration**: Currently seeded from verified point-in-time snapshots (`database/raw/`); a production version would schedule incremental sync jobs against official campus APIs.
-4. **Rich Web Client (`client/`)**: The decoupled `/api/v1` API and stored MazeMap coordinates (`lat`/`lon`) + 211 room 360° `image_url`s are ready for a Next.js/React frontend featuring interactive floor-map discovery and 360° room previews.
+4. **Web Client (`client/`)**: The prototype shows campus location and panorama previews where metadata is available. A richer floor-map integration remains future work.
 5. **Advanced Booking Features**: Recurring series bookings, automated waitlists, calendar (`.ics`) invites, and email/Teams reminders.
