@@ -2,7 +2,7 @@
 """Adapter script normalizing raw Warwick snapshots into the 11-table domain-pure catalog.json.
 
 Maps external Warwick portal snapshots into the canonical 3NF CTI schema defined in
-docs/design/models.md (zero external-portal column leakage, zero JSON columns):
+docs/design/03_data_models.md (zero external-portal column leakage, zero JSON columns):
   - departments, buildings, booking_statuses (6 lifecycle states)
   - resources (12-column supertype: location, description, image_url, policy/status)
   - rooms (capacity, room_style)

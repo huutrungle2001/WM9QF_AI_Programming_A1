@@ -178,6 +178,6 @@ All domain classes live in `server/app/domain/` with **zero imports from FastAPI
 
 ## 5. Booking Lifecycle & Repository Contracts
 
-- **State Transition Validator**: Enforced in `BookingService.transition_status()` via an explicit transition map `ALLOWED_TRANSITIONS: dict[BookingStatusId, set[BookingStatusId]]` matching `docs/design/requirements.md`.
+- **State Transition Validator**: Enforced in `BookingService.transition_status()` via an explicit transition map `ALLOWED_TRANSITIONS: dict[BookingStatusId, set[BookingStatusId]]` matching `docs/design/01_requirements.md`.
 - **Transaction Boundary**: `DatabaseManager.transaction(immediate=True)` wraps multi-table CTI writes (`CatalogRepository`) and conflict-checked booking writes (`BookingRepository`) inside SQLite `BEGIN IMMEDIATE ... COMMIT / ROLLBACK`.
 - **Strict Repository Separation**: Only `server/app/repositories/` executes SQL; all predicates use `?` placeholders, all `ORDER BY` clauses map through static allowlists, and every normal query filters `deleted_at IS NULL`.
