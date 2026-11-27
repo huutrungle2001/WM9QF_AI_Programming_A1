@@ -44,4 +44,4 @@ Implementation follows **Iterative + TDD (Red -> Green -> Refactor)**: for each 
 - [ ] `T4.1` Write failing tests in `server/tests/test_api_and_cli.py`.
 - [ ] `T4.2` Implement FastAPI routers (`health`, `reference`, `users`, `resources`, `bookings`, `analytics`), exception handlers, and `server/app/main.py`.
 - [ ] `T4.3` Implement thin CLI in `server/app/cli/` (interactive menu + subcommands with f-string tables, delegating to services).
-- [ ] `T4.4` Run full `pytest` suite, write `README.md` and `docs/sdlc_and_interviews.md`, and commit Phase 4.
+- [ ] `T4.4` Run full `pytest` suite, finalise `README.md` and update `docs/SDLC.md` with test/interview evidence, and commit Phase 4.
