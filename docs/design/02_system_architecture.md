@@ -62,6 +62,8 @@ The repository uses a clean 3-pillar monorepo layout (`database/` + `server/` + 
 ```text
 assessments/A1/
 ├── README.md                              # Setup and run instructions (CLI, FastAPI, client, pytest)
+├── PLAN.md                                # Detailed phase-by-phase technical implementation plan
+├── TODO.md                                # Actionable checkbox task board (translated from PLAN.md)
 ├── .gitignore
 │
 ├── docs/                                  # Assessment brief, design specs, and LO5 reflections

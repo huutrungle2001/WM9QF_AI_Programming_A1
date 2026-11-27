@@ -1,6 +1,6 @@
-# Test-Driven Development (TDD) Plan & Implementation Checklist
+# Test-Driven Development (TDD) Test Matrix
 
-Implementation follows **Iterative + TDD (Red -> Green -> Refactor)**: for each phase, write failing `pytest` test cases first, implement the minimum clean code to pass, refactor, and commit a green checkpoint.
+Implementation follows **Iterative + TDD (Red -> Green -> Refactor)**: for each phase, write failing `pytest` test cases first, implement the minimum clean code to pass, refactor, and commit a green checkpoint. See `PLAN.md` for phase architecture/exit criteria and `TODO.md` for the live actionable task board.
 
 ---
 
@@ -17,31 +17,11 @@ Implementation follows **Iterative + TDD (Red -> Green -> Refactor)**: for each 
 
 ---
 
-## 2. Phased Implementation Checklist
+## 2. Phase-to-Test Mapping
 
-### Phase 1 — Database Schema, Domain OOP & Deterministic Seed
-- [ ] `T1.1` Create `server/pyproject.toml`, `server/requirements.txt`, and `server/tests/conftest.py` (in-memory / temp SQLite fixtures).
-- [ ] `T1.2` Write failing tests in `server/tests/test_db_and_domain.py`.
-- [ ] `T1.3` Implement `database/schema.sql` (11 tables, FKs, CHECKs, partial indexes) and `server/app/config.py` (`BookingPolicyConfig`) + `server/app/database.py`.
-- [ ] `T1.4` Implement `server/app/domain/exceptions.py`, `enums.py`, and `resources.py` (`Resource(ABC)`, `RoomResource`, `EquipmentResource`, `AcademicSupportResource`, `ResourceFactory`).
-- [ ] `T1.5` Implement `database/scripts/seed_db.py` (loads `database/catalog.json` + synthetic users & multi-week bookings with exam pressure spike).
-- [ ] `T1.6` Verify `pytest server/tests/test_db_and_domain.py` passes green and commit Phase 1.
+- **Phase 1 (`T1.1`–`T1.7`)** -> `test_db_and_domain.py`
+- **Phase 2 (`T2.1`–`T2.10`)** -> `test_catalog_crud.py`, `test_bookings_and_conflicts.py`, `test_policy_and_privacy.py`
+- **Phase 3 (`T3.1`–`T3.4`)** -> `test_analytics_and_charts.py`
+- **Phase 4 (`T4.1`–`T4.5`)** -> `test_api_and_cli.py`
 
-### Phase 2 — Repositories, Services, Conflict Engine & RBAC/Privacy
-- [ ] `T2.1` Write failing tests in `test_catalog_crud.py`, `test_bookings_and_conflicts.py`, and `test_policy_and_privacy.py`.
-- [ ] `T2.2` Implement Pydantic DTOs in `server/app/schemas/`.
-- [ ] `T2.3` Implement repositories (`reference_repo.py`, `user_repo.py`, `resource_repo.py`, `booking_repo.py`) with 100% parameterised SQL and atomic CTI transactions.
-- [ ] `T2.4` Implement `PolicyGuard` (`server/app/services/policy.py`), `CatalogService`, and `BookingService` (`BEGIN IMMEDIATE` 2-way overlap check, state machine, soft delete, CSV import).
-- [ ] `T2.5` Verify all Phase 1 + Phase 2 tests pass green and commit Phase 2.
-
-### Phase 3 — Analytics Queries & Matplotlib Visualisations
-- [ ] `T3.1` Write failing tests in `server/tests/test_analytics_and_charts.py`.
-- [ ] `T3.2` Implement `analytics_repo.py` and `analytics_service.py` (overview KPIs, top/underused resources, 7x24 heatmap, weekly trends, `k >= 5` course fairness).
-- [ ] `T3.3` Implement `chart_service.py` generating 4 clean PNG visualisations in `server/reports/charts/`.
-- [ ] `T3.4` Verify all tests pass green and commit Phase 3.
-
-### Phase 4 — FastAPI REST Layer, Thin CLI & Project Docs
-- [ ] `T4.1` Write failing tests in `server/tests/test_api_and_cli.py`.
-- [ ] `T4.2` Implement FastAPI routers (`health`, `reference`, `users`, `resources`, `bookings`, `analytics`), exception handlers, and `server/app/main.py`.
-- [ ] `T4.3` Implement thin CLI in `server/app/cli/` (interactive menu + subcommands with f-string tables, delegating to services).
-- [ ] `T4.4` Run full `pytest` suite, finalise `README.md` and update `docs/SDLC.md` with test/interview evidence, and commit Phase 4.
+Track live progress in `TODO.md` and detailed technical deliverables in `PLAN.md`.
