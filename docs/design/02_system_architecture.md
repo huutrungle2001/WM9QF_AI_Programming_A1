@@ -90,16 +90,23 @@ assessments/A1/
 │   │   ├── main.py                        # FastAPI entrypoint (uvicorn), router registration, HTTP error mappers
 │   │   ├── config.py                      # DB path & BookingPolicyConfig (quotas, horizon, k-anonymity)
 │   │   ├── database.py                    # DatabaseManager (sqlite3, PRAGMA foreign_keys=ON, transactions)
+│   │   ├── dependencies.py                # FastAPI Depends wiring (DB, services, X-Role / X-User-Id ActorContext)
 │   │   ├── domain/                        # Pure OOP domain layer (zero SQL/HTTP coupling)
-│   │   │   ├── exceptions.py              # DomainError, AuthenticationError, AuthorizationError, ConflictError, etc.
+│   │   │   ├── enums.py                   # Role, UserType, ResourceType, RoomStyle, BookingEligibility, BookingStatusId
+│   │   │   ├── exceptions.py              # DomainError, UnauthorizedError, ForbiddenError, NotFoundError, ConflictError, ValidationError
 │   │   │   └── resources.py               # Resource(ABC) -> Room/Equipment/Support subclasses + ResourceFactory
 │   │   ├── schemas/                       # Shared Pydantic v2 DTOs (used identically by FastAPI & CLI)
-│   │   │   ├── catalog.py                 # Department, Building, User, Resource (CTI union), Facility
-│   │   │   ├── booking.py                 # BookingCreate/Update/Record/Filter, AvailabilityQuery, ImportSummary
+│   │   │   ├── actor.py                   # ActorContext & auth header DTOs
+│   │   │   ├── reference.py               # Department, Building, Facility, BookingStatus DTOs
+│   │   │   ├── user.py                    # UserCreate, UserUpdate, UserOut
+│   │   │   ├── resource.py                # Polymorphic ResourceCreate/Update/Out (CTI details union) & AvailabilitySlot
+│   │   │   ├── booking.py                 # BookingCreate/Update/Transition/Out, BookingFilter, ImportSummary
 │   │   │   └── analytics.py               # OverviewKPI, DemandItem, HeatmapCell, TrendPoint, FairnessRow
 │   │   ├── repositories/                  # 100% parameterised raw SQLite3 queries (SQLi-safe)
-│   │   │   ├── catalog_repo.py            # CRUD departments, buildings, users, resources (+ CTI subtypes & facilities)
-│   │   │   ├── booking_repo.py            # CRUD bookings, Unix range overlap checks, availability SQL pushdown
+│   │   │   ├── reference_repo.py          # CRUD departments, buildings, facilities & booking_statuses lookup
+│   │   │   ├── user_repo.py               # CRUD users & soft deactivate (is_active = 0)
+│   │   │   ├── resource_repo.py           # Atomic CTI create/update, N:M facilities sync, Policy-to-SQL pushdown, soft retire
+│   │   │   ├── booking_repo.py            # CRUD bookings, blocks_slot=1 overlap checks, soft delete (deleted_at)
 │   │   │   └── analytics_repo.py          # SQL aggregations (demand, underused, heatmap, weekly trends, fairness)
 │   │   ├── services/                      # Business logic & access-control boundary
 │   │   │   ├── policy.py                  # PolicyGuard: RBAC, Policy-to-SQL pushdown, SHA-256 PII redaction, k>=5
@@ -109,12 +116,15 @@ assessments/A1/
 │   │   │   └── chart_service.py           # Matplotlib PNG chart generation (demand, heatmap, trends, fairness)
 │   │   ├── routers/                       # Thin FastAPI /api/v1 HTTP adapters
 │   │   │   ├── health.py
-│   │   │   ├── catalog.py                 # /departments, /buildings, /users, /resources, /facilities
-│   │   │   ├── bookings.py                # /availability, /bookings, /{id}/cancel, /import-csv
+│   │   │   ├── reference.py               # /departments, /buildings, /facilities, /booking-statuses
+│   │   │   ├── users.py                   # /users CRUD + soft deactivate
+│   │   │   ├── resources.py               # /resources CRUD + /availability
+│   │   │   ├── bookings.py                # /bookings CRUD, /approve, /reject, /cancel, /complete, /no-show, /import-csv
 │   │   │   └── analytics.py               # /overview, /demand, /heatmap, /trends, /cancellations, /fairness, /charts
 │   │   └── cli/                           # Thin CLI adapter sharing the exact same service layer
 │   │       ├── main.py                    # Scriptable subcommands (seed, import-csv, book, analytics, charts, serve)
-│   │       └── menu.py                    # Interactive demo menu with clean f-string tables
+│   │       ├── menu.py                    # Interactive role-aware menu walkthrough
+│   │       └── formatting.py              # Aligned f-string table renderer (headers + separators)
 │   ├── reports/charts/                    # Generated PNG visualisations
 │   └── tests/                             # pytest TDD suite (mirrors application layers)
 │       ├── conftest.py                    # Isolated temporary SQLite DB fixture & seed helpers
@@ -125,10 +135,33 @@ assessments/A1/
 │       ├── test_analytics_and_charts.py   # KPIs, underused resources, heatmap, weekly trends, fairness, PNG output
 │       └── test_api_and_cli.py            # FastAPI TestClient end-to-end & CLI smoke tests
 │
-└── client/                                # Web UI (Next.js / React consumer of /api/v1)
-    ├── app/                               # Unified Workspace (5-type tabs, filters, campus map, Admin/Analytics)
-    ├── components/                        # Polymorphic booking panel (hourly / multi-day loan / workshop), charts, role switcher
-    └── lib/api.ts                         # Typed HTTP client for /api/v1
+└── client/                                # Web UI (Next.js App Router + TypeScript + Tailwind, consumes /api/v1)
+    ├── package.json
+    ├── tsconfig.json
+    ├── next.config.ts
+    ├── .env.local.example                 # NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api/v1
+    └── src/
+        ├── app/                           # App Router pages
+        │   ├── layout.tsx                 # Global shell, sidebar navigation, demo Actor/Role switcher
+        │   ├── page.tsx                   # Unified Resource Explorer (5-type tabs, filters, live availability)
+        │   ├── resources/[id]/page.tsx    # Resource details, facilities badges, 360° panorama & MazeMap pin
+        │   ├── bookings/page.tsx          # My Bookings (upcoming, past, edit purpose, reschedule, cancel)
+        │   ├── approvals/page.tsx         # Pending Approval Queue (manager / admin approve & reject with notes)
+        │   ├── admin/page.tsx             # Catalogue CRUD (resources, users, departments, buildings, CSV import)
+        │   └── analytics/page.tsx         # Utilisation KPIs, 7x24 heatmap, weekly trends & k>=5 fairness dashboard
+        ├── components/
+        │   ├── layout/                    # Navbar, Sidebar, RoleSwitcher (injects X-Role / X-User-Id headers)
+        │   ├── resources/                 # ResourceCard, FilterBar, CampusMap (lat/lon), PanoramaViewer (image_url)
+        │   ├── bookings/                  # BookingDrawer (hourly / multi-day loan / workshop), StatusBadge
+        │   ├── analytics/                 # KpiGrid, DemandHeatmap, TrendChart, FairnessTable
+        │   └── ui/                        # Reusable primitives (Button, Modal, DataTable, Badge, EmptyState)
+        ├── lib/
+        │   ├── api-client.ts              # Typed fetch wrapper injecting actor headers & standard error handling
+        │   ├── resources.api.ts           # /resources, /availability, /facilities API wrappers
+        │   ├── bookings.api.ts            # /bookings, /approve, /reject, /cancel, /import-csv API wrappers
+        │   └── analytics.api.ts           # /analytics/* API wrappers
+        ├── hooks/                         # useActor, useAvailability, useBookings
+        └── types/                         # TypeScript interfaces mirroring server/app/schemas/*
 ```
 
 ### One-Way Dependency Flow & Boundary Rules
