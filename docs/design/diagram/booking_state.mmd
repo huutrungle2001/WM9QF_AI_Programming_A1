@@ -1,7 +1,7 @@
 stateDiagram-v2
     [*] --> pending : create_booking (requires_approval=1, member)
     [*] --> confirmed : create_booking (requires_approval=0 or admin/manager)
-    pending --> confirmed : manager/admin approves [generates access_pin if checkin=pin]
+    pending --> confirmed : manager/admin approves
     pending --> rejected : manager/admin declines [releases slot]
     pending --> cancelled : owner/manager/admin cancels [releases slot]
     confirmed --> completed : session/loan finishes

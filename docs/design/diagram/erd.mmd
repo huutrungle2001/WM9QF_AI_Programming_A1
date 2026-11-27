@@ -34,6 +34,7 @@ erDiagram
         TEXT building_id FK
         TEXT location
         TEXT description
+        TEXT image_url
         INTEGER requires_approval
         TEXT booking_eligibility
         TEXT checkin_method
@@ -44,8 +45,6 @@ erDiagram
         TEXT resource_id PK,FK
         INTEGER capacity
         TEXT room_style
-        TEXT noise_zone
-        INTEGER min_group_size
     }
 
     EQUIPMENT_ITEMS {
@@ -57,11 +56,9 @@ erDiagram
 
     SUPPORT_SERVICES {
         TEXT resource_id PK,FK
-        TEXT support_area
-        TEXT session_kind
-        TEXT delivery_mode
+        TEXT category
         INTEGER max_attendees
-        TEXT host_user_id FK
+        TEXT host_name
     }
 
     FACILITIES {
@@ -87,10 +84,8 @@ erDiagram
         INTEGER start_time
         INTEGER end_time
         TEXT status_id FK
-        TEXT reason_category
-        TEXT public_reference
-        TEXT private_notes
-        TEXT access_pin
+        TEXT purpose
+        TEXT notes
         INTEGER created_at
         INTEGER updated_at
         INTEGER deleted_at
@@ -102,7 +97,6 @@ erDiagram
     RESOURCES ||--o| ROOMS : "1:1 room/lab"
     RESOURCES ||--o| EQUIPMENT_ITEMS : "1:1 equipment"
     RESOURCES ||--o| SUPPORT_SERVICES : "1:1 support"
-    USERS ||--o{ SUPPORT_SERVICES : "hosts"
     RESOURCES ||--o{ RESOURCE_FACILITIES : "has"
     FACILITIES ||--o{ RESOURCE_FACILITIES : "tagged on"
     USERS ||--o{ BOOKINGS : "makes"

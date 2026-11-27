@@ -4,10 +4,10 @@
 Maps external Warwick portal snapshots into the canonical 3NF CTI schema defined in
 docs/design/models.md (zero external-portal column leakage, zero JSON columns):
   - departments, buildings, booking_statuses (6 lifecycle states)
-  - resources (11-column supertype: location, description, policy/status)
-  - rooms (capacity, room_style, noise_zone, min_group_size)
+  - resources (12-column supertype: location, description, image_url, policy/status)
+  - rooms (capacity, room_style)
   - equipment_items (category, quantity, specifications)
-  - support_services (support_area, session_kind, delivery_mode, max_attendees, host_user_id)
+  - support_services (category, max_attendees, host_name)
   - facilities, resource_facilities (N:M lookup)
 """
 
@@ -245,17 +245,17 @@ def infer_zone(name: str, campus: str, lat: float | None, lon: float | None) -> 
 
 def infer_room_style(raw_type: str, rtype: str) -> str:
     low = (raw_type or "").lower()
-    if rtype == "computer_lab":
-        return "computer_lab"
     if "boardroom" in low:
         return "boardroom"
     if "tiered" in low:
         return "lecture"
+    if "flexible" in low:
+        return "flexible"
     if "teaching" in low:
         return "seminar"
-    if rtype == "study_room":
-        return "individual_study"
-    return "study_pod"
+    if rtype == "group_space":
+        return "study_pod"
+    return "standard"
 
 
 def infer_support_area(text: str) -> str:
@@ -342,7 +342,7 @@ def normalize_buildings(raw_dir: Path) -> tuple[list[dict[str, Any]], dict[str, 
 
 
 def resolve_building_id(label: str, name_to_id: dict[str, str]) -> str | None:
-    clean = label.strip()
+    clean = re.sub(r",\s*University of Warwick$", "", label.strip(), flags=re.I).strip()
     if not clean:
         return None
     target = BUILDING_ALIAS_TO_MAZEMAP.get(clean, clean)
@@ -403,6 +403,7 @@ def normalize_resources(
         seen_ids.add(rid)
         if parent["department_id"] not in valid_department_ids:
             raise ValueError(f"Invalid department_id {parent['department_id']} on {rid}")
+        parent.setdefault("image_url", None)
         resources.append(parent)
 
         sub = {"resource_id": rid, **subtype_row}
@@ -420,6 +421,11 @@ def normalize_resources(
     central_av = {
         r["slug"].lower(): r["facilities"]
         for r in load_json(raw_dir / "warwick_rooms" / "central_av_tags.json").get("rooms", [])
+    }
+    central_panorama = {
+        r["slug"].lower(): r.get("panorama_url")
+        for r in load_json(raw_dir / "warwick_rooms" / "central_av_tags.json").get("rooms", [])
+        if r.get("panorama_url")
     }
     meeting_av = {
         r["slug"].lower(): r["facilities"]
@@ -444,13 +450,10 @@ def normalize_resources(
             is_student_bookable = slug in wrb_slugs
             if is_lab:
                 rtype, dept, elig, checkin = "computer_lab", "IDG", "staff_only", "card_swipe"
-                min_grp, noise = 1, "quiet"
             elif cap <= 16:
                 rtype, dept, elig, checkin = "study_room", "CENTRAL", ("all_users" if is_student_bookable else "staff_only"), "none"
-                min_grp, noise = 1, "quiet"
             else:
                 rtype, dept, elig, checkin = "group_space", "CENTRAL", ("all_users" if is_student_bookable else "staff_only"), "none"
-                min_grp, noise = min(4, cap), "collaborative"
 
             facs = list(central_av.get(slug, []))
             if is_lab and "Desktop PCs" not in facs:
@@ -465,6 +468,7 @@ def normalize_resources(
                     "building_id": bid,
                     "location": rm["name"].strip(),
                     "description": f"Central campus {rtype.replace('_', ' ')} in {b_name} ({rm.get('type', 'flat')}). Open 09:00-22:00. No food or drink permitted.",
+                    "image_url": central_panorama.get(slug),
                     "requires_approval": 1,
                     "booking_eligibility": elig,
                     "checkin_method": checkin,
@@ -474,8 +478,6 @@ def normalize_resources(
                 subtype_row={
                     "capacity": cap,
                     "room_style": infer_room_style(rm.get("type", ""), rtype),
-                    "noise_zone": noise,
-                    "min_group_size": min_grp,
                 },
                 facility_names=facs,
             )
@@ -506,8 +508,6 @@ def normalize_resources(
                 subtype_row={
                     "capacity": cap,
                     "room_style": infer_room_style(rm.get("type", "boardroom"), "study_room"),
-                    "noise_zone": "quiet",
-                    "min_group_size": 1,
                 },
                 facility_names=meeting_av.get(slug, []),
             )
@@ -540,8 +540,6 @@ def normalize_resources(
                 subtype_row={
                     "capacity": cap,
                     "room_style": infer_room_style(rm.get("type", ""), rtype),
-                    "noise_zone": "quiet" if rtype == "study_room" else "collaborative",
-                    "min_group_size": 1 if rtype == "study_room" else 2,
                 },
                 facility_names=[],
             )
@@ -568,7 +566,7 @@ def normalize_resources(
                 "status": "active",
             },
             subtype_kind="room",
-            subtype_row={"capacity": 8, "room_style": "study_pod", "noise_zone": "collaborative", "min_group_size": 2},
+            subtype_row={"capacity": 8, "room_style": "study_pod"},
             facility_names=["Large Display Screen", "Whiteboard", "PIN Door Access"],
         )
 
@@ -593,9 +591,7 @@ def normalize_resources(
             subtype_kind="room",
             subtype_row={
                 "capacity": sp["capacity"],
-                "room_style": "flexible" if is_group else "individual_study",
-                "noise_zone": "collaborative" if is_group else "quiet",
-                "min_group_size": 2 if is_group else 1,
+                "room_style": "flexible" if is_group else "standard",
             },
             facility_names=(
                 ["Flexible Furniture", "Display Screen"]
@@ -609,7 +605,6 @@ def normalize_resources(
         name = acc["name"]
         is_pg = "postgrad" in name.lower()
         rid_suffix = "PGHUB" if is_pg else slugify(name.replace("Accessible Study Room", "").strip(), 10)
-        is_collab = any(n in name for n in ("114", "204"))
         add_resource(
             {
                 "resource_id": f"LIB-ACC-{rid_suffix}",
@@ -627,9 +622,7 @@ def normalize_resources(
             subtype_kind="room",
             subtype_row={
                 "capacity": 2,
-                "room_style": "individual_study",
-                "noise_zone": "collaborative" if is_collab else "quiet",
-                "min_group_size": 1,
+                "room_style": "standard",
             },
             facility_names=[
                 "Accessible Room",
@@ -666,7 +659,7 @@ def normalize_resources(
                 "status": "active",
             },
             subtype_kind="room",
-            subtype_row={"capacity": cap, "room_style": "study_pod", "noise_zone": "collaborative", "min_group_size": 2},
+            subtype_row={"capacity": cap, "room_style": "study_pod"},
             facility_names=facs,
         )
 
@@ -703,9 +696,7 @@ def normalize_resources(
             subtype_kind="room",
             subtype_row={
                 "capacity": max(int(wa.get("total") or 1), 1),
-                "room_style": "computer_lab",
-                "noise_zone": "quiet",
-                "min_group_size": 1,
+                "room_style": "standard",
             },
             facility_names=facs,
         )
@@ -729,11 +720,9 @@ def normalize_resources(
             },
             subtype_kind="support",
             subtype_row={
-                "support_area": infer_support_area(tp["name"]),
-                "session_kind": "one_to_one",
-                "delivery_mode": "hybrid",
+                "category": infer_support_area(tp["name"]),
                 "max_attendees": 1,
-                "host_user_id": None,
+                "host_name": "Student Opportunity & Careers Team",
             },
             facility_names=["MS Teams Consultation", "1-on-1 Advisor"],
         )
@@ -765,11 +754,9 @@ def normalize_resources(
             },
             subtype_kind="support",
             subtype_row={
-                "support_area": infer_support_area(title + " " + (ev.get("type") or "")),
-                "session_kind": "group_workshop",
-                "delivery_mode": "online" if bid is None else "in_person",
+                "category": infer_support_area(title + " " + (ev.get("type") or "")),
                 "max_attendees": 30,
-                "host_user_id": None,
+                "host_name": "WMG Careers Team" if "wmg" in title.lower() else "Student Opportunity & Careers Team",
             },
             facility_names=["Workshop Session"],
         )

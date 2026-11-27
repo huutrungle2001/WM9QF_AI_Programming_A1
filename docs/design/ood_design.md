@@ -19,6 +19,7 @@ classDiagram
         +Optional~str~ building_id
         +str location
         +Optional~str~ description
+        +Optional~str~ image_url
         +bool requires_approval
         +BookingEligibility booking_eligibility
         +CheckinMethod checkin_method
@@ -26,7 +27,6 @@ classDiagram
         +list~str~ facilities
         +validate_active() void
         +initial_status(actor) BookingStatusId
-        +generate_access_pin(status_id) Optional~str~
         +max_concurrent_bookings()* int
         +max_duration_seconds(config)* int
         +validate_booking_request(start_time, end_time, config, group_size)* void
@@ -37,8 +37,6 @@ classDiagram
     class RoomResource {
         +int capacity
         +RoomStyle room_style
-        +NoiseZone noise_zone
-        +int min_group_size
         +max_concurrent_bookings() int
         +max_duration_seconds(config) int
         +validate_booking_request(start_time, end_time, config, group_size) void
@@ -58,11 +56,9 @@ classDiagram
     }
 
     class AcademicSupportResource {
-        +SupportArea support_area
-        +SessionKind session_kind
-        +DeliveryMode delivery_mode
+        +str category
         +int max_attendees
-        +Optional~str~ host_user_id
+        +Optional~str~ host_name
         +max_concurrent_bookings() int
         +max_duration_seconds(config) int
         +validate_booking_request(start_time, end_time, config, group_size) void
@@ -131,7 +127,6 @@ All domain classes live in `server/app/domain/` with **zero imports from FastAPI
 - **Shared Concrete Behaviours**:
   - `validate_active()`: Raises `ValidationError` if `status != ResourceStatus.ACTIVE`.
   - `initial_status(actor)`: Returns `BookingStatusId.PENDING` when `requires_approval` is `True` and `actor.role == Role.MEMBER`; otherwise `BookingStatusId.CONFIRMED`.
-  - `generate_access_pin(status_id)`: Generates a cryptographically random 4-digit PIN (`secrets.randbelow(10000):04d`) if and only if `status_id == CONFIRMED` and `checkin_method == PIN`.
 - **Abstract Polymorphic Hooks**:
   - `max_concurrent_bookings() -> int`: Cleanly separates room seat capacity (`1` exclusive booking) from pooled equipment `quantity` and workshop `max_attendees`.
   - `max_duration_seconds(config) -> int`: Reads subtype-appropriate ceiling from `BookingPolicyConfig` (e.g. 4h rooms, 7d equipment, 2h support).
@@ -142,9 +137,9 @@ All domain classes live in `server/app/domain/` with **zero imports from FastAPI
 
 | Subclass | `resource_type` Values | CTI Table | Polymorphic Rule Overrides |
 | :--- | :--- | :--- | :--- |
-| **`RoomResource`** | `study_room`, `group_space`, `computer_lab` | `rooms` | `max_concurrent_bookings() -> 1`; enforces `min_group_size <= group_size <= capacity` (when provided) and `config.max_room_hours`. |
+| **`RoomResource`** | `study_room`, `group_space`, `computer_lab` | `rooms` | `max_concurrent_bookings() -> 1`; enforces `1 <= group_size <= capacity` (when provided) and `config.max_room_hours`. |
 | **`EquipmentResource`** | `specialist_equipment` | `equipment_items` | `max_concurrent_bookings() -> self.quantity`; enforces `config.max_equipment_loan_days`. |
-| **`AcademicSupportResource`** | `academic_support` | `support_services` | `max_concurrent_bookings() -> self.max_attendees`; enforces `max_attendees == 1` for `one_to_one` and `config.max_support_hours`. |
+| **`AcademicSupportResource`** | `academic_support` | `support_services` | `max_concurrent_bookings() -> self.max_attendees` (`1` for 1-on-1, `>1` for group workshops); enforces `config.max_support_hours`. |
 
 ### 2.3 Factory Pattern: `ResourceFactory`
 
@@ -177,7 +172,7 @@ All domain classes live in `server/app/domain/` with **zero imports from FastAPI
    - For `member`, computes the exact tuple of permitted `booking_eligibility` values from `actor.user_type` + `actor.has_accessibility_access`.
    - Passed directly into `CatalogRepository.list_resources(...)` and `BookingRepository.find_available(...)` as a parameterised `IN (?, ?, ...)` SQL clause so the frontend only receives resources the active user can book.
 3. **Write-Side Enforcement (`assert_eligible_for_resource`)**: Re-evaluates the exact same rule on `POST /api/v1/bookings` so direct API calls cannot bypass UI filtering.
-4. **Privacy Projection (`project_booking`)**: For `student_services`, hashes `user_id` via salted SHA-256 (`ANON-<10hex>`), strips `user_name`/`email`, and replaces `private_notes` with `"[REDACTED]"`. In `AnalyticsService.course_fairness()`, cohorts with `< min_cohort` (default `5`) unique users are merged into `"Other (<5)"`.
+4. **Privacy Projection (`project_booking`)**: For `student_services`, hashes `user_id` via salted SHA-256 (`ANON-<10hex>`), strips `user_name`/`email`, and replaces `purpose` and `notes` with `"[REDACTED]"`. In `AnalyticsService.course_fairness()`, cohorts with `< min_cohort` (default `5`) unique users are merged into `"Other (<5)"`.
 
 ---
 

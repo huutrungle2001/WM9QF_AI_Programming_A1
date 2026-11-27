@@ -8,6 +8,7 @@ classDiagram
         +Optional~str~ building_id
         +str location
         +Optional~str~ description
+        +Optional~str~ image_url
         +bool requires_approval
         +BookingEligibility booking_eligibility
         +CheckinMethod checkin_method
@@ -15,7 +16,6 @@ classDiagram
         +list~str~ facilities
         +validate_active() void
         +initial_status(actor) BookingStatusId
-        +generate_access_pin(status_id) Optional~str~
         +max_concurrent_bookings()* int
         +max_duration_seconds(config)* int
         +validate_booking_request(start_time, end_time, config, group_size)* void
@@ -26,8 +26,6 @@ classDiagram
     class RoomResource {
         +int capacity
         +RoomStyle room_style
-        +NoiseZone noise_zone
-        +int min_group_size
         +max_concurrent_bookings() int
         +max_duration_seconds(config) int
         +validate_booking_request(start_time, end_time, config, group_size) void
@@ -47,11 +45,9 @@ classDiagram
     }
 
     class AcademicSupportResource {
-        +SupportArea support_area
-        +SessionKind session_kind
-        +DeliveryMode delivery_mode
+        +str category
         +int max_attendees
-        +Optional~str~ host_user_id
+        +Optional~str~ host_name
         +max_concurrent_bookings() int
         +max_duration_seconds(config) int
         +validate_booking_request(start_time, end_time, config, group_size) void

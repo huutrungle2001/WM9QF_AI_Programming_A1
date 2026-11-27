@@ -100,7 +100,7 @@ assessments/A1/
 │   │   ├── services/                      # Business logic & access-control boundary
 │   │   │   ├── policy.py                  # PolicyGuard: RBAC, Policy-to-SQL pushdown, SHA-256 PII redaction, k>=5
 │   │   │   ├── catalog_service.py         # Catalogue orchestration & role enforcement
-│   │   │   ├── booking_service.py         # Booking lifecycle, 2-way clash check, loan limits, auto-PIN, CSV import
+│   │   │   ├── booking_service.py         # Booking lifecycle, 2-way clash check, loan limits, CSV import
 │   │   │   ├── analytics_service.py       # KPI reports & privacy-filtered fairness analytics
 │   │   │   └── chart_service.py           # Matplotlib PNG chart generation (demand, heatmap, trends, fairness)
 │   │   ├── routers/                       # Thin FastAPI /api/v1 HTTP adapters
@@ -116,7 +116,7 @@ assessments/A1/
 │       ├── conftest.py                    # Isolated temporary SQLite DB fixture & seed helpers
 │       ├── test_db_and_domain.py          # 11-table DDL, FK integrity, CTI 1:1, OOP polymorphism & ResourceFactory
 │       ├── test_catalog_crud.py           # CRUD across catalogue entities, N:M facilities, SQLi resistance
-│       ├── test_bookings_and_conflicts.py # 2-way overlap, adjacent boundaries, max_loan_days, auto-PIN, cancel vs delete
+│       ├── test_bookings_and_conflicts.py # 2-way overlap, adjacent boundaries, duration limits, cancel vs delete
 │       ├── test_policy_and_privacy.py     # 4 roles, Policy-to-SQL pushdown, PII redaction, k>=5 suppression
 │       ├── test_analytics_and_charts.py   # KPIs, underused resources, heatmap, weekly trends, fairness, PNG output
 │       └── test_api_and_cli.py            # FastAPI TestClient end-to-end & CLI smoke tests
@@ -195,7 +195,7 @@ All API endpoints accept role/actor context via request headers (`X-Role`, optio
 | `POST` | `/api/v1/bookings` | Create booking with resource-clash, user-clash, active-status, and quota validation | `admin`, `manager`, `member` |
 | `GET` | `/api/v1/bookings/{booking_id}` | Retrieve single booking record | All *(scoped/redacted by role)* |
 | `PATCH` | `/api/v1/bookings/{booking_id}` | Reschedule `start_time`/`end_time`, update status, or edit reference/notes (re-runs conflict check) | `admin`, `manager`, owner `member` |
-| `POST` | `/api/v1/bookings/{booking_id}/approve` | Approve `pending` request (`confirmed` + auto-PIN if `pin`) | `admin`, `manager` |
+| `POST` | `/api/v1/bookings/{booking_id}/approve` | Approve `pending` request (`pending` -> `confirmed`) | `admin`, `manager` |
 | `POST` | `/api/v1/bookings/{booking_id}/reject` | Decline `pending` request (`rejected`, releases slot) | `admin`, `manager` |
 | `POST` | `/api/v1/bookings/{booking_id}/cancel` | Cancel booking (`status_id = 'cancelled'`), releasing slot while keeping history | `admin`, `manager`, owner `member` |
 | `DELETE` | `/api/v1/bookings/{booking_id}` | Soft-delete record (`deleted_at = now`; zero hard deletes) | `admin` |
@@ -235,9 +235,9 @@ The CLI mirrors the same core services for quick scripted runs and the 15-minute
 
 - **SQL Injection Prevention**: 100% parameterised SQL placeholders (`?`); dynamic filters append only whitelisted column predicates.
 - **Privacy by Role**:
-  - `student_services` never receives raw student names/emails/IDs or `private_notes`; IDs are SHA-256 pseudonymised (`ANON-...`) and course cohorts smaller than `k = 5` are suppressed/grouped.
+  - `student_services` never receives raw student names/emails/IDs or `purpose`/`notes`; IDs are SHA-256 pseudonymised (`ANON-...`) and course cohorts smaller than `k = 5` are suppressed/grouped.
   - `member` can only view and manage their own bookings (never other students' records).
-- **Data Minimisation**: Structured `reason_category` reduces sensitive free-text collection while preserving analytical value.
+- **Data Minimisation**: Optional `purpose` keeps booking forms minimal (`requires_approval = 0` needs no explanation) and is redacted automatically for read-only analytical roles.
 
 ---
 
@@ -249,4 +249,4 @@ Core implementation proceeds immediately with sensible defaults; the following p
 2. **Booking Horizon & Cancellation Cutoff**: How far in advance may bookings be made (e.g. 14 days), and is there a late-cancellation / no-show threshold?
 3. **Approval Workflow**: Do all 5 resource types auto-confirm, or should `specialist_equipment` / `academic_support` default to `pending` pending staff approval?
 4. **Maintenance Overrides**: When a resource moves to `maintenance`, should existing future bookings auto-cancel with a flag or require manual manager review?
-5. **Privacy Boundary**: Confirm whether `student_services` should only view aggregated/anonymised metrics and whether `private_notes` should be optional or disabled.
+5. **Privacy Boundary**: Confirm whether `student_services` should only view aggregated/anonymised metrics and whether `purpose` should be optional on auto-confirmed bookings.

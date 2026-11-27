@@ -97,13 +97,16 @@
         "auth": "mixed (public for roominformation; sso for meetingrooms)",
         "params": {
           "basePage": "/services/idg/services-support/av/lecturerooms/roominformation | .../meetingrooms",
+          "page": "/services/idg/services-support/av/lecturerooms/roominformation | .../meetingrooms",
           "pageTypes": "HTML",
           "fieldToShow": "pageHeading",
+          "includeDescription": "true",
+          "includeTags": "true",
           "includeSubsites": "true",
-          "searchType": "AND",
-          "searchTerms": "<single AV tag name>"
+          "searchType": "OR",
+          "searchTerms": "<campuses + AVkitList.js kit names>"
         },
-        "notes": "Query once per AV facility tag (24 central tags, 12 meeting-room tags) to build the complete exact room->facilities matrix (215 central rooms + 39 meeting rooms)."
+        "notes": "Passing includeTags=true returns all page tags + Capacity in one request (230 central rooms, 35 active AV kit tags verified against /services/idg/services-support/av/AVkitList.js, plus 360 panorama URL convention .../roominformation/<slug>/<slug>.jpg). Meeting rooms remain SSO-protected (39 rooms)."
       },
       "official_departments": {
         "method": "GET",

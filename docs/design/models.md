@@ -19,7 +19,7 @@ To balance **OOA/OOD inheritance** with pragmatic flexibility (avoiding brittle 
 | :--- | :--- | :--- |
 | `admin` | Full system management (departments, buildings, users, resources, bookings, overrides, analytics) | Unconstrained god-view; core system is built against this role first |
 | `manager` *(Learning Resources Manager)* | Manage resource catalogue, approve/reject `pending` bookings, manage cancellations, view operational analytics | Full resource/booking operations; operational reporting |
-| `student_services` *(Student Services Rep)* | Read-only access to availability, course fairness, and semester pressure trends | Pseudonymised student IDs (SHA-256), redacted `private_notes`, small-cohort suppression (`k >= 5`) |
+| `student_services` *(Student Services Rep)* | Read-only access to availability, course fairness, and semester pressure trends | Pseudonymised student IDs (SHA-256), redacted `purpose`/`notes`, small-cohort suppression (`k >= 5`) |
 | `member` *(Student / Staff)* | Browse eligible available resources, create bookings for self, reschedule or cancel own bookings | Ownership-scoped; eligibility enforced via Policy-to-SQL pushdown on `user_type` + `has_accessibility_access` |
 
 ### Entity-Relationship Diagram (ERD)
@@ -63,6 +63,7 @@ erDiagram
         TEXT building_id FK
         TEXT location
         TEXT description
+        TEXT image_url
         INTEGER requires_approval
         TEXT booking_eligibility
         TEXT checkin_method
@@ -73,8 +74,6 @@ erDiagram
         TEXT resource_id PK,FK
         INTEGER capacity
         TEXT room_style
-        TEXT noise_zone
-        INTEGER min_group_size
     }
 
     EQUIPMENT_ITEMS {
@@ -86,11 +85,9 @@ erDiagram
 
     SUPPORT_SERVICES {
         TEXT resource_id PK,FK
-        TEXT support_area
-        TEXT session_kind
-        TEXT delivery_mode
+        TEXT category
         INTEGER max_attendees
-        TEXT host_user_id FK
+        TEXT host_name
     }
 
     FACILITIES {
@@ -116,10 +113,8 @@ erDiagram
         INTEGER start_time
         INTEGER end_time
         TEXT status_id FK
-        TEXT reason_category
-        TEXT public_reference
-        TEXT private_notes
-        TEXT access_pin
+        TEXT purpose
+        TEXT notes
         INTEGER created_at
         INTEGER updated_at
         INTEGER deleted_at
@@ -131,7 +126,6 @@ erDiagram
     RESOURCES ||--o| ROOMS : "1:1 room/lab"
     RESOURCES ||--o| EQUIPMENT_ITEMS : "1:1 equipment"
     RESOURCES ||--o| SUPPORT_SERVICES : "1:1 support"
-    USERS ||--o{ SUPPORT_SERVICES : "hosts"
     RESOURCES ||--o{ RESOURCE_FACILITIES : "has"
     FACILITIES ||--o{ RESOURCE_FACILITIES : "tagged on"
     USERS ||--o{ BOOKINGS : "makes"
@@ -195,9 +189,10 @@ Parent table holding attributes shared across all 5 scenario resource categories
 | `building_id` | `TEXT` | `NULL REFERENCES buildings(building_id) ON DELETE RESTRICT` | Physical building (`NULL` for online-only support services) |
 | `location` | `TEXT` | `NOT NULL` | Short pinpoint location: room number (`FAB0.03`, `A0.01`), pickup point (`Floor 1 Lobby Lockers`), or `Online (MS Teams)` |
 | `description` | `TEXT` | `NULL` | Flexible free-text notes (opening hours, sensory/access instructions, loan rules, software, edge cases) |
+| `image_url` | `TEXT` | `NULL` | Optional room photo or 360° panorama URL (e.g. `.../roominformation/fab507/fab507.jpg`) |
 | `requires_approval` | `INTEGER` | `NOT NULL DEFAULT 0 CHECK (requires_approval IN (0, 1))` | `1` starts member bookings in `pending`; `0` auto-confirms |
 | `booking_eligibility` | `TEXT` | `NOT NULL DEFAULT 'all_users' CHECK (booking_eligibility IN ('all_users', 'students_only', 'staff_only', 'pg_only', 'pgr_and_staff', 'disability_only'))` | User eligibility policy evaluated against `users.user_type` and `has_accessibility_access` |
-| `checkin_method` | `TEXT` | `NOT NULL DEFAULT 'none' CHECK (checkin_method IN ('none', 'pin', 'card_swipe'))` | Physical check-in / collection method (`pin` generates 4-digit `access_pin`; `card_swipe` uses ID card tap) |
+| `checkin_method` | `TEXT` | `NOT NULL DEFAULT 'none' CHECK (checkin_method IN ('none', 'pin', 'card_swipe'))` | Physical check-in / collection method (`none`, `pin` keypad, or `card_swipe` reader) |
 | `status` | `TEXT` | `NOT NULL DEFAULT 'active' CHECK (status IN ('active', 'maintenance', 'retired'))` | Lifecycle status (`retired` is soft delete; only `active` accepts new bookings) |
 
 #### 2.4.1 `rooms` *(CTI Subtype — `study_room`, `group_space`, `computer_lab`)*
@@ -208,9 +203,7 @@ Unified physical-space subtype covering study rooms, group spaces, teaching/meet
 | :--- | :--- | :--- | :--- |
 | `resource_id` | `TEXT` | `PRIMARY KEY REFERENCES resources(resource_id) ON DELETE CASCADE` | Shared PK/FK to parent `resources` |
 | `capacity` | `INTEGER` | `NOT NULL CHECK (capacity > 0)` | Max seats or workstations inside the room (room itself is reserved exclusively: 1 active booking per slot) |
-| `room_style` | `TEXT` | `NOT NULL DEFAULT 'study_pod' CHECK (room_style IN ('individual_study', 'study_pod', 'seminar', 'lecture', 'boardroom', 'computer_lab', 'flexible'))` | Physical room layout/purpose |
-| `noise_zone` | `TEXT` | `NOT NULL DEFAULT 'quiet' CHECK (noise_zone IN ('silent', 'quiet', 'collaborative'))` | Acoustic zone classification |
-| `min_group_size` | `INTEGER` | `NOT NULL DEFAULT 1 CHECK (min_group_size > 0)` | Minimum group size (`1` for individual rooms/labs; `>= 2` for group spaces) |
+| `room_style` | `TEXT` | `NOT NULL DEFAULT 'standard' CHECK (room_style IN ('seminar', 'lecture', 'boardroom', 'study_pod', 'flexible', 'standard'))` | Physical room furniture/layout style |
 
 #### 2.4.2 `equipment_items` *(CTI Subtype — `specialist_equipment`)*
 
@@ -225,16 +218,14 @@ Generalised subtype for any borrowable campus equipment—single items, multi-pi
 
 #### 2.4.3 `support_services` *(CTI Subtype — `academic_support`)*
 
-Repeatable 1-on-1 consultations and group academic/skills support services. Maps to `AcademicSupportResource`.
+Repeatable 1-on-1 consultations (`max_attendees = 1`) and group academic/skills support workshops (`max_attendees > 1`). Online vs in-person delivery is expressed naturally via `resources.building_id` and `resources.location`. Maps to `AcademicSupportResource`.
 
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `resource_id` | `TEXT` | `PRIMARY KEY REFERENCES resources(resource_id) ON DELETE CASCADE` | Shared PK/FK to parent `resources` |
-| `support_area` | `TEXT` | `NOT NULL CHECK (support_area IN ('writing', 'maths_stats', 'careers', 'study_skills', 'disability_advice', 'general'))` | Support domain |
-| `session_kind` | `TEXT` | `NOT NULL CHECK (session_kind IN ('one_to_one', 'group_workshop'))` | Individual appointment vs multi-attendee workshop |
-| `delivery_mode` | `TEXT` | `NOT NULL CHECK (delivery_mode IN ('in_person', 'online', 'hybrid'))` | Delivery format |
-| `max_attendees` | `INTEGER` | `NOT NULL DEFAULT 1 CHECK (max_attendees > 0)` | Concurrent attendee limit (`1` for 1-on-1 consultations; `> 1` for group workshops) |
-| `host_user_id` | `TEXT` | `NULL REFERENCES users(user_id) ON DELETE SET NULL` | Lead staff advisor/mentor responsible for the service |
+| `category` | `TEXT` | `NOT NULL` | Open support domain label (e.g. `writing`, `maths_stats`, `careers`, `study_skills`, `disability_advice`, `visa_advice`) |
+| `max_attendees` | `INTEGER` | `NOT NULL DEFAULT 1 CHECK (max_attendees > 0)` | Concurrent attendee limit (`1` = 1-on-1 consultation; `> 1` = group workshop) |
+| `host_name` | `TEXT` | `NULL` | Advisor or team hosting the service (e.g. `Careers Advisory Team`, `Dr. Sarah Chen`) |
 
 ### 2.5 `facilities` & `resource_facilities` *(N:M Lookup)*
 
@@ -269,10 +260,8 @@ Central transactional table storing reservations in UTC Unix epoch seconds with 
 | `start_time` | `INTEGER` | `NOT NULL` | Reservation start in Unix epoch seconds (UTC) |
 | `end_time` | `INTEGER` | `NOT NULL CHECK (end_time > start_time)` | Reservation end in Unix epoch seconds (UTC), strictly after `start_time` |
 | `status_id` | `TEXT` | `NOT NULL REFERENCES booking_statuses(status_id) ON DELETE RESTRICT` | Current lifecycle state |
-| `reason_category` | `TEXT` | `NOT NULL CHECK (reason_category IN ('individual_study', 'group_work', 'lab_practical', 'academic_support', 'equipment_loan', 'other'))` | Structured purpose for safe analytics aggregation |
-| `public_reference` | `TEXT` | `NULL` | Optional topic/module reference visible on room schedules |
-| `private_notes` | `TEXT` | `NULL` | Optional private note visible only to `admin`/`manager`/owner; redacted for `student_services` |
-| `access_pin` | `TEXT` | `NULL` | Optional 4-digit door PIN generated on confirmed `pin`-method resources |
+| `purpose` | `TEXT` | `NULL` | Optional booking purpose/notes (recommended or required when `requires_approval = 1`; visible to owner/`admin`/`manager`, redacted for `student_services`) |
+| `notes` | `TEXT` | `NULL` | Optional flexible remarks (extra user requests, manager rejection reason, equipment handover/return notes; redacted for `student_services`) |
 | `created_at` | `INTEGER` | `NOT NULL DEFAULT (CAST(strftime('%s', 'now') AS INTEGER))` | UTC creation Unix timestamp |
 | `updated_at` | `INTEGER` | `NOT NULL DEFAULT (CAST(strftime('%s', 'now') AS INTEGER))` | UTC last-modified Unix timestamp |
 | `deleted_at` | `INTEGER` | `NULL` | Soft-delete Unix timestamp (`NULL` = active record; non-null rows excluded from normal queries and conflict checks) |
